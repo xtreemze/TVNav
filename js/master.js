@@ -1,7 +1,7 @@
 const videoSection = document.getElementById("videoSection");
 const channelSection = document.getElementById("channelSection");
 
-const channel = function(name, shortName, link, type, video) {
+const channel = function(name, shortName, link, type, video, data) {
   this.name = name;
   this.shortName = shortName;
   this.link = link;
@@ -15,6 +15,7 @@ const channel = function(name, shortName, link, type, video) {
   } else {
     this.video = "audio";
   }
+  this.data = data;
   channelSection.innerHTML += `<div onclick="updateVideo(${shortName});" class="individualChannel" id=${shortName}>${name}</div>`;
 };
 
@@ -37,6 +38,15 @@ window.tn8 = new channel(
   "video/youtube"
 );
 
+window.ten = new channel(
+  "TEN",
+  "ten",
+  "rtmp://stream.grupoabchn.com:1935/TENHD/TENLIVEHD_2",
+  "rtmp/mp4",
+  "video",
+  `data-setup='{"techOrder": ["flash", "html5"]}'`
+);
+
 window.hch = new channel(
   "HCH",
   "hch",
@@ -47,6 +57,13 @@ window.choluSat = new channel(
   "CholuSat",
   "choluSat",
   "http://live.audiotvserver.com:1935/livemedia/cholusat/playlist.m3u8"
+);
+
+window.globo = new channel(
+  "GloboTV",
+  "globo",
+  "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
+  // "video/flash"
 );
 
 window.tele7 = new channel(
@@ -77,13 +94,19 @@ window.america = new channel(
   "audio"
 );
 
-// window.globo = new channel(
-//   "GloboTV",
-//   "globo",
-//   `flashvars="src=rtmp%3A%2F%2F167.114.32.20%3A8979%2Flive%2Fg13&streamType=live&autoPlay=true&scaleMode=stretch`,
-//   "video/flash"
-// );
+window.fox = new channel(
+  "FOX LA",
+  "fox",
+  "http://144.217.85.216/streams/src1/lk.m3u8?mxg=U2FsdGVkX1%2BuHQO2E1H%2BP7sAXOhxjrCNPA xGoGomRPhceDWuRB7Lp5qQB4flInWlPDUGBxRXQX6rJhiSl4qq TQ"
+  // "video/mp4"
+);
 
+window.nbc = new channel(
+  "NBC LA",
+  "nbc",
+  "http://144.217.85.216/streams/src1/lk.m3u8?mxg=U2FsdGVkX193DVxSGtLXvtuWqictwICfXqcxQS jZrwqqwBqcogKAXGq7O7srH1sRvK%2FlzIyeySBj5Oull%2Bz1 5A%3D%3D"
+  // "video/mp4"
+);
 // window.rtv = new channel(
 //   "RTV",
 //   "rtv",
@@ -100,12 +123,9 @@ window.updateVideo = function(channel) {
     <source src=${channel.link} type=${channel.type} ${channel.data}>
     </${channel.video}>`;
   //   window.videoSource = document.getElementById("videoContainer");
-  player = videojs(
-    "videoContainer",
-    {
-      // techOrder: ["flash", "youtube", "html5"]
-    }
-  );
+  player = videojs("videoContainer", {
+    techOrder: ["flash", "youtube", "html5"]
+  });
   player.width(window.innerWidth);
   player.height(window.innerHeight);
   player.play();

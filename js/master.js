@@ -29,8 +29,8 @@ window.choluSat = new channel(
 
 window.tele7 = new channel(
   "TeleCeiba",
-  "http://190.11.224.14:8134/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8"
-  //   "http://190.11.224.14:8134/liveevent.m3u8"
+  //   "http://190.11.224.14:8134/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8"
+  "http://190.11.224.14:8134/liveevent.m3u8"
 );
 
 window.updateVideo = function(newChannel) {

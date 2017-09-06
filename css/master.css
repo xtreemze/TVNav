@@ -5,14 +5,14 @@ body {
 
 #channelSection {
   position: absolute;
-  width: 12%;
+  width: 8em;
   z-index: 1;
   top: 0;
   right: 0;
 }
 
 .individualChannel {
-  background-color: rgba(0, 0, 0, 0.23);
+  background-color: rgba(85, 85, 85, 0.26);
   padding: 1rem;
   color: white;
   cursor: pointer;

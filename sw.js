@@ -10,13 +10,13 @@ var __wpo = {
   },
   "externals": [],
   "hashesMap": {
-    "37533ef15f226980c6c1642b4e8b4ba7904683bd": "./",
-    "9c22f4831fb5f42251738279f1f9b3725c4dfe60": "./bundle.js",
-    "0147f74b4b1e29960aaf74cb1a565ce9786b39c6": "./main.css"
+    "4e4de913ddeec943b51e5629c9de512413fdfaa1": "./",
+    "62bc8b6973dec91fb6c172ab524d36f93a0d98ee": "./bundle.js",
+    "ec1f6f37780dd9c617e76aaca878966829e7483e": "./main.css"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-9-6 19:38:41",
+  "version": "2017-9-6 20:53:32",
   "name": "webpack-offline",
   "pluginVersion": "4.8.3",
   "relativePaths": true

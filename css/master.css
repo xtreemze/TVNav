@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 
-#channels {
+#channelSection {
   position: absolute;
   width: 12%;
   z-index: 1;

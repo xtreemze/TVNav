@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against Net",
+      "url": "http://192.168.0.170",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "runtimeArgs": [
+        "--incognito",
+        "--allow-running-insecure-content",
+        "--allow-file-access-from-files",
+        "--allow-file-access",
+        "--allow-cross-origin-auth-prompt",
+        "--remote-debugging-port=9222"
+      ],
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${workspaceRoot}/*"
+      }
+    }
+  ]
+}

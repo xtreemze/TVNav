@@ -111,9 +111,9 @@ module.exports = function prod(env) {
       }),
       new OfflinePlugin({
         externals: [
-          "./js/materialize.min.js",
-          "./js/jquery-3.2.1.min.js",
-          "./manifest.json"
+          // "./js/materialize.min.js",
+          // "./js/jquery-3.2.1.min.js",
+          // "./manifest.json"
         ],
         caches: "all",
         responseStrategy: "network-first",

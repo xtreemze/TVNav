@@ -1,59 +1,22 @@
 var __wpo = {
   "assets": {
     "main": [
-      "./fonts/materialdesignicons-webfont.eot",
-      "./fonts/materialdesignicons-webfont.woff2",
-      "./fonts/materialdesignicons-webfont.woff",
-      "./fonts/materialdesignicons-webfont.ttf",
-      "./fonts/materialdesignicons-webfont.svg",
-      "./fonts/roboto/Roboto-Thin.woff2",
-      "./fonts/roboto/Roboto-Thin.woff",
-      "./fonts/roboto/Roboto-Light.woff2",
-      "./fonts/roboto/Roboto-Light.woff",
-      "./fonts/roboto/Roboto-Regular.woff2",
-      "./fonts/roboto/Roboto-Regular.woff",
-      "./fonts/roboto/Roboto-Medium.woff2",
-      "./fonts/roboto/Roboto-Medium.woff",
-      "./fonts/roboto/Roboto-Bold.woff2",
-      "./fonts/roboto/Roboto-Bold.woff",
       "./",
       "./bundle.js",
-      "./main.css",
-      "./js/materialize.min.js",
-      "./js/jquery-3.2.1.min.js",
-      "./manifest.json"
+      "./main.css"
     ],
     "additional": [],
     "optional": []
   },
-  "externals": [
-    "./js/materialize.min.js",
-    "./js/jquery-3.2.1.min.js",
-    "./manifest.json"
-  ],
+  "externals": [],
   "hashesMap": {
-    "02acf9a6077c6fd0ba37b5f16499365bf05eb7c9": "./fonts/materialdesignicons-webfont.eot",
-    "ae356d6811285df99e5efa432a27a1ae2efb19b5": "./fonts/materialdesignicons-webfont.woff2",
-    "5b560e4a95f2e1efea1b4d2b39d9d545b012ca22": "./fonts/materialdesignicons-webfont.woff",
-    "0d237a357a6428d90612b24e71a74deb9a1b062a": "./fonts/materialdesignicons-webfont.ttf",
-    "f70e244175be4f96a237a748577f28f39dd3c7cb": "./fonts/materialdesignicons-webfont.svg",
-    "c321aeb611cf1dcb25717484a4ced717d8ca76fa": "./fonts/roboto/Roboto-Thin.woff2",
-    "cb8f61464f349af887ba96f6a2ae1e318b3cc8d9": "./fonts/roboto/Roboto-Thin.woff",
-    "f6daab924b79b4822dc9faa56bbefe1d1efa3e42": "./fonts/roboto/Roboto-Light.woff2",
-    "c7494493f62984e2f581598739b5dd340e9e891b": "./fonts/roboto/Roboto-Light.woff",
-    "c193deaa915e7183828400922700567900fb6cc3": "./fonts/roboto/Roboto-Regular.woff2",
-    "6cfb2a5eb3a601ba450dda2d80bacef26c5ba873": "./fonts/roboto/Roboto-Regular.woff",
-    "7c512e2ebddd4dbd08d0f7bfb5b772501f707078": "./fonts/roboto/Roboto-Medium.woff2",
-    "b17bd60107c9ec0fd8c58a9e1fd222da7f1b99f4": "./fonts/roboto/Roboto-Medium.woff",
-    "5a8465896222227807ff29908d8648db510561a5": "./fonts/roboto/Roboto-Bold.woff2",
-    "e0655b6097eddf9df88cd194eff08436ea086a1c": "./fonts/roboto/Roboto-Bold.woff",
-    "edde446a851af9e67b9445ac2b73198ea3ebc832": "./",
-    "a7c0886cb8b70568e37e35b0e358a14694606187": "./bundle.js",
-    "f4f820e61827e647b402fd000b040ba0b5d39e80": "./main.css"
+    "37533ef15f226980c6c1642b4e8b4ba7904683bd": "./",
+    "9c22f4831fb5f42251738279f1f9b3725c4dfe60": "./bundle.js",
+    "0147f74b4b1e29960aaf74cb1a565ce9786b39c6": "./main.css"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-9-6 16:05:52",
+  "version": "2017-9-6 19:38:41",
   "name": "webpack-offline",
   "pluginVersion": "4.8.3",
   "relativePaths": true

@@ -38,14 +38,13 @@ window.tn8 = new channel(
   "video/youtube"
 );
 
-window.ten = new channel(
-  "TEN",
-  "ten",
-  "rtmp://stream.grupoabchn.com:1935/TENHD/TENLIVEHD_2",
-  "rtmp/mp4",
-  "video",
-  `data-setup='{"techOrder": ["flash", "html5"]}'`
-);
+// window.ten = new channel(
+//   "TEN",
+//   "ten",
+//   "rtmp://stream.grupoabchn.com:1935/TENHD/TENLIVEHD_2",
+//   "rtmp/mp4",
+//   "video"`data-setup='{"techOrder": ["flash", "html5"]}'`
+// );
 
 window.hch = new channel(
   "HCH",
@@ -94,19 +93,19 @@ window.america = new channel(
   "audio"
 );
 
-window.fox = new channel(
-  "FOX LA",
-  "fox",
-  "http://144.217.85.216/streams/src1/lk.m3u8?mxg=U2FsdGVkX1%2BuHQO2E1H%2BP7sAXOhxjrCNPA xGoGomRPhceDWuRB7Lp5qQB4flInWlPDUGBxRXQX6rJhiSl4qq TQ"
-  // "video/mp4"
-);
+// window.fox = new channel(
+//   "FOX LA",
+//   "fox",
+//   "http://144.217.85.216/streams/src1/lk.m3u8?mxg=U2FsdGVkX1%2BuHQO2E1H%2BP7sAXOhxjrCNPA xGoGomRPhceDWuRB7Lp5qQB4flInWlPDUGBxRXQX6rJhiSl4qq TQ"
+//   // "video/mp4"
+// );
 
-window.nbc = new channel(
-  "NBC LA",
-  "nbc",
-  "http://144.217.85.216/streams/src1/lk.m3u8?mxg=U2FsdGVkX193DVxSGtLXvtuWqictwICfXqcxQS jZrwqqwBqcogKAXGq7O7srH1sRvK%2FlzIyeySBj5Oull%2Bz1 5A%3D%3D"
-  // "video/mp4"
-);
+// window.nbc = new channel(
+//   "NBC LA",
+//   "nbc",
+//   "http://144.217.85.216/streams/src1/lk.m3u8?mxg=U2FsdGVkX193DVxSGtLXvtuWqictwICfXqcxQS jZrwqqwBqcogKAXGq7O7srH1sRvK%2FlzIyeySBj5Oull%2Bz1 5A%3D%3D"
+//   // "video/mp4"
+// );
 // window.rtv = new channel(
 //   "RTV",
 //   "rtv",

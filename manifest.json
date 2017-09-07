@@ -1,7 +1,7 @@
 {
   "name": "TVNav",
   "short_name": "TVNav",
-  "start_url": "./index.html",
+  "start_url": "./",
   "icons": [
     {
       "src": "https://xtreemze.github.io/TVNav/android-chrome-192x192.png",

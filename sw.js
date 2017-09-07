@@ -12,11 +12,11 @@ var __wpo = {
   "hashesMap": {
     "7f2f1aa3d523b32a602bee3b4c08b39f521af6dd": "./",
     "e3c28babb75aaf1b62c21699ee889a4043bc3387": "./bundle.js",
-    "008e4e6f158b3222a32be349a2785b04a333046e": "./main.css"
+    "aef008cd5df8e34db28fa3e26b7f2d3d0a416f09": "./main.css"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-9-7 03:19:22",
+  "version": "2017-9-7 03:23:57",
   "name": "webpack-offline",
   "pluginVersion": "4.8.3",
   "relativePaths": true

@@ -8,11 +8,12 @@ body {
   position: absolute;
   width: 7em;
   z-index: 1;
-  top: 0;
+  bottom: 34px;
   right: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: 100vh;
+  /* max-height: 50vh; */
+  /* margin-bottom: 0em; */
 }
 
 .individualChannel {

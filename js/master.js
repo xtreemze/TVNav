@@ -131,6 +131,9 @@ window.updateVideo = function(channel) {
   window.currentElement = document.getElementById(channel.shortName);
   window.currentElement.classList.add("active");
 };
+window.toggleChannels = function() {
+  channelSection.classList.toggle("inactiveChannels");
+};
 window.onresize = function() {
   player.width(window.innerWidth);
   player.height(window.innerHeight);

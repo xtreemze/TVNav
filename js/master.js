@@ -77,6 +77,12 @@ window.prog = new channel(
   "http://streannlive-lh.akamaihd.net/i/teleprogreso_1@372779/index_3_av-p.m3u8?sd=10&set-segment-duration=smoothest&rebase=on&hdntl=exp=1504818729~acl=%2f*~data=hdntl~hmac=3193f9a3a3ffbb7e4421fae3798785724aa25340fbbdf18e452f6a3f058d1876"
 );
 
+window.campus = new channel(
+  "Campus",
+  "campus",
+  "http://st2.worldkast.com/8004/8004/playlist.m3u8"
+);
+
 window.hrn = new channel(
   "HRN",
   "hrn",

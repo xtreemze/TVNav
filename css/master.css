@@ -1,19 +1,22 @@
 body {
+  position: fixed;
   margin: 0;
   padding: 0;
   background-color: #000;
+  /* z-index: 100; */
 }
 
 #channelSection {
   position: absolute;
   width: 7em;
-  z-index: 1;
-  bottom: 34px;
+  z-index: 600;
+  /* bottom: 34px; */
   right: 0;
+  top: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  /* max-height: 50vh; */
-  /* margin-bottom: 0em; */
+  /* max-height: 76vh; */
+  margin: 8px 0;
 }
 
 .individualChannel {

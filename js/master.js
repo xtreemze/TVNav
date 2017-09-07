@@ -58,9 +58,9 @@ window.choluSat = new channel(
   "http://live.audiotvserver.com:1935/livemedia/cholusat/playlist.m3u8"
 );
 
-window.globo = new channel(
+window.globoTV = new channel(
   "GloboTV",
-  "globo",
+  "globoTV",
   "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
   // "video/flash"
 );
@@ -89,6 +89,14 @@ window.america = new channel(
   "America",
   "america",
   "http://17803.live.streamtheworld.com/AMERICAAAC.aac",
+  "audio/mpeg",
+  "audio"
+);
+
+window.rGlobo = new channel(
+  "RGlobo",
+  "rGlobo",
+  "http://aliasdns.info:8016/;stream.mp3",
   "audio/mpeg",
   "audio"
 );

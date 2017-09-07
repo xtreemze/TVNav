@@ -12,11 +12,12 @@ body {
   z-index: 600;
   /* bottom: 34px; */
   right: 0;
-  top: 0;
+  /* top: 32; */
+  vertical-align: center;
   overflow-y: auto;
   overflow-x: hidden;
-  /* max-height: 76vh; */
-  margin: 8px 0;
+  max-height: 100vh;
+  margin: auto 0;
 }
 
 .individualChannel {
@@ -26,6 +27,11 @@ body {
   color: white;
   cursor: pointer;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.vjs-control-bar {
+  z-index: 700;
+  /* position: relative; */
 }
 
 .active {

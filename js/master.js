@@ -22,13 +22,13 @@ const channel = function(name, shortName, link, type, video, data) {
 window.tn5 = new channel(
   "TN5",
   "tn5",
-  "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/index_800_av-p.m3u8"
+  "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/index_800_av-p.m3u8?sd=10&rebase=on"
 );
 
 window.tsi = new channel(
   "TSi",
   "tsi",
-  "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/index_800_av-p.m3u8"
+  "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/index_800_av-p.m3u8?sd=10&rebase=on"
 );
 
 window.tn8 = new channel(
@@ -145,7 +145,7 @@ window.updateVideo = function(channel) {
     </${channel.video}>`;
   //   window.videoSource = document.getElementById("videoContainer");
   player = videojs("videoContainer", {
-    techOrder: ["flash", "youtube", "html5"]
+    techOrder: ["html5", "youtube", "flash"]
   });
   player.width(window.innerWidth);
   player.height(window.innerHeight);

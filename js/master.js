@@ -118,7 +118,7 @@ window.updateVideo = function(channel) {
     window.currentElement.classList.remove("active");
     videojs.players.videoContainer.dispose();
   }
-  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" autoplay class="video-js vjs-default-skin vjs-big-play-centered">
+  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
     <source src=${channel.link} type=${channel.type} ${channel.data}>
     </${channel.video}>`;
   //   window.videoSource = document.getElementById("videoContainer");
@@ -127,9 +127,16 @@ window.updateVideo = function(channel) {
   });
   player.width(window.innerWidth);
   player.height(window.innerHeight);
-  player.play();
   window.currentElement = document.getElementById(channel.shortName);
   window.currentElement.classList.add("active");
+  setTimeout(function() {
+    player.muted(!"setMuted");
+    // player.play();
+    setTimeout(function() {
+      // videoContainer.player.muted(!"setMuted");
+      player.play();
+    }, 200);
+  }, 900);
 };
 window.toggleChannels = function() {
   channelSection.classList.toggle("inactiveChannels");

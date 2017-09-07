@@ -11,9 +11,9 @@ body {
   position: absolute;
   width: 7em;
   z-index: 600;
-  bottom: 32px;
-  right: 0;
-  top: 32px;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  right: -1rem;
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 100vh;
@@ -23,16 +23,16 @@ body {
 
 .individualChannel {
   background-color: rgba(72, 72, 72, 0.71);
-  padding: 1.5rem 1rem;
-  margin: 0.3rem 0rem;
-  color: white;
+  padding: 1.3rem 1rem;
+  margin: 0.8rem 0rem;
+  color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 0.76em;
 }
 
 .vjs-control-bar {
   z-index: 700;
-  /* position: relative; */
 }
 
 .active {
@@ -55,7 +55,7 @@ body {
   right: 0;
   position: absolute;
   z-index: 800;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   text-align: left;
   cursor: pointer;
 }

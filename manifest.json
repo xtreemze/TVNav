@@ -3,6 +3,18 @@
   "short_name": "TVNav",
   "start_url": "./index.html?utm_source=homescreen",
   "display": "fullscreen",
-  "background_color": "#000",
-  "theme_color": "#000"
+  "icons": [
+    {
+      "src": "https://xtreemze.github.io/TVNav/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://xtreemze.github.io/TVNav/android-chrome-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
 }

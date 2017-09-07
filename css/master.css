@@ -1,5 +1,5 @@
 body {
-  position: fixed;
+  /* position: initial; */
   margin: 0;
   padding: 0;
   background-color: #000;
@@ -10,10 +10,10 @@ body {
   position: absolute;
   width: 7em;
   z-index: 600;
-  /* bottom: 34px; */
+  bottom: 32px;
   right: 0;
-  /* top: 32; */
-  vertical-align: center;
+  top: 4px;
+  /* vertical-align: middle; */
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 100vh;
@@ -36,4 +36,8 @@ body {
 
 .active {
   background-color: rgba(138, 138, 138, 0.85) !important;
+}
+
+.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+  opacity: 1;
 }

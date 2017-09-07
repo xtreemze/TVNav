@@ -38,13 +38,13 @@ window.tn8 = new channel(
   "video/youtube"
 );
 
-// window.ten = new channel(
-//   "TEN",
-//   "ten",
-//   "rtmp://stream.grupoabchn.com:1935/TENHD/TENLIVEHD_2",
-//   "rtmp/mp4",
-//   "video"`data-setup='{"techOrder": ["flash", "html5"]}'`
-// );
+window.ten = new channel(
+  "TEN",
+  "ten",
+  "http://stream.grupoabchn.com:1935/TENHD/TENLive.smil/playlist.m3u8"
+  // "rtmp/mp4",
+  // "video"`data-setup='{"techOrder": ["flash", "html5"]}'`
+);
 
 window.hch = new channel(
   "HCH",
@@ -89,6 +89,14 @@ window.america = new channel(
   "America",
   "america",
   "http://17803.live.streamtheworld.com/AMERICAAAC.aac",
+  "audio/mpeg",
+  "audio"
+);
+
+window.rprog = new channel(
+  "RProgreso",
+  "rprog",
+  "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
   "audio/mpeg",
   "audio"
 );

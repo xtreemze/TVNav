@@ -1,3 +1,5 @@
+import fscreen from "fscreen";
+
 const videoSection = document.getElementById("videoSection");
 const channelSection = document.getElementById("channelSection");
 
@@ -72,13 +74,13 @@ window.tele7 = new channel(
 );
 
 window.prog = new channel(
-  "TeleProg",
+  "TeleProgreso",
   "prog",
   "http://streannlive-lh.akamaihd.net/i/teleprogreso_1@372779/index_3_av-p.m3u8?sd=10&set-segment-duration=smoothest&rebase=on&hdntl=exp=1504818729~acl=%2f*~data=hdntl~hmac=3193f9a3a3ffbb7e4421fae3798785724aa25340fbbdf18e452f6a3f058d1876"
 );
 
 window.campus = new channel(
-  "Campus",
+  "CampusTV",
   "campus",
   "http://st2.worldkast.com/8004/8004/playlist.m3u8"
 );
@@ -92,7 +94,7 @@ window.hrn = new channel(
 );
 
 window.america = new channel(
-  "America",
+  "Radio America",
   "america",
   "http://17803.live.streamtheworld.com/AMERICAAAC.aac",
   "audio/mpeg",
@@ -100,7 +102,7 @@ window.america = new channel(
 );
 
 window.rGlobo = new channel(
-  "RGlobo",
+  "Radio Globo",
   "rGlobo",
   "http://aliasdns.info:8016/;stream.mp3",
   "audio/mpeg",
@@ -108,7 +110,7 @@ window.rGlobo = new channel(
 );
 
 window.rprog = new channel(
-  "RProgreso",
+  "Radio Progreso",
   "rprog",
   "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
   "audio/mpeg",
@@ -136,35 +138,47 @@ window.rprog = new channel(
 // );
 
 window.updateVideo = function(channel) {
-  if (videojs.players.videoContainer) {
+  if (videojs.players.videoContainer && window.player) {
     window.currentElement.classList.remove("active");
     videojs.players.videoContainer.dispose();
   }
-  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
-    <source src=${channel.link} type=${channel.type} ${channel.data}>
-    </${channel.video}>`;
-  //   window.videoSource = document.getElementById("videoContainer");
-  player = videojs("videoContainer", {
+  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="../img/test.jpg" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+  <source src=${channel.link} type=${channel.type} ${channel.data}>
+  </${channel.video}>`;
+  window.player = videojs("videoContainer", {
     techOrder: ["html5", "youtube", "flash"]
   });
-  player.width(window.innerWidth);
-  player.height(window.innerHeight);
+  window.player.width(window.innerWidth);
+  window.player.height(window.innerHeight);
   window.currentElement = document.getElementById(channel.shortName);
   window.currentElement.classList.add("active");
+  document.title = channel.name + " | TVNav";
   setTimeout(function() {
-    player.muted(!"setMuted");
-    // player.play();
+    window.player.muted(!"setMuted");
     setTimeout(function() {
-      // videoContainer.player.muted(!"setMuted");
-      player.play();
+      window.player.play();
     }, 200);
   }, 900);
 };
 window.toggleChannels = function() {
   channelSection.classList.toggle("inactiveChannels");
 };
-window.onresize = function() {
-  player.width(window.innerWidth);
-  player.height(window.innerHeight);
-};
 window.updateVideo(tsi);
+window.addEventListener("resize", function() {
+  window.player.width(window.innerWidth);
+  window.player.height(window.innerHeight);
+});
+window.addEventListener("orientationchange", function() {
+  window.player.width(window.innerWidth);
+  window.player.height(window.innerHeight);
+});
+const main = document.getElementById("main");
+const fullscreenButton = document.getElementById("fullscreenButton");
+fullscreenButton.addEventListener("click", function() {
+  if (fscreen.fullscreenElement !== null) {
+    fscreen.exitFullscreen();
+  } else {
+    channelSection.classList.add("inactiveChannels");
+    fscreen.requestFullscreen(main);
+  }
+});

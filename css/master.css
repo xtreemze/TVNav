@@ -9,11 +9,11 @@ body {
 
 #channelSection {
   position: absolute;
-  width: 7em;
+  width: 8em;
   z-index: 600;
   top: 2.5rem;
   bottom: 2.5rem;
-  right: -1rem;
+  right: 0rem;
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 100vh;
@@ -23,7 +23,7 @@ body {
 
 .individualChannel {
   background-color: rgba(72, 72, 72, 0.71);
-  padding: 1.3rem 1rem;
+  padding: 1.3rem 0.8rem;
   margin: 0.8rem 0rem;
   color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
@@ -61,5 +61,15 @@ body {
 }
 
 .inactiveChannels {
-  right: -6.8em !important;
+  right: -7.8em !important;
+}
+
+#fullscreenButton {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2rem;
+  width: 7rem;
+  z-index: 900;
 }

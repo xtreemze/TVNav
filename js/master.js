@@ -28,6 +28,14 @@ window.tsi = new channel(
   "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/master.m3u8"
 );
 
+window.hrn = new channel(
+  "HRN",
+  "hrn",
+  "http://radios504.geucast.net:18101/radio-live",
+  "audio/mpeg",
+  "audio"
+);
+
 window.tn5 = new channel(
   "TN5",
   "tn5",
@@ -69,6 +77,14 @@ window.globoTV = new channel(
   // "video/flash"
 );
 
+window.rGlobo = new channel(
+  "Radio Globo",
+  "rGlobo",
+  "http://aliasdns.info:8016/;stream.mp3",
+  "audio/mpeg",
+  "audio"
+);
+
 window.tele7 = new channel(
   "TeleCeiba",
   "tele7",
@@ -88,14 +104,6 @@ window.campus = new channel(
   "http://st2.worldkast.com/8004/8004/playlist.m3u8"
 );
 
-window.hrn = new channel(
-  "HRN",
-  "hrn",
-  "http://radios504.geucast.net:18101/radio-live",
-  "audio/mpeg",
-  "audio"
-);
-
 window.america = new channel(
   "Radio America",
   "america",
@@ -104,10 +112,10 @@ window.america = new channel(
   "audio"
 );
 
-window.rGlobo = new channel(
-  "Radio Globo",
-  "rGlobo",
-  "http://aliasdns.info:8016/;stream.mp3",
+window.patio = new channel(
+  "Radio El Patio",
+  "patio",
+  "http://195.154.182.222:25730/patio",
   "audio/mpeg",
   "audio"
 );

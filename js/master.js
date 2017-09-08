@@ -230,6 +230,6 @@ fullscreenButton.addEventListener("click", function() {
     fscreen.requestFullscreen(main);
   }
 });
-window.addEventListener("load", function() {
-  window.updateVideo(tsi);
-});
+// window.addEventListener("load", function() {
+//   window.updateVideo(tsi);
+// });

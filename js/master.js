@@ -163,9 +163,14 @@ window.updateVideo = function(channel) {
   videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/test.jpg" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
   <source src=${channel.link} type=${channel.type} ${channel.data}>
   </${channel.video}>`;
-  window.player = videojs("videoContainer", {
-    techOrder: ["flash", "youtube", "html5"]
-  });
+  window.player = videojs(
+    "videoContainer"
+    // , {
+    //   techOrder: [
+    //     // "flash", "youtube",
+    //    "html5"]
+    // }
+  );
   window.player.width(window.innerWidth);
   window.player.height(window.innerHeight);
   window.currentElement = document.getElementById(channel.shortName);

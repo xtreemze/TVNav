@@ -114,6 +114,11 @@ module.exports = function prod(env) {
           // "./js/materialize.min.js",
           // "./js/jquery-3.2.1.min.js",
           // "./manifest.json"
+          "./js/video.min.js",
+          "./js/Youtube.js",
+          "./js/videojs-contrib-hls.min.js",
+          "./css/video-js.min.css",
+          "./img/test.jpg"
         ],
         caches: "all",
         responseStrategy: "network-first",

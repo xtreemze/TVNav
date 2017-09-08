@@ -1,11 +1,16 @@
 CACHE MANIFEST
-#ver:2017-9-8 11:32:11
+#ver:2017-9-8 11:52:22
 #plugin:4.8.3
 
 CACHE:
 ../
 ../bundle.js
 ../main.css
+../js/video.min.js
+../js/Youtube.js
+../js/videojs-contrib-hls.min.js
+../css/video-js.min.css
+../img/test.jpg
 
 NETWORK:
 *

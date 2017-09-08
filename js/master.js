@@ -71,6 +71,7 @@ window.tele7 = new channel(
   "TeleCeiba",
   "tele7",
   "http://190.11.224.14:8134/liveevent.m3u8"
+  // "http://190.11.224.14:8134/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8"
 );
 
 window.prog = new channel(
@@ -117,6 +118,13 @@ window.rprog = new channel(
   "audio"
 );
 
+// Donate
+channelSection.innerHTML += `<div class="individualChannel" id="donate"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NWT2PUFW6NFLC">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form></div>`;
 // window.fox = new channel(
 //   "FOX LA",
 //   "fox",
@@ -146,11 +154,7 @@ window.updateVideo = function(channel) {
   <source src=${channel.link} type=${channel.type} ${channel.data}>
   </${channel.video}>`;
   window.player = videojs("videoContainer", {
-    techOrder: [
-      "html5",
-      "youtube"
-      // , "flash"
-    ]
+    techOrder: ["flash", "youtube", "html5"]
   });
   window.player.width(window.innerWidth);
   window.player.height(window.innerHeight);

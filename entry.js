@@ -2,6 +2,8 @@ require("./indexB.html");
 // require("./css/materialdesignicons.css");
 require("./css/video-js.min.css");
 require("./css/master.css");
+// require("./js/video.min.js");
+// require("./js/videojs-contrib-hls.min");
 require("./js/master.js");
 /*
 db    db d8888b. d8888b.  .d8b.  d888888b d88888b .d8888. 

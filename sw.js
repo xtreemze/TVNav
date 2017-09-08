@@ -6,6 +6,7 @@ var __wpo = {
       "./img/test.jpg",
       "./bundle.js",
       "./js/video.min.js",
+      "./js/videojs-flash.js",
       "./js/videojs-contrib-hls.min.js",
       "./img/test.jpg"
     ],
@@ -14,18 +15,19 @@ var __wpo = {
   },
   "externals": [
     "./js/video.min.js",
+    "./js/videojs-flash.js",
     "./js/videojs-contrib-hls.min.js",
     "./img/test.jpg"
   ],
   "hashesMap": {
-    "097596bcf7028c13ba2bc04ee271fac2af7c059b": "./",
+    "fbcf92940ef38ecc36e1d8fcd839d32b503d1dd1": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
     "d30cb7c3c409f47de321d108d701ddeec5f418c0": "./img/test.jpg",
-    "63cab072299047fae3777c7bed36816d42173f70": "./bundle.js"
+    "37123432f3c9722d215568deb5314f0b8fcce6fa": "./bundle.js"
   },
   "strategy": "all",
-  "responseStrategy": "cache-first",
-  "version": "2017-9-8 22:49:43",
+  "responseStrategy": "network-first",
+  "version": "2017-9-8 23:06:54",
   "name": "webpack-offline",
   "pluginVersion": "4.8.3",
   "relativePaths": true

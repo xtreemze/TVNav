@@ -70,7 +70,16 @@ window.ten = new channel(
 window.hch = new channel(
   "HCH",
   "hch",
-  "https://5997ea093ae04.streamlock.net/hch/hch/playlist.m3u8"
+  // "https://5997ea093ae04.streamlock.net/hch/hch/playlist.m3u8"
+  "http://stream.innovandote.com/hch/hch/playlist.m3u8"
+);
+
+window.rhch = new channel(
+  "Radio HCH",
+  "rhch",
+  "http://media.innovandote.com:8006/mountpoint",
+  "audio/mpeg",
+  "audio"
 );
 
 window.choluSat = new channel(
@@ -181,14 +190,13 @@ window.updateVideo = function(channel) {
   videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/test.jpg" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
   <source src=${channel.link} type=${channel.type} ${channel.data}>
   </${channel.video}>`;
-  window.player = videojs(
-    "videoContainer"
-    // , {
-    //   techOrder: [
-    //     // "flash", "youtube",
-    //    "html5"]
-    // }
-  );
+  window.player = videojs("videoContainer", {
+    techOrder: [
+      "flash",
+      //  "youtube",
+      "html5"
+    ]
+  });
   window.player.width(window.innerWidth);
   window.player.height(window.innerHeight);
   window.currentElement = document.getElementById(channel.shortName);

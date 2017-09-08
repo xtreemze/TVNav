@@ -24,13 +24,15 @@ const channel = function(name, shortName, link, type, video, data) {
 window.tsi = new channel(
   "TSi",
   "tsi",
-  "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/index_800_av-p.m3u8?sd=10&rebase=on"
+  // "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/index_800_av-p.m3u8?sd=10&rebase=on"
+  "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/master.m3u8"
 );
 
 window.tn5 = new channel(
   "TN5",
   "tn5",
-  "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/index_800_av-p.m3u8?sd=10&rebase=on"
+  // "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/index_800_av-p.m3u8?sd=10&rebase=on"
+  "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/master.m3u8"
 );
 
 window.tn8 = new channel(

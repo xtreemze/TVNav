@@ -167,7 +167,6 @@ window.updateVideo = function(channel) {
 window.toggleChannels = function() {
   channelSection.classList.toggle("inactiveChannels");
 };
-window.updateVideo(tsi);
 window.addEventListener("resize", function() {
   window.player.width(window.innerWidth);
   window.player.height(window.innerHeight);
@@ -185,4 +184,7 @@ fullscreenButton.addEventListener("click", function() {
     channelSection.classList.add("inactiveChannels");
     fscreen.requestFullscreen(main);
   }
+});
+window.addEventListener("load", function() {
+  window.updateVideo(tsi);
 });

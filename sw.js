@@ -19,13 +19,13 @@ var __wpo = {
     "./img/test.jpg"
   ],
   "hashesMap": {
-    "f9e0a217ac30ac651c4025dae1588e2e1a66a3f3": "./",
+    "302902fbd6cf04effebce308838d6e1d13511f37": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
-    "af8747863500b03bcda7d3d968c0dbbe6a6db940": "./bundle.js"
+    "52123f7330a47ef1658fbdf74e0224499767e442": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-9-8 12:13:53",
+  "version": "2017-9-8 12:21:23",
   "name": "webpack-offline",
   "pluginVersion": "4.8.3",
   "relativePaths": true

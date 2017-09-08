@@ -120,12 +120,13 @@ module.exports = function prod(env) {
           // "./css/video-js.min.css",
           // "./manifest.json"
           "./js/video.min.js",
-          "./js/Youtube.js",
+          // "./js/Youtube.js",
           "./js/videojs-contrib-hls.min.js",
           "./img/test.jpg"
         ],
         caches: "all",
-        responseStrategy: "network-first",
+        // responseStrategy: "network-first",
+        responseStrategy: "cache-first",
         updateStrategy: "all",
         minify: "true",
         ServiceWorker: {

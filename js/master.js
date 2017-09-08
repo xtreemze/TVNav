@@ -35,12 +35,12 @@ window.tn5 = new channel(
   "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/master.m3u8"
 );
 
-window.tn8 = new channel(
-  "TN8",
-  "tn8",
-  "https://www.youtube.com/embed/6SWOtepXrbI",
-  "video/youtube"
-);
+// window.tn8 = new channel(
+//   "TN8",
+//   "tn8",
+//   "https://www.youtube.com/embed/6SWOtepXrbI",
+//   "video/youtube"
+// );
 
 window.ten = new channel(
   "TEN",
@@ -109,6 +109,14 @@ window.rGlobo = new channel(
   "rGlobo",
   "http://aliasdns.info:8016/;stream.mp3",
   "audio/mpeg",
+  "audio"
+);
+
+window.rnh = new channel(
+  "Radio Nacional",
+  "rnh",
+  "http://stream.playerlive.info:8049//rnh.aac",
+  "audio/aac",
   "audio"
 );
 

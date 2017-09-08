@@ -146,7 +146,11 @@ window.updateVideo = function(channel) {
   <source src=${channel.link} type=${channel.type} ${channel.data}>
   </${channel.video}>`;
   window.player = videojs("videoContainer", {
-    techOrder: ["html5", "youtube", "flash"]
+    techOrder: [
+      "html5",
+      "youtube"
+      // , "flash"
+    ]
   });
   window.player.width(window.innerWidth);
   window.player.height(window.innerHeight);

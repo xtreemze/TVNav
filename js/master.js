@@ -142,7 +142,7 @@ window.updateVideo = function(channel) {
     window.currentElement.classList.remove("active");
     videojs.players.videoContainer.dispose();
   }
-  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="http://xtreemze.github.io/TVNav/img/test.jpg" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/test.jpg" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
   <source src=${channel.link} type=${channel.type} ${channel.data}>
   </${channel.video}>`;
   window.player = videojs("videoContainer", {

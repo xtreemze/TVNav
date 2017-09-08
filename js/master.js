@@ -21,16 +21,16 @@ const channel = function(name, shortName, link, type, video, data) {
   channelSection.innerHTML += `<div onclick="updateVideo(${shortName});" class="individualChannel" id=${shortName}>${name}</div>`;
 };
 
-window.tn5 = new channel(
-  "TN5",
-  "tn5",
-  "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/index_800_av-p.m3u8?sd=10&rebase=on"
-);
-
 window.tsi = new channel(
   "TSi",
   "tsi",
   "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/index_800_av-p.m3u8?sd=10&rebase=on"
+);
+
+window.tn5 = new channel(
+  "TN5",
+  "tn5",
+  "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/index_800_av-p.m3u8?sd=10&rebase=on"
 );
 
 window.tn8 = new channel(

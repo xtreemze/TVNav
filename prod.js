@@ -123,7 +123,8 @@ module.exports = function prod(env) {
           "./js/videojs-flash.js",
           // "./js/Youtube.js",
           "./js/videojs-contrib-hls.min.js",
-          "./img/test.jpg"
+          // "./img/test.jpg"
+          "./img/bars.png"
         ],
         caches: "all",
         responseStrategy: "network-first",

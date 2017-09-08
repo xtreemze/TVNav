@@ -4,10 +4,10 @@ const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const OfflinePlugin = require("offline-plugin");
 const OptimizeJsPlugin = require("optimize-js-plugin");
-const path = require("path");
+// const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const PurifyCSSPlugin = require("purifycss-webpack");
-const glob = require("glob-all");
+// const PurifyCSSPlugin = require("purifycss-webpack");
+// const glob = require("glob-all");
 //
 module.exports = function prod(env) {
   return {
@@ -30,12 +30,16 @@ module.exports = function prod(env) {
             "html-loader"
           ]
         },
+        // {
+        //   test: /\.css$/,
+        //   loader: ExtractTextPlugin.extract({
+        //     fallback: "style-loader",
+        //     use: "css-loader"
+        //   })
+        // },
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: "css-loader"
-          })
+          use: ["style-loader", "css-loader"]
         },
         {
           test: /\.(png|gif|jpg|webp)$/,
@@ -99,16 +103,16 @@ module.exports = function prod(env) {
         makeSourceMaps: true,
         concurrency: 4
       }),
-      new ExtractTextPlugin("[name].css"),
-      new PurifyCSSPlugin({
-        minimize: true,
-        verbose: true,
-        // Give paths to parse for rules. These should be absolute!
-        paths: glob.sync([
-          path.join(__dirname, "*.html"),
-          path.join(__dirname, "js/*.js")
-        ])
-      }),
+      // new ExtractTextPlugin("[name].css"),
+      // new PurifyCSSPlugin({
+      //   minimize: true,
+      //   verbose: true,
+      //   // Give paths to parse for rules. These should be absolute!
+      //   paths: glob.sync([
+      //     path.join(__dirname, "*.html"),
+      //     path.join(__dirname, "js/*.js")
+      //   ])
+      // }),
       new OfflinePlugin({
         externals: [
           // "./js/materialize.min.js",
@@ -117,7 +121,7 @@ module.exports = function prod(env) {
           "./js/video.min.js",
           "./js/Youtube.js",
           "./js/videojs-contrib-hls.min.js",
-          "./css/video-js.min.css",
+          // "./css/video-js.min.css",
           "./img/test.jpg"
         ],
         caches: "all",

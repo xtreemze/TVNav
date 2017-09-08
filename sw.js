@@ -2,12 +2,11 @@ var __wpo = {
   "assets": {
     "main": [
       "./",
+      "./css/font/VideoJS.eot",
       "./bundle.js",
-      "./main.css",
       "./js/video.min.js",
       "./js/Youtube.js",
       "./js/videojs-contrib-hls.min.js",
-      "./css/video-js.min.css",
       "./img/test.jpg"
     ],
     "additional": [],
@@ -17,17 +16,16 @@ var __wpo = {
     "./js/video.min.js",
     "./js/Youtube.js",
     "./js/videojs-contrib-hls.min.js",
-    "./css/video-js.min.css",
     "./img/test.jpg"
   ],
   "hashesMap": {
-    "3acfbb459d584d6c552d58b3db6b1d7c72d921ed": "./",
-    "e2c52a5194f77c06cc1b8b052be8bf38c49ca3ae": "./bundle.js",
-    "9c0139fabbc18ad870e9b2335b8b6783e6d72160": "./main.css"
+    "f9e0a217ac30ac651c4025dae1588e2e1a66a3f3": "./",
+    "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
+    "af8747863500b03bcda7d3d968c0dbbe6a6db940": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-9-8 12:00:02",
+  "version": "2017-9-8 12:13:53",
   "name": "webpack-offline",
   "pluginVersion": "4.8.3",
   "relativePaths": true

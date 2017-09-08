@@ -1,15 +1,14 @@
 CACHE MANIFEST
-#ver:2017-9-8 12:00:02
+#ver:2017-9-8 12:13:53
 #plugin:4.8.3
 
 CACHE:
 ../
+../css/font/VideoJS.eot
 ../bundle.js
-../main.css
 ../js/video.min.js
 ../js/Youtube.js
 ../js/videojs-contrib-hls.min.js
-../css/video-js.min.css
 ../img/test.jpg
 
 NETWORK:

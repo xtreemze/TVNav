@@ -20,14 +20,14 @@ var __wpo = {
     "./img/test.jpg"
   ],
   "hashesMap": {
-    "46b86777ea48adfe159c4cd791f928f125a7f7be": "./",
+    "984640b79362ddbec244dfc8cb922a00f535d374": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
     "d30cb7c3c409f47de321d108d701ddeec5f418c0": "./img/test.jpg",
     "1048712c487756ea01c674929f61d64fa93077be": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-9-8 15:54:01",
+  "version": "2017-9-8 19:54:08",
   "name": "webpack-offline",
   "pluginVersion": "4.8.3",
   "relativePaths": true

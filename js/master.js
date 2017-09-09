@@ -26,6 +26,11 @@ const channel = function(name, shortName, link, type, video, data) {
   } else {
     this.video = "audio";
   }
+  if (data === "undefined") {
+    this.data = "{}";
+  } else {
+    this.data = data;
+  }
   this.data = data;
   channelSection.innerHTML += `<div onclick="updateVideo(${shortName});" class="individualChannel" id=${shortName}>${name}</div>`;
 };
@@ -187,8 +192,8 @@ window.updateVideo = function(channel) {
     window.currentElement.classList.remove("active");
     videojs.players.videoContainer.dispose();
   }
-  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered" data-setup='{}'>
-  <source src=${channel.link} type=${channel.type} ${channel.data}>
+  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered" data=${channel.data}>
+  <source src=${channel.link} type=${channel.type}>
   </${channel.video}>`;
   window.player = videojs("videoContainer", {
     techOrder: [

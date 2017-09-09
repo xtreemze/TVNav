@@ -187,7 +187,7 @@ window.updateVideo = function(channel) {
     window.currentElement.classList.remove("active");
     videojs.players.videoContainer.dispose();
   }
-  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered" data-setup='{}'>
   <source src=${channel.link} type=${channel.type} ${channel.data}>
   </${channel.video}>`;
   window.player = videojs("videoContainer", {
@@ -197,8 +197,10 @@ window.updateVideo = function(channel) {
       "html5"
     ]
   });
-  window.player.width(window.innerWidth);
-  window.player.height(window.innerHeight);
+  if (window.player) {
+    window.player.width(window.innerWidth);
+    window.player.height(window.innerHeight);
+  }
   window.currentElement = document.getElementById(channel.shortName);
   window.currentElement.classList.add("active");
   document.title = channel.name + " | TVNav";
@@ -213,12 +215,16 @@ window.toggleChannels = function() {
   channelSection.classList.toggle("inactiveChannels");
 };
 window.addEventListener("resize", function() {
-  window.player.width(window.innerWidth);
-  window.player.height(window.innerHeight);
+  if (window.player) {
+    window.player.width(window.innerWidth);
+    window.player.height(window.innerHeight);
+  }
 });
 window.addEventListener("orientationchange", function() {
-  window.player.width(window.innerWidth);
-  window.player.height(window.innerHeight);
+  if (window.player) {
+    window.player.width(window.innerWidth);
+    window.player.height(window.innerHeight);
+  }
 });
 const main = document.getElementById("main");
 const fullscreenButton = document.getElementById("fullscreenButton");

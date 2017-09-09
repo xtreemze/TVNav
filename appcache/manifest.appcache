@@ -1,11 +1,11 @@
 CACHE MANIFEST
-#ver:2017-9-8 23:54:20
+#ver:2017-9-9 14:12:30
 #plugin:4.8.3
 
 CACHE:
 ../
 ../css/font/VideoJS.eot
-../img/bars.png
+../img/bars.svg
 ../bundle.js
 ../js/video.min.js
 ../js/videojs-flash.js

@@ -167,25 +167,6 @@ ton_id" value="NWT2PUFW6NFLC">
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form></div>`;
-// window.fox = new channel(
-//   "FOX LA",
-//   "fox",
-//   "http://144.217.85.216/streams/src1/lk.m3u8?mxg=U2FsdGVkX1%2BuHQO2E1H%2BP7sAXOhxjrCNPA xGoGomRPhceDWuRB7Lp5qQB4flInWlPDUGBxRXQX6rJhiSl4qq TQ"
-//   // "video/mp4"
-// );
-
-// window.nbc = new channel(
-//   "NBC LA",
-//   "nbc",
-//   "http://144.217.85.216/streams/src1/lk.m3u8?mxg=U2FsdGVkX193DVxSGtLXvtuWqictwICfXqcxQS jZrwqqwBqcogKAXGq7O7srH1sRvK%2FlzIyeySBj5Oull%2Bz1 5A%3D%3D"
-//   // "video/mp4"
-// );
-// window.rtv = new channel(
-//   "RTV",
-//   "rtv",
-//   `http://www.ustream.tv/embed/18502457`
-//   // "video/flash"
-// );
 
 window.updateVideo = function(channel) {
   if (videojs.players.videoContainer && window.player) {
@@ -241,6 +222,6 @@ fullscreenButton.addEventListener("click", function() {
     fscreen.requestFullscreen(main);
   }
 });
-// window.addEventListener("load", function() {
-//   window.updateVideo(tsi);
-// });
+window.addEventListener("load", function() {
+  window.updateVideo(tsi);
+});

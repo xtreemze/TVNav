@@ -175,7 +175,7 @@ window.updateVideo = function(channel) {
   }
   if (navigator.onLine) {
     videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered" data=${channel.data}>
-  <source src=${channel.link} type=${channel.type} data=${channel.data}>
+  <source src=${channel.link} type=${channel.type}>
   </${channel.video}>`;
     window.player = videojs("videoContainer", {
       techOrder: [
@@ -187,18 +187,18 @@ window.updateVideo = function(channel) {
     if (window.player) {
       window.player.width(window.innerWidth);
       window.player.height(window.innerHeight);
+      setTimeout(function() {
+        window.player.muted(!"setMuted");
+        // setTimeout(function() {
+        //   window.player.play();
+        // }, 200);
+      }, 900);
     }
     window.currentElement = document.getElementById(channel.shortName);
     window.currentElement.classList.add("active");
-    setTimeout(function() {
-      window.player.muted(!"setMuted");
-      // setTimeout(function() {
-      //   window.player.play();
-      // }, 200);
-    }, 900);
-    document.title = channel.name + " | TVNav";
-    h1Title.innerText = channel.name + " | TVNav";
   }
+  document.title = channel.name + " | TVNav";
+  h1Title.innerText = channel.name + " | TVNav";
 };
 window.toggleChannels = function() {
   channelSection.classList.toggle("inactiveChannels");

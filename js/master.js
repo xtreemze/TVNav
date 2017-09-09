@@ -2,6 +2,7 @@ import fscreen from "fscreen";
 
 const videoSection = document.getElementById("videoSection");
 const channelSection = document.getElementById("channelSection");
+const h1Title = document.getElementById("h1Title");
 
 /**
  * Channel Factory
@@ -190,6 +191,7 @@ window.updateVideo = function(channel) {
   window.currentElement = document.getElementById(channel.shortName);
   window.currentElement.classList.add("active");
   document.title = channel.name + " | TVNav";
+  h1Title.innerText = channel.name + " | TVNav";
   setTimeout(function() {
     window.player.muted(!"setMuted");
     setTimeout(function() {

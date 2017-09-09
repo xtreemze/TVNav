@@ -2,7 +2,7 @@
   position: absolute;
   width: 8em;
   z-index: 600;
-  top: 3rem;
+  top: 0;
   bottom: 2rem;
   right: 0rem;
   overflow-y: auto;
@@ -36,8 +36,8 @@
   opacity: 0.25;
 }
 
-.title {
-  width: 8rem;
+.toggle {
+  width: 30%;
   top: 0;
   right: 0;
   bottom: 2rem;
@@ -45,9 +45,17 @@
   z-index: 600;
   cursor: pointer;
   /* background-color: red; */
-  text-align: left;
-  padding-top: 0.5rem;
+  /* padding-top: 0.5rem; */
 }
+
+.title {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+}
+
 #logo {
   padding: 0.5rem 0.7rem;
   /* position: absolute; */
@@ -60,6 +68,7 @@ h1 {
   color: rgb(215, 215, 215);
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.85);
   float: left;
+  width: 7rem;
 }
 
 .inactiveChannels {

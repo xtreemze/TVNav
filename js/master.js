@@ -174,16 +174,18 @@ window.updateVideo = function(channel) {
     window.currentElement.classList.remove("active");
     videojs.players.videoContainer.dispose();
   }
-  videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered" data=${channel.data}>
+  if (navigator.onLine) {
+    videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered" data=${channel.data}>
   <source src=${channel.link} type=${channel.type}>
   </${channel.video}>`;
-  window.player = videojs("videoContainer", {
-    techOrder: [
-      "html5",
-      "flash"
-      //  "youtube",
-    ]
-  });
+    window.player = videojs("videoContainer", {
+      techOrder: [
+        "html5",
+        "flash"
+        //  "youtube",
+      ]
+    });
+  }
   if (window.player) {
     window.player.width(window.innerWidth);
     window.player.height(window.innerHeight);

@@ -27,12 +27,11 @@ const channel = function(name, shortName, link, type, video, data) {
   } else {
     this.video = "audio";
   }
-  if (data === "undefined") {
+  if (data == "undefined") {
     this.data = "{}";
   } else {
     this.data = data;
   }
-  this.data = data;
   channelSection.innerHTML += `<div onclick="updateVideo(${shortName});" class="individualChannel" id=${shortName}>${name}</div>`;
 };
 
@@ -116,11 +115,11 @@ window.tele7 = new channel(
   // "http://190.11.224.14:8134/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8"
 );
 
-window.prog = new channel(
-  "TeleProgreso",
-  "prog",
-  "http://streannlive-lh.akamaihd.net/i/teleprogreso_1@372779/index_3_av-p.m3u8?sd=10&set-segment-duration=smoothest&rebase=on&hdntl=exp=1504818729~acl=%2f*~data=hdntl~hmac=3193f9a3a3ffbb7e4421fae3798785724aa25340fbbdf18e452f6a3f058d1876"
-);
+// window.prog = new channel(
+//   "TeleProgreso",
+//   "prog",
+//   "http://streannlive-lh.akamaihd.net/i/teleprogreso_1@372779/index_3_av-p.m3u8?sd=10&set-segment-duration=smoothest&rebase=on&hdntl=exp=1504818729~acl=%2f*~data=hdntl~hmac=3193f9a3a3ffbb7e4421fae3798785724aa25340fbbdf18e452f6a3f058d1876"
+// );
 
 window.campus = new channel(
   "CampusTV",
@@ -176,7 +175,7 @@ window.updateVideo = function(channel) {
   }
   if (navigator.onLine) {
     videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered" data=${channel.data}>
-  <source src=${channel.link} type=${channel.type}>
+  <source src=${channel.link} type=${channel.type} data=${channel.data}>
   </${channel.video}>`;
     window.player = videojs("videoContainer", {
       techOrder: [
@@ -185,21 +184,21 @@ window.updateVideo = function(channel) {
         //  "youtube",
       ]
     });
-  }
-  if (window.player) {
-    window.player.width(window.innerWidth);
-    window.player.height(window.innerHeight);
-  }
-  window.currentElement = document.getElementById(channel.shortName);
-  window.currentElement.classList.add("active");
-  document.title = channel.name + " | TVNav";
-  h1Title.innerText = channel.name + " | TVNav";
-  setTimeout(function() {
-    window.player.muted(!"setMuted");
+    if (window.player) {
+      window.player.width(window.innerWidth);
+      window.player.height(window.innerHeight);
+    }
+    window.currentElement = document.getElementById(channel.shortName);
+    window.currentElement.classList.add("active");
     setTimeout(function() {
-      window.player.play();
-    }, 200);
-  }, 900);
+      window.player.muted(!"setMuted");
+      // setTimeout(function() {
+      //   window.player.play();
+      // }, 200);
+    }, 900);
+    document.title = channel.name + " | TVNav";
+    h1Title.innerText = channel.name + " | TVNav";
+  }
 };
 window.toggleChannels = function() {
   channelSection.classList.toggle("inactiveChannels");

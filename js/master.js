@@ -170,7 +170,7 @@ ton_id" value="NWT2PUFW6NFLC">
 </form></div>`;
 
 window.updateVideo = function(channel) {
-  if (videojs.players.videoContainer && window.player) {
+  if (!videojs.players.videoContainer === false && !window.player === false) {
     window.currentElement.classList.remove("active");
     videojs.players.videoContainer.dispose();
   }
@@ -179,9 +179,9 @@ window.updateVideo = function(channel) {
   </${channel.video}>`;
   window.player = videojs("videoContainer", {
     techOrder: [
-      "flash",
+      "html5",
+      "flash"
       //  "youtube",
-      "html5"
     ]
   });
   if (window.player) {

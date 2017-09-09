@@ -225,5 +225,7 @@ fullscreenButton.addEventListener("click", function() {
   }
 });
 window.addEventListener("load", function() {
-  window.updateVideo(tsi);
+  if (navigator.onLine) {
+    window.updateVideo(tsi);
+  }
 });

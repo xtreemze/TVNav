@@ -2,6 +2,7 @@ import fscreen from "fscreen";
 
 const videoSection = document.getElementById("videoSection");
 const channelSection = document.getElementById("channelSection");
+let channelList = "";
 const h1Title = document.getElementById("h1Title");
 
 /**
@@ -32,9 +33,9 @@ window.channel = function(name, shortName, link, type, video, data) {
   } else if (!data === false) {
     this.data = data;
   }
-  channelSection.innerHTML += `<div onclick="window.updateVideo(${shortName})" class="individualChannel" id=${shortName}>${name}</div>`;
+  channelList += `<div onclick="window.updateVideo(${shortName})" class="individualChannel" id=${shortName}>${name}</div>`;
   this.element = document.getElementById(this.shortName);
-  document.addEventListener("click", this.element.scrollIntoView());
+  // document.addEventListener("click", this.element.scrollIntoView());
 };
 
 window.updateVideo = function(channel) {
@@ -222,7 +223,7 @@ window.addEventListener("load", function() {
   );
 
   // Donate
-  channelSection.innerHTML += `<div class="individualChannel" id="donate"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  channelList += `<div class="individualChannel" id="donate"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick">
   <input type="hidden" name="hosted_but
   ton_id" value="NWT2PUFW6NFLC">
@@ -246,6 +247,7 @@ window.addEventListener("load", function() {
   //   Test Another
   //   </div>`;
   // };
+  channelSection.innerHTML = channelList;
 
   if (navigator.onLine) {
     updateVideo(tsi);

@@ -60,9 +60,6 @@ window.updateVideo = function(channel) {
       window.player.height(window.innerHeight);
       setTimeout(function() {
         window.player.muted(!"setMuted");
-        // setTimeout(function() {
-        //   window.player.play();
-        // }, 200);
       }, 900);
     }
     window.currentElement = document.getElementById(channel.shortName);
@@ -120,13 +117,6 @@ window.addEventListener("load", function() {
     "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/master.m3u8"
   );
 
-  // window.tn8 = new channel(
-  //   "TN8",
-  //   "tn8",
-  //   "https://www.youtube.com/embed/6SWOtepXrbI",
-  //   "video/youtube"
-  // );
-
   window.ten = new channel(
     "TEN",
     "ten",
@@ -178,12 +168,6 @@ window.addEventListener("load", function() {
     // "http://190.11.224.14:8134/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8"
   );
 
-  // window.prog = new channel(
-  //   "TeleProgreso",
-  //   "prog",
-  //   "http://streannlive-lh.akamaihd.net/i/teleprogreso_1@372779/index_3_av-p.m3u8?sd=10&set-segment-duration=smoothest&rebase=on&hdntl=exp=1504818729~acl=%2f*~data=hdntl~hmac=3193f9a3a3ffbb7e4421fae3798785724aa25340fbbdf18e452f6a3f058d1876"
-  // );
-
   window.campus = new channel(
     "CampusTV",
     "campus",
@@ -230,23 +214,7 @@ window.addEventListener("load", function() {
   <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
   <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
   </form></div>`;
-  // // Test
-  // channelSection.innerHTML += `<div onclick="testing()" class="individualChannel" id="test">
-  // Test URL
-  // </div>`;
-  // window.testing = function() {
-  //   videojs.players.videoContainer.dispose();
-  //   channelSection.innerText = ``;
-  //   window.testURL = prompt("Test URL", tsi.link);
-  //   alert("Testing " + testURL);
-  //   window.test = new channel("Testing URL", "test", window.testURL);
-  //   if (navigator.onLine) {
-  //     window.updateVideo(window.testURL);
-  //   }
-  //   channelSection.innerHTML += `<div onclick="testing()" class="individualChannel" id="testAnother">
-  //   Test Another
-  //   </div>`;
-  // };
+
   channelSection.innerHTML = channelList;
 
   if (navigator.onLine) {

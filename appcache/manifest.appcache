@@ -1,12 +1,12 @@
 CACHE MANIFEST
-#ver:2017-10-12 16:43:49
+#ver:2017-10-12 16:46:10
 #plugin:4.8.4
 
 CACHE:
 ../
 ../css/font/VideoJS.eot
-../img/bars.svg
 ../Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png
+../img/bars.svg
 ../bundle.js
 ../img/bars.png
 

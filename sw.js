@@ -3,8 +3,8 @@ var __wpo = {
     "main": [
       "./",
       "./css/font/VideoJS.eot",
-      "./img/bars.svg",
       "./Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png",
+      "./img/bars.svg",
       "./bundle.js",
       "http://vjs.zencdn.net/6.2.8/video.js",
       "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
@@ -21,15 +21,15 @@ var __wpo = {
     "./img/bars.png"
   ],
   "hashesMap": {
-    "509f9cf4bff88aa5711da6126a1b21af86dc2f9c": "./",
+    "8c7fe032b5e4dbe73b2b9979aab1ce2ebc672582": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
-    "89c96e7bf126dfa6dbf54a15ba98db502a450bd5": "./img/bars.svg",
     "47698cfc3b377868469932fec8355f5dd5e38485": "./Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png",
-    "7177c680f4a81916fb94b93b429358bf30ce1c81": "./bundle.js"
+    "89c96e7bf126dfa6dbf54a15ba98db502a450bd5": "./img/bars.svg",
+    "304bc9047c450ab2a43ee7af62fdf346f1893794": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-12 16:43:49",
+  "version": "2017-10-12 16:46:10",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

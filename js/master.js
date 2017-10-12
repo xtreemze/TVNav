@@ -5,6 +5,40 @@ const channelSection = document.getElementById("channelSection");
 let channelList = "";
 const h1Title = document.getElementById("h1Title");
 
+window.checkSupport = function() {
+  let content = "";
+  const types = [
+    "video/ogg",
+    "video/mp4",
+    "video/mp3",
+    "video/webm",
+    "audio/mpeg",
+    "audio/ogg",
+    "audio/mp3",
+    "audio/aac",
+    "audio/mp4"
+  ];
+  types.forEach(function(type) {
+    let vid = document.createElement("video");
+    let response;
+    switch (vid.canPlayType(type)) {
+      case "probably":
+        response = "Probably";
+        break;
+      case "maybe":
+        response = "Maybe";
+        break;
+      case "":
+        response = "No support";
+        break;
+      default:
+        break;
+    }
+    content += type + ": " + response + "\n";
+  }, this);
+  console.log(content);
+};
+let Channels = new Set();
 /**
  * Channel Factory
  * @param {string} name 
@@ -36,6 +70,7 @@ window.channel = function(name, shortName, link, type, video, data) {
   channelList += `<div onclick="window.updateVideo(${shortName})" class="individualChannel" id=${shortName}>${name}</div>`;
   this.element = document.getElementById(this.shortName);
   // document.addEventListener("click", this.element.scrollIntoView());
+  Channels.add(this);
 };
 
 window.updateVideo = function(channel) {
@@ -46,7 +81,9 @@ window.updateVideo = function(channel) {
   }
   if (navigator.onLine) {
     videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
-  <source src=${channel.link} type=${channel.type} data=${channel.data}>
+  <source src=${channel.link}
+   type=${channel.type} data=${channel.data}
+   >
   </${channel.video}>`;
     window.player = videojs("videoContainer", {
       techOrder: [
@@ -67,6 +104,10 @@ window.updateVideo = function(channel) {
   }
   document.title = channel.name + " | TVNav";
   h1Title.innerText = channel.name + " | TVNav";
+  window.player.on("error", function() {
+    let element = document.getElementById(channel.shortName);
+    element.remove();
+  });
 };
 window.toggleChannels = function() {
   channelSection.classList.toggle("inactiveChannels");
@@ -84,15 +125,6 @@ window.addEventListener("orientationchange", function() {
   }
 });
 const main = document.getElementById("main");
-const fullscreenButton = document.getElementById("fullscreenButton");
-fullscreenButton.addEventListener("click", function() {
-  if (fscreen.fullscreenElement !== null) {
-    fscreen.exitFullscreen();
-  } else {
-    channelSection.classList.add("inactiveChannels");
-    fscreen.requestFullscreen(main);
-  }
-});
 
 window.addEventListener("load", function() {
   window.tsi = new channel(
@@ -190,13 +222,13 @@ window.addEventListener("load", function() {
     "audio"
   );
 
-  window.rnh = new channel(
-    "Radio Nacional",
-    "rnh",
-    "http://stream.playerlive.info:8049//rnh.aac",
-    "audio/aac",
-    "audio"
-  );
+  // window.rnh = new channel(
+  //   "Radio Nacional",
+  //   "rnh",
+  //   "http://stream.playerlive.info:8049//rnh.aac",
+  //   "audio/aac",
+  //   "audio"
+  // );
 
   window.rprog = new channel(
     "Radio Progreso",
@@ -218,6 +250,24 @@ window.addEventListener("load", function() {
   channelSection.innerHTML = channelList;
 
   if (navigator.onLine) {
-    updateVideo(tsi);
+    let timer = 50;
+    Channels.forEach(function(channel) {
+      timer += 500;
+      setTimeout(function() {
+        updateVideo(channel);
+      }, timer);
+    }, this);
+    setTimeout(function() {
+      updateVideo(tsi);
+    }, timer + 500);
   }
+  const fullscreenButton = document.getElementById("fullscreenButton");
+  fullscreenButton.addEventListener("click", function() {
+    if (fscreen.fullscreenElement !== null) {
+      fscreen.exitFullscreen();
+    } else {
+      channelSection.classList.add("inactiveChannels");
+      fscreen.requestFullscreen(main);
+    }
+  });
 });

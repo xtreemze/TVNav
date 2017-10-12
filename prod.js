@@ -8,6 +8,7 @@ const OptimizeJsPlugin = require("optimize-js-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const PurifyCSSPlugin = require("purifycss-webpack");
 // const glob = require("glob-all");
+
 //
 module.exports = function prod(env) {
   return {
@@ -64,7 +65,7 @@ module.exports = function prod(env) {
             {
               loader: "babel-loader",
               options: {
-                presets: [["es2015", { modules: false }]]
+                presets: [["env", { modules: false }]]
               }
             }
           ]
@@ -91,11 +92,7 @@ module.exports = function prod(env) {
           externs: [
             {
               src: `
-                      var jQuery = {};
-                      
-                      var $ = {}  
 
-                      Materialize.toast();
                `
             }
           ]
@@ -119,11 +116,14 @@ module.exports = function prod(env) {
           // "./js/jquery-3.2.1.min.js",
           // "./css/video-js.min.css",
           // "./manifest.json"
-          "./js/video.min.js",
-          "./js/videojs-flash.js",
+          // "./js/video.min.js",
+          // "./js/videojs-flash.js",
           // "./js/Youtube.js",
-          "./js/videojs-contrib-hls.min.js",
+          // "./js/videojs-contrib-hls.min.js",
           // "./img/test.jpg"
+          "http://vjs.zencdn.net/6.2.8/video.js",
+          "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
+          "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js",
           "./img/bars.png"
         ],
         caches: "all",

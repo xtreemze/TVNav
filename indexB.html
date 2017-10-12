@@ -29,25 +29,29 @@
 
 <body>
   <div id="main">
-    <div class="title"><img id="logo" src="Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png"></img>
+    <div class="title">
+      <img id="logo" src="Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png">
       <h1 id="h1Title">TVNav</h1>
     </div>
+    <div id="fullscreenButton"></div>
     <div class="toggle" onclick="toggleChannels()">
     </div>
     <section id="videoSection">
       <div style="overflow: hidden;">
-        <img src="./img/bars.svg" style="width: 100%; height: 100%; position: fixed;"
-          alt="TVNav">Canales de Televisión de Honduras en Vivo.</img>
+        <img src="./img/bars.svg" style="width: 100%; height: 100%; position: fixed;" alt="TVNav Canales de Televisión de Honduras en Vivo.">
       </div>
     </section>
     <section id="channelSection">
     </section>
   </div>
-  <script src="js/video.min.js"></script>
+  <!-- <script src="js/video.min.js"></script> -->
+  <script src="http://vjs.zencdn.net/6.2.8/video.js"></script>
   <!-- <script async src="js/Youtube.js"></script> -->
-  <script src="js/videojs-flash.js"></script>
-  <script async src="js/videojs-contrib-hls.min.js"></script>
-  <script async src="bundle.js"></script>
+  <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+  <!-- <script src="js/videojs-flash.js"></script>
+  <script async src="js/videojs-contrib-hls.min.js"></script> -->
+  <script src="bundle.js"></script>
   <script>
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

@@ -1,7 +1,7 @@
 {
   "name": "TVNav",
   "short_name": "TVNav",
-  "start_url": "https://xtreemze.github.io/TVNav/",
+  "start_url": "./",
   "icons": [
     {
       "src":

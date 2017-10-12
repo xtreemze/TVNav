@@ -6,32 +6,32 @@ var __wpo = {
       "./img/bars.svg",
       "./Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png",
       "./bundle.js",
-      "./js/video.min.js",
-      "./js/videojs-flash.js",
-      "./js/videojs-contrib-hls.min.js",
+      "http://vjs.zencdn.net/6.2.8/video.js",
+      "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
+      "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js",
       "./img/bars.png"
     ],
     "additional": [],
     "optional": []
   },
   "externals": [
-    "./js/video.min.js",
-    "./js/videojs-flash.js",
-    "./js/videojs-contrib-hls.min.js",
+    "http://vjs.zencdn.net/6.2.8/video.js",
+    "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
+    "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js",
     "./img/bars.png"
   ],
   "hashesMap": {
-    "ca65acfd24aae8e95451c8c86c355598758971e2": "./",
+    "509f9cf4bff88aa5711da6126a1b21af86dc2f9c": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
     "89c96e7bf126dfa6dbf54a15ba98db502a450bd5": "./img/bars.svg",
     "47698cfc3b377868469932fec8355f5dd5e38485": "./Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png",
-    "2bbf9b4334c0a13e600084bfe348fc2eac2e84c2": "./bundle.js"
+    "13c70be627564a0b5fd943a693b2e5b2873e766c": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-9-20 14:38:24",
+  "version": "2017-10-12 12:26:04",
   "name": "webpack-offline",
-  "pluginVersion": "4.8.3",
+  "pluginVersion": "4.8.4",
   "relativePaths": true
 };
 

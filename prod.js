@@ -114,14 +114,14 @@ module.exports = function prod(env) {
         externals: [
           // "./js/materialize.min.js",
           // "./js/jquery-3.2.1.min.js",
-          // "./css/video-js.min.css",
+          "./css/video-js.min.css",
           // "./manifest.json"
-          // "./js/video.min.js",
+          "./js/video.min.js",
           // "./js/videojs-flash.js",
           // "./js/Youtube.js",
           // "./js/videojs-contrib-hls.min.js",
           // "./img/test.jpg"
-          "http://vjs.zencdn.net/6.2.8/video.js",
+          // "http://vjs.zencdn.net/6.2.8/video.js",
           "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
           "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js",
           "./img/bars.png"

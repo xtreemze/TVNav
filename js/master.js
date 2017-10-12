@@ -200,6 +200,12 @@ window.addEventListener("load", function() {
     // "http://190.11.224.14:8134/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8"
   );
 
+  window.teleProg = new channel(
+    "TeleProgreso",
+    "teleProg",
+    "blob:http://ott.streann.com/842c11f9-0d92-4a74-926c-e41c39dffd61"
+  );
+
   window.campus = new channel(
     "CampusTV",
     "campus",
@@ -249,8 +255,17 @@ window.addEventListener("load", function() {
 
   channelSection.innerHTML = channelList;
 
+  const fullscreenButton = document.getElementById("fullscreenButton");
+  fullscreenButton.addEventListener("click", function() {
+    if (fscreen.fullscreenElement !== null) {
+      fscreen.exitFullscreen();
+    } else {
+      channelSection.classList.add("inactiveChannels");
+      fscreen.requestFullscreen(main);
+    }
+  });
   if (navigator.onLine) {
-    let timer = 50;
+    let timer = 100;
     Channels.forEach(function(channel) {
       timer += 500;
       setTimeout(function() {
@@ -261,13 +276,4 @@ window.addEventListener("load", function() {
       updateVideo(tsi);
     }, timer + 500);
   }
-  const fullscreenButton = document.getElementById("fullscreenButton");
-  fullscreenButton.addEventListener("click", function() {
-    if (fscreen.fullscreenElement !== null) {
-      fscreen.exitFullscreen();
-    } else {
-      channelSection.classList.add("inactiveChannels");
-      fscreen.requestFullscreen(main);
-    }
-  });
 });

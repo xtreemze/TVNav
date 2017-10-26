@@ -39,47 +39,46 @@ window.checkSupport = function() {
   console.log(content);
 };
 let Channels = new Set();
-/**
- * Channel Factory
- * @param {string} name 
- * @param {string} shortName 
- * @param {string} link 
- * @param {string} type 
- * @param {string} video 
- * @param {string} data 
- */
-window.channel = function(name, shortName, link, type, video, data) {
-  this.name = name;
-  this.shortName = shortName;
-  this.link = link;
-  if (!type) {
-    this.type = "application/x-mpegURL";
-  } else {
+
+class Channel {
+  constructor({ name, shortName, link, type, video, data, ustream }) {
+    this.name = name;
+    this.shortName = shortName;
+    this.link = link;
     this.type = type;
+    this.video = video;
+    this.ustream = ustream;
+    if (!type) {
+      this.type = "application/x-mpegURL";
+    } else {
+      this.type = type;
+    }
+    if (!video) {
+      this.video = "video";
+    } else {
+      this.video = "audio";
+    }
+    if (data == "undefined") {
+      this.data = "{}";
+    } else if (!data === false) {
+      this.data = data;
+    }
+    channelList += `<div onclick="window.updateVideo(${shortName})" class="individualChannel" id=${shortName}>${name}</div>`;
+    this.element = document.getElementById(this.shortName);
+    // document.addEventListener("click", this.element.scrollIntoView());
+    Channels.add(this);
   }
-  if (!video) {
-    this.video = "video";
-  } else {
-    this.video = "audio";
-  }
-  if (data == "undefined") {
-    this.data = "{}";
-  } else if (!data === false) {
-    this.data = data;
-  }
-  channelList += `<div onclick="window.updateVideo(${shortName})" class="individualChannel" id=${shortName}>${name}</div>`;
-  this.element = document.getElementById(this.shortName);
-  // document.addEventListener("click", this.element.scrollIntoView());
-  Channels.add(this);
-};
+}
 
 window.updateVideo = function(channel) {
-  if (!videojs.players.videoContainer === false && !window.player === false) {
+  if (!window.currentElement === false) {
     window.currentElement.classList.remove("active");
+  }
+  if (!videojs.players.videoContainer === false && !window.player === false) {
     videojs.players.videoContainer.pause();
     videojs.players.videoContainer.dispose();
   }
-  if (navigator.onLine) {
+  if (navigator.onLine && !channel.ustream) {
     videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
   <source src=${channel.link}
    type=${channel.type} data=${channel.data}
@@ -101,6 +100,31 @@ window.updateVideo = function(channel) {
     }
     window.currentElement = document.getElementById(channel.shortName);
     window.currentElement.classList.add("active");
+  } else if (navigator.onLine && channel.ustream) {
+    if (!videojs.players.videoContainer === false && !window.player === false) {
+      window.currentElement.classList.remove("active");
+      videojs.players.videoContainer.pause();
+      videojs.players.videoContainer.dispose();
+    }
+
+    if (navigator.onLine) {
+      videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0" width="${window.innerWidth}" height="${window.innerHeight}" id="video" class="" data-src="https://www.ustream.tv/corsCommunicatorFrameDirect"
+    src="${channel.link}?html5ui&autoplay">
+    </iframe>`;
+      window.addEventListener("resize", function() {
+        if (window.video) {
+          window.video.width = window.innerWidth;
+          window.video.height = window.innerHeight;
+        }
+      });
+      window.currentElement = document.getElementById(channel.shortName);
+      window.currentElement.classList.add("active");
+    }
+    document.title = channel.name + " | TVNav";
+    h1Title.innerText = channel.name + " | TVNav";
+    // setTimeout(function() {
+    //   window.video.click();
+    // }, 1000);
   }
   document.title = channel.name + " | TVNav";
   h1Title.innerText = channel.name + " | TVNav";
@@ -109,6 +133,7 @@ window.updateVideo = function(channel) {
     element.remove();
   });
 };
+
 window.toggleChannels = function() {
   channelSection.classList.toggle("inactiveChannels");
 };
@@ -127,122 +152,142 @@ window.addEventListener("orientationchange", function() {
 const main = document.getElementById("main");
 
 window.addEventListener("load", function() {
-  window.tsi = new channel(
-    "TSi",
-    "tsi",
-    // "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/index_800_av-p.m3u8?sd=10&rebase=on"
-    "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/master.m3u8"
-  );
+  window.tsi = new Channel({
+    name: "TSi",
+    shortName: "tsi",
+    link:
+      "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/master.m3u8"
+  });
 
-  window.hrn = new channel(
-    "HRN",
-    "hrn",
-    "http://radios504.geucast.net:18101/radio-live",
-    "audio/mpeg",
-    "audio"
-  );
+  window.hrn = new Channel({
+    name: "HRN",
+    shortName: "hrn",
+    link: "http://radios504.geucast.net:18101/radio-live",
+    type: "audio/mpeg",
+    video: "audio"
+  });
 
-  window.tn5 = new channel(
-    "TN5",
-    "tn5",
-    // "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/index_800_av-p.m3u8?sd=10&rebase=on"
-    "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/master.m3u8"
-  );
+  window.tn5 = new Channel({
+    name: "TN5",
+    shortName: "tn5",
+    link:
+      "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/master.m3u8"
+  });
 
-  window.ten = new channel(
-    "TEN",
-    "ten",
-    "http://stream.grupoabchn.com:1935/TENHD/TENLive.smil/playlist.m3u8"
-    // "rtmp/mp4",
-    // "video"`data-setup='{"techOrder": ["flash", "html5"]}'`
-  );
+  window.ten = new Channel({
+    name: "TEN",
+    shortName: "ten",
+    link: "http://stream.grupoabchn.com:1935/TENHD/TENLive.smil/playlist.m3u8"
+  });
 
-  window.hch = new channel(
-    "HCH",
-    "hch",
-    // "https://5997ea093ae04.streamlock.net/hch/hch/playlist.m3u8"
-    "http://stream.innovandote.com/hch/hch/playlist.m3u8"
-  );
+  window.hch = new Channel({
+    name: "HCH",
+    shortName: "hch",
+    link: "http://stream.innovandote.com/hch/hch/playlist.m3u8"
+  });
 
-  window.rhch = new channel(
-    "Radio HCH",
-    "rhch",
-    "http://media.innovandote.com:8006/mountpoint",
-    "audio/mpeg",
-    "audio"
-  );
+  window.rhch = new Channel({
+    name: "Radio HCH",
+    shortName: "rhch",
+    link: "http://media.innovandote.com:8006/mountpoint",
+    type: "audio/mpeg",
+    video: "audio"
+  });
 
-  window.choluSat = new channel(
-    "CholuSat",
-    "choluSat",
-    "http://live.audiotvserver.com:1935/livemedia/cholusat/playlist.m3u8"
-  );
+  window.choluSat = new Channel({
+    name: "CholuSat",
+    shortName: "choluSat",
+    link: "http://live.audiotvserver.com:1935/livemedia/cholusat/playlist.m3u8"
+  });
 
-  window.globoTV = new channel(
-    "GloboTV",
-    "globoTV",
-    "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
-    // "video/flash"
-  );
+  window.globoTV = new Channel({
+    name: "GloboTV",
+    shortName: "globoTV",
+    link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
+  });
+  
+  window.rGlobo = new Channel({
+    name: "Radio Globo",
+    shortName: "rGlobo",
+    link: "http://aliasdns.info:8016/;stream.mp3",
+    type: "audio/mpeg",
+    video: "audio"
+  });
+  
+      window.patio = new Channel({
+      name: "Radio El Patio",
+      shortName: "patio",
+      link: "http://195.154.182.222:25730/patio",
+      type: "audio/mpeg",
+      video: "audio"
+    });
+  window.tv45 = new Channel({
+    name: "45TV",
+    shortName: "tv45",
+    link: "http://www.ustream.tv/embed/19421752",
+    ustream: true
+  });
+  
+  window.tele7 = new Channel({
+    name: "TeleCeiba",
+    shortName: "tele7",
+    link: "http://190.11.224.14:8134/liveevent.m3u8"
+  });
+  
+  window.teleProg = new Channel({
+    name: "TeleProgreso",
+    shortName: "teleProg",
+    link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
+  });
+  
+  window.rtv = new Channel({
+    name: "RTV",
+    shortName: "rtv",
+    link: "http://www.ustream.tv/embed/18502457",
+    ustream: true
+  });
 
-  window.rGlobo = new channel(
-    "Radio Globo",
-    "rGlobo",
-    "http://aliasdns.info:8016/;stream.mp3",
-    "audio/mpeg",
-    "audio"
-  );
+  window.campus = new Channel({
+    name: "CampusTV",
+    shortName: "campus",
+    link: "http://st2.worldkast.com/8004/8004/playlist.m3u8"
+  });
+ 
+  window.rt = new Channel({
+    name: "RT",
+    shortName: "rt",
+    link: "https://secure-streams.akamaized.net/rt-esp/index800.m3u8"
+  });
 
-  window.tele7 = new channel(
-    "TeleCeiba",
-    "tele7",
-    "http://190.11.224.14:8134/liveevent.m3u8"
-    // "http://190.11.224.14:8134/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8"
-  );
+  window.teleSur = new Channel({
+    name: "TeleSur",
+    shortName: "teleSur",
+    link: "blob:https://mblive.telesur.ultrabase.net/3c81c78a-d99e-49ce-b58a-961e5e4ff320"
+  });
 
-  window.teleProg = new channel(
-    "TeleProgreso",
-    "teleProg",
-    "blob:http://ott.streann.com/842c11f9-0d92-4a74-926c-e41c39dffd61"
-  );
+  window.america = new Channel({
+    name: "Radio America",
+    shortName: "america",
+    link: "http://17803.live.streamtheworld.com/AMERICAAAC.aac",
+    type: "audio/mpeg",
+    video: "audio"
+  });
 
-  window.campus = new channel(
-    "CampusTV",
-    "campus",
-    "http://st2.worldkast.com/8004/8004/playlist.m3u8"
-  );
+  window.rnh = new Channel({
+    name: "Radio Nacional",
+    shortName: "rnh",
+    link: "http://stream.playerlive.info:8049//rnh.aac",
+    type: "audio/aac",
+    video: "audio"
+  });
 
-  window.america = new channel(
-    "Radio America",
-    "america",
-    "http://17803.live.streamtheworld.com/AMERICAAAC.aac",
-    "audio/mpeg",
-    "audio"
-  );
-
-  window.patio = new channel(
-    "Radio El Patio",
-    "patio",
-    "http://195.154.182.222:25730/patio",
-    "audio/mpeg",
-    "audio"
-  );
-
-  // window.rnh = new channel(
-  //   "Radio Nacional",
-  //   "rnh",
-  //   "http://stream.playerlive.info:8049//rnh.aac",
-  //   "audio/aac",
-  //   "audio"
-  // );
-
-  window.rprog = new channel(
-    "Radio Progreso",
-    "rprog",
-    "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
-    "audio/mpeg",
-    "audio"
-  );
+  // window.rprog = new Channel({
+  //   name: "Radio Progreso",
+  //   shortName: "rprog",
+  //   link: "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
+  //   type: "audio/mpeg",
+  //   video: "audio"
+  // });
 
   // Donate
   channelList += `<div class="individualChannel" id="donate"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -264,16 +309,19 @@ window.addEventListener("load", function() {
       fscreen.requestFullscreen(main);
     }
   });
-  if (navigator.onLine) {
-    let timer = 100;
-    Channels.forEach(function(channel) {
-      timer += 500;
-      setTimeout(function() {
-        updateVideo(channel);
-      }, timer);
-    }, this);
-    setTimeout(function() {
-      updateVideo(tsi);
-    }, timer + 500);
-  }
+  channelTest();
+  // updateVideo(tv45);
 });
+
+const channelTest = function(){if (navigator.onLine) {
+  let timer = 100;
+  Channels.forEach(function(channel) {
+    timer += 500;
+    setTimeout(function() {
+      updateVideo(channel);
+    }, timer);
+  }, this);
+  setTimeout(function() {
+    updateVideo(tsi);
+  }, timer + 500);
+}}

@@ -1,9 +1,9 @@
 var __wpo = {
   "assets": {
     "main": [
+      "./img/bars.svg",
       "./",
       "./css/font/VideoJS.eot",
-      "./img/bars.svg",
       "./Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png",
       "./bundle.js",
       "./css/video-js.min.css",
@@ -23,15 +23,15 @@ var __wpo = {
     "./img/bars.png"
   ],
   "hashesMap": {
+    "89c96e7bf126dfa6dbf54a15ba98db502a450bd5": "./img/bars.svg",
     "a0ab7b93a70e8ecceaa4fcc0b4ef95d77f4b5665": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
-    "89c96e7bf126dfa6dbf54a15ba98db502a450bd5": "./img/bars.svg",
     "47698cfc3b377868469932fec8355f5dd5e38485": "./Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png",
-    "dc36f709816658b8989c44d7e61ea87cb206008e": "./bundle.js"
+    "e11e58d6d383da70ab60897b2947ac527010dbab": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-26 13:42:12",
+  "version": "2017-10-26 14:02:31",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

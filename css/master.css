@@ -87,10 +87,12 @@ h1 {
   z-index: 900;
 }
 
-iframe, #videoSection{
+iframe,
+#videoSection {
   border: none;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   position: inherit;
+  background-image: url(../img/bars.svg);
 }

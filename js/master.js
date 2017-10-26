@@ -78,8 +78,9 @@ window.updateVideo = function(channel) {
     videojs.players.videoContainer.pause();
     videojs.players.videoContainer.dispose();
   }
+  // poster="https://xtreemze.github.io/TVNav/img/bars.png"
   if (navigator.onLine && !channel.ustream) {
-    videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" poster="https://xtreemze.github.io/TVNav/img/bars.png" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+    videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
   <source src=${channel.link}
    type=${channel.type} data=${channel.data}
    >
@@ -108,8 +109,8 @@ window.updateVideo = function(channel) {
     }
 
     if (navigator.onLine) {
-      videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0" width="${window.innerWidth}" height="${window.innerHeight}" id="video" class="" data-src="https://www.ustream.tv/corsCommunicatorFrameDirect"
-    src="${channel.link}?html5ui&autoplay">
+      videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0" width="${window.innerWidth}" height="${window.innerHeight}" id="video"
+    src="${channel.link}?html5ui=1&autoplay=true&controls=false">
     </iframe>`;
       window.addEventListener("resize", function() {
         if (window.video) {
@@ -205,7 +206,7 @@ window.addEventListener("load", function() {
     shortName: "globoTV",
     link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
   });
-  
+
   window.rGlobo = new Channel({
     name: "Radio Globo",
     shortName: "rGlobo",
@@ -213,33 +214,33 @@ window.addEventListener("load", function() {
     type: "audio/mpeg",
     video: "audio"
   });
-  
-      window.patio = new Channel({
-      name: "Radio El Patio",
-      shortName: "patio",
-      link: "http://195.154.182.222:25730/patio",
-      type: "audio/mpeg",
-      video: "audio"
-    });
+
+  window.patio = new Channel({
+    name: "Radio El Patio",
+    shortName: "patio",
+    link: "http://195.154.182.222:25730/patio",
+    type: "audio/mpeg",
+    video: "audio"
+  });
   window.tv45 = new Channel({
     name: "45TV",
     shortName: "tv45",
     link: "http://www.ustream.tv/embed/19421752",
     ustream: true
   });
-  
+
   window.tele7 = new Channel({
     name: "TeleCeiba",
     shortName: "tele7",
     link: "http://190.11.224.14:8134/liveevent.m3u8"
   });
-  
+
   window.teleProg = new Channel({
     name: "TeleProgreso",
     shortName: "teleProg",
     link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
   });
-  
+
   window.rtv = new Channel({
     name: "RTV",
     shortName: "rtv",
@@ -252,7 +253,7 @@ window.addEventListener("load", function() {
     shortName: "campus",
     link: "http://st2.worldkast.com/8004/8004/playlist.m3u8"
   });
- 
+
   window.rt = new Channel({
     name: "RT",
     shortName: "rt",
@@ -262,7 +263,8 @@ window.addEventListener("load", function() {
   window.teleSur = new Channel({
     name: "TeleSur",
     shortName: "teleSur",
-    link: "blob:https://mblive.telesur.ultrabase.net/3c81c78a-d99e-49ce-b58a-961e5e4ff320"
+    link:
+      "blob:https://mblive.telesur.ultrabase.net/3c81c78a-d99e-49ce-b58a-961e5e4ff320"
   });
 
   window.america = new Channel({
@@ -313,15 +315,17 @@ window.addEventListener("load", function() {
   // updateVideo(tv45);
 });
 
-const channelTest = function(){if (navigator.onLine) {
-  let timer = 100;
-  Channels.forEach(function(channel) {
-    timer += 500;
+const channelTest = function() {
+  if (navigator.onLine) {
+    let timer = 100;
+    Channels.forEach(function(channel) {
+      timer += 500;
+      setTimeout(function() {
+        updateVideo(channel);
+      }, timer);
+    }, this);
     setTimeout(function() {
-      updateVideo(channel);
-    }, timer);
-  }, this);
-  setTimeout(function() {
-    updateVideo(tsi);
-  }, timer + 500);
-}}
+      updateVideo(tsi);
+    }, timer + 500);
+  }
+};

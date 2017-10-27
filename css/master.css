@@ -102,7 +102,7 @@ iframe {
   /* width: 100wh;
 	height: 90vh; */
   color: #fff;
-  background: linear-gradient(-45deg, #4172bd, #071b2e, #49669c, #142853);
+  background: linear-gradient(-45deg, #4172bd, #07202e, #b6b9bd, #132f68);
   background-size: 400% 400%;
   -webkit-animation: Gradient 25s ease infinite;
   -moz-animation: Gradient 25s ease infinite;
@@ -147,4 +147,21 @@ iframe {
 
 .video-js {
   background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.vjs-modal-dialog .vjs-modal-dialog-content {
+  padding: 20% 10%;
+}
+
+#channelLogo {
+  max-width: 8rem;
+  max-height: 1.5rem;
+  position: absolute;
+  top: 2.4rem;
+  left: 1.4rem;
+}
+
+#channelLogo img {
+  height: 100%;
+  width: 100%;
 }

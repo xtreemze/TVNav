@@ -18,14 +18,14 @@ var __wpo = {
     "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
   ],
   "hashesMap": {
-    "8e6f69fe576c7b3f8dd40097bd0d8e9ec0fea3e8": "./",
+    "01ed6f128231e99c0cac1728d2d142f5dca1dd68": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
     "47698cfc3b377868469932fec8355f5dd5e38485": "./Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png",
     "155299de3c01a22ce0d281a8b6b3816abb15cc10": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-27 15:26:47",
+  "version": "2017-10-27 15:33:50",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

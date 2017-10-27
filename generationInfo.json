@@ -1,10 +1,10 @@
 {
-    "generationTool": "pwabuilder-api",
-    "generationToolVersion": "2.0.1-rc.1",
-    "platformId": "web",
-    "platformPackage": "pwabuilder-web",
-    "platformVersion": "2.0.0-rc.2",
-    "generatedFrom": "Website Wizard",
-    "generationDate": "2017-09-08 17:37:03 Z",
-    "generatedURL": "https://xtreemze.github.io/TVNav/manifest.json"
+  "generationTool": "pwabuilder-api",
+  "generationToolVersion": "2.0.1-rc.1",
+  "platformId": "web",
+  "platformPackage": "pwabuilder-web",
+  "platformVersion": "2.0.0-rc.2",
+  "generatedFrom": "Website Wizard",
+  "generationDate": "2017-09-08 17:37:03 Z",
+  "generatedURL": "../manifest.json"
 }

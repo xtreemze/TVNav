@@ -84,7 +84,7 @@ window.updateVideo = function(channel) {
     videojs.players.videoContainer.pause();
     videojs.players.videoContainer.dispose();
   }
-  // poster="https://xtreemze.github.io/TVNav/img/bars.png"
+  // poster="../img/bars.png"
   if (navigator.onLine && !channel.ustream) {
     videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
   <source src=${channel.link}

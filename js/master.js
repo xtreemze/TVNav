@@ -418,7 +418,7 @@ window.addEventListener("load", function() {
 
 const channelTest = function() {
   if (navigator.onLine) {
-    let timer = 90;
+    let timer = 100;
     Channels.forEach(function(channel) {
       timer += 700;
       setTimeout(function() {

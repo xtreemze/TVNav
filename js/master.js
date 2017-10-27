@@ -132,6 +132,8 @@ window.updateVideo = function(channel) {
   window.player.on("error", function() {
     let element = document.getElementById(channel.shortName);
     element.remove();
+    document.title = "Canal eliminado: " + channel.name;
+    h1Title.innerText = "Canal eliminado: " + channel.name;
   });
 };
 
@@ -294,9 +296,8 @@ window.addEventListener("load", function() {
   // Donate
   channelList += `<div class="individualChannel" id="donate"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick">
-  <input type="hidden" name="hosted_but
-  ton_id" value="NWT2PUFW6NFLC">
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+  <input type="hidden" name="hosted_button_id" value="NWT2PUFW6NFLC">
+  <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
   <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
   </form></div>`;
 
@@ -324,6 +325,8 @@ const channelTest = function() {
         updateVideo(channel);
         // window.player.width(0);
         window.player.height(0);
+        document.title = "Revisando canal: " + channel.name;
+        h1Title.innerText = "Revisando canal: " + channel.name;
       }, timer);
     }, this);
     setTimeout(function() {

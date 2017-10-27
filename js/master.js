@@ -322,6 +322,8 @@ const channelTest = function() {
       timer += 500;
       setTimeout(function() {
         updateVideo(channel);
+        // window.player.width(0);
+        window.player.height(0);
       }, timer);
     }, this);
     setTimeout(function() {

@@ -70,7 +70,7 @@ h1 {
   color: rgb(215, 215, 215);
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.85);
   float: left;
-  width: 7rem;
+  width: 12rem;
 }
 
 .inactiveChannels {
@@ -94,5 +94,56 @@ iframe,
   height: 100vh;
   overflow: hidden;
   position: inherit;
-  background-image: url(../img/bars.svg);
+}
+
+#videoSection,
+iframe {
+  /* width: 100wh;
+	height: 90vh; */
+  color: #fff;
+  background: linear-gradient(-45deg, #4172bd, #071b2e, #49669c, #142853);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 25s ease infinite;
+  -moz-animation: Gradient 25s ease infinite;
+  animation: Gradient 25s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.video-js {
+  background-color: rgba(0, 0, 0, 0) !important;
 }

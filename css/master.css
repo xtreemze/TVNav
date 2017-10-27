@@ -153,14 +153,13 @@ iframe {
 }
 
 #channelLogo {
-  max-width: 8rem;
-  max-height: 1.5rem;
+  max-width: 5rem;
+  height: 5.5rem;
   position: absolute;
   top: 2.4rem;
   left: 1.4rem;
 }
 
 #channelLogo img {
-  height: 100%;
   width: 100%;
 }

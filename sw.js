@@ -21,11 +21,11 @@ var __wpo = {
     "3e896c6e1ca42f1867ef1b43e2c56c2c9dae3f4f": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
     "79284602f8bc872ec3449a4484123078fd79f637": "./61d5df2a4fc583564ddcaf3a5311e517.png",
-    "f2009fc8fed40270718d3d92e0df369562e4efb1": "./bundle.js"
+    "130d2dc408319d304c0fa99b870cc48fb796c266": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-27 16:32:00",
+  "version": "2017-10-27 16:40:45",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

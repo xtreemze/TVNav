@@ -418,9 +418,9 @@ window.addEventListener("load", function() {
 
 const channelTest = function() {
   if (navigator.onLine) {
-    let timer = 100;
+    let timer = 90;
     Channels.forEach(function(channel) {
-      timer += 500;
+      timer += 700;
       setTimeout(function() {
         updateVideo(channel);
         // window.player.width(0);

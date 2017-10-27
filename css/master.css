@@ -60,7 +60,7 @@
 }
 
 #logo {
-  padding: 0.5rem 0.7rem;
+  padding: 0.3rem 0.4rem;
   /* position: absolute; */
   float: left;
 }
@@ -158,7 +158,7 @@ iframe {
   height: 5.5rem;
   position: absolute;
   top: 2.4rem;
-  left: 1.4rem;
+  left: 0.5rem;
 }
 
 #channelLogo img {

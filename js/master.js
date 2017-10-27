@@ -424,7 +424,7 @@ const channelTest = function() {
       setTimeout(function() {
         updateVideo(channel);
         // window.player.width(0);
-        window.player.height(0);
+        // window.player.height(0);
         document.title = "Revisando canal: " + channel.name;
         h1Title.innerText = "Revisando canal: " + channel.name;
       }, timer);

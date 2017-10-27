@@ -149,7 +149,8 @@ iframe {
 }
 
 .vjs-modal-dialog .vjs-modal-dialog-content {
-  padding: 20% 10%;
+  padding: 10% 20%;
+  display: none;
 }
 
 #channelLogo {

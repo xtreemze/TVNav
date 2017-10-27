@@ -164,7 +164,7 @@ window.addEventListener("load", function() {
   window.tsi = new Channel({
     name: "TSi",
     shortName: "tsi",
-    logo: "./logos/tsi.png",
+    logo: "/logos/tsi.png",
     link:
       "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/master.m3u8"
   });
@@ -172,7 +172,7 @@ window.addEventListener("load", function() {
   window.tn5 = new Channel({
     name: "TN5",
     shortName: "tn5",
-    logo: "./logos/canal5.png",
+    logo: "/logos/canal5.png",
     link:
       "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/master.m3u8"
   });
@@ -180,35 +180,35 @@ window.addEventListener("load", function() {
   window.ten = new Channel({
     name: "TEN",
     shortName: "ten",
-    logo: "./logos/ten.png",
+    logo: "/logos/ten.png",
     link: "http://stream.grupoabchn.com:1935/TENHD/TENLive.smil/playlist.m3u8"
   });
 
   window.hch = new Channel({
     name: "HCH",
     shortName: "hch",
-    logo: "./logos/hch.png",
+    logo: "/logos/hch.png",
     link: "http://stream.innovandote.com/hch/hch/playlist.m3u8"
   });
 
   window.choluSat = new Channel({
     name: "CholuSat",
     shortName: "choluSat",
-    logo: "./logos/cholusat.png",
+    logo: "/logos/cholusat.png",
     link: "http://live.audiotvserver.com:1935/livemedia/cholusat/playlist.m3u8"
   });
 
   window.globoTV = new Channel({
     name: "GloboTV",
     shortName: "globoTV",
-    logo: "./logos/globoTV.png",
+    logo: "/logos/globoTV.png",
     link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
   });
 
   window.tv45 = new Channel({
     name: "45TV",
     shortName: "tv45",
-    logo: "./logos/45tv.png",
+    logo: "/logos/45tv.png",
     link: "http://www.ustream.tv/embed/19421752",
     ustream: true
   });
@@ -216,21 +216,21 @@ window.addEventListener("load", function() {
   window.tele7 = new Channel({
     name: "TeleCeiba",
     shortName: "tele7",
-    logo: "./logos/teleceiba.png",
+    logo: "/logos/teleceiba.png",
     link: "http://190.11.224.14:8134/liveevent.m3u8"
   });
 
   window.teleProg = new Channel({
     name: "TeleProgreso",
     shortName: "teleProg",
-    logo: "./logos/teleprogreso.png",
+    logo: "/logos/teleprogreso.png",
     link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
   });
 
   window.rtv = new Channel({
     name: "RTV",
     shortName: "rtv",
-    logo: "./logos/rtv.png",
+    logo: "/logos/rtv.png",
     link: "http://www.ustream.tv/embed/18502457",
     ustream: true
   });
@@ -238,7 +238,7 @@ window.addEventListener("load", function() {
   window.seis = new Channel({
     name: "Canal 6",
     shortName: "seis",
-    logo: "./logos/canal6.png",
+    logo: "/logos/canal6.png",
     link:
       "https://ott.streann.com/loadbalancer/services/public/channels-secure/56bd45f5e4b0ba125fe8a866/playlist.m3u8"
   });
@@ -246,7 +246,7 @@ window.addEventListener("load", function() {
   window.once = new Channel({
     name: "Canal 11",
     shortName: "once",
-    logo: "./logos/canal11.png",
+    logo: "/logos/canal11.png",
     link:
       "http://www.miotv.hn:1935/securelive/smil:c11.smil/chunklist_w1277053248_b1304800.m3u8"
   });
@@ -254,14 +254,14 @@ window.addEventListener("load", function() {
   window.azteca = new Channel({
     name: "Azteca",
     shortName: "azteca",
-    logo: "./logos/azteca.png",
+    logo: "/logos/azteca.png",
     link: "http://aztecalive-lh.akamaihd.net/i/0dcqjxkgx_1@502208/master.m3u8"
   });
 
   window.td = new Channel({
     name: "Todo Deportes",
     shortName: "td",
-    logo: "./logos/td.png",
+    logo: "/logos/td.png",
     link:
       "http://190.92.0.43:1935/securelive/tdtv85jd5EKL3xWq3/chunklist_w1241310319.m3u8"
   });
@@ -275,21 +275,21 @@ window.addEventListener("load", function() {
   window.vtv = new Channel({
     name: "VTV",
     shortName: "vtv",
-    logo: "./logos/vtv.png",
+    logo: "/logos/vtv.png",
     link: "http://d3bus2b3f32oks.cloudfront.net/hn//smil:vtv.smil/playlist.m3u8"
   });
 
   window.campus = new Channel({
     name: "CampusTV",
     shortName: "campus",
-    logo: "./logos/campustv.png",
+    logo: "/logos/campustv.png",
     link: "http://st2.worldkast.com/8004/8004/playlist.m3u8"
   });
 
   window.hondured = new Channel({
     name: "HonduRed",
     shortName: "hondured",
-    logo: "./logos/hondured.png",
+    logo: "/logos/hondured.png",
     link:
       "http://173.236.71.62:1935/hondured/hrtv.sdp/chunklist_w172057188.m3u8"
   });
@@ -297,21 +297,21 @@ window.addEventListener("load", function() {
   window.rt = new Channel({
     name: "RT",
     shortName: "rt",
-    logo: "./logos/rt.svg",
+    logo: "/logos/rt.svg",
     link: "https://secure-streams.akamaized.net/rt-esp/index800.m3u8"
   });
 
   window.hispan = new Channel({
     name: "HISPANTV",
     shortName: "hispan",
-    logo: "./logos/hispantv.png",
+    logo: "/logos/hispantv.png",
     link: "http://178.32.255.199:1935/live/hispantv/chunklist_w1542092239.m3u8"
   });
 
   window.caracol = new Channel({
     name: "Caracol",
     shortName: "caracol",
-    logo: "./logos/caracol.png",
+    logo: "/logos/caracol.png",
     link: "http://mdstrm.com/live-stream-playlist/58dc3d471cbe05ff3c8e463e.m3u8"
     // ustream: true
   });
@@ -319,7 +319,7 @@ window.addEventListener("load", function() {
   window.teleSur = new Channel({
     name: "TeleSUR",
     shortName: "teleSur",
-    logo: "./logos/telesur.svg",
+    logo: "/logos/telesur.svg",
     link:
       "blob:https://mblive.telesur.ultrabase.net/3c81c78a-d99e-49ce-b58a-961e5e4ff320"
   });
@@ -327,14 +327,14 @@ window.addEventListener("load", function() {
   window.cnn = new Channel({
     name: "CNN",
     shortName: "cnn",
-    logo: "./logos/cnnChile.svg",
+    logo: "/logos/cnnChile.svg",
     link: "http://unlimited1-us.dps.live/cnn/cnn.smil/playlist.m3u8"
   });
 
   window.hrn = new Channel({
     name: "HRN",
     shortName: "hrn",
-    logo: "./logos/hrn.jpg",
+    logo: "/logos/hrn.jpg",
     link: "http://radios504.geucast.net:18101/radio-live",
     type: "audio/mpeg",
     video: "audio"
@@ -343,7 +343,7 @@ window.addEventListener("load", function() {
   window.rhch = new Channel({
     name: "Radio HCH",
     shortName: "rhch",
-    logo: "./logos/hch.png",
+    logo: "/logos/hch.png",
     link: "http://media.innovandote.com:8006/mountpoint",
     type: "audio/mpeg",
     video: "audio"
@@ -352,7 +352,7 @@ window.addEventListener("load", function() {
   window.rGlobo = new Channel({
     name: "Radio Globo",
     shortName: "rGlobo",
-    logo: "./logos/radioGlobo.png",
+    logo: "/logos/radioGlobo.png",
     link: "http://aliasdns.info:8016/;stream.mp3",
     type: "audio/mpeg",
     video: "audio"
@@ -361,7 +361,7 @@ window.addEventListener("load", function() {
   window.patio = new Channel({
     name: "Radio El Patio",
     shortName: "patio",
-    logo: "./logos/patio.jpg",
+    logo: "/logos/patio.jpg",
     link: "http://195.154.182.222:25730/patio",
     type: "audio/mpeg",
     video: "audio"
@@ -370,7 +370,7 @@ window.addEventListener("load", function() {
   window.america = new Channel({
     name: "Radio America",
     shortName: "america",
-    logo: "./logos/radioAmerica.png",
+    logo: "/logos/radioAmerica.png",
     link: "http://17803.live.streamtheworld.com/AMERICAAAC.aac",
     type: "audio/mpeg",
     video: "audio"
@@ -379,7 +379,7 @@ window.addEventListener("load", function() {
   window.rnh = new Channel({
     name: "Radio Nacional",
     shortName: "rnh",
-    logo: "./logos/radioNacional.jpg",
+    logo: "/logos/radioNacional.jpg",
     link: "http://stream.playerlive.info:8049//rnh.aac",
     type: "audio/aac",
     video: "audio"

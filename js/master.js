@@ -40,15 +40,13 @@ window.checkSupport = function() {
 };
 window.Channels = new Set();
 window.ChannelIterator = Channels.values();
-let order = -1;
+
 class Channel {
   constructor({ name, shortName, link, type, video, data, ustream, logo }) {
     this.name = name;
     this.shortName = shortName;
     this.link = link;
     this.type = type;
-    order++;
-    this.order = order;
     this.enabled = true;
     this.video = video;
     this.logo = logo;
@@ -68,7 +66,7 @@ class Channel {
     } else if (!data === false) {
       this.data = data;
     }
-    channelList += `<div onclick="window.updateVideo(${shortName})" class="individualChannel" id=${shortName}>${name}</div>`;
+    channelList += `<div onclick="window.test=false; window.updateVideo(${shortName}); " class="individualChannel" id=${shortName}>${name}</div>`;
     this.element = document.getElementById(this.shortName);
     // document.addEventListener("click", this.element.scrollIntoView());
     Channels.add(this);
@@ -116,6 +114,7 @@ window.updateVideo = function(channel) {
       }, 900);
     }
     window.currentElement = document.getElementById(channel.shortName);
+
     window.currentElement.classList.add("active");
   } else if (navigator.onLine && channel.ustream) {
     if (!videojs.players.videoContainer === false && !window.player === false) {
@@ -148,11 +147,11 @@ window.updateVideo = function(channel) {
   window.player.on("error", function() {
     let element = document.getElementById(channel.shortName);
     element.classList.add("deleteChannel");
-    document.title = "Canal eliminado: " + channel.name;
-    h1Title.innerText = "Canal eliminado: " + channel.name;
-    updateVideo(ChannelIterator.next().value);
+    document.title = "Eliminando: " + channel.name;
+    h1Title.innerText = "Eliminando: " + channel.name;
+    // updateVideo(ChannelIterator.next().value);
     Channels.delete(channel);
-    console.log("deleted " + channel.name);
+    console.log("Eliminando: " + channel.name);
     setTimeout(function() {
       element.remove();
     }, 1000);
@@ -434,15 +433,20 @@ window.addEventListener("load", function() {
 
 const channelTest = function() {
   if (navigator.onLine) {
+    window.test = true;
     let timer = 300;
     Channels.forEach(function(channel) {
       timer += 1200;
-      setTimeout(function() {
-        updateVideo(channel);
-        // window.player.width(0);
-        // window.player.height(0);
-        document.title = "Revisando canal: " + channel.name;
-        h1Title.innerText = "Revisando canal: " + channel.name;
+      window.channelTestTimer = window.setTimeout(function() {
+        if (window.test === true) {
+          updateVideo(channel);
+          // window.player.width(0);
+          // window.player.height(0);
+          document.title = "Revisando: " + channel.name;
+          h1Title.innerText = "Revisando: " + channel.name;
+        } else {
+          window.clearTimeout(window.channelTestTimer);
+        }
       }, timer);
     }, this);
     setTimeout(function() {

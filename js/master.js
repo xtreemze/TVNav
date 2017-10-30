@@ -499,7 +499,7 @@ document.addEventListener("keydown", event => {
     selectedElement = nextElement;
   }
   switch (keyName) {
-    case "ArrowUp":
+    case "Up":
       if (previousElement.parentElement.id === "channelSection") {
         selectedElement.classList.remove("selectedElement");
         selectedElement = previousElement;
@@ -513,7 +513,7 @@ document.addEventListener("keydown", event => {
         previousElement = selectedElement.previousSibling;
       }
       break;
-    case "ArrowDown":
+    case "Down":
       if (nextElement.parentElement.id === "channelSection") {
         selectedElement.classList.remove("selectedElement");
         selectedElement = nextElement;
@@ -528,7 +528,7 @@ document.addEventListener("keydown", event => {
         previousElement = selectedElement.previousSibling;
       }
       break;
-    case "ArrowRight":
+    case "Right":
       toggleChannels();
       break;
     case "Enter":
@@ -543,7 +543,7 @@ document.addEventListener("keydown", event => {
         fscreen.requestFullscreen(main);
       }
       break;
-    case "ArrowLeft":
+    case "Left":
       if (fscreen.fullscreenElement !== null) {
         fscreen.exitFullscreen();
       } else {

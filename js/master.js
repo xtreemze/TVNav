@@ -116,6 +116,7 @@ window.updateVideo = function(channel) {
     window.currentElement = document.getElementById(channel.shortName);
 
     window.currentElement.classList.add("active");
+    window.currentElement.scrollIntoView(false);
   } else if (navigator.onLine && channel.ustream) {
     if (!videojs.players.videoContainer === false && !window.player === false) {
       window.currentElement.classList.remove("active");
@@ -435,6 +436,20 @@ const channelTest = function() {
   if (navigator.onLine) {
     window.test = true;
     let timer = 300;
+    Channels.forEach(function(channel) {
+      timer += 500;
+      window.channelTestTimer = window.setTimeout(function() {
+        if (window.test === true) {
+          updateVideo(channel);
+          // window.player.width(0);
+          // window.player.height(0);
+          document.title = "Revisando: " + channel.name;
+          h1Title.innerText = "Revisando: " + channel.name;
+        } else {
+          window.clearTimeout(window.channelTestTimer);
+        }
+      }, timer);
+    }, this);
     Channels.forEach(function(channel) {
       timer += 1200;
       window.channelTestTimer = window.setTimeout(function() {

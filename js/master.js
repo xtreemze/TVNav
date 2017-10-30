@@ -47,7 +47,6 @@ class Channel {
     this.shortName = shortName;
     this.link = link;
     this.type = type;
-    this.enabled = true;
     this.video = video;
     this.logo = logo;
     this.ustream = ustream;
@@ -95,10 +94,10 @@ window.updateVideo = function(channel) {
   // poster="../img/bars.png"
   if (navigator.onLine && !channel.ustream) {
     videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
-  <source src=${channel.link}
+    <source src=${channel.link}
    type=${channel.type} data=${channel.data}
    >
-  </${channel.video}>`;
+   </${channel.video}>`;
     window.player = videojs("videoContainer", {
       techOrder: [
         "html5",
@@ -109,13 +108,16 @@ window.updateVideo = function(channel) {
     if (window.player) {
       window.player.width(window.innerWidth);
       window.player.height(window.innerHeight);
-      setTimeout(function() {
-        window.player.muted(!"setMuted");
-      }, 900);
+      if (!channel.ustream) {
+        setTimeout(function() {
+          window.player.muted(!"setMuted");
+        }, 900);
+      }
     }
     window.currentElement = document.getElementById(channel.shortName);
 
     window.currentElement.classList.add("active");
+
     require("smoothscroll-polyfill").polyfill();
     window.currentElement.scrollIntoView({
       block: "center",
@@ -148,10 +150,14 @@ window.updateVideo = function(channel) {
     //   window.video.click();
     // }, 1000);
   }
+  window.selectedElement = window.currentElement;
+  window.nextElement = selectedElement.nextSibling;
+  window.previousElement = selectedElement.previousSibling;
   document.title = channel.name + " | TVNav";
   h1Title.innerText = channel.name + " | TVNav";
   window.player.on("error", function() {
     let element = document.getElementById(channel.shortName);
+
     element.classList.add("deleteChannel");
     document.title = "Eliminando: " + channel.name;
     h1Title.innerText = "Eliminando: " + channel.name;
@@ -159,8 +165,9 @@ window.updateVideo = function(channel) {
     Channels.delete(channel);
     console.log("Eliminando: " + channel.name);
     setTimeout(function() {
+      // nextElement.click();
       element.remove();
-    }, 1000);
+    }, 1001);
   });
 };
 
@@ -352,6 +359,13 @@ window.addEventListener("load", function() {
     link: "http://unlimited1-us.dps.live/cnn/cnn.smil/playlist.m3u8"
   });
 
+  window.tve = new Channel({
+    name: "TVE",
+    shortName: "tve",
+    logo: "logos/tve.svg",
+    link: "http://hlsackdn_gl8-lh.akamaihd.net/i/hlsdvrlive_1@81183/master.m3u8"
+  });
+
   window.hrn = new Channel({
     name: "HRN",
     shortName: "hrn",
@@ -452,6 +466,7 @@ const channelTest = function() {
           h1Title.innerText = "Revisando: " + channel.name;
         } else {
           window.clearTimeout(window.channelTestTimer);
+          window.clearTimeout(window.finalVideo);
         }
       }, timer);
     }, this);
@@ -469,8 +484,83 @@ const channelTest = function() {
         }
       }, timer);
     }, this);
-    setTimeout(function() {
+    window.finalVideo = setTimeout(function() {
       updateVideo(tsi);
     }, timer + 500);
   }
 };
+
+// Keyboard commands
+document.addEventListener("keydown", event => {
+  const keyName = event.key;
+  console.log(keyName);
+  console.log(event);
+  if (currentElement === null) {
+    selectedElement = nextElement;
+  }
+  switch (keyName) {
+    case "ArrowUp":
+      selectedElement.classList.remove("selectedElement");
+      selectedElement = previousElement;
+      selectedElement.scrollIntoView({
+        block: "center",
+        inline: "nearest",
+        behavior: "smooth"
+      });
+      selectedElement.classList.add("selectedElement");
+      nextElement = selectedElement.nextSibling;
+      previousElement = selectedElement.previousSibling;
+      break;
+    case "ArrowDown":
+      selectedElement.classList.remove("selectedElement");
+      selectedElement = nextElement;
+      selectedElement.scrollIntoView({
+        block: "center",
+        inline: "nearest",
+        behavior: "smooth"
+      });
+      selectedElement.classList.add("selectedElement");
+      nextElement = selectedElement.nextSibling;
+      previousElement = selectedElement.previousSibling;
+      break;
+    case "ArrowRight":
+      toggleChannels();
+      break;
+    case "Enter":
+      selectedElement.click();
+      selectedElement.classList.remove("selectedElement");
+      break;
+    case "f":
+      if (fscreen.fullscreenElement !== null) {
+        fscreen.exitFullscreen();
+      } else {
+        channelSection.classList.add("inactiveChannels");
+        fscreen.requestFullscreen(main);
+      }
+      break;
+    case "ArrowLeft":
+      if (fscreen.fullscreenElement !== null) {
+        fscreen.exitFullscreen();
+      } else {
+        channelSection.classList.add("inactiveChannels");
+        fscreen.requestFullscreen(main);
+      }
+      break;
+    case " ":
+      if (player.paused()) {
+        player.play();
+      } else {
+        player.pause();
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      selectedElement.scrollIntoView({
+        block: "center",
+        inline: "nearest",
+        behavior: "smooth"
+      });
+      break;
+    default:
+      break;
+  }
+});

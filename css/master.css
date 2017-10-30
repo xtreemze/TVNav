@@ -272,3 +272,8 @@ iframe {
 #channelLogo img {
   width: 100%;
 }
+
+.selectedElement {
+  border: 1px dashed rgba(245, 245, 245, 0.78);
+  border-right: 0;
+}

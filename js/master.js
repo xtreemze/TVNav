@@ -454,9 +454,9 @@ window.addEventListener("load", function() {
 const channelTest = function() {
   if (navigator.onLine) {
     window.test = true;
-    let timer = 300;
+    let timer = 100;
     Channels.forEach(function(channel) {
-      timer += 500;
+      timer += 300;
       window.channelTestTimer = window.setTimeout(function() {
         if (window.test === true) {
           updateVideo(channel);
@@ -471,7 +471,7 @@ const channelTest = function() {
       }, timer);
     }, this);
     Channels.forEach(function(channel) {
-      timer += 1200;
+      timer += 800;
       window.channelTestTimer = window.setTimeout(function() {
         if (window.test === true) {
           updateVideo(channel);

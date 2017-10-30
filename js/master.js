@@ -116,7 +116,7 @@ window.updateVideo = function(channel) {
     window.currentElement = document.getElementById(channel.shortName);
 
     window.currentElement.classList.add("active");
-    window.currentElement.scrollIntoView({
+    window.currentElement.scrollIntoView(false, {
       block: "center",
       inline: "nearest",
       behavior: "smooth"

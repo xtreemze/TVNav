@@ -116,7 +116,11 @@ window.updateVideo = function(channel) {
     window.currentElement = document.getElementById(channel.shortName);
 
     window.currentElement.classList.add("active");
-    window.currentElement.scrollIntoView(false);
+    window.currentElement.scrollIntoView({
+      block: "center",
+      inline: "nearest",
+      behavior: "smooth"
+    });
   } else if (navigator.onLine && channel.ustream) {
     if (!videojs.players.videoContainer === false && !window.player === false) {
       window.currentElement.classList.remove("active");

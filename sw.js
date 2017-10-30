@@ -3,7 +3,6 @@ var __wpo = {
     "main": [
       "./",
       "./css/font/VideoJS.eot",
-      "./61d5df2a4fc583564ddcaf3a5311e517.png",
       "./bundle.js",
       "./js/video.min.js",
       "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
@@ -18,14 +17,22 @@ var __wpo = {
     "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
   ],
   "hashesMap": {
-    "3e896c6e1ca42f1867ef1b43e2c56c2c9dae3f4f": "./",
+    "d3718b55d4a0fca01aabc948ab80747a30d9ee20": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
+<<<<<<< HEAD
     "79284602f8bc872ec3449a4484123078fd79f637": "./61d5df2a4fc583564ddcaf3a5311e517.png",
     "defe031ac2ca2aa0b0ba4c8addb007b3b4a6c1de": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
   "version": "2017-10-30 09:42:13",
+=======
+    "2ceed8d0362081c81793c6f172684cbe979d9815": "./bundle.js"
+  },
+  "strategy": "all",
+  "responseStrategy": "network-first",
+  "version": "2017-10-29 18:55:01",
+>>>>>>> 66c979f8f73a433a2a4cc2307684b303240bb2fe
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

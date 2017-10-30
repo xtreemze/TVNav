@@ -1,11 +1,14 @@
 CACHE MANIFEST
+<<<<<<< HEAD
 #ver:2017-10-30 09:42:13
+=======
+#ver:2017-10-29 18:55:01
+>>>>>>> 66c979f8f73a433a2a4cc2307684b303240bb2fe
 #plugin:4.8.4
 
 CACHE:
 ../
 ../css/font/VideoJS.eot
-../61d5df2a4fc583564ddcaf3a5311e517.png
 ../bundle.js
 ../js/video.min.js
 

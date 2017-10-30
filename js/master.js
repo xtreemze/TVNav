@@ -500,28 +500,33 @@ document.addEventListener("keydown", event => {
   }
   switch (keyName) {
     case "ArrowUp":
-      selectedElement.classList.remove("selectedElement");
-      selectedElement = previousElement;
-      selectedElement.scrollIntoView({
-        block: "center",
-        inline: "nearest",
-        behavior: "smooth"
-      });
-      selectedElement.classList.add("selectedElement");
-      nextElement = selectedElement.nextSibling;
-      previousElement = selectedElement.previousSibling;
+      if (previousElement.parentElement.id === "channelSection") {
+        selectedElement.classList.remove("selectedElement");
+        selectedElement = previousElement;
+        selectedElement.scrollIntoView({
+          block: "center",
+          inline: "nearest",
+          behavior: "smooth"
+        });
+        selectedElement.classList.add("selectedElement");
+        nextElement = selectedElement.nextSibling;
+        previousElement = selectedElement.previousSibling;
+      }
       break;
     case "ArrowDown":
-      selectedElement.classList.remove("selectedElement");
-      selectedElement = nextElement;
-      selectedElement.scrollIntoView({
-        block: "center",
-        inline: "nearest",
-        behavior: "smooth"
-      });
-      selectedElement.classList.add("selectedElement");
-      nextElement = selectedElement.nextSibling;
-      previousElement = selectedElement.previousSibling;
+      if (nextElement.parentElement.id === "channelSection") {
+        selectedElement.classList.remove("selectedElement");
+        selectedElement = nextElement;
+        selectedElement.scrollIntoView({
+          block: "center",
+          inline: "nearest",
+          behavior: "smooth"
+        });
+        selectedElement.classList.add("selectedElement");
+
+        nextElement = selectedElement.nextSibling;
+        previousElement = selectedElement.previousSibling;
+      }
       break;
     case "ArrowRight":
       toggleChannels();

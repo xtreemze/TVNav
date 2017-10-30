@@ -512,6 +512,8 @@ document.addEventListener("keydown", event => {
         nextElement = selectedElement.nextSibling;
         previousElement = selectedElement.previousSibling;
       }
+      event.preventDefault();
+      event.stopPropagation();
       break;
     case "Down":
       if (nextElement.parentElement.id === "channelSection") {
@@ -527,6 +529,8 @@ document.addEventListener("keydown", event => {
         nextElement = selectedElement.nextSibling;
         previousElement = selectedElement.previousSibling;
       }
+      event.preventDefault();
+      event.stopPropagation();
       break;
     case "Right":
       toggleChannels();
@@ -534,6 +538,8 @@ document.addEventListener("keydown", event => {
     case "Enter":
       selectedElement.click();
       selectedElement.classList.remove("selectedElement");
+      event.preventDefault();
+      event.stopPropagation();
       break;
     case "f":
       if (fscreen.fullscreenElement !== null) {
@@ -542,6 +548,8 @@ document.addEventListener("keydown", event => {
         channelSection.classList.add("inactiveChannels");
         fscreen.requestFullscreen(main);
       }
+      event.preventDefault();
+      event.stopPropagation();
       break;
     case "Left":
       if (fscreen.fullscreenElement !== null) {
@@ -550,6 +558,8 @@ document.addEventListener("keydown", event => {
         channelSection.classList.add("inactiveChannels");
         fscreen.requestFullscreen(main);
       }
+      event.preventDefault();
+      event.stopPropagation();
       break;
     case " ":
       if (player.paused()) {

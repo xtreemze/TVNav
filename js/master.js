@@ -116,7 +116,8 @@ window.updateVideo = function(channel) {
     window.currentElement = document.getElementById(channel.shortName);
 
     window.currentElement.classList.add("active");
-    window.currentElement.scrollIntoView(false, {
+    require("smoothscroll-polyfill").polyfill();
+    window.currentElement.scrollIntoView({
       block: "center",
       inline: "nearest",
       behavior: "smooth"

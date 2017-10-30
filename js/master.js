@@ -131,7 +131,7 @@ window.updateVideo = function(channel) {
 
     if (navigator.onLine) {
       videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0" width="${window.innerWidth}" height="${window.innerHeight}" id="video"
-    src="${channel.link}?html5ui=1&autoplay=true&controls=true">
+    src="${channel.link}?html5ui=1&autoplay=true&controls=false">
     </iframe>`;
       window.addEventListener("resize", function() {
         if (window.video) {

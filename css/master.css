@@ -12,8 +12,13 @@
   transition: right 1s ease-in-out;
 }
 
+body {
+  /* -webkit-font-smoothing: antialiased;
+  font-smooth: auto; */
+}
+
 .individualChannel {
-  background-color: rgba(19, 19, 19, 0.65);
+  background-color: rgba(19, 19, 19, 0.822);
   padding: 1.5rem 0 1.5rem 1rem;
   margin: 0.5rem 0;
   color: #ddd;
@@ -28,7 +33,121 @@
   border: 1px solid rgba(56, 56, 56, 0.08);
 }
 .active {
-  background-color: hsla(0, 0%, 92%, 0.25) !important;
+  background-color: rgba(112, 112, 112, 0.911) !important;
+}
+
+.deleteChannel {
+  -webkit-animation: slideRight 1s ease-in-out forwards;
+  animation: slideRight 1s ease-in-out forwards;
+  right: 0rem;
+  position: relative;
+  padding: 1.5rem 0 1.5rem 1rem;
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
+  background: rgba(255, 0, 0, 0.466) !important;
+  border: 1px solid rgba(56, 56, 56, 0.08);
+}
+
+@-webkit-keyframes slideRight {
+  50% {
+    right: -10rem;
+    font-size: 0.8rem;
+    padding: 1.5rem 0 1.5rem 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes slideRight {
+  50% {
+    right: -10rem;
+    font-size: 0.8rem;
+    padding: 1.5rem 0 1.5rem 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideRight {
+  100% {
+    right: -10rem;
+    font-size: 0rem;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    border: 0px solid rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes slideRight {
+  100% {
+    right: -10rem;
+    font-size: 0rem;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    border: 0px solid rgba(0, 0, 0, 0);
+  }
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 0.5s ease-in-out forwards;
+  animation: fadeOut 0.5s ease-in-out forwards;
+  opacity: 1;
+}
+
+@-webkit-keyframes fadeOut {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 0.5s ease-in-out forwards;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  50% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
 }
 
 .vjs-control-bar {
@@ -108,6 +227,9 @@ iframe {
   animation: Gradient 25s ease infinite;
 }
 
+iframe {
+  background-color: rgba(0, 0, 0, 0);
+}
 @-webkit-keyframes Gradient {
   0% {
     background-position: 0% 50%;

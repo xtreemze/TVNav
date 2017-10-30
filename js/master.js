@@ -38,14 +38,18 @@ window.checkSupport = function() {
   }, this);
   console.log(content);
 };
-let Channels = new Set();
-
+window.Channels = new Set();
+window.ChannelIterator = Channels.values();
+let order = -1;
 class Channel {
   constructor({ name, shortName, link, type, video, data, ustream, logo }) {
     this.name = name;
     this.shortName = shortName;
     this.link = link;
     this.type = type;
+    order++;
+    this.order = order;
+    this.enabled = true;
     this.video = video;
     this.logo = logo;
     this.ustream = ustream;
@@ -73,7 +77,13 @@ class Channel {
 
 window.updateVideo = function(channel) {
   if (channel.logo) {
-    window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
+    window.channelLogo.classList.remove("fadeIn");
+    window.channelLogo.classList.add("fadeOut");
+    setTimeout(function() {
+      window.channelLogo.classList.remove("fadeOut");
+      window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
+      window.channelLogo.classList.add("fadeIn");
+    }, 500);
   } else {
     window.channelLogo.innerHTML = ``;
   }
@@ -137,9 +147,15 @@ window.updateVideo = function(channel) {
   h1Title.innerText = channel.name + " | TVNav";
   window.player.on("error", function() {
     let element = document.getElementById(channel.shortName);
-    element.remove();
+    element.classList.add("deleteChannel");
     document.title = "Canal eliminado: " + channel.name;
     h1Title.innerText = "Canal eliminado: " + channel.name;
+    updateVideo(ChannelIterator.next().value);
+    Channels.delete(channel);
+    console.log("deleted " + channel.name);
+    setTimeout(function() {
+      element.remove();
+    }, 1000);
   });
 };
 
@@ -413,14 +429,14 @@ window.addEventListener("load", function() {
     }
   });
   channelTest();
-  // updateVideo(tv45);
+  // updateVideo(tsi);
 });
 
 const channelTest = function() {
   if (navigator.onLine) {
-    let timer = 100;
+    let timer = 300;
     Channels.forEach(function(channel) {
-      timer += 700;
+      timer += 1200;
       setTimeout(function() {
         updateVideo(channel);
         // window.player.width(0);

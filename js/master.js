@@ -137,14 +137,13 @@ const channelTest = function() {
           h1Title.innerText = "Revisando: " + channel.name;
         } else {
           window.clearTimeout(window.channelTestTimer);
-          window.clearTimeout(window.finalVideo);
         }
       }, timer);
     }, this);
     Channels.forEach(function(channel) {
       timer += 1001;
       window.channelTestTimer = window.setTimeout(function() {
-        if (window.test === true) {
+        if (window.test === true && !channel.ustream) {
           updateVideo(channel);
           // window.player.width(0);
           // window.player.height(0);
@@ -152,12 +151,15 @@ const channelTest = function() {
           h1Title.innerText = "Revisando: " + channel.name;
         } else {
           window.clearTimeout(window.channelTestTimer);
+          window.clearTimeout(window.finalVideo);
         }
       }, timer);
     }, this);
     window.finalVideo = setTimeout(function() {
       updateVideo(earth);
     }, timer + 1001);
+
+    finalVideo();
   }
 };
 

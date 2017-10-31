@@ -74,7 +74,7 @@ var __wpo = {
     "c4f77c484c2b4b881756f094d8cc00cb93f8c315": "./build/caracol.png",
     "d19c79a9a7fcffa76498c96a49357d308f814f47": "./build/telesur.svg",
     "3f993c2f9f4b491e5701a472810cdb12a8b686bc": "./build/cnnChile.svg",
-    "67531d4ff0c2b2d0b92851e1250ea9665181470c": "./build/tve.svg",
+    "0d776fdd8f9c46adfa257e9fe82080fd9dd93ad4": "./build/tve.svg",
     "29ca02ae81ec25d06e30ce53f803a2539598bf2a": "./build/dw.svg",
     "f81571674e1515e53e79bb32b0510b183abb818a": "./build/tvmas.jpg",
     "b7ef1d2bd6c7516cafa14a71f46b749a5cce9c6b": "./build/tvperu.png",
@@ -99,11 +99,11 @@ var __wpo = {
     "8043e1e0f080ba5b840b6abed153e2a0792a69b2": "./build/patio.jpg",
     "bee3adb477d05f848f7dce8bba9ddb209b7878b5": "./build/radioAmerica.png",
     "921a862eee052c6fea7d728a6d2bf9b21699a462": "./build/radioNacional.jpg",
-    "9edafbdfefa473bfac1dfac5db557148e2b1fe0e": "./bundle.js"
+    "ae46ced56e9ca422263b0649a741e4f67241948c": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-31 14:09:26",
+  "version": "2017-10-31 14:16:58",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

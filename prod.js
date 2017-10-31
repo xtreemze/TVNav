@@ -62,11 +62,11 @@ module.exports = function prod(env) {
                 mozjpeg: {
                   progressive: true,
                   quality: 65
-                },
-                // Specifying webp here will create a WEBP version of your JPG/PNG images
-                webp: {
-                  quality: 75
                 }
+                // Specifying webp here will create a WEBP version of your JPG/PNG images
+                // webp: {
+                //   quality: 75
+                // }
               }
             }
           ]

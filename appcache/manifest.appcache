@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-10-31 13:59:03
+#ver:2017-10-31 14:09:26
 #plugin:4.8.4
 
 CACHE:
@@ -28,6 +28,8 @@ CACHE:
 ../build/mega.svg
 ../build/chilevision.png
 ../build/cablenoticias.png
+../build/capital.svg
+../build/nex.png
 ../build/td.png
 ../build/teleprogreso.png
 ../build/rtv.png
@@ -36,8 +38,6 @@ CACHE:
 ../build/canal6.png
 ../build/cholusat.png
 ../build/vtv.png
-../build/capital.svg
-../build/nex.png
 ../build/hrn.jpg
 ../build/euro.svg
 ../build/rcv.png

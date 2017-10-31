@@ -45,7 +45,7 @@ window.updateVideo = function(channel) {
       if (!channel.ustream) {
         setTimeout(function() {
           window.player.muted(!"setMuted");
-        }, 100);
+        }, 400);
       }
     }
     window.currentElement = document.getElementById(channel.shortName);

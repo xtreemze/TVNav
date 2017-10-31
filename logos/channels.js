@@ -167,7 +167,7 @@ window.mas = new Channel({
 });
 
 window.peru = new Channel({
-  name: "Peru",
+  name: "TVPeru",
   shortName: "peru",
   logo: require("./tvperu.png"),
   link: "http://cdnh15.iblups.com/hls/irtp.m3u8"
@@ -203,67 +203,6 @@ window.cableNoti = new Channel({
   logo: require("./cablenoticias.png"),
   link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/CNOT/tu1_1.m3u8"
 });
-
-window.td = new Channel({
-  name: "Todo Deportes",
-  shortName: "td",
-  logo: require("./td.png"),
-  link:
-    "http://190.92.0.43:1935/securelive/tdtv85jd5EKL3xWq3/chunklist_w1241310319.m3u8"
-});
-window.teleProg = new Channel({
-  name: "TeleProgreso",
-  shortName: "teleProg",
-  logo: require("./teleprogreso.png"),
-  link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
-});
-
-window.rtv = new Channel({
-  name: "RTV",
-  shortName: "rtv",
-  logo: require("./rtv.png"),
-  link: "http://www.ustream.tv/embed/18502457",
-  ustream: true
-});
-window.hondured = new Channel({
-  name: "HonduRed",
-  shortName: "hondured",
-  logo: require("./hondured.png"),
-  link: "http://173.236.71.62:1935/hondured/hrtv.sdp/chunklist_w172057188.m3u8"
-});
-window.hispan = new Channel({
-  name: "HISPANTV",
-  shortName: "hispan",
-  logo: require("./hispantv.png"),
-  link: "http://178.32.255.199:1935/live/hispantv/chunklist_w1542092239.m3u8"
-});
-
-window.seis = new Channel({
-  name: "Canal 6",
-  shortName: "seis",
-  logo: require("./canal6.png"),
-  link:
-    "https://ott.streann.com/loadbalancer/services/public/channels-secure/56bd45f5e4b0ba125fe8a866/playlist.m3u8"
-});
-window.choluSat = new Channel({
-  name: "CholuSat",
-  shortName: "choluSat",
-  logo: require("./cholusat.png"),
-  link: "http://live.audiotvserver.com:1935/livemedia/cholusat/playlist.m3u8"
-});
-window.metro = new Channel({
-  name: "MetroTV",
-  shortName: "metro",
-  link: "http://servicioamerica.net:1935/8404/8404/playlist.m3u8"
-});
-
-window.vtv = new Channel({
-  name: "VTV",
-  shortName: "vtv",
-  logo: require("./vtv.png"),
-  link: "http://d3bus2b3f32oks.cloudfront.net/hn//smil:vtv.smil/playlist.m3u8"
-});
-
 window.capital = new Channel({
   name: "Canal Capital",
   shortName: "capital",
@@ -286,12 +225,77 @@ window.nqn = new Channel({
   link: "http://142.4.208.146:1935/cn247/cn247/playlist.m3u8"
 });
 
-window.once = new Channel({
+window.conce = new Channel({
   name: "Once",
-  shortName: "once",
+  shortName: "conce",
   // logo: require("./tve.svg"),
   link:
     "http://live.canaloncelive.tv:1935/livepkgr2/smil:internacional.smil/master.m3u8"
+});
+
+window.td = new Channel({
+  name: "Todo Deportes",
+  shortName: "td",
+  logo: require("./td.png"),
+  link:
+    "http://190.92.0.43:1935/securelive/tdtv85jd5EKL3xWq3/chunklist_w1241310319.m3u8"
+});
+
+window.teleProg = new Channel({
+  name: "TeleProgreso",
+  shortName: "teleProg",
+  logo: require("./teleprogreso.png"),
+  link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
+});
+
+window.rtv = new Channel({
+  name: "RTV",
+  shortName: "rtv",
+  logo: require("./rtv.png"),
+  link: "http://www.ustream.tv/embed/18502457",
+  ustream: true
+});
+
+window.hondured = new Channel({
+  name: "HonduRed",
+  shortName: "hondured",
+  logo: require("./hondured.png"),
+  link: "http://173.236.71.62:1935/hondured/hrtv.sdp/chunklist_w172057188.m3u8"
+});
+
+window.hispan = new Channel({
+  name: "HISPANTV",
+  shortName: "hispan",
+  logo: require("./hispantv.png"),
+  link: "http://178.32.255.199:1935/live/hispantv/chunklist_w1542092239.m3u8"
+});
+
+window.seis = new Channel({
+  name: "Canal 6",
+  shortName: "seis",
+  logo: require("./canal6.png"),
+  link:
+    "https://ott.streann.com/loadbalancer/services/public/channels-secure/56bd45f5e4b0ba125fe8a866/playlist.m3u8"
+});
+
+window.choluSat = new Channel({
+  name: "CholuSat",
+  shortName: "choluSat",
+  logo: require("./cholusat.png"),
+  link: "http://live.audiotvserver.com:1935/livemedia/cholusat/playlist.m3u8"
+});
+
+window.metro = new Channel({
+  name: "MetroTV",
+  shortName: "metro",
+  link: "http://servicioamerica.net:1935/8404/8404/playlist.m3u8"
+});
+
+window.vtv = new Channel({
+  name: "VTV",
+  shortName: "vtv",
+  logo: require("./vtv.png"),
+  link: "http://d3bus2b3f32oks.cloudfront.net/hn//smil:vtv.smil/playlist.m3u8"
 });
 
 window.hrn = new Channel({
@@ -313,7 +317,7 @@ window.euro = new Channel({
 });
 
 window.voces = new Channel({
-  name: "Radio Cadena Voces",
+  name: "Cadena Voces",
   shortName: "voces",
   logo: require("./rcv.png"),
   link: "http://stream.latinoradiocast.com/41a8pc4gfd5tv",

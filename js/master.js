@@ -156,7 +156,7 @@ const channelTest = function() {
       }, timer);
     }, this);
     window.finalVideo = setTimeout(function() {
-      updateVideo(tsi);
+      updateVideo(earth);
     }, timer + 1001);
   }
 };

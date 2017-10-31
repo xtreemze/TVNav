@@ -1,34 +1,46 @@
 CACHE MANIFEST
-#ver:2017-10-31 12:11:51
+#ver:2017-10-31 13:59:03
 #plugin:4.8.4
 
 CACHE:
-../build/hch.png
 ../
 ../css/font/VideoJS.eot
+../build/earthtv.png
 ../build/tsi.png
 ../build/canal5.png
 ../build/ten.png
-../build/cholusat.png
+../build/hch.png
 ../build/globoTV.png
 ../build/45tv.png
 ../build/teleceiba.png
-../build/teleprogreso.png
-../build/rtv.png
-../build/canal6.png
 ../build/canal11.png
 ../build/azteca.png
-../build/td.png
-../build/vtv.png
 ../build/campustv.png
-../build/hondured.png
 ../build/rt.svg
-../build/hispantv.png
 ../build/caracol.png
 ../build/telesur.svg
 ../build/cnnChile.svg
 ../build/tve.svg
+../build/dw.svg
+../build/tvmas.jpg
+../build/tvperu.png
+../build/ecuadortv.png
+../build/mega.svg
+../build/chilevision.png
+../build/cablenoticias.png
+../build/td.png
+../build/teleprogreso.png
+../build/rtv.png
+../build/hondured.png
+../build/hispantv.png
+../build/canal6.png
+../build/cholusat.png
+../build/vtv.png
+../build/capital.svg
+../build/nex.png
 ../build/hrn.jpg
+../build/euro.svg
+../build/rcv.png
 ../build/radioGlobo.png
 ../build/patio.jpg
 ../build/radioAmerica.png

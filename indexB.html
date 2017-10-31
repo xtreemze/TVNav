@@ -23,6 +23,117 @@
       overflow-x: hidden;
     }
 
+    iframe,
+    #videoSection {
+      border: none;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: inherit;
+    }
+
+    #videoSection,
+    iframe {
+      color: #fff;
+      background: linear-gradient(-45deg, #4172bd, #07202e, #b6b9bd, #132f68);
+      background-size: 400% 400%;
+      -webkit-animation: Gradient 25s ease infinite;
+      animation: Gradient 25s ease infinite;
+    }
+
+    @-webkit-keyframes Gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes Gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .logos {
+      width: 1px;
+      height: 0px;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    .title {
+      text-align: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 900;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      font-size: 0.9rem;
+      color: rgb(215, 215, 215);
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.58);
+      float: left;
+      margin-left: 0.5rem;
+    }
+
+    #channelSection {
+      position: absolute;
+      width: 8em;
+      z-index: 600;
+      top: 0;
+      bottom: 2rem;
+      right: 0rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: 100vh;
+      margin: auto 0;
+      -webkit-transition: right 1s ease-in-out;
+      transition: right 1s ease-in-out;
+    }
+
+
+    .individualChannel {
+      background-color: rgba(19, 19, 19, 0.822);
+      padding: 1.5rem 0 1.5rem 1rem;
+      margin: 0.5rem 0;
+      color: #ddd;
+      cursor: pointer;
+      font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.58);
+      border-radius: 1rem 0 0 1rem;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      -webkit-highlight: rgba(255, 255, 255, 0);
+      border: 1px solid rgba(56, 56, 56, 0.08);
+    }
+
+    #channelLogo {
+      max-width: 5rem;
+      height: 5.5rem;
+      position: absolute;
+      top: 2.4rem;
+      left: 0.5rem;
+    }
+
+    #channelLogo img {
+      width: 100%;
+    }
+
   </style>
 </head>
 
@@ -41,12 +152,14 @@
     <section id="channelSection">
     </section>
   </div>
+  <section id="logos" class="logos">
+  </section>
   <script src="js/video.min.js"></script>
   <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
   <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
   <!-- <script src="js/videojs-flash.js"></script>
   <script async src="js/videojs-contrib-hls.min.js"></script> -->
-  <script async src="bundle.js"></script>
+  <script src="bundle.js"></script>
   <script>
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

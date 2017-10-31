@@ -1,10 +1,38 @@
 CACHE MANIFEST
-#ver:2017-10-31 09:42:58
+#ver:2017-10-31 11:45:22
 #plugin:4.8.4
 
 CACHE:
+../build/hch.png
 ../
 ../css/font/VideoJS.eot
+../build/tsi.png
+../build/canal5.png
+../build/ten.png
+../build/cholusat.png
+../build/globoTV.png
+../build/45tv.png
+../build/teleceiba.png
+../build/teleprogreso.png
+../build/rtv.png
+../build/canal6.png
+../build/canal11.png
+../build/azteca.png
+../build/td.png
+../build/vtv.png
+../build/campustv.png
+../build/hondured.png
+../build/rt.svg
+../build/hispantv.png
+../build/caracol.png
+../build/telesur.svg
+../build/cnnChile.svg
+../build/tve.svg
+../build/hrn.jpg
+../build/radioGlobo.png
+../build/patio.jpg
+../build/radioAmerica.png
+../build/radioNacional.jpg
 ../bundle.js
 ../js/video.min.js
 

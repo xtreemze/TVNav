@@ -26,7 +26,7 @@ module.exports = function dev(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=[path][name].[ext]",
+            "file-loader?name=build/[name].[ext]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -43,11 +43,11 @@ module.exports = function dev(env) {
                 mozjpeg: {
                   progressive: true,
                   quality: 65
-                },
-                // Specifying webp here will create a WEBP version of your JPG/PNG images
-                webp: {
-                  quality: 75
                 }
+                // Specifying webp here will create a WEBP version of your JPG/PNG images
+                // webp: {
+                //   quality: 75
+                // }
               }
             }
           ]

@@ -3,7 +3,7 @@
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const OfflinePlugin = require("offline-plugin");
-const OptimizeJsPlugin = require("optimize-js-plugin");
+// const OptimizeJsPlugin = require("optimize-js-plugin");
 // const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const PurifyCSSPlugin = require("purifycss-webpack");
@@ -53,20 +53,20 @@ module.exports = function prod(env) {
                   interlaced: false
                 },
                 optipng: {
-                  optimizationLevel: 8
+                  optimizationLevel: 7
                 },
                 pngquant: {
-                  quality: "72-95",
-                  speed: 3
+                  quality: "65-90",
+                  speed: 4
                 },
                 mozjpeg: {
                   progressive: true,
+                  quality: 65
+                },
+                // Specifying webp here will create a WEBP version of your JPG/PNG images
+                webp: {
                   quality: 75
                 }
-                // Specifying webp here will create a WEBP version of your JPG/PNG images
-                // webp: {
-                //   quality: 75
-                // }
               }
             }
           ]
@@ -97,9 +97,9 @@ module.exports = function prod(env) {
       // }),
       // ... other plugins
       new HtmlMinifierPlugin({}),
-      new OptimizeJsPlugin({
-        sourceMap: true
-      }),
+      // new OptimizeJsPlugin({
+      //   sourceMap: true
+      // }),
       new ClosureCompiler({
         compiler: {
           language_in: "ECMASCRIPT6",

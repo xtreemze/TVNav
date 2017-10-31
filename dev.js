@@ -43,11 +43,11 @@ module.exports = function dev(env) {
                 mozjpeg: {
                   progressive: true,
                   quality: 65
-                }
+                },
                 // Specifying webp here will create a WEBP version of your JPG/PNG images
-                // webp: {
-                //   quality: 75
-                // }
+                webp: {
+                  quality: 75
+                }
               }
             }
           ]
@@ -56,14 +56,14 @@ module.exports = function dev(env) {
           test: /\.(eot|ttf|woff|woff2)$/,
           loader: "file-loader?name=[path][name].[ext]"
         },
-        {
-          test: /\.svg$/,
-          use: [
-            {
-              loader: "file-loader?name=[path][name].[ext]"
-            }
-          ]
-        },
+        // {
+        //   test: /\.svg$/,
+        //   use: [
+        //     {
+        //       loader: "file-loader?name=build/[name].[ext]"
+        //     }
+        //   ]
+        // },
         {
           test: /\.js$/,
           exclude: [/node_modules/],

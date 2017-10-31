@@ -135,8 +135,37 @@ const channelTest = function() {
           // window.player.height(0);
           document.title = "Revisando: " + channel.name;
           h1Title.innerText = "Revisando: " + channel.name;
-        } else {
+        } else if (window.test === true && channel.ustream) {
+          if (channel.logo) {
+            window.channelLogo.classList.remove("fadeIn");
+            window.channelLogo.classList.add("fadeOut");
+            setTimeout(function() {
+              window.channelLogo.classList.remove("fadeOut");
+              window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
+              window.channelLogo.classList.add("fadeIn");
+            }, 500);
+          } else {
+            window.channelLogo.innerHTML = ``;
+          }
+          if (!window.currentElement === false) {
+            window.currentElement.classList.remove("active");
+          }
+          window.currentElement = document.getElementById(channel.shortName);
+
+          window.currentElement.classList.add("active");
+
+          window.currentElement.scrollIntoView({
+            block: "center",
+            inline: "nearest",
+            behavior: "smooth"
+          });
+          // window.player.width(0);
+          // window.player.height(0);
+          document.title = "Revisando: " + channel.name;
+          h1Title.innerText = "Revisando: " + channel.name;
+        } else if (window.test === false) {
           window.clearTimeout(window.channelTestTimer);
+          window.clearTimeout(window.finalVideo);
         }
       }, timer);
     }, this);
@@ -149,7 +178,35 @@ const channelTest = function() {
           // window.player.height(0);
           document.title = "Revisando: " + channel.name;
           h1Title.innerText = "Revisando: " + channel.name;
-        } else {
+        } else if (window.test === true && channel.ustream) {
+          if (channel.logo) {
+            window.channelLogo.classList.remove("fadeIn");
+            window.channelLogo.classList.add("fadeOut");
+            setTimeout(function() {
+              window.channelLogo.classList.remove("fadeOut");
+              window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
+              window.channelLogo.classList.add("fadeIn");
+            }, 500);
+          } else {
+            window.channelLogo.innerHTML = ``;
+          }
+          if (!window.currentElement === false) {
+            window.currentElement.classList.remove("active");
+          }
+          window.currentElement = document.getElementById(channel.shortName);
+
+          window.currentElement.classList.add("active");
+
+          window.currentElement.scrollIntoView({
+            block: "center",
+            inline: "nearest",
+            behavior: "smooth"
+          });
+          // window.player.width(0);
+          // window.player.height(0);
+          document.title = "Revisando: " + channel.name;
+          h1Title.innerText = "Revisando: " + channel.name;
+        } else if (window.test === false) {
           window.clearTimeout(window.channelTestTimer);
           window.clearTimeout(window.finalVideo);
         }
@@ -158,8 +215,6 @@ const channelTest = function() {
     window.finalVideo = setTimeout(function() {
       updateVideo(earth);
     }, timer + 1001);
-
-    finalVideo();
   }
 };
 

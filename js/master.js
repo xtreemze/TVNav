@@ -515,7 +515,40 @@ document.addEventListener("keydown", event => {
       event.preventDefault();
       event.stopPropagation();
       break;
+    case "UpArrow":
+      if (previousElement.parentElement.id === "channelSection") {
+        selectedElement.classList.remove("selectedElement");
+        selectedElement = previousElement;
+        selectedElement.scrollIntoView({
+          block: "center",
+          inline: "nearest",
+          behavior: "smooth"
+        });
+        selectedElement.classList.add("selectedElement");
+        nextElement = selectedElement.nextSibling;
+        previousElement = selectedElement.previousSibling;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      break;
     case "Down":
+      if (nextElement.parentElement.id === "channelSection") {
+        selectedElement.classList.remove("selectedElement");
+        selectedElement = nextElement;
+        selectedElement.scrollIntoView({
+          block: "center",
+          inline: "nearest",
+          behavior: "smooth"
+        });
+        selectedElement.classList.add("selectedElement");
+
+        nextElement = selectedElement.nextSibling;
+        previousElement = selectedElement.previousSibling;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      break;
+    case "DownArrow":
       if (nextElement.parentElement.id === "channelSection") {
         selectedElement.classList.remove("selectedElement");
         selectedElement = nextElement;
@@ -535,6 +568,9 @@ document.addEventListener("keydown", event => {
     case "Right":
       toggleChannels();
       break;
+    case "RightArrow":
+      toggleChannels();
+      break;
     case "Enter":
       selectedElement.click();
       selectedElement.classList.remove("selectedElement");
@@ -552,6 +588,16 @@ document.addEventListener("keydown", event => {
       event.stopPropagation();
       break;
     case "Left":
+      if (fscreen.fullscreenElement !== null) {
+        fscreen.exitFullscreen();
+      } else {
+        channelSection.classList.add("inactiveChannels");
+        fscreen.requestFullscreen(main);
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      break;
+    case "LeftArrow":
       if (fscreen.fullscreenElement !== null) {
         fscreen.exitFullscreen();
       } else {

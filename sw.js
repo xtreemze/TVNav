@@ -75,11 +75,11 @@ var __wpo = {
     "8043e1e0f080ba5b840b6abed153e2a0792a69b2": "./build/patio.jpg",
     "bee3adb477d05f848f7dce8bba9ddb209b7878b5": "./build/radioAmerica.png",
     "921a862eee052c6fea7d728a6d2bf9b21699a462": "./build/radioNacional.jpg",
-    "65ab458b50f8cc15f4b30ed9863770961c0ea35d": "./bundle.js"
+    "4cb82516019d1033d9ef801b514c8efdaf70f1a6": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-31 11:45:22",
+  "version": "2017-10-31 11:52:51",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

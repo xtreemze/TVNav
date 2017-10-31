@@ -206,6 +206,6 @@ fullscreenButton.addEventListener("click", function() {
 // };
 
 window.addEventListener("load", function() {
-  // channelTest();
+  channelTest();
   // updateVideo(tsi);
 });

@@ -200,6 +200,7 @@ window.mas = new Channel({
   name: "TVMas",
   shortName: "mas",
   logo: require("./tvmas.jpg"),
+  country: require("./flags/mexico.svg"),
   link: "http://50.7.98.234:1935/rtv/videortv/chunklist.m3u8"
 });
 
@@ -262,17 +263,11 @@ window.nexTV = new Channel({
   link: "http://198.1.117.5:1935/live/livestream/chunklist_w1290911642.m3u8"
 });
 
-window.nqn = new Channel({
-  name: "NQN",
-  shortName: "nqn",
-  // logo: require("./tve.svg"),
-  link: "http://142.4.208.146:1935/cn247/cn247/playlist.m3u8"
-});
-
 window.conce = new Channel({
   name: "Once",
   shortName: "conce",
-  // logo: require("./tve.svg"),
+  logo: require("./once.png"),
+  country: require("./flags/mexico.svg"),
   link:
     "http://live.canaloncelive.tv:1935/livepkgr2/smil:internacional.smil/master.m3u8"
 });

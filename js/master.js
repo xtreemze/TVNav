@@ -93,9 +93,9 @@ window.updateVideo = function(channel) {
 
     if (navigator.onLine) {
       videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0"
-    width="${window.innerWidth}" height="${window.innerHeight}" id="video" src="${channel.link}?html5ui=1&autoplay=true&controls=false">
-</iframe>
-`;
+      width="${window.innerWidth}" height="${window.innerHeight}" id="video" src="${channel.link}?html5ui=1&autoplay=true&controls=false">
+      </iframe>
+      `;
       window.addEventListener("resize", function() {
         if (window.video) {
           window.video.width = window.innerWidth;
@@ -112,6 +112,7 @@ window.updateVideo = function(channel) {
     // }, 1000);
   }
 
+  window.selectedElement = window.currentElement;
   document.title = channel.name + " | TVNav";
   h1Title.innerText = channel.name + " | TVNav";
   window.player.on("error", function() {
@@ -207,6 +208,8 @@ const channelTest = function() {
         } else if (window.test === false) {
           window.clearTimeout(window.channelTestTimer);
           window.clearTimeout(window.finalVideo);
+          document.title = earth.name;
+          h1Title.innerText = earth.name;
         }
       }, timer);
     }, this);
@@ -232,6 +235,7 @@ const channelTest = function() {
         videojs.players.videoContainer.dispose();
       }
       window.currentElement = document.getElementById(earth.shortName);
+      window.selectedElement = window.currentElement;
       window.currentElement.classList.add("active");
       window.currentElement.scrollIntoView({
         block: "center",

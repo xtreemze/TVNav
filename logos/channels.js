@@ -1,5 +1,6 @@
+// Declare Channel Class
 window.Channels = new Set();
-window.ChannelIterator = Channels.values();
+// Create Channels
 let channelList = "";
 
 class Channel {
@@ -26,7 +27,8 @@ class Channel {
     } else if (!data === false) {
       this.data = data;
     }
-    channelList += `<div onclick="window.test=false; window.updateVideo(${shortName}); " class="individualChannel" id=${shortName}>${name}</div>`;
+    channelList += `<div onclick="window.falseTest(); window.updateVideo(${shortName});" class="individualChannel" id=${shortName}>${name}</div>
+`;
     this.element = document.getElementById(this.shortName);
     // document.addEventListener("click", this.element.scrollIntoView());
     Channels.add(this);
@@ -370,29 +372,14 @@ window.rnh = new Channel({
 // });
 
 // Donate
-channelList += `<div class="individualChannel" id="donate"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="NWT2PUFW6NFLC">
-<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form></div>`;
-
+channelList += `<div class="individualChannel" id="donate">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="NWT2PUFW6NFLC">
+        <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+</div>
+`;
+// Send Channels to DOM
 channelSection.innerHTML = channelList;
-
-// window.logoList = function() {
-//   //   let content = "";
-//   let html = "";
-//   Channels.forEach(function(channel) {
-//     if (channel.logo) {
-//       //   content += `"${channel.logo}",\n`;
-//       html += `<img src="${channel.logo}">\n`;
-//     }
-//   }, this);
-//   //   console.log(content);
-//   //   console.log(html);
-//   window.logos.innerHTML = html;
-//   setTimeout(function() {
-//     window.logos.remove();
-//   }, 4000);
-// };
-// logoList();

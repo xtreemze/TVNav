@@ -23,8 +23,14 @@
       overflow-x: hidden;
     }
 
+    #videoInit {
+      position: absolute !important;
+      z-index: 500;
+    }
+
     iframe,
-    #videoSection {
+    #videoSection,
+    #videoInit {
       border: none;
       width: 100vw;
       height: 100vh;
@@ -32,6 +38,7 @@
       position: inherit;
     }
 
+    #videoInit,
     #videoSection,
     iframe {
       color: #fff;
@@ -108,7 +115,7 @@
 
     .individualChannel {
       background-color: rgba(19, 19, 19, 0.822);
-      padding: 1.5rem 0 1.5rem 1rem;
+      padding: 2.7rem 1rem 1rem;
       margin: 0.5rem 0;
       color: #ddd;
       cursor: pointer;
@@ -147,6 +154,8 @@
     <div id="fullscreenButton"></div>
     <div class="toggle" onclick="toggleChannels()">
     </div>
+    <section id="videoInit">
+    </section>
     <section id="videoSection">
     </section>
     <section id="channelSection">

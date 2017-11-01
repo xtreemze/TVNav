@@ -57,7 +57,7 @@ var __wpo = {
     "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
   ],
   "hashesMap": {
-    "107bfaad82b4818c8c3019e7982253759bc669bd": "./",
+    "1315e9c457fd9a1d17f878aad09c7558a33b4e89": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
     "f85a53eac73f424bebec4a62e382c06e3b21bc6b": "./build/earthtv.png",
     "803ea25027f384c739c2a34979680b4eae3b9b7c": "./build/tsi.png",
@@ -99,11 +99,11 @@ var __wpo = {
     "415722bb4b475711f6341ff7869dceb524d366b5": "./build/patio.jpg",
     "1979308b63baafadb2bbf3fb2a71fedb1b78c7b5": "./build/radioAmerica.png",
     "e13f27bec7380b809d1267e9cc4e0bdaeec7d8ac": "./build/radioNacional.jpg",
-    "2bb68d1d2a5126c300ad15fab09b6c5ed8b2fcc2": "./bundle.js"
+    "2affa88a2b5ff62a99c0046d1cec321d35fbe4fa": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-31 15:02:36",
+  "version": "2017-11-1 12:56:17",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

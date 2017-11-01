@@ -1,10 +1,41 @@
-import fscreen from "fscreen";
 require("smoothscroll-polyfill").polyfill();
+require("../logos/channels.js");
+require("../js/keyboard.js");
 const videoSection = document.getElementById("videoSection");
 const channelSection = document.getElementById("channelSection");
 const h1Title = document.getElementById("h1Title");
-require("../logos/channels.js");
-require("../js/keyboard.js");
+const main = document.getElementById("main");
+const fullscreenButton = document.getElementById("fullscreenButton");
+window.falseTest = function() {
+  if (window.test === true) {
+    window.test = false;
+    document.getElementById("videoInit").remove();
+  }
+};
+
+window.addEventListener("resize", function() {
+  if (window.player) {
+    window.player.width(window.innerWidth);
+    window.player.height(window.innerHeight);
+  }
+  if (window.player2) {
+    window.player2.width(window.innerWidth);
+    window.player2.height(window.innerHeight);
+  }
+});
+window.addEventListener("orientationchange", function() {
+  if (window.player) {
+    window.player.width(window.innerWidth);
+    window.player.height(window.innerHeight);
+  }
+  if (window.player2) {
+    window.player2.width(window.innerWidth);
+    window.player2.height(window.innerHeight);
+  }
+});
+window.toggleChannels = function() {
+  channelSection.classList.toggle("inactiveChannels");
+};
 
 window.updateVideo = function(channel) {
   if (channel.logo) {
@@ -28,10 +59,9 @@ window.updateVideo = function(channel) {
   // poster="../img/bars.png"
   if (navigator.onLine && !channel.ustream) {
     videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
-    <source src=${channel.link}
-   type=${channel.type} data=${channel.data}
-   >
-   </${channel.video}>`;
+    <source src=${channel.link} type=${channel.type} data=${channel.data}>
+</${channel.video}>
+`;
     window.player = videojs("videoContainer", {
       techOrder: [
         "html5",
@@ -65,9 +95,10 @@ window.updateVideo = function(channel) {
     }
 
     if (navigator.onLine) {
-      videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0" width="${window.innerWidth}" height="${window.innerHeight}" id="video"
-    src="${channel.link}?html5ui=1&autoplay=true&controls=false">
-    </iframe>`;
+      videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0"
+    width="${window.innerWidth}" height="${window.innerHeight}" id="video" src="${channel.link}?html5ui=1&autoplay=true&controls=false">
+</iframe>
+`;
       window.addEventListener("resize", function() {
         if (window.video) {
           window.video.width = window.innerWidth;
@@ -95,32 +126,13 @@ window.updateVideo = function(channel) {
     element.classList.add("deleteChannel");
     document.title = "Eliminando: " + channel.name;
     h1Title.innerText = "Eliminando: " + channel.name;
-    // updateVideo(ChannelIterator.next().value);
     Channels.delete(channel);
     console.log("Eliminando: " + channel.name);
     setTimeout(function() {
-      // nextElement.click();
       element.remove();
     }, 1001);
   });
 };
-
-window.toggleChannels = function() {
-  channelSection.classList.toggle("inactiveChannels");
-};
-window.addEventListener("resize", function() {
-  if (window.player) {
-    window.player.width(window.innerWidth);
-    window.player.height(window.innerHeight);
-  }
-});
-window.addEventListener("orientationchange", function() {
-  if (window.player) {
-    window.player.width(window.innerWidth);
-    window.player.height(window.innerHeight);
-  }
-});
-const main = document.getElementById("main");
 
 const channelTest = function() {
   if (navigator.onLine) {
@@ -137,13 +149,7 @@ const channelTest = function() {
           h1Title.innerText = "Revisando: " + channel.name;
         } else if (window.test === true && channel.ustream) {
           if (channel.logo) {
-            window.channelLogo.classList.remove("fadeIn");
-            window.channelLogo.classList.add("fadeOut");
-            setTimeout(function() {
-              window.channelLogo.classList.remove("fadeOut");
-              window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
-              window.channelLogo.classList.add("fadeIn");
-            }, 500);
+            window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
           } else {
             window.channelLogo.innerHTML = ``;
           }
@@ -151,9 +157,7 @@ const channelTest = function() {
             window.currentElement.classList.remove("active");
           }
           window.currentElement = document.getElementById(channel.shortName);
-
           window.currentElement.classList.add("active");
-
           window.currentElement.scrollIntoView({
             block: "center",
             inline: "nearest",
@@ -213,56 +217,66 @@ const channelTest = function() {
       }, timer);
     }, this);
     window.finalVideo = setTimeout(function() {
-      updateVideo(earth);
+      // document.getElementById("videoInit").remove();
+
+      window.channelLogo.classList.remove("fadeIn");
+      window.channelLogo.classList.add("fadeOut");
+      setTimeout(function() {
+        window.channelLogo.classList.remove("fadeOut");
+        window.channelLogo.innerHTML = `<img src="${earth.logo}">`;
+        window.channelLogo.classList.add("fadeIn");
+      }, 500);
+
+      if (!window.currentElement === false) {
+        window.currentElement.classList.remove("active");
+      }
+      if (
+        !videojs.players.videoContainer === false &&
+        !window.player === false
+      ) {
+        videojs.players.videoContainer.pause();
+        videojs.players.videoContainer.dispose();
+      }
+      window.currentElement = document.getElementById(earth.shortName);
+
+      window.currentElement.classList.add("active");
+
+      window.currentElement.scrollIntoView({
+        block: "center",
+        inline: "nearest",
+        behavior: "smooth"
+      });
     }, timer + 1001);
   }
 };
 
-const fullscreenButton = document.getElementById("fullscreenButton");
-fullscreenButton.addEventListener("click", function() {
-  if (fscreen.fullscreenElement !== null) {
-    fscreen.exitFullscreen();
-  } else {
-    channelSection.classList.add("inactiveChannels");
-    fscreen.requestFullscreen(main);
-  }
-});
-
-// window.checkSupport = function() {
-//   let content = "";
-//   const types = [
-//     "video/ogg",
-//     "video/mp4",
-//     "video/mp3",
-//     "video/webm",
-//     "audio/mpeg",
-//     "audio/ogg",
-//     "audio/mp3",
-//     "audio/aac",
-//     "audio/mp4"
-//   ];
-//   types.forEach(function(type) {
-//     let vid = document.createElement("video");
-//     let response;
-//     switch (vid.canPlayType(type)) {
-//       case "probably":
-//         response = "Probably";
-//         break;
-//       case "maybe":
-//         response = "Maybe";
-//         break;
-//       case "":
-//         response = "No support";
-//         break;
-//       default:
-//         break;
-//     }
-//     content += type + ": " + response + "\n";
-//   }, this);
-//   console.log(content);
-// };
-
 window.addEventListener("load", function() {
+  initVideo(earth);
   channelTest();
   // updateVideo(tsi);
 });
+
+const initVideo = function(channel) {
+  if (navigator.onLine && !channel.ustream) {
+    videoInit.innerHTML = `<${channel.video} controls id="videoContainer2" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+  <source src=${channel.link} type=${channel.type} data=${channel.data}>
+</${channel.video}>
+`;
+    window.player2 = videojs("videoContainer2", {
+      techOrder: [
+        "html5",
+        "flash"
+        // , "youtube"
+      ]
+    });
+    if (window.player2) {
+      window.player2.width(window.innerWidth);
+      window.player2.height(window.innerHeight);
+      if (!channel.ustream) {
+        setTimeout(function() {
+          window.player2.muted(!"setMuted");
+        }, 400);
+      }
+    }
+  }
+};

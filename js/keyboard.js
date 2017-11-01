@@ -1,3 +1,28 @@
+import fscreen from "fscreen";
+fullscreenButton.addEventListener("click", function() {
+  if (fscreen.fullscreenElement !== null) {
+    fscreen.exitFullscreen();
+    if (window.player) {
+      window.player.width(window.innerWidth);
+      window.player.height(window.innerHeight);
+    }
+    if (window.player2) {
+      window.player2.width(window.innerWidth);
+      window.player2.height(window.innerHeight);
+    }
+  } else {
+    channelSection.classList.add("inactiveChannels");
+    fscreen.requestFullscreen(main);
+    if (window.player) {
+      window.player.width(window.innerWidth);
+      window.player.height(window.innerHeight);
+    }
+    if (window.player2) {
+      window.player2.width(window.innerWidth);
+      window.player2.height(window.innerHeight);
+    }
+  }
+});
 // Keyboard commands
 document.addEventListener("keydown", event => {
   const keyName = event.key;
@@ -89,8 +114,8 @@ document.addEventListener("keydown", event => {
       if (fscreen.fullscreenElement !== null) {
         fscreen.exitFullscreen();
       } else {
-        channelSection.classList.add("inactiveChannels");
         fscreen.requestFullscreen(main);
+        channelSection.classList.add("inactiveChannels");
       }
       event.preventDefault();
       event.stopPropagation();
@@ -99,8 +124,8 @@ document.addEventListener("keydown", event => {
       if (fscreen.fullscreenElement !== null) {
         fscreen.exitFullscreen();
       } else {
-        channelSection.classList.add("inactiveChannels");
         fscreen.requestFullscreen(main);
+        channelSection.classList.add("inactiveChannels");
       }
       event.preventDefault();
       event.stopPropagation();
@@ -109,8 +134,8 @@ document.addEventListener("keydown", event => {
       if (fscreen.fullscreenElement !== null) {
         fscreen.exitFullscreen();
       } else {
-        channelSection.classList.add("inactiveChannels");
         fscreen.requestFullscreen(main);
+        channelSection.classList.add("inactiveChannels");
       }
       event.preventDefault();
       event.stopPropagation();

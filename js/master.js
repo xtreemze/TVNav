@@ -1,11 +1,10 @@
-require("smoothscroll-polyfill").polyfill();
 require("../logos/channels.js");
-require("../js/keyboard.js");
+// require("smoothscroll-polyfill").polyfill();
 const videoSection = document.getElementById("videoSection");
 const channelSection = document.getElementById("channelSection");
 const h1Title = document.getElementById("h1Title");
 const main = document.getElementById("main");
-const fullscreenButton = document.getElementById("fullscreenButton");
+
 window.falseTest = function() {
   if (window.test === true) {
     window.test = false;
@@ -79,9 +78,7 @@ window.updateVideo = function(channel) {
       }
     }
     window.currentElement = document.getElementById(channel.shortName);
-
     window.currentElement.classList.add("active");
-
     window.currentElement.scrollIntoView({
       block: "center",
       inline: "nearest",
@@ -115,9 +112,6 @@ window.updateVideo = function(channel) {
     // }, 1000);
   }
 
-  window.selectedElement = window.currentElement;
-  window.nextElement = selectedElement.nextSibling;
-  window.previousElement = selectedElement.previousSibling;
   document.title = channel.name + " | TVNav";
   h1Title.innerText = channel.name + " | TVNav";
   window.player.on("error", function() {
@@ -238,9 +232,7 @@ const channelTest = function() {
         videojs.players.videoContainer.dispose();
       }
       window.currentElement = document.getElementById(earth.shortName);
-
       window.currentElement.classList.add("active");
-
       window.currentElement.scrollIntoView({
         block: "center",
         inline: "nearest",
@@ -249,12 +241,6 @@ const channelTest = function() {
     }, timer + 1001);
   }
 };
-
-window.addEventListener("load", function() {
-  initVideo(earth);
-  channelTest();
-  // updateVideo(tsi);
-});
 
 const initVideo = function(channel) {
   if (navigator.onLine && !channel.ustream) {
@@ -280,3 +266,10 @@ const initVideo = function(channel) {
     }
   }
 };
+window.addEventListener("load", function() {
+  initVideo(earth);
+
+  channelTest();
+  // updateVideo(tsi);
+});
+require("../js/keyboard.js");

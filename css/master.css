@@ -137,7 +137,7 @@
 }
 
 .inactiveChannels {
-  right: -7.8em !important;
+  right: -10.8em !important;
 }
 
 #fullscreenButton {
@@ -160,7 +160,7 @@
 }
 
 .selectedElement {
-  border: 1px dashed rgba(245, 245, 245, 0.78);
+  border: 0.1rem dashed rgba(245, 245, 245, 0.78);
   border-right: 0;
 }
 

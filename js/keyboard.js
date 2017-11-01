@@ -1,4 +1,7 @@
 import fscreen from "fscreen";
+require("smoothscroll-polyfill").polyfill();
+
+const fullscreenButton = document.getElementById("fullscreenButton");
 fullscreenButton.addEventListener("click", function() {
   if (fscreen.fullscreenElement !== null) {
     fscreen.exitFullscreen();
@@ -28,75 +31,80 @@ document.addEventListener("keydown", event => {
   const keyName = event.key;
   console.log(keyName);
   console.log(event);
-  if (currentElement === null) {
-    selectedElement = nextElement;
+  if (!window.selectedElement) {
+    window.selectedElement = window.currentElement;
+    window.nextElement = selectedElement.nextElementSibling;
+    window.previousElement = selectedElement.previousElementSibling;
+  }
+  if (window.currentElement === null) {
+    window.selectedElement = window.nextElement;
   }
   switch (keyName) {
     case "Up":
-      if (previousElement.parentElement.id === "channelSection") {
-        selectedElement.classList.remove("selectedElement");
-        selectedElement = previousElement;
-        selectedElement.scrollIntoView({
+      event.preventDefault();
+      event.stopPropagation();
+      if (window.previousElement.parentElement.id === "channelSection") {
+        window.selectedElement.classList.remove("selectedElement");
+        window.selectedElement = window.previousElement;
+        window.selectedElement.classList.add("selectedElement");
+        window.nextElement = selectedElement.nextElementSibling;
+        window.previousElement = selectedElement.previousElementSibling;
+        window.selectedElement.scrollIntoView({
           block: "center",
           inline: "nearest",
           behavior: "smooth"
         });
-        selectedElement.classList.add("selectedElement");
-        nextElement = selectedElement.nextSibling;
-        previousElement = selectedElement.previousSibling;
       }
-      event.preventDefault();
-      event.stopPropagation();
+
       break;
     case "ArrowUp":
-      if (previousElement.parentElement.id === "channelSection") {
-        selectedElement.classList.remove("selectedElement");
-        selectedElement = previousElement;
-        selectedElement.scrollIntoView({
+      event.preventDefault();
+      event.stopPropagation();
+      if (window.previousElement.parentElement.id === "channelSection") {
+        window.selectedElement.classList.remove("selectedElement");
+        window.selectedElement = window.previousElement;
+        window.selectedElement.classList.add("selectedElement");
+        window.nextElement = window.selectedElement.nextElementSibling;
+        window.previousElement = window.selectedElement.previousElementSibling;
+        window.selectedElement.scrollIntoView({
           block: "center",
           inline: "nearest",
           behavior: "smooth"
         });
-        selectedElement.classList.add("selectedElement");
-        nextElement = selectedElement.nextSibling;
-        previousElement = selectedElement.previousSibling;
       }
-      event.preventDefault();
-      event.stopPropagation();
+
       break;
     case "Down":
-      if (nextElement.parentElement.id === "channelSection") {
-        selectedElement.classList.remove("selectedElement");
-        selectedElement = nextElement;
-        selectedElement.scrollIntoView({
+      event.preventDefault();
+      event.stopPropagation();
+      if (window.nextElement.parentElement.id === "channelSection") {
+        window.selectedElement.classList.remove("selectedElement");
+        window.selectedElement = window.nextElement;
+        window.selectedElement.classList.add("selectedElement");
+        window.nextElement = window.selectedElement.nextElementSibling;
+        window.previousElement = window.selectedElement.previousElementSibling;
+        window.selectedElement.scrollIntoView({
           block: "center",
           inline: "nearest",
           behavior: "smooth"
         });
-        selectedElement.classList.add("selectedElement");
-
-        nextElement = selectedElement.nextSibling;
-        previousElement = selectedElement.previousSibling;
       }
-      event.preventDefault();
-      event.stopPropagation();
       break;
     case "ArrowDown":
-      if (nextElement.parentElement.id === "channelSection") {
-        selectedElement.classList.remove("selectedElement");
-        selectedElement = nextElement;
-        selectedElement.scrollIntoView({
+      event.preventDefault();
+      event.stopPropagation();
+      if (window.nextElement.parentElement.id === "channelSection") {
+        window.selectedElement.classList.remove("selectedElement");
+        window.selectedElement = window.nextElement;
+        window.selectedElement.classList.add("selectedElement");
+        window.nextElement = window.selectedElement.nextElementSibling;
+        window.previousElement = window.selectedElement.previousElementSibling;
+        window.selectedElement.scrollIntoView({
           block: "center",
           inline: "nearest",
           behavior: "smooth"
         });
-        selectedElement.classList.add("selectedElement");
-
-        nextElement = selectedElement.nextSibling;
-        previousElement = selectedElement.previousSibling;
       }
-      event.preventDefault();
-      event.stopPropagation();
       break;
     case "Right":
       toggleChannels();
@@ -105,50 +113,50 @@ document.addEventListener("keydown", event => {
       toggleChannels();
       break;
     case "Enter":
-      selectedElement.click();
-      selectedElement.classList.remove("selectedElement");
       event.preventDefault();
       event.stopPropagation();
+      window.selectedElement.click();
+      window.selectedElement.classList.remove("selectedElement");
       break;
     case "f":
+      event.preventDefault();
+      event.stopPropagation();
       if (fscreen.fullscreenElement !== null) {
         fscreen.exitFullscreen();
       } else {
         fscreen.requestFullscreen(main);
         channelSection.classList.add("inactiveChannels");
       }
-      event.preventDefault();
-      event.stopPropagation();
       break;
     case "Left":
+      event.preventDefault();
+      event.stopPropagation();
       if (fscreen.fullscreenElement !== null) {
         fscreen.exitFullscreen();
       } else {
         fscreen.requestFullscreen(main);
         channelSection.classList.add("inactiveChannels");
       }
-      event.preventDefault();
-      event.stopPropagation();
       break;
     case "ArrowLeft":
+      event.preventDefault();
+      event.stopPropagation();
       if (fscreen.fullscreenElement !== null) {
         fscreen.exitFullscreen();
       } else {
         fscreen.requestFullscreen(main);
         channelSection.classList.add("inactiveChannels");
       }
-      event.preventDefault();
-      event.stopPropagation();
       break;
     case " ":
+      event.preventDefault();
+      event.stopPropagation();
       if (player.paused()) {
         player.play();
       } else {
         player.pause();
       }
-      event.preventDefault();
-      event.stopPropagation();
-      selectedElement.scrollIntoView({
+      window.selectedElement.scrollIntoView({
         block: "center",
         inline: "nearest",
         behavior: "smooth"

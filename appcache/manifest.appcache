@@ -1,14 +1,15 @@
 CACHE MANIFEST
-#ver:2017-11-1 22:14:51
+#ver:2017-11-2 00:54:15
 #plugin:4.8.4
 
 CACHE:
 ../build/honduras.svg
+../build/spain.svg
+../build/usa.svg
 ../build/colombia.svg
+../build/mexico.svg
 ../build/germany.svg
 ../build/chile.svg
-../build/spain.svg
-../build/mexico.svg
 ../
 ../css/font/VideoJS.eot
 ../build/earthtv.png
@@ -27,10 +28,21 @@ CACHE:
 ../build/caracol.png
 ../build/telesur.svg
 ../build/venezuela.svg
+../build/telpin.png
+../build/argentina.svg
+../build/sexta.svg
+../build/neox.jpg
+../build/nova.png
 ../build/cnnChile.svg
 ../build/tve.svg
 ../build/dw.svg
+../build/msnbc.png
+../build/bloomberg.svg
+../build/cbs.svg
+../build/nbc.svg
+../build/fox.svg
 ../build/tvmas.jpg
+../build/azteca13.png
 ../build/tvperu.png
 ../build/peru.svg
 ../build/ecuadortv.png

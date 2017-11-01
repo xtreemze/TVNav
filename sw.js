@@ -74,7 +74,7 @@ var __wpo = {
     "a3a62d692e1c3e8a037a513f31ad8680587cc73c": "./build/caracol.png",
     "d19c79a9a7fcffa76498c96a49357d308f814f47": "./build/telesur.svg",
     "3f993c2f9f4b491e5701a472810cdb12a8b686bc": "./build/cnnChile.svg",
-    "0d776fdd8f9c46adfa257e9fe82080fd9dd93ad4": "./build/tve.svg",
+    "67531d4ff0c2b2d0b92851e1250ea9665181470c": "./build/tve.svg",
     "29ca02ae81ec25d06e30ce53f803a2539598bf2a": "./build/dw.svg",
     "e07d4456f55c06bc72c33f33321e78525ec0f8ad": "./build/tvmas.jpg",
     "000df5363a915ac53faef9c6199fb086b1527071": "./build/tvperu.png",
@@ -94,29 +94,16 @@ var __wpo = {
     "71c72ed3dbee17722c6dd1fb810a0be1b8d1cf8e": "./build/vtv.png",
     "9f8fa7d545260b7808adabb01d1aa358e8e949b9": "./build/hrn.jpg",
     "504002d69d9ccdd156c9e2bd35a50d9cc53bccc4": "./build/euro.svg",
-<<<<<<< HEAD
-    "e3a7a99a9471ec17e3b2423f2491107c1b54471f": "./build/rcv.png",
-    "250d849090f00377217501c6049834447d6ec8f3": "./build/radioGlobo.png",
-    "415722bb4b475711f6341ff7869dceb524d366b5": "./build/patio.jpg",
-    "1979308b63baafadb2bbf3fb2a71fedb1b78c7b5": "./build/radioAmerica.png",
-    "e13f27bec7380b809d1267e9cc4e0bdaeec7d8ac": "./build/radioNacional.jpg",
-    "2affa88a2b5ff62a99c0046d1cec321d35fbe4fa": "./bundle.js"
-  },
-  "strategy": "all",
-  "responseStrategy": "network-first",
-  "version": "2017-11-1 12:56:17",
-=======
     "75cc8727e22681da91c26b5e926b356d41c16b1c": "./build/rcv.png",
     "6d243935a4d76e79808c7383e948c61b79be6c4e": "./build/radioGlobo.png",
     "e886ea0b6f568d6089c73bce7298a026078bfaf4": "./build/patio.jpg",
     "d7609e1deef7d04af440f357c3ee4d025acb455b": "./build/radioAmerica.png",
     "53c0d8e2e29e601b42151c8ad0bb0427bbc02aaa": "./build/radioNacional.jpg",
-    "2bb68d1d2a5126c300ad15fab09b6c5ed8b2fcc2": "./bundle.js"
+    "2affa88a2b5ff62a99c0046d1cec321d35fbe4fa": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-31 17:19:54",
->>>>>>> 9861ec2ffe1565f7cc70488ffdd8ae30e88e8ca5
+  "version": "2017-11-1 12:58:31",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

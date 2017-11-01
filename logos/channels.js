@@ -38,9 +38,13 @@ class Channel {
     } else if (!data === false) {
       this.data = data;
     }
-    channelList += `<div onclick="window.falseTest(); window.updateVideo(${shortName});" class="individualChannel" id=${shortName}>${name}</div>
+    channelList += `<div onclick="window.falseTest(); window.updateVideo(${shortName});" class="individualChannel" id=${shortName}>
+    <span class="channelName">
+        ${name}
+    </span>
 <div class="flagContainer">
     <img class="countryFlag" src="${country}">
+</div>
 </div>
 `;
     this.element = document.getElementById(this.shortName);

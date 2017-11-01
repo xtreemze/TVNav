@@ -74,7 +74,7 @@ var __wpo = {
     "aec41592917284ddb826cff304523728403d93f9": "./build/germany.svg",
     "c08c9c908b705d0fa817763e775745ade4761345": "./build/chile.svg",
     "97c65eaaf92399874a3cd76c3b4922ae845390e1": "./build/spain.svg",
-    "8783f99002f08a706331a2dd670a0ef30e9834ec": "./",
+    "52b26fc13ab25205bd3ac9c1c9b9e8a0787bf0c4": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./css/font/VideoJS.eot",
     "405a6129ac60f454b6e0d7d9769ab606a47eb412": "./build/earthtv.png",
     "3654b47b585515ec260f09e82570c70f6c77818a": "./build/tsi.png",
@@ -123,11 +123,11 @@ var __wpo = {
     "e886ea0b6f568d6089c73bce7298a026078bfaf4": "./build/patio.jpg",
     "d7609e1deef7d04af440f357c3ee4d025acb455b": "./build/radioAmerica.png",
     "53c0d8e2e29e601b42151c8ad0bb0427bbc02aaa": "./build/radioNacional.jpg",
-    "3fc2cc087087104dc5c38f95e3baacf8f515a630": "./bundle.js"
+    "83372dd0e1b954941b4ef18067bf539ff75e425d": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-1 14:45:20",
+  "version": "2017-11-1 16:46:14",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

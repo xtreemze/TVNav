@@ -123,11 +123,11 @@ var __wpo = {
     "e886ea0b6f568d6089c73bce7298a026078bfaf4": "./build/patio.jpg",
     "d7609e1deef7d04af440f357c3ee4d025acb455b": "./build/radioAmerica.png",
     "53c0d8e2e29e601b42151c8ad0bb0427bbc02aaa": "./build/radioNacional.jpg",
-    "83372dd0e1b954941b4ef18067bf539ff75e425d": "./bundle.js"
+    "bb7e0eb15a086f246908c2f7e5047210d042733d": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-1 16:46:14",
+  "version": "2017-11-1 18:08:38",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

@@ -123,6 +123,7 @@ window.updateVideo = function(channel) {
     h1Title.innerText = "Eliminando: " + channel.name;
     Channels.delete(channel);
     console.log("Eliminando: " + channel.name);
+    window.selectedElement = window.nextElement;
     setTimeout(function() {
       element.remove();
     }, 1001);
@@ -208,8 +209,6 @@ const channelTest = function() {
         } else if (window.test === false) {
           window.clearTimeout(window.channelTestTimer);
           window.clearTimeout(window.finalVideo);
-          document.title = earth.name;
-          h1Title.innerText = earth.name;
         }
       }, timer);
     }, this);
@@ -236,6 +235,8 @@ const channelTest = function() {
       }
       window.currentElement = document.getElementById(earth.shortName);
       window.selectedElement = window.currentElement;
+      document.title = earth.name + " | TVNav";
+      h1Title.innerText = earth.name + " | TVNav";
       window.currentElement.classList.add("active");
       window.currentElement.scrollIntoView({
         block: "center",

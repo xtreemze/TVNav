@@ -38,7 +38,7 @@ class Channel {
     } else if (!data === false) {
       this.data = data;
     }
-    channelList += `<div onclick="window.falseTest(); window.updateVideo(${shortName});" class="individualChannel" id=${shortName}>
+    channelList += `<div onclick="window.falseTest(); window.updateVideo(${shortName});" class="individualChannel pointer" id=${shortName}>
     <span class="channelName">
         ${name}
     </span>

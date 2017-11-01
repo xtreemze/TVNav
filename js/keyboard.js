@@ -33,12 +33,12 @@ document.addEventListener("keydown", event => {
   console.log(event);
   if (!window.selectedElement) {
     window.selectedElement = window.currentElement;
-    window.nextElement = selectedElement.nextElementSibling;
-    window.previousElement = selectedElement.previousElementSibling;
   }
   if (window.currentElement === null) {
     window.selectedElement = window.nextElement;
   }
+  window.nextElement = selectedElement.nextElementSibling;
+  window.previousElement = selectedElement.previousElementSibling;
   switch (keyName) {
     case "Up":
       event.preventDefault();

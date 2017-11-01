@@ -178,6 +178,11 @@
   opacity: 0.25;
 }
 
+.pointer {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
 .toggle {
   width: 70%;
   height: 100%;
@@ -185,7 +190,7 @@
   right: 0;
   bottom: 2rem;
   z-index: 600;
-  cursor: pointer;
+  cursor: ew-resize;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   /* -webkit-highlight: rgba(255, 255, 255, 0); */
 }
@@ -195,12 +200,12 @@
 }
 
 #fullscreenButton {
-  cursor: pointer;
+  cursor: zoom-in;
   position: absolute;
   bottom: 0;
   right: 0;
   height: 2rem;
-  width: 7rem;
+  width: 11rem;
   z-index: 900;
 }
 

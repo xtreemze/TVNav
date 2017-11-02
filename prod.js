@@ -20,7 +20,12 @@ module.exports = function prod(env) {
     stats: {
       warnings: false
     },
-    devtool: "cheap-module-source-map",
+    resolve: {
+      alias: {
+        webworkify: "webworkify-webpack-dropin"
+      }
+    },
+    // devtool: "cheap-module-source-map",
     module: {
       rules: [
         {

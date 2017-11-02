@@ -1,5 +1,6 @@
 import fscreen from "fscreen";
-require("smoothscroll-polyfill").polyfill();
+// import zenscroll from "zenscroll";
+// require("smoothscroll-polyfill").polyfill();
 
 const fullscreenButton = document.getElementById("fullscreenButton");
 fullscreenButton.addEventListener("click", function() {
@@ -49,11 +50,12 @@ document.addEventListener("keydown", event => {
         window.selectedElement.classList.add("selectedElement");
         window.nextElement = selectedElement.nextElementSibling;
         window.previousElement = selectedElement.previousElementSibling;
-        window.selectedElement.scrollIntoView({
-          block: "center",
-          inline: "nearest",
-          behavior: "smooth"
-        });
+        window.scroller.center(window.selectedElement, 480, 0);
+        // window.selectedElement.scrollIntoView({
+        //   block: "center",
+        //   inline: "nearest",
+        //   behavior: "smooth"
+        // });
       }
 
       break;
@@ -66,11 +68,12 @@ document.addEventListener("keydown", event => {
         window.selectedElement.classList.add("selectedElement");
         window.nextElement = window.selectedElement.nextElementSibling;
         window.previousElement = window.selectedElement.previousElementSibling;
-        window.selectedElement.scrollIntoView({
-          block: "center",
-          inline: "nearest",
-          behavior: "smooth"
-        });
+        window.scroller.center(window.selectedElement, 480, 0);
+        // window.selectedElement.scrollIntoView({
+        //   block: "center",
+        //   inline: "nearest",
+        //   behavior: "smooth"
+        // });
       }
 
       break;
@@ -83,11 +86,12 @@ document.addEventListener("keydown", event => {
         window.selectedElement.classList.add("selectedElement");
         window.nextElement = window.selectedElement.nextElementSibling;
         window.previousElement = window.selectedElement.previousElementSibling;
-        window.selectedElement.scrollIntoView({
-          block: "center",
-          inline: "nearest",
-          behavior: "smooth"
-        });
+        window.scroller.center(window.selectedElement, 480, 0);
+        // window.selectedElement.scrollIntoView({
+        //   block: "center",
+        //   inline: "nearest",
+        //   behavior: "smooth"
+        // });
       }
       break;
     case "ArrowDown":
@@ -99,11 +103,12 @@ document.addEventListener("keydown", event => {
         window.selectedElement.classList.add("selectedElement");
         window.nextElement = window.selectedElement.nextElementSibling;
         window.previousElement = window.selectedElement.previousElementSibling;
-        window.selectedElement.scrollIntoView({
-          block: "center",
-          inline: "nearest",
-          behavior: "smooth"
-        });
+        window.scroller.center(window.selectedElement, 480, 0);
+        // window.selectedElement.scrollIntoView({
+        //   block: "center",
+        //   inline: "nearest",
+        //   behavior: "smooth"
+        // });
       }
       break;
     case "Right":
@@ -156,11 +161,12 @@ document.addEventListener("keydown", event => {
       } else {
         player.pause();
       }
-      window.selectedElement.scrollIntoView({
-        block: "center",
-        inline: "nearest",
-        behavior: "smooth"
-      });
+      window.scroller.center(window.selectedElement, 480, 0);
+      // window.selectedElement.scrollIntoView({
+      //   block: "center",
+      //   inline: "nearest",
+      //   behavior: "smooth"
+      // });
       break;
     default:
       break;

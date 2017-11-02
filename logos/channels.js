@@ -545,3 +545,8 @@ channelList += `<div class="individualChannel" id="donate">
 `;
 // Send Channels to DOM
 channelSection.innerHTML = channelList;
+window.scroller = window.zenscroll.createScroller(
+  window.channelSection,
+  500,
+  30
+);

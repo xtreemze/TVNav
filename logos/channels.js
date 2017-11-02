@@ -249,6 +249,24 @@ window.bloomberg = new Channel({
   link: "http://live-bloomberg-us-east.global.ssl.fastly.net/us/us3_live.m3u8"
 });
 
+window.jazeera = new Channel({
+  name: " AlJazeera",
+  shortName: "jazeera",
+  logo: require("./jazeera.svg"),
+  country: require("./flags/qatar.svg"),
+  link:
+    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
+});
+
+window.twit = new Channel({
+  name: "TWiT",
+  shortName: "twit",
+  logo: require("./twit.svg"),
+  country: require("./flags/usa.svg"),
+  link: "https://www.ustream.tv/embed/1524",
+  ustream: true
+});
+
 window.cbsn = new Channel({
   name: "CBSN",
   shortName: "cbsn",

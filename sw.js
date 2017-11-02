@@ -2,8 +2,8 @@ var __wpo = {
   "assets": {
     "main": [
       "./build/honduras.svg",
-      "./build/spain.svg",
       "./build/usa.svg",
+      "./build/spain.svg",
       "./build/colombia.svg",
       "./build/mexico.svg",
       "./build/germany.svg",
@@ -36,6 +36,9 @@ var __wpo = {
       "./build/dw.svg",
       "./build/msnbc.png",
       "./build/bloomberg.svg",
+      "./build/jazeera.svg",
+      "./build/qatar.svg",
+      "./build/twit.svg",
       "./build/cbs.svg",
       "./build/nbc.svg",
       "./build/fox.svg",
@@ -84,8 +87,8 @@ var __wpo = {
   ],
   "hashesMap": {
     "51fcca7fbbb7d68ffab285927ab15acacc1f4975": "./build/honduras.svg",
-    "97c65eaaf92399874a3cd76c3b4922ae845390e1": "./build/spain.svg",
     "973a8137bcf4bd4a832dae0bc0f2b4e36db79d10": "./build/usa.svg",
+    "97c65eaaf92399874a3cd76c3b4922ae845390e1": "./build/spain.svg",
     "30796bf2d3448449342ee5852b8576f318f58b20": "./build/colombia.svg",
     "601a560790aedbf09e9548df2ec06acfcd4a1cc1": "./build/mexico.svg",
     "aec41592917284ddb826cff304523728403d93f9": "./build/germany.svg",
@@ -118,6 +121,9 @@ var __wpo = {
     "29ca02ae81ec25d06e30ce53f803a2539598bf2a": "./build/dw.svg",
     "70409901e67b2ef7b58ff4c61182f1dab6f01816": "./build/msnbc.png",
     "2e1e98617def30d7fea10bef647abb37fb5195b3": "./build/bloomberg.svg",
+    "ec5e696dad788051a147a7618c8fb884939f7be4": "./build/jazeera.svg",
+    "af405ce55d21c8ec2565a5e6120d0d37fba7356a": "./build/qatar.svg",
+    "c402b5293c1ef129c09c45d6e47f7764ee333637": "./build/twit.svg",
     "16bea8d5e284351a8a80e4df1b3441f816d032e9": "./build/cbs.svg",
     "4a90bb7265c0ba8866ea336fa1e8adb23a8ac578": "./build/nbc.svg",
     "7a0febdebc84ed3cfa24b742714590a03916526d": "./build/fox.svg",
@@ -151,11 +157,11 @@ var __wpo = {
     "e886ea0b6f568d6089c73bce7298a026078bfaf4": "./build/patio.jpg",
     "d7609e1deef7d04af440f357c3ee4d025acb455b": "./build/radioAmerica.png",
     "53c0d8e2e29e601b42151c8ad0bb0427bbc02aaa": "./build/radioNacional.jpg",
-    "c1bb16482f91d9c3d34b595d21299e68f271e614": "./bundle.js"
+    "a6bf4a4b010647abcb274302e852358a23002c30": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-2 11:12:45",
+  "version": "2017-11-2 11:29:51",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

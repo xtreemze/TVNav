@@ -1,11 +1,11 @@
 CACHE MANIFEST
-#ver:2017-11-2 11:12:45
+#ver:2017-11-2 11:29:51
 #plugin:4.8.4
 
 CACHE:
 ../build/honduras.svg
-../build/spain.svg
 ../build/usa.svg
+../build/spain.svg
 ../build/colombia.svg
 ../build/mexico.svg
 ../build/germany.svg
@@ -38,6 +38,9 @@ CACHE:
 ../build/dw.svg
 ../build/msnbc.png
 ../build/bloomberg.svg
+../build/jazeera.svg
+../build/qatar.svg
+../build/twit.svg
 ../build/cbs.svg
 ../build/nbc.svg
 ../build/fox.svg

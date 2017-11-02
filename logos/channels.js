@@ -59,7 +59,8 @@ window.earth = new Channel({
   logo: require("./earthtv.png"),
   country: require("./flags/germany.svg"),
   link:
-    "https://cdn-liveonearth.global.ssl.fastly.net/cdnedge/smil:TWL-es.smil/playlist.m3u8?599d9478bbf047685d049e82"
+    "https://cdn-liveonearth.global.ssl.fastly.net/cdnedge/smil:TWL-es.smil/playlist.m3u8"
+  // ?599d9478bbf047685d049e82"
 });
 
 window.tsi = new Channel({
@@ -181,7 +182,7 @@ window.telpin = new Channel({
 });
 
 window.sexta = new Channel({
-  name: "La Sexta",
+  name: "la Sexta",
   shortName: "sexta",
   logo: require("./sexta.svg"),
   country: require("./flags/spain.svg"),
@@ -189,7 +190,7 @@ window.sexta = new Channel({
 });
 
 window.neox = new Channel({
-  name: "Neox",
+  name: "neox",
   shortName: "neox",
   logo: require("./neox.jpg"),
   country: require("./flags/spain.svg"),
@@ -197,12 +198,13 @@ window.neox = new Channel({
 });
 
 window.nova = new Channel({
-  name: "NOVA",
+  name: "nova",
   shortName: "nova",
   logo: require("./nova.png"),
   country: require("./flags/spain.svg"),
   link:
-    "http://a3live-lh.akamaihd.net/i/nvhds/geonova_1@379404/index_4_av-b.m3u8?sd=10&rebase=on"
+    "http://a3live-lh.akamaihd.net/i/nvhds/geonova_1@379404/index_4_av-b.m3u8"
+  // ?sd=10&rebase=on"
 });
 
 window.cnn = new Channel({
@@ -227,7 +229,8 @@ window.dw = new Channel({
   logo: require("./dw.svg"),
   country: require("./flags/germany.svg"),
   link:
-    "http://dwstream3-lh.akamaihd.net/i/dwstream3_live@124409/index_5_av-p.m3u8?sd=10&rebase=on"
+    "http://dwstream3-lh.akamaihd.net/i/dwstream3_live@124409/index_5_av-p.m3u8"
+  // ?sd=10&rebase=on"
 });
 
 window.msnbc = new Channel({
@@ -285,7 +288,8 @@ window.azteca13 = new Channel({
   logo: require("./azteca13.png"),
   country: require("./flags/mexico.svg"),
   link:
-    "http://aztecalive-lh.akamaihd.net/i/0qm7cjvop_1@502476/index_3_av-p.m3u8?sd=10&rebase=on"
+    "http://aztecalive-lh.akamaihd.net/i/0qm7cjvop_1@502476/index_3_av-p.m3u8"
+  // ?sd=10&rebase=on"
 });
 
 window.peru = new Channel({
@@ -336,7 +340,8 @@ window.capital = new Channel({
   logo: require("./capital.svg"),
   country: require("./flags/colombia.svg"),
   link:
-    "http://us-b2-p-e-sx6.cdn.mdstrm.com/live-stream/57d01d6c28b263eb73b59a5a/publish/media_500.m3u8?dnt=true&es=us-b2-p-e-sx6.cdn.mdstrm.com&ote=1506105524968&ot=PhcZX6iEf6naqlTvLiSrJA&proto=http"
+    "http://us-b2-p-e-sx6.cdn.mdstrm.com/live-stream/57d01d6c28b263eb73b59a5a/publish/media_500.m3u8"
+  // ?dnt=true&es=us-b2-p-e-sx6.cdn.mdstrm.com&ote=1506105524968&ot=PhcZX6iEf6naqlTvLiSrJA&proto=http"
 });
 
 window.nexTV = new Channel({
@@ -510,13 +515,15 @@ window.rnh = new Channel({
 
 // Donate
 channelList += `<div class="individualChannel" id="donate">
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="NWT2PUFW6NFLC">
-        <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-</div>
+    <div class="channelName">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="NWT2PUFW6NFLC">
+            <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div>
+</div.>
 `;
 // Send Channels to DOM
 channelSection.innerHTML = channelList;

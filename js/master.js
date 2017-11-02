@@ -8,6 +8,10 @@ const main = document.getElementById("main");
 window.falseTest = function() {
   if (window.test === true) {
     window.test = false;
+  }
+  if (!videojs.players.videoContainer2 === false) {
+    // videojs.players.videoContainer2.pause();
+    videojs.players.videoContainer2.dispose();
     document.getElementById("videoInit").remove();
   }
 };
@@ -52,7 +56,7 @@ window.updateVideo = function(channel) {
     window.currentElement.classList.remove("active");
   }
   if (!videojs.players.videoContainer === false && !window.player === false) {
-    videojs.players.videoContainer.pause();
+    // videojs.players.videoContainer.pause();
     videojs.players.videoContainer.dispose();
   }
   // poster="../img/bars.png"
@@ -87,7 +91,7 @@ window.updateVideo = function(channel) {
   } else if (navigator.onLine && channel.ustream) {
     if (!videojs.players.videoContainer === false && !window.player === false) {
       window.currentElement.classList.remove("active");
-      videojs.players.videoContainer.pause();
+      // videojs.players.videoContainer.pause();
       videojs.players.videoContainer.dispose();
     }
 
@@ -96,12 +100,12 @@ window.updateVideo = function(channel) {
       width="${window.innerWidth}" height="${window.innerHeight}" id="video" src="${channel.link}?html5ui=1&autoplay=true&controls=false">
       </iframe>
       `;
-      window.addEventListener("resize", function() {
-        if (window.video) {
-          window.video.width = window.innerWidth;
-          window.video.height = window.innerHeight;
-        }
-      });
+      // window.addEventListener("resize", function() {
+      //   if (window.video) {
+      //     window.video.width = window.innerWidth;
+      //     window.video.height = window.innerHeight;
+      //   }
+      // });
       window.currentElement = document.getElementById(channel.shortName);
       window.currentElement.classList.add("active");
     }
@@ -133,14 +137,58 @@ window.updateVideo = function(channel) {
 const channelTest = function() {
   if (navigator.onLine) {
     window.test = true;
-    let timer = 1000;
+    let timer = 1200;
     Channels.forEach(function(channel) {
       timer += 300;
       window.channelTestTimer = window.setTimeout(function() {
         if (window.test === true && !channel.ustream) {
-          updateVideo(channel);
-          // window.player.width(0);
-          // window.player.height(0);
+          if (channel.logo) {
+            setTimeout(function() {
+              window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
+            }, 5);
+          } else {
+            window.channelLogo.innerHTML = ``;
+          }
+          if (!window.currentElement === false) {
+            window.currentElement.classList.remove("active");
+          }
+          if (
+            !videojs.players.videoContainer === false &&
+            !window.player === false
+          ) {
+            // videojs.players.videoContainer.pause();
+            videojs.players.videoContainer.dispose();
+          }
+          // poster="../img/bars.png"
+          if (navigator.onLine && !channel.ustream) {
+            videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+            <source src=${channel.link} type=${channel.type} data=${channel.data}>
+        </${channel.video}>
+        `;
+            window.player = videojs("videoContainer", {
+              techOrder: [
+                "html5",
+                "flash"
+                // , "youtube"
+              ]
+            });
+            if (window.player) {
+              window.player.width(window.innerWidth);
+              window.player.height(window.innerHeight);
+              if (!channel.ustream) {
+                setTimeout(function() {
+                  window.player.muted(!"setMuted");
+                }, 1002);
+              }
+            }
+            window.currentElement = document.getElementById(channel.shortName);
+            window.currentElement.classList.add("active");
+            window.currentElement.scrollIntoView({
+              block: "center",
+              inline: "nearest",
+              behavior: "smooth"
+            });
+          }
           document.title = "Revisando: " + channel.name;
           h1Title.innerText = "Revisando: " + channel.name;
         } else if (window.test === true && channel.ustream) {
@@ -159,10 +207,8 @@ const channelTest = function() {
             inline: "nearest",
             behavior: "smooth"
           });
-          // window.player.width(0);
-          // window.player.height(0);
-          document.title = "Revisando: " + channel.name;
-          h1Title.innerText = "Revisando: " + channel.name;
+          // document.title = "Revisando: " + channel.name;
+          // h1Title.innerText = "Revisando: " + channel.name;
         } else if (window.test === false) {
           window.clearTimeout(window.channelTestTimer);
           window.clearTimeout(window.finalVideo);
@@ -230,7 +276,7 @@ const channelTest = function() {
         !videojs.players.videoContainer === false &&
         !window.player === false
       ) {
-        videojs.players.videoContainer.pause();
+        // videojs.players.videoContainer.pause();
         videojs.players.videoContainer.dispose();
       }
       window.currentElement = document.getElementById(earth.shortName);
@@ -243,6 +289,10 @@ const channelTest = function() {
         inline: "nearest",
         behavior: "smooth"
       });
+      setTimeout(function() {
+        window.falseTest();
+        updateVideo(earth);
+      }, 1005);
     }, timer + 1001);
   }
 };
@@ -263,11 +313,11 @@ const initVideo = function(channel) {
     if (window.player2) {
       window.player2.width(window.innerWidth);
       window.player2.height(window.innerHeight);
-      if (!channel.ustream) {
-        setTimeout(function() {
-          window.player2.muted(!"setMuted");
-        }, 400);
-      }
+      // if (!channel.ustream) {
+      //   setTimeout(function() {
+      //     window.player2.muted(!"setMuted");
+      //   }, 1001);
+      // }
     }
   }
 };

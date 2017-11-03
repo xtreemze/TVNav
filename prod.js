@@ -25,7 +25,7 @@ module.exports = function prod(env) {
         webworkify: "webworkify-webpack-dropin"
       }
     },
-    // devtool: "cheap-module-source-map",
+    devtool: "source-map",
     module: {
       rules: [
         {
@@ -119,7 +119,7 @@ module.exports = function prod(env) {
             }
           ]
         },
-        makeSourceMaps: false,
+        makeSourceMaps: true,
         concurrency: 4
       }),
       // new ExtractTextPlugin("[name].css"),

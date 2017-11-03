@@ -7,11 +7,10 @@ const full = document.getElementById("full");
 window.goFull = function() {
   if (fscreen.fullscreenElement !== null) {
     fscreen.exitFullscreen();
-    channelSection.classList.remove("inactiveChannels");
+    // channelSection.classList.remove("inactiveChannels");
   } else {
-    channelSection.classList.add("inactiveChannels");
     fscreen.requestFullscreen(full);
-    channelSection.classList.add("inactiveChannels");
+    // channelSection.classList.add("inactiveChannels");
   }
   // if (window.player) {
   //   window.player.width(window.innerWidth);
@@ -22,10 +21,13 @@ window.goFull = function() {
   //   window.player2.height(window.innerHeight);
   // }
 };
-fullscreenButton.addEventListener("click", goFull());
+fullscreenButton.addEventListener("click", goFull);
 // Keyboard commands
 document.addEventListener("keydown", event => {
   const keyName = event.key;
+  if (window.test === true) {
+    window.falseTest();
+  }
   // console.log(keyName);
   // console.log(event);
   if (!window.selectedElement) {

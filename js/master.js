@@ -17,17 +17,23 @@ const main = document.getElementById("main");
 window.falseTest = function() {
   if (window.test === true) {
     window.test = false;
-    // document.getElementById("videoInit").remove();
-    // videojs.players.videoContainer2.dispose();
+    window.clearTimeout(window.channelTestTimer);
   }
   if (!videojs.players.videoContainer2 === false) {
-    // videojs.players.videoContainer2.pause();
+    videojs.players.videoContainer2.pause();
     videojs.players.videoContainer2.dispose();
   }
-  if (window.videoInit) {
-    document.getElementById("videoInit").remove();
+  if (window.initialVideoSection) {
+    document.getElementById("initialVideoSection").remove();
+    updateVideo(earth);
   }
 };
+
+channelSection.addEventListener("wheel", function() {
+  if (window.test === true) {
+    window.falseTest();
+  }
+});
 
 window.addEventListener("resize", function() {
   if (window.player) {
@@ -69,7 +75,7 @@ window.updateVideo = function(channel) {
     window.currentElement.classList.remove("active");
   }
   if (!videojs.players.videoContainer === false && !window.player === false) {
-    // videojs.players.videoContainer.pause();
+    videojs.players.videoContainer.pause();
     videojs.players.videoContainer.dispose();
   }
   // poster="../img/bars.png"
@@ -112,7 +118,7 @@ window.updateVideo = function(channel) {
   } else if (navigator.onLine && channel.ustream) {
     if (!videojs.players.videoContainer === false && !window.player === false) {
       window.currentElement.classList.remove("active");
-      // videojs.players.videoContainer.pause();
+      videojs.players.videoContainer.pause();
       videojs.players.videoContainer.dispose();
     }
 
@@ -179,12 +185,12 @@ const channelTest = function(pass) {
               !videojs.players.videoContainer === false &&
               !window.player === false
             ) {
-              // videojs.players.videoContainer.pause();
+              videojs.players.videoContainer.pause();
               videojs.players.videoContainer.dispose();
             }
             // poster="../img/bars.png"
             if (navigator.onLine && !channel.ustream) {
-              videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+              videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin">
             <source src=${channel.link} type=${channel.type} data=${channel.data}>
         </${channel.video}>
         `;
@@ -249,7 +255,6 @@ const channelTest = function(pass) {
             // document.title = "Revisando: " + channel.name;
             // h1Title.innerText = "Revisando: " + channel.name;
           } else if (window.test === false) {
-            window.clearTimeout(window.channelTestTimer);
             window.clearTimeout(window.finalVideo);
           }
         }, timer);
@@ -294,15 +299,12 @@ const channelTest = function(pass) {
             document.title = "Revisando: " + channel.name;
             h1Title.innerText = "Revisando: " + channel.name;
           } else if (window.test === false) {
-            window.clearTimeout(window.channelTestTimer);
             window.clearTimeout(window.finalVideo);
           }
         }, timer);
       }, this);
     }
     window.finalVideo = setTimeout(function() {
-      // document.getElementById("videoInit").remove();
-
       window.channelLogo.classList.remove("fadeIn");
       window.channelLogo.classList.add("fadeOut");
       setTimeout(function() {
@@ -318,7 +320,7 @@ const channelTest = function(pass) {
         !videojs.players.videoContainer === false &&
         !window.player === false
       ) {
-        // videojs.players.videoContainer.pause();
+        videojs.players.videoContainer.pause();
         videojs.players.videoContainer.dispose();
       }
       window.currentElement = document.getElementById(earth.shortName);
@@ -333,8 +335,9 @@ const channelTest = function(pass) {
       //   behavior: "smooth"
       // });
       setTimeout(function() {
+        // Functions after testing ends
+        toggleChannels();
         window.falseTest();
-        updateVideo(earth);
       }, 1005);
     }, timer + 1001);
   }
@@ -342,7 +345,7 @@ const channelTest = function(pass) {
 
 const initVideo = function(channel) {
   if (navigator.onLine && !channel.ustream) {
-    videoInit.innerHTML = `<${channel.video} controls id="videoContainer2" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+    initialVideoSection.innerHTML = `<${channel.video} controls id="videoContainer2" preload="auto" autoplay muted class="video-js vjs-default-skin">
   <source src=${channel.link} type=${channel.type} data=${channel.data}>
 </${channel.video}>
 `;
@@ -366,11 +369,11 @@ const initVideo = function(channel) {
         if (window.player2) {
           window.player2.width(window.innerWidth);
           window.player2.height(window.innerHeight);
-          // if (!channel.ustream) {
-          //   setTimeout(function() {
-          //     window.player2.muted(!"setMuted");
-          //   }, 1001);
-          // }
+          if (!channel.ustream) {
+            setTimeout(function() {
+              window.player2.muted(!"setMuted");
+            }, 1001);
+          }
         }
       }
     );
@@ -378,13 +381,14 @@ const initVideo = function(channel) {
 };
 window.addEventListener("load", function() {
   // videojs.players.videoContainer2.dispose();
-  // document.getElementById("videoInit").remove();
   // falseTest();
   // setTimeout(function() {
   // updateVideo(earth);
   // }, 500);
   initVideo(earth);
   channelTest(1);
+
+  // toggleChannels();
   // updateVideo(tsi);
 });
 require("../js/keyboard.js");

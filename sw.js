@@ -86,7 +86,7 @@ var __wpo = {
     "601a560790aedbf09e9548df2ec06acfcd4a1cc1": "./build/mexico.svg",
     "aec41592917284ddb826cff304523728403d93f9": "./build/germany.svg",
     "c08c9c908b705d0fa817763e775745ade4761345": "./build/chile.svg",
-    "200b7163ad83510e03e6795b26595abd5927e641": "./",
+    "c0f88a7d43617d9a663a1752662dd55ba4b36e7d": "./",
     "f494a1aec8fc46fb7ad59b441a088783a7a2eef9": "./node_modules/video.js/dist/font/VideoJS.eot",
     "405a6129ac60f454b6e0d7d9769ab606a47eb412": "./build/earthtv.png",
     "3654b47b585515ec260f09e82570c70f6c77818a": "./build/tsi.png",
@@ -154,7 +154,7 @@ var __wpo = {
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-3 21:54:21",
+  "version": "2017-11-3 22:27:33",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

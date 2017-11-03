@@ -233,7 +233,7 @@ const channelTest = function(pass) {
               //   behavior: "smooth"
               // });
             }
-            document.title = "Revisando: " + channel.name;
+            // document.title = "Revisando: " + channel.name;
             h1Title.innerText = "Revisando: " + channel.name;
           } else if (window.test === true && channel.ustream) {
             if (channel.logo) {
@@ -296,7 +296,7 @@ const channelTest = function(pass) {
             // });
             // window.player.width(0);
             // window.player.height(0);
-            document.title = "Revisando: " + channel.name;
+            // document.title = "Revisando: " + channel.name;
             h1Title.innerText = "Revisando: " + channel.name;
           } else if (window.test === false) {
             window.clearTimeout(window.finalVideo);

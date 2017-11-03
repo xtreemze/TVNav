@@ -169,6 +169,9 @@
 
 .vjs-control-bar {
   z-index: 902;
+  transform: scale(2);
+  max-width: 50vw;
+  transform-origin: left bottom;
 }
 
 .vjs-big-play-centered .vjs-big-play-button {
@@ -216,9 +219,10 @@
 }
 
 #fullscreenButtonSVG {
-  height: 2.1rem;
-  right: 0.7rem;
+  height: 4.2rem;
+  right: 1.9rem;
   position: absolute;
+  transform: scale(1.7);
 }
 
 .vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
@@ -234,7 +238,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 2rem;
+  height: 4rem;
   width: 11rem;
   z-index: 1000;
 }

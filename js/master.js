@@ -1,3 +1,25 @@
+var OfflinePlugin = require("offline-plugin/runtime");
+
+OfflinePlugin.install({
+  onInstalled: function() {
+    h1Title.innerText = "Actualizado | TVNav";
+  },
+
+  onUpdating: function() {
+    h1Title.innerText = "Actualizando... | TVNav";
+  },
+
+  onUpdateReady: function() {
+    OfflinePlugin.applyUpdate();
+  },
+  onUpdated: function() {
+    h1Title.innerText = "Reiniciando";
+    setTimeout(function() {
+      window.location.reload();
+    }, 10000);
+  }
+});
+
 import videojs from "video.js";
 require("videojs-flash");
 // import "videojs-contrib-hls";

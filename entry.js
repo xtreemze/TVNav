@@ -6,5 +6,5 @@ require("./css/master.css");
 // require("./js/video.min.js");
 // require("./js/videojs-contrib-hls.min");
 require("./js/master.js");
-import * as OfflinePluginRuntime from "offline-plugin/runtime";
-OfflinePluginRuntime.install();
+// import * as OfflinePluginRuntime from "offline-plugin/runtime";
+// OfflinePluginRuntime.install();

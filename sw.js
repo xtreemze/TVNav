@@ -72,19 +72,12 @@ var __wpo = {
       "./build/patio.jpg",
       "./build/radioAmerica.png",
       "./build/radioNacional.jpg",
-      "./bundle.js",
-      "./js/video.min.js",
-      "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
-      "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
+      "./bundle.js"
     ],
     "additional": [],
     "optional": []
   },
-  "externals": [
-    "./js/video.min.js",
-    "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
-    "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
-  ],
+  "externals": [],
   "hashesMap": {
     "51fcca7fbbb7d68ffab285927ab15acacc1f4975": "./build/honduras.svg",
     "973a8137bcf4bd4a832dae0bc0f2b4e36db79d10": "./build/usa.svg",
@@ -99,7 +92,7 @@ var __wpo = {
     "3654b47b585515ec260f09e82570c70f6c77818a": "./build/tsi.png",
     "56adbc3dc7826bc7f7ee5a6d7da8ed626d2f90e6": "./build/canal5.png",
     "4645c8ca162494d74a826ccc0fc576698e2db0e6": "./build/ten.png",
-    "5a7dcfb0160df001471e2a5f13c665c023ed38b2": "./build/hch.png",
+    "ba480d7df6a1f24ef8d09f2556f1bd28ecfb59ba": "./build/hch.png",
     "145dca38194c725b0bac8434e5f9d2fb16cf73b4": "./build/globoTV.png",
     "ae2007a6d9a655c7ad487181fb69b77e2a7f601a": "./build/45tv.png",
     "3f58434732cede4f969ce513372b1a823a34b245": "./build/teleceiba.png",
@@ -157,11 +150,11 @@ var __wpo = {
     "e886ea0b6f568d6089c73bce7298a026078bfaf4": "./build/patio.jpg",
     "d7609e1deef7d04af440f357c3ee4d025acb455b": "./build/radioAmerica.png",
     "53c0d8e2e29e601b42151c8ad0bb0427bbc02aaa": "./build/radioNacional.jpg",
-    "92ef3915f7b8463c967ddd2da471b07ec2c85ca5": "./bundle.js"
+    "9fd452ddaf7f6b24f97f74f9cb84e36f8ef8aa9f": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-3 21:09:30",
+  "version": "2017-11-3 21:54:21",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

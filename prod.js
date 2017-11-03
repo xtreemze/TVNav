@@ -1,12 +1,12 @@
-//   .default;
-// const ImageminPlugin = require("imagemin-webpack-plugin");
+// import * as OfflinePluginRuntime from "offline-plugin/runtime";
+// OfflinePluginRuntime.install();
+// const OfflinePlugin = require("offline-plugin");
+
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
-// const OptimizeJsPlugin = require("optimize-js-plugin");
 const ClosureCompiler = require("google-closure-compiler-js").webpack;
 // const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const PurifyCSSPlugin = require("purifycss-webpack");
 // const glob = require("glob-all");
 
 //
@@ -36,13 +36,6 @@ module.exports = function prod(env) {
             "html-loader"
           ]
         },
-        // {
-        //   test: /\.css$/,
-        //   loader: ExtractTextPlugin.extract({
-        //     fallback: "style-loader",
-        //     use: "css-loader"
-        //   })
-        // },
         {
           test: /\.css$/,
           use: ["style-loader", "css-loader", "postcss-loader"]
@@ -57,9 +50,9 @@ module.exports = function prod(env) {
                 gifsicle: {
                   interlaced: false
                 },
-                optipng: {
-                  optimizationLevel: 7
-                },
+                // optipng: {
+                //   optimizationLevel: 7
+                // },
                 pngquant: {
                   quality: "65-90",
                   speed: 4
@@ -112,11 +105,10 @@ module.exports = function prod(env) {
           compilation_level: "ADVANCED",
           warning_level: "QUIET",
           externs: [
-            {
-              src: `
-
-               `
-            }
+            // {
+            //   src: `
+            //    `
+            // }
           ]
         },
         makeSourceMaps: true,
@@ -138,14 +130,14 @@ module.exports = function prod(env) {
           // "./js/jquery-3.2.1.min.js",
           // "./css/video-js.min.css",
           // "./manifest.json"
-          "./js/video.min.js",
+          // "./js/video.min.js",
           // "./js/videojs-flash.js",
           // "./js/Youtube.js",
           // "./js/videojs-contrib-hls.min.js",
           // "./img/test.jpg"
           // "http://vjs.zencdn.net/6.2.8/video.js",
-          "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
-          "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
+          // "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
+          // "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
           // "./img/bars.png"
         ],
         caches: "all",
@@ -153,11 +145,12 @@ module.exports = function prod(env) {
         // responseStrategy: "cache-first",
         updateStrategy: "all",
         minify: "true",
+        autoUpdate: 1000 * 60 * 60 * 2,
         ServiceWorker: {
-          events: "true"
+          // events: "true"
         },
         AppCache: {
-          events: "true"
+          // events: "true"
         }
       })
     ]

@@ -110,7 +110,7 @@ var __wpo = {
     "6396696f9c746dfc1e42079d5111d16341515b17": "./build/neox.jpg",
     "9d046bf3c49b49f43bfe49438f5d1438765ee995": "./build/nova.png",
     "3f993c2f9f4b491e5701a472810cdb12a8b686bc": "./build/cnnChile.svg",
-    "0d776fdd8f9c46adfa257e9fe82080fd9dd93ad4": "./build/tve.svg",
+    "67531d4ff0c2b2d0b92851e1250ea9665181470c": "./build/tve.svg",
     "29ca02ae81ec25d06e30ce53f803a2539598bf2a": "./build/dw.svg",
     "70409901e67b2ef7b58ff4c61182f1dab6f01816": "./build/msnbc.png",
     "2e1e98617def30d7fea10bef647abb37fb5195b3": "./build/bloomberg.svg",
@@ -150,11 +150,11 @@ var __wpo = {
     "e886ea0b6f568d6089c73bce7298a026078bfaf4": "./build/patio.jpg",
     "d7609e1deef7d04af440f357c3ee4d025acb455b": "./build/radioAmerica.png",
     "53c0d8e2e29e601b42151c8ad0bb0427bbc02aaa": "./build/radioNacional.jpg",
-    "cd2a15e1be23d5f2c173f2c2251247611ceb2d57": "./bundle.js"
+    "16b591bb6143360deccb5710ab2c7d065ab09bb0": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-4 00:06:50",
+  "version": "2017-11-4 00:43:38",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

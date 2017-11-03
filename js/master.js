@@ -25,6 +25,7 @@ require("videojs-flash");
 // import "videojs-contrib-hls";
 window.videojs = videojs;
 import * as HLS from "videojs-contrib-hls";
+require("!style-loader!css-loader!video.js/dist/video-js.css");
 import zenscroll from "zenscroll";
 window.zenscroll = zenscroll;
 // import videojs-flash from "videojs-flash";

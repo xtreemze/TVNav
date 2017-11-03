@@ -25,7 +25,7 @@ module.exports = function prod(env) {
         webworkify: "webworkify-webpack-dropin"
       }
     },
-    devtool: "source-map",
+    devtool: "cheap-source-map",
     module: {
       rules: [
         {

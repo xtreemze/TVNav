@@ -1,9 +1,9 @@
 //   .default;
 // const ImageminPlugin = require("imagemin-webpack-plugin");
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
-const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const OfflinePlugin = require("offline-plugin");
 // const OptimizeJsPlugin = require("optimize-js-plugin");
+const ClosureCompiler = require("google-closure-compiler-js").webpack;
 // const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const PurifyCSSPlugin = require("purifycss-webpack");
@@ -45,7 +45,7 @@ module.exports = function prod(env) {
         // },
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader"]
+          use: ["style-loader", "css-loader", "postcss-loader"]
         },
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
@@ -119,7 +119,7 @@ module.exports = function prod(env) {
             }
           ]
         },
-        makeSourceMaps: true,
+        makeSourceMaps: false,
         concurrency: 4
       }),
       // new ExtractTextPlugin("[name].css"),

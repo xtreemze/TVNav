@@ -3,35 +3,31 @@ import fscreen from "fscreen";
 // require("smoothscroll-polyfill").polyfill();
 
 const fullscreenButton = document.getElementById("fullscreenButton");
-fullscreenButton.addEventListener("click", function() {
+const full = document.getElementById("full");
+window.goFull = function() {
   if (fscreen.fullscreenElement !== null) {
     fscreen.exitFullscreen();
-    if (window.player) {
-      window.player.width(window.innerWidth);
-      window.player.height(window.innerHeight);
-    }
-    if (window.player2) {
-      window.player2.width(window.innerWidth);
-      window.player2.height(window.innerHeight);
-    }
+    channelSection.classList.remove("inactiveChannels");
   } else {
     channelSection.classList.add("inactiveChannels");
-    fscreen.requestFullscreen(main);
-    if (window.player) {
-      window.player.width(window.innerWidth);
-      window.player.height(window.innerHeight);
-    }
-    if (window.player2) {
-      window.player2.width(window.innerWidth);
-      window.player2.height(window.innerHeight);
-    }
+    fscreen.requestFullscreen(full);
+    channelSection.classList.add("inactiveChannels");
   }
-});
+  // if (window.player) {
+  //   window.player.width(window.innerWidth);
+  //   window.player.height(window.innerHeight);
+  // }
+  // if (window.player2) {
+  //   window.player2.width(window.innerWidth);
+  //   window.player2.height(window.innerHeight);
+  // }
+};
+fullscreenButton.addEventListener("click", goFull());
 // Keyboard commands
 document.addEventListener("keydown", event => {
   const keyName = event.key;
-  console.log(keyName);
-  console.log(event);
+  // console.log(keyName);
+  // console.log(event);
   if (!window.selectedElement) {
     window.selectedElement = window.currentElement;
   }
@@ -126,32 +122,17 @@ document.addEventListener("keydown", event => {
     case "f":
       event.preventDefault();
       event.stopPropagation();
-      if (fscreen.fullscreenElement !== null) {
-        fscreen.exitFullscreen();
-      } else {
-        fscreen.requestFullscreen(main);
-        channelSection.classList.add("inactiveChannels");
-      }
+      goFull();
       break;
     case "Left":
       event.preventDefault();
       event.stopPropagation();
-      if (fscreen.fullscreenElement !== null) {
-        fscreen.exitFullscreen();
-      } else {
-        fscreen.requestFullscreen(main);
-        channelSection.classList.add("inactiveChannels");
-      }
+      goFull();
       break;
     case "ArrowLeft":
       event.preventDefault();
       event.stopPropagation();
-      if (fscreen.fullscreenElement !== null) {
-        fscreen.exitFullscreen();
-      } else {
-        fscreen.requestFullscreen(main);
-        channelSection.classList.add("inactiveChannels");
-      }
+      goFull();
       break;
     case " ":
       event.preventDefault();

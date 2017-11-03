@@ -147,10 +147,10 @@ module.exports = function prod(env) {
         minify: "true",
         autoUpdate: 1000 * 60 * 60 * 2,
         ServiceWorker: {
-          // events: "true"
+          events: "true"
         },
         AppCache: {
-          // events: "true"
+          events: "true"
         }
       })
     ]

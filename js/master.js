@@ -51,11 +51,27 @@ window.falseTest = function() {
   }
 };
 
-channelSection.addEventListener("wheel", function() {
-  if (window.test === true) {
-    window.falseTest();
-  }
-});
+channelSection.addEventListener(
+  "wheel",
+  function wheel() {
+    if (window.test === true) {
+      window.falseTest();
+    }
+    channelSection.removeEventListener("wheel", wheel(), false);
+  },
+  false
+);
+
+channelSection.addEventListener(
+  "touchstart",
+  function touchstart() {
+    if (window.test === true) {
+      window.falseTest();
+    }
+    channelSection.removeEventListener("touchstart", touchstart(), false);
+  },
+  false
+);
 
 window.addEventListener("resize", function() {
   if (window.player) {

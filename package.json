@@ -4,7 +4,8 @@
   "description": "Navega canales de television y radio en vivo.",
   "main": "index.html",
   "scripts": {
-    "test": "none",
+    "test": "webpack-dev-server --public --host 
+192.30.164.78 --port 8084 --env=dev --profile",
     "dev": "webpack-dev-server --host localhost --env=dev --inline --hot --profile --open",
     "debugHot": "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile",
     "debug": "webpack-dev-server --host localhost --port 8080 --env=dev --profile",

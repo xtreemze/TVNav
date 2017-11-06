@@ -6,7 +6,7 @@ module.exports = function dev(env) {
       filename: "bundle.js"
     },
     stats: {
-      warnings: false
+      // warnings: false
     },
     resolve: {
       alias: {

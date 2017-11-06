@@ -13,7 +13,7 @@ module.exports = function prod(env) {
       filename: "bundle.js"
     },
     stats: {
-      warnings: false
+      // warnings: false
     },
     resolve: {
       alias: {

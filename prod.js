@@ -1,7 +1,7 @@
 const OfflinePlugin = require("offline-plugin");
 
+// const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
-const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 //
@@ -20,7 +20,7 @@ module.exports = function prod(env) {
         webworkify: "webworkify-webpack-dropin"
       }
     },
-    devtool: "cheap-source-map",
+    devtool: "cheap-module-source-map",
     module: {
       rules: [
         {
@@ -85,22 +85,24 @@ module.exports = function prod(env) {
     plugins: [
       new HtmlMinifierPlugin({}),
 
-      new ClosureCompiler({
-        compiler: {
-          language_in: "ECMASCRIPT6",
-          language_out: "ECMASCRIPT5",
-          compilation_level: "ADVANCED",
-          warning_level: "QUIET",
-          externs: [
-            // {
-            //   src: `
-            //    `
-            // }
-          ]
-        },
-        makeSourceMaps: true,
-        concurrency: 4
-      }),
+      // new ClosureCompiler({
+      //   options: {
+      //     languageIn: "ECMASCRIPT6",
+      //     languageOut: "ECMASCRIPT5",
+      //     // compilationLevel: "ADVANCED",
+      //     compilationLevel: "SIMPLE",
+      //     warningLevel: "QUIET",
+      //     warningLevel: "DEFAULT",
+      //     createSourceMap: true,
+      //     externs: [
+      //       // {
+      //       //   src: `
+      //       //    `
+      //       // }
+      //     ]
+      //   },
+      //   concurrency: 6
+      // }),
 
       new OfflinePlugin({
         externals: [

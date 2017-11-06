@@ -47,12 +47,12 @@ module.exports = function dev(env) {
           test: /\.js$/,
           exclude: [/node_modules/],
           use: [
-            {
-              loader: "babel-loader?cacheDirectory",
-              options: {
-                presets: [["env", { modules: false }]]
-              }
-            }
+            // {
+            //   loader: "babel-loader?cacheDirectory",
+            //   options: {
+            //     presets: [["env", { modules: false }]]
+            //   }
+            // }
           ]
         }
       ]

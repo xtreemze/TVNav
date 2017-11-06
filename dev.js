@@ -40,16 +40,9 @@ module.exports = function dev(env) {
         },
         {
           test: /\.(eot|ttf|woff|woff2)$/,
-          loader: "file-loader?name=[path][name].[ext]"
+          loader: "url-loader?limit=1000000"
         },
-        // {
-        //   test: /\.svg$/,
-        //   use: [
-        //     {
-        //       loader: "file-loader?name=build/[name].[ext]"
-        //     }
-        //   ]
-        // },
+
         {
           test: /\.js$/,
           exclude: [/node_modules/],
@@ -57,7 +50,7 @@ module.exports = function dev(env) {
             {
               loader: "babel-loader?cacheDirectory",
               options: {
-                presets: [["@babel/preset-env", { modules: false }]]
+                presets: [["env", { modules: false }]]
               }
             }
           ]

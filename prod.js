@@ -1,13 +1,8 @@
-// import * as OfflinePluginRuntime from "offline-plugin/runtime";
-// OfflinePluginRuntime.install();
-// const OfflinePlugin = require("offline-plugin");
+const OfflinePlugin = require("offline-plugin");
 
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
-const OfflinePlugin = require("offline-plugin");
 const ClosureCompiler = require("google-closure-compiler-js").webpack;
-// const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const glob = require("glob-all");
 
 //
 module.exports = function prod(env) {
@@ -71,7 +66,7 @@ module.exports = function prod(env) {
         },
         {
           test: /\.(eot|ttf|woff|woff2)$/,
-          loader: "file-loader?name=[path][name].[ext]"
+          loader: "url-loader?limit=1000000"
         },
         {
           test: /\.js$/,
@@ -80,7 +75,7 @@ module.exports = function prod(env) {
             {
               loader: "babel-loader?cacheDirectory",
               options: {
-                presets: [["@babel/preset-env", { modules: false }]]
+                presets: [["env", { modules: false }]]
               }
             }
           ]
@@ -88,16 +83,8 @@ module.exports = function prod(env) {
       ]
     },
     plugins: [
-      // new ImageminPlugin({
-      //   pngquant: {
-      //     quality: "95-100"
-      //   }
-      // }),
-      // ... other plugins
       new HtmlMinifierPlugin({}),
-      // new OptimizeJsPlugin({
-      //   sourceMap: true
-      // }),
+
       new ClosureCompiler({
         compiler: {
           language_in: "ECMASCRIPT6",
@@ -114,31 +101,15 @@ module.exports = function prod(env) {
         makeSourceMaps: true,
         concurrency: 4
       }),
-      // new ExtractTextPlugin("[name].css"),
-      // new PurifyCSSPlugin({
-      //   minimize: true,
-      //   verbose: true,
-      //   // Give paths to parse for rules. These should be absolute!
-      //   paths: glob.sync([
-      //     path.join(__dirname, "*.html"),
-      //     path.join(__dirname, "js/*.js")
-      //   ])
-      // }),
+
       new OfflinePlugin({
         externals: [
           // "./js/materialize.min.js",
           // "./js/jquery-3.2.1.min.js",
           // "./css/video-js.min.css",
-          // "./manifest.json"
-          // "./js/video.min.js",
-          // "./js/videojs-flash.js",
-          // "./js/Youtube.js",
-          // "./js/videojs-contrib-hls.min.js",
-          // "./img/test.jpg"
           // "http://vjs.zencdn.net/6.2.8/video.js",
           // "https://unpkg.com/videojs-flash/dist/videojs-flash.js",
           // "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
-          // "./img/bars.png"
         ],
         caches: "all",
         responseStrategy: "network-first",

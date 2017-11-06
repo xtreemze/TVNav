@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-11-4 15:41:02
+#ver:2017-11-6 13:04:35
 #plugin:4.8.4
 
 CACHE:
@@ -11,7 +11,6 @@ CACHE:
 ../build/germany.svg
 ../build/chile.svg
 ../
-../node_modules/video.js/dist/font/VideoJS.eot
 ../build/earthtv.png
 ../build/tsi.png
 ../build/canal5.png

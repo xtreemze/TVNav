@@ -5,7 +5,6 @@
 .flagContainer {
   position: relative;
   height: 3rem;
-  /* transform: rotate(90deg); */
   top: 0.1rem;
   left: 6.5rem;
   width: 3rem;
@@ -17,18 +16,9 @@
 }
 
 .countryFlag {
-  /* height: 100%; */
-  /* min-width: 5rem; */
   height: 100%;
   position: relative;
-  /* right: 1.2rem; */
   opacity: 0.5;
-  /* display: block;
-  margin: auto; */
-  /* width: 120%; */
-  /* transform-origin: bottom;
-  transform: scale(1.2); */
-  /* left: -1rem; */
 }
 
 .channelName {
@@ -55,11 +45,8 @@
 
 .deleteChannel {
   animation: slideRight 1s ease-in-out forwards;
-  /* right: 0rem; */
   height: 5rem;
-  /* position: relative; */
   margin: 0.1rem 0 0;
-  /* transform: scale(1); */
   transform: translateZ(0) translateX(0rem) scale(1);
   background: rgba(255, 0, 0, 0.466) !important;
   border: 0.1rem solid rgba(56, 56, 56, 0.08);
@@ -68,8 +55,6 @@
 @-webkit-keyframes slideRight {
   50% {
     transform: translateZ(0) translateX(12rem) scale(1);
-    /* right: -13rem; */
-    /* transform: scale(1); */
     height: 5em;
     margin: 0.2rem 0 0;
     border: 0.1rem solid rgba(56, 56, 56, 0.08);
@@ -79,8 +64,6 @@
 @keyframes slideRight {
   50% {
     transform: translateZ(0) translateX(12rem) scale(1);
-    /* right: -13rem; */
-    /* transform: scale(1); */
     height: 5em;
     margin: 0.2rem 0 0;
     border: 0.1rem solid rgba(56, 56, 56, 0.08);
@@ -89,9 +72,7 @@
 
 @-webkit-keyframes slideRight {
   100% {
-    /* right: -13rem; */
     transform: translateZ(0) translateX(12rem) scale(0);
-    /* transform: scale(0); */
     height: 0;
     margin: 0;
     border: 0px solid rgba(0, 0, 0, 0);
@@ -100,9 +81,7 @@
 
 @keyframes slideRight {
   100% {
-    /* right: -13rem; */
     transform: translateZ(0) translateX(12rem) scale(0);
-    /* transform: scale(0); */
     height: 0;
     margin: 0;
     border: 0px solid rgba(0, 0, 0, 0);
@@ -196,13 +175,10 @@
   width: 11em;
   z-index: 620;
   top: 0;
-  /* bottom: 2rem; */
   right: 0;
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 100vh;
-  /* margin: auto 0; */
-  /* transition: toggle 1s linear; */
   scroll-behavior: smooth;
   transition: transform 1s ease-in-out;
 }
@@ -248,7 +224,6 @@
 }
 
 #initialVideoSection {
-  /* position: absolute !important; */
   z-index: 499;
 }
 
@@ -265,8 +240,6 @@
   border: 0.1rem dashed rgba(245, 245, 245, 0.78);
   border-right: 0;
 }
-
-/* scrollbar */
 
 ::-webkit-scrollbar {
   width: 3px;

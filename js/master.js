@@ -1,5 +1,4 @@
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
-// OfflinePluginRuntime.install();
 
 OfflinePluginRuntime.install({
   onInstalled: function() {
@@ -25,7 +24,6 @@ import videojs from "video.js";
 require("videojs-flash");
 // import "videojs-contrib-hls";
 window.videojs = videojs;
-video.js = videojs;
 
 import * as HLS from "videojs-contrib-hls";
 // require("!style-loader!css-loader!video.js/dist/video-js.css");

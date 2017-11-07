@@ -1,5 +1,5 @@
 const OfflinePlugin = require("offline-plugin");
-
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 // const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -20,7 +20,7 @@ module.exports = function prod(env) {
         webworkify: "webworkify-webpack-dropin"
       }
     },
-    devtool: "cheap-module-source-map",
+    // devtool: "cheap-module-source-map",
     module: {
       rules: [
         {
@@ -70,39 +70,47 @@ module.exports = function prod(env) {
         },
         {
           test: /\.js$/,
-          exclude: [/node_modules/],
-          use: [
-            {
-              loader: "babel-loader?cacheDirectory",
-              options: {
-                presets: [["env", { modules: false }]]
-              }
-            }
-          ]
+          exclude: [/node_modules/]
+          // use: [
+          //   {
+          //     loader: "babel-loader?cacheDirectory",
+          //     options: {
+          //       presets: [["env", { modules: false }]]
+          //     }
+          //   }
+          // ]
         }
       ]
     },
     plugins: [
-      new HtmlMinifierPlugin({}),
-
-      // new ClosureCompiler({
-      //   options: {
-      //     languageIn: "ECMASCRIPT6",
-      //     languageOut: "ECMASCRIPT5",
-      //     // compilationLevel: "ADVANCED",
-      //     compilationLevel: "SIMPLE",
-      //     warningLevel: "QUIET",
-      //     warningLevel: "DEFAULT",
-      //     createSourceMap: true,
-      //     externs: [
-      //       // {
-      //       //   src: `
-      //       //    `
-      //       // }
-      //     ]
-      //   },
-      //   concurrency: 6
-      // }),
+      new UglifyJSPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false,
+        uglifyOptions: {
+          ecma: 8,
+          output: {
+            comments: false
+          }
+        }
+      }),
+      new HtmlMinifierPlugin({
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeEmtpyElements: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeStyleLinkTypeAttributes: true,
+        sortAttributes: true,
+        sortClassName: true,
+        minifyURLs: true,
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: true,
+        collapseBooleanAttributes: true
+      }),
 
       new OfflinePlugin({
         externals: [

@@ -19,7 +19,7 @@
     "devHTML":
       "webpack-dev-server --progress --colors --host localhost --port 8080 --env=dev --profile --open",
     "watch": "webpack --progress --colors --env=dev --profile --watch",
-    "exportp": "webpack --env=prod --profile -p"
+    "exportp": "webpack --env=prod --profile"
   },
   "repository": {
     "type": "git",
@@ -53,10 +53,11 @@
     "postcss": "^6.0.14",
     "postcss-loader": "^2.0.8",
     "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
     "url-loader": "^0.6.2",
     "video.js": "^6.4.0",
-    "videojs-contrib-hls": "^5.12.1",
-    "videojs-contrib-media-sources": "^4.6.1",
+    "videojs-contrib-hls": "^5.12.2",
+    "videojs-contrib-media-sources": "^4.6.2",
     "videojs-flash": "^2.0.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",

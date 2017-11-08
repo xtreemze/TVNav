@@ -1,17 +1,30 @@
 const OfflinePlugin = require("offline-plugin");
+const webpack = require("webpack");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 // const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 //
 module.exports = function prod(env) {
   return {
-    entry: "./entry.js",
+    entry: {
+      // entry: "./entry.js",
+      app: "./app.js",
+      vendor: [
+        "zenscroll",
+        "fscreen",
+        "video.js",
+        "videojs-contrib-hls",
+        "videojs-flash"
+      ]
+    },
     output: {
       path: __dirname,
-      filename: "bundle.js"
+      filename: "build/[name].bundle.[chunkhash].js"
     },
+
     stats: {
       // warnings: false
     },
@@ -23,14 +36,22 @@ module.exports = function prod(env) {
     // devtool: "cheap-module-source-map",
     module: {
       rules: [
-        {
-          test: /indexB.html$/,
-          loaders: [
-            "file-loader?name=index.[ext]",
-            "extract-loader",
-            "html-loader"
-          ]
-        },
+        // {
+        //   test: /indexB.html$/,
+        //   loaders: [
+        //     "file-loader?name=index.[ext]",
+        //     "extract-loader",
+        //     "html-loader"
+        //   ]
+        // },
+        // {
+        //   test: /html$/,
+        //   loaders: [
+        //     "file-loader?name=[name].[ext]",
+        //     "extract-loader",
+        //     "html-loader"
+        //   ]
+        // },
         {
           test: /\.css$/,
           use: ["style-loader", "css-loader", "postcss-loader"]
@@ -38,7 +59,7 @@ module.exports = function prod(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=build/[name].[ext]",
+            "file-loader?name=build/[name].[hash].[ext]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -83,6 +104,24 @@ module.exports = function prod(env) {
       ]
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        title: "TVNav",
+        template: "indexB.html"
+      }),
+      new webpack.HashedModuleIdsPlugin(),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "vendor",
+        // filename: "build/vendor.bundle.[chunkhash].js",
+        // (Give the chunk a different name)
+
+        minChunks: Infinity
+        // (with more entries, this ensures that no other module
+        //  goes into the vendor chunk)
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "manifest",
+        minChunks: Infinity
+      }),
       new UglifyJSPlugin({
         cache: true,
         parallel: true,
@@ -122,9 +161,10 @@ module.exports = function prod(env) {
           // "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
         ],
         caches: "all",
-        responseStrategy: "network-first",
-        // responseStrategy: "cache-first",
-        updateStrategy: "all",
+        // responseStrategy: "network-first",
+        responseStrategy: "cache-first",
+        // updateStrategy: "all",
+        updateStrategy: "changed",
         minify: "true",
         autoUpdate: 1000 * 60 * 60 * 2,
         ServiceWorker: {

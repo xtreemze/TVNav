@@ -3,26 +3,25 @@ const webpack = require("webpack");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 // const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 //
 module.exports = function prod(env) {
   return {
     entry: {
-      // entry: "./entry.js",
-      app: "./app.js",
       vendor: [
         "zenscroll",
         "fscreen",
         "video.js",
         "videojs-contrib-hls",
         "videojs-flash"
-      ]
+      ],
+      app: "./app.js"
     },
     output: {
       path: __dirname,
-      filename: "build/[name].bundle.[chunkhash].js"
+      filename: "__[name].bundle.[chunkhash].js"
     },
 
     stats: {
@@ -118,10 +117,10 @@ module.exports = function prod(env) {
         // (with more entries, this ensures that no other module
         //  goes into the vendor chunk)
       }),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: "manifest",
-        minChunks: Infinity
-      }),
+      // new webpack.optimize.CommonsChunkPlugin({
+      //   name: "manifest",
+      //   minChunks: Infinity
+      // }),
       new UglifyJSPlugin({
         cache: true,
         parallel: true,

@@ -33,7 +33,7 @@ module.exports = function prod(env) {
         webworkify: "webworkify-webpack-dropin"
       }
     },
-    // devtool: "cheap-module-source-map",
+    devtool: "cheap-module-source-map",
     module: {
       rules: [
         // {
@@ -125,7 +125,7 @@ module.exports = function prod(env) {
       new UglifyJSPlugin({
         cache: true,
         parallel: true,
-        sourceMap: false,
+        sourceMap: true,
         uglifyOptions: {
           ecma: 8,
           output: {

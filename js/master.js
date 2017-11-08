@@ -130,12 +130,12 @@ window.updateVideo = function(channel) {
       techOrder: ["html5", "flash"],
       html5: {
         hls: {
-          withCredentials: false
+          withCredentials: true
         }
       },
       flash: {
         hls: {
-          withCredentials: false
+          withCredentials: true
         }
       }
     });
@@ -242,12 +242,12 @@ const channelTest = function(pass) {
                   techOrder: ["html5", "flash"],
                   html5: {
                     hls: {
-                      withCredentials: false
+                      withCredentials: true
                     }
                   },
                   flash: {
                     hls: {
-                      withCredentials: false
+                      withCredentials: true
                     }
                   }
                 },
@@ -397,12 +397,12 @@ const initVideo = function(channel) {
         techOrder: ["html5", "flash"],
         html5: {
           hls: {
-            withCredentials: false
+            withCredentials: true
           }
         },
         flash: {
           hls: {
-            withCredentials: false
+            withCredentials: true
           }
         }
       },

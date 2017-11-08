@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-11-8 17:59:24
+#ver:2017-11-8 18:17:05
 #plugin:4.8.4
 
 CACHE:
@@ -73,11 +73,11 @@ CACHE:
 ../build/radioAmerica.879ae28ffeaea4f1ed7dbe2154cdbf2c.png
 ../build/radioNacional.cffb05ddd0b1ecae364803b8db68424f.jpg
 ../build/vendor.bundle.926f35b03ff9bf2c6a32.js
-../build/app.bundle.779f002798e334a4ee43.js
-../build/manifest.bundle.b2f0e1c1e5f6a1cefe98.js
+../build/app.bundle.30f2978ddb850a5f0228.js
+../build/manifest.bundle.a63d0a45fb56154db679.js
 ../build/vendor.bundle.926f35b03ff9bf2c6a32.js.map
-../build/app.bundle.779f002798e334a4ee43.js.map
-../build/manifest.bundle.b2f0e1c1e5f6a1cefe98.js.map
+../build/app.bundle.30f2978ddb850a5f0228.js.map
+../build/manifest.bundle.a63d0a45fb56154db679.js.map
 ../
 
 NETWORK:

@@ -149,14 +149,14 @@ var __wpo = {
     "6d243935a4d76e79808c7383e948c61b79be6c4e": "./build/radioGlobo.84ab820a93e25f0d507613b9c7f7ef06.png",
     "d7609e1deef7d04af440f357c3ee4d025acb455b": "./build/radioAmerica.879ae28ffeaea4f1ed7dbe2154cdbf2c.png",
     "53c0d8e2e29e601b42151c8ad0bb0427bbc02aaa": "./build/radioNacional.cffb05ddd0b1ecae364803b8db68424f.jpg",
-    "6392adb83912dc250f7d3084e5e64a91ff2c2c09": "./build/vendor.bundle.a900de97cacfa4c641cf.js",
-    "b19a5c12af21b31515cbcb9795438f4c01692b84": "./build/app.bundle.c66a1f3d22b26c3afc39.js",
-    "d140bb74fe2ad0a9b91f0dd5e9e6bc75c8ac6d4c": "./build/manifest.bundle.403164f4b495c33f991c.js",
+    "695f9133277577a1352ad8b2508317b923eec622": "./build/vendor.bundle.a900de97cacfa4c641cf.js",
+    "9a26be4992310dd90f92c03f7b68767448b2268f": "./build/app.bundle.c66a1f3d22b26c3afc39.js",
+    "cb08bc973d5a0a30c6e6573da27b732ea7f986e2": "./build/manifest.bundle.403164f4b495c33f991c.js",
     "b8ae1b214102469042b511b8575128fe352b06ad": "./"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2017-11-8 16:37:03",
+  "version": "2017-11-8 16:42:44",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

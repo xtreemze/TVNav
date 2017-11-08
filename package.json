@@ -62,7 +62,6 @@
     "videojs-flash": "^2.0.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
-    "webworkify": "^1.4.0",
     "webworkify-webpack-dropin": "^1.1.9",
     "zenscroll": "^4.0.0"
   }

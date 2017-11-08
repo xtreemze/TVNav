@@ -22,7 +22,7 @@ module.exports = function prod(env) {
     },
     output: {
       path: __dirname,
-      filename: "build/[name].bundle.[chunkhash].js"
+      filename: "./build/[name].bundle.[chunkhash].js"
     },
 
     stats: {

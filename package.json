@@ -19,8 +19,7 @@
     "devHTML":
       "webpack-dev-server --progress --colors --host localhost --port 8080 --env=dev --profile --open",
     "watch": "webpack --progress --colors --env=dev --profile --watch",
-    "exportp": "webpack --env=prod --profile",
-    "exw": "rm -r ./build"
+    "exportp": "webpack --env=prod --profile"
   },
   "repository": {
     "type": "git",

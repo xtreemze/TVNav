@@ -10,10 +10,11 @@ OfflinePluginRuntime.install({
   },
 
   onUpdateReady: function() {
-    OfflinePlugin.applyUpdate();
+    h1Title.innerText = "Reiniciando... | TVNav";
+    OfflinePluginRuntime.applyUpdate();
   },
   onUpdated: function() {
-    h1Title.innerText = "Reiniciando";
+    h1Title.innerText = "Actualizado | TVNav";
     setTimeout(function() {
       window.location.reload();
     }, 10000);

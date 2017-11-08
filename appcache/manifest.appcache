@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-11-8 17:22:59
+#ver:2017-11-8 17:33:45
 #plugin:4.8.4
 
 CACHE:
@@ -32,7 +32,7 @@ CACHE:
 ../build/neox.2058ce1330793cfec70f4cc5d601cd11.jpg
 ../build/nova.b794d28cbe11e4a50800bd0bcc030e67.png
 ../build/cnnChile.750999d9fa6a3b75431980f7bd18b8e9.svg
-../build/tve.2e570e1aec597a2f9bb8e8b604563acf.svg
+../build/tve.b83e1cb709cb5a43a0a41c635885d35a.svg
 ../build/dw.33e0ea4d61d6bc83d9967f104aaf3aad.svg
 ../build/msnbc.009b5832226ead16506cf33a9c35f1da.png
 ../build/bloomberg.7d529cdb6eaccc93c290ba27cad1f79e.svg
@@ -73,8 +73,8 @@ CACHE:
 ../build/radioAmerica.879ae28ffeaea4f1ed7dbe2154cdbf2c.png
 ../build/radioNacional.cffb05ddd0b1ecae364803b8db68424f.jpg
 ../build/vendor.bundle.926f35b03ff9bf2c6a32.js
-../build/app.bundle.7c21e8414b8197d0df15.js
-../build/manifest.bundle.ca7b3cfe23c88293b67a.js
+../build/app.bundle.e3a1fa9e36dfdd66b128.js
+../build/manifest.bundle.ec8b0b3f71f0fbe8833a.js
 ../
 
 NETWORK:

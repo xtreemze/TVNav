@@ -13,10 +13,10 @@ module.exports = function prod(env) {
       vendor: [
         "zenscroll",
         "fscreen",
-        "video.js",
-        "videojs-contrib-hls",
-        "videojs-contrib-media-sources",
-        "videojs-flash"
+        "video.js"
+        // "videojs-contrib-hls"
+        // "videojs-contrib-media-sources",
+        // "videojs-flash"
       ],
       app: "./app.js"
     },

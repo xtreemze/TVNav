@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-11-8 18:17:05
+#ver:2017-11-9 14:35:45
 #plugin:4.8.4
 
 CACHE:
@@ -8,9 +8,7 @@ CACHE:
 ../build/spain.48f5989c7f98c3cabae7cadd8c9e5da8.svg
 ../build/colombia.14d012867c7fab9aa745e9b9420cbd0d.svg
 ../build/mexico.f1ba522e8e48091b7eca97a81d2097f2.svg
-../build/germany.68a51090190055f8e34d670ea0296f9c.svg
 ../build/chile.4e9ff41f7c822ef9a7b2bc728bde3c52.svg
-../build/earthtv.4e969b8aeb25cdbb6389242a4d72025d.png
 ../build/tsi.b658103c2d1be43f3b13713a5fdad596.png
 ../build/canal5.7baf93d617c9501b729cac477759ac36.png
 ../build/ten.a78dac6ed8551874899ba9452fcd25d7.png
@@ -34,6 +32,10 @@ CACHE:
 ../build/cnnChile.750999d9fa6a3b75431980f7bd18b8e9.svg
 ../build/tve.2e570e1aec597a2f9bb8e8b604563acf.svg
 ../build/dw.33e0ea4d61d6bc83d9967f104aaf3aad.svg
+../build/germany.68a51090190055f8e34d670ea0296f9c.svg
+../build/bbc.15511ca386348d3e2006a87d4e042804.svg
+../build/england.e1fc5c82fdd9316a6114baa3f2a28f58.svg
+../build/weather.d61bd628efced925efacecd63f66dcae.svg
 ../build/msnbc.009b5832226ead16506cf33a9c35f1da.png
 ../build/bloomberg.7d529cdb6eaccc93c290ba27cad1f79e.svg
 ../build/jazeera.1b8aefe053a072b8bfc80d08ea5d874b.svg
@@ -48,6 +50,7 @@ CACHE:
 ../build/peru.a3855d5b76c478e227e09117957ca4cd.svg
 ../build/ecuadortv.b2a9da0ffef1ee5c730a26c10ebb66b0.png
 ../build/ecuador.8407dec6e3f02f4b76bdbe12b7bae2e3.svg
+../build/antena3.5d3eec216a39b08e9b0e8fea3890ae49.svg
 ../build/mega.8ccde67f6d309c57e20dec82243718d8.svg
 ../build/chilevision.8d7fba976e44f5db6d5d0ae789f94931.png
 ../build/cablenoticias.8e808f375424d8413f98037e021492f0.png
@@ -63,7 +66,6 @@ CACHE:
 ../build/iran.5445a5a1fcfccc3ea1ce748ef5d91991.svg
 ../build/canal6.e6eadb53f45780ef01a158d5eab4df8b.png
 ../build/cholusat.a68ac6da848cb823d3d05cc536dbc978.png
-../build/vtv.109531fba3fc426e7e8e0d3df3fca9c1.png
 ../build/hrn.e8dc0686dfd0438bf18b040fa2a9ea00.jpg
 ../build/euro.6393a5dbddeee27aa80a38e0d5be5de3.svg
 ../build/france.c6ad3636055d0b5a84bae6ba5f70ce6f.svg
@@ -72,12 +74,12 @@ CACHE:
 ../build/patio.d2effa51b08b77f63f6e66d209bcea97.jpg
 ../build/radioAmerica.879ae28ffeaea4f1ed7dbe2154cdbf2c.png
 ../build/radioNacional.cffb05ddd0b1ecae364803b8db68424f.jpg
-../build/vendor.bundle.926f35b03ff9bf2c6a32.js
-../build/app.bundle.30f2978ddb850a5f0228.js
-../build/manifest.bundle.a63d0a45fb56154db679.js
-../build/vendor.bundle.926f35b03ff9bf2c6a32.js.map
-../build/app.bundle.30f2978ddb850a5f0228.js.map
-../build/manifest.bundle.a63d0a45fb56154db679.js.map
+../build/app.bundle.893491d120e1906ebdec.js
+../build/vendor.bundle.b162a62ffc94b7fcc677.js
+../build/manifest.bundle.ae71e48b25eb577a482b.js
+../build/app.bundle.893491d120e1906ebdec.js.map
+../build/vendor.bundle.b162a62ffc94b7fcc677.js.map
+../build/manifest.bundle.ae71e48b25eb577a482b.js.map
 ../
 
 NETWORK:

@@ -9,9 +9,9 @@ module.exports = function dev(env) {
         "zenscroll",
         "fscreen",
         "video.js",
-        "videojs-contrib-hls",
-        "videojs-contrib-media-sources",
-        "videojs-flash"
+        "videojs-contrib-hls"
+        // "videojs-contrib-media-sources",
+        // "videojs-flash"
       ],
       app: "./app.js"
     },

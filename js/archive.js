@@ -49,3 +49,36 @@ window.checkSupport = function() {
   }, this);
   console.log(content);
 };
+
+const initVideo = function(channel) {
+  if (navigator.onLine && !channel.ustream) {
+    initialVideoSection.innerHTML = `<${channel.video} controls id="videoContainer2" preload="auto" autoplay muted class="video-js vjs-default-skin">
+  <source src=${channel.link} type=${channel.type} data=${channel.data}>
+</${channel.video}>
+`;
+    window.player2 = videojs("videoContainer2", video.option, function() {
+      video.mediaSession;
+      if (window.player2) {
+        window.player2.width(window.innerWidth);
+        window.player2.height(window.innerHeight);
+        if (!channel.ustream) {
+          setTimeout(function() {
+            window.player2.muted(!"setMuted");
+          }, 1001);
+        }
+      }
+    });
+  }
+};
+
+window.addEventListener("load", function() {
+  // videojs.players.videoContainer2.dispose();
+  // falseTest();
+  // setTimeout(function() {
+  // updateVideo(earth);
+  // }, 500);
+  // initVideo(earth);
+  // channelTest(1);
+  // toggleChannels();
+  // updateVideo(tsi);
+});

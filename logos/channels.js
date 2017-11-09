@@ -53,15 +53,16 @@ class Channel {
   }
 }
 
-window.earth = new Channel({
-  name: "EarthTV",
-  shortName: "earth",
-  logo: require("./earthtv.png"),
-  country: require("./flags/germany.svg"),
-  link:
-    "https://cdn-liveonearth.global.ssl.fastly.net/cdnedge/smil:TWL-es.smil/playlist.m3u8"
-  // ?599d9478bbf047685d049e82"
-});
+// window.earth = new Channel({
+//   name: "EarthTV",
+//   shortName: "earth",
+//   logo: require("./earthtv.png"),
+//   country: require("./flags/germany.svg"),
+//   // "https://cdn-liveonearth.global.ssl.fastly.net/cdnedge/smil:TWL-es.smil/playlist.m3u8?599d9478bbf047685d049e82"
+//   link:
+//     "http://playercdn.earthtv.com/?autoplay=true&token=599d9478bbf047685d049e82&language=es&live=true&channel=live&livesd=https://cdn-liveonearth.global.ssl.fastly.net/cdnedge/smil:TWL-es.smil/playlist.m3u8",
+//   ustream: true
+// });
 
 window.tsi = new Channel({
   name: "TSi",
@@ -233,6 +234,22 @@ window.dw = new Channel({
   // ?sd=10&rebase=on"
 });
 
+window.bbc = new Channel({
+  name: "BBC",
+  shortName: "bbc",
+  logo: require("./bbc.svg"),
+  country: require("./flags/england.svg"),
+  link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/BBCW/tu1_1.m3u8"
+});
+
+window.weather = new Channel({
+  name: "Weather Channel",
+  shortName: "weather",
+  logo: require("./weather.svg"),
+  country: require("./flags/usa.svg"),
+  link: "http://weather-lh.akamaihd.net/i/twc_1@92006/master.m3u8"
+});
+
 window.msnbc = new Channel({
   name: "MSNBC",
   shortName: "msnbc",
@@ -327,6 +344,14 @@ window.ecuador = new Channel({
     "http://api.new.livestream.com/accounts/22196143/events/6576568/live.m3u8"
 });
 
+window.antena3 = new Channel({
+  name: "Antena 3",
+  shortName: "antena3",
+  logo: require("./antena3.svg"),
+  country: require("./flags/spain.svg"),
+  link: "http://a3live-lh.akamaihd.net/i/antena3_1@35248/index_4_av-p.m3u8"
+});
+
 window.mega = new Channel({
   name: "MEGA",
   shortName: "mega",
@@ -352,6 +377,7 @@ window.cableNoti = new Channel({
   country: require("./flags/colombia.svg"),
   link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/CNOT/tu1_1.m3u8"
 });
+
 window.capital = new Channel({
   name: "Canal Capital",
   shortName: "capital",
@@ -438,20 +464,20 @@ window.choluSat = new Channel({
   link: "http://live.audiotvserver.com:1935/livemedia/cholusat/playlist.m3u8"
 });
 
-window.metro = new Channel({
-  name: "MetroTV",
-  shortName: "metro",
-  country: require("./flags/honduras.svg"),
-  link: "http://servicioamerica.net:1935/8404/8404/playlist.m3u8"
-});
+// window.metro = new Channel({
+//   name: "MetroTV",
+//   shortName: "metro",
+//   country: require("./flags/honduras.svg"),
+//   link: "http://servicioamerica.net:1935/8404/8404/playlist.m3u8"
+// });
 
-window.vtv = new Channel({
-  name: "VTV",
-  shortName: "vtv",
-  logo: require("./vtv.png"),
-  country: require("./flags/honduras.svg"),
-  link: "http://d3bus2b3f32oks.cloudfront.net/hn//smil:vtv.smil/playlist.m3u8"
-});
+// window.vtv = new Channel({
+//   name: "VTV",
+//   shortName: "vtv",
+//   logo: require("./vtv.png"),
+//   country: require("./flags/honduras.svg"),
+//   link: "http://d3bus2b3f32oks.cloudfront.net/hn//smil:vtv.smil/playlist.m3u8"
+// });
 
 window.hrn = new Channel({
   name: "HRN",
@@ -545,6 +571,8 @@ channelList += `<div class="individualChannel" id="donate">
 `;
 // Send Channels to DOM
 channelSection.innerHTML = channelList;
+window.selectedElement = channelSection.firstElementChild;
+window.nextElement = window.selectedElement;
 window.scroller = window.zenscroll.createScroller(
   window.channelSection,
   500,

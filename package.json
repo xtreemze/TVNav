@@ -4,35 +4,36 @@
   "description": "Navega canales de television y radio en vivo.",
   "main": "index.html",
   "scripts": {
-    "test": "webpack-dev-server --public --host 192.30.164.78 --port 8084 --env=dev --profile",
-    "dev": "webpack-dev-server --host localhost --env=dev --inline --hot --profile --open",
-    "debugHot": "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile",
-    "debug": "webpack-dev-server --host localhost --port 8080 --env=dev --profile",
-    "net": "webpack-dev-server --public --host 192.168.0.170 --port 80 --env=dev --profile --open",
-    "net2": "webpack-dev-server --public --host 192.168.0.117 --port 80 --env=dev --profile --open",
-    "devHTML": "webpack-dev-server --progress --colors --host localhost --port 8080 --env=dev --profile --open",
+    "test":
+      "webpack-dev-server --public --host 192.30.164.78 --port 8084 --env=dev --profile",
+    "dev":
+      "webpack-dev-server --host localhost --env=dev --inline --hot --profile --open",
+    "debugHot":
+      "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile",
+    "debug":
+      "webpack-dev-server --host localhost --port 8080 --env=dev --profile",
+    "net":
+      "webpack-dev-server --public --host 192.168.0.170 --port 80 --env=dev --profile --open",
+    "net2":
+      "webpack-dev-server --public --host 192.168.0.117 --port 80 --env=dev --profile --open",
+    "devHTML":
+      "webpack-dev-server --progress --colors --host localhost --port 8080 --env=dev --profile --open",
     "watch": "webpack --progress --colors --env=dev --profile --watch",
-    "exportp": "webpack --env=prod --profile"
+    "exportp": "node ./js/rmDir.js && webpack --env=prod --profile --progress",
+    "rm": "node ./js/rmDir.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xtreemze/TVNav.git"
   },
-  "keywords": [
-    "progressive",
-    "webapp",
-    "JavaScript"
-  ],
+  "keywords": ["progressive", "webapp", "JavaScript"],
   "author": "Carlos Velasco",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/xtreemze/TVNav/issues"
   },
   "homepage": "https://github.com/xtreemze/TVNav#readme",
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
+  "browserslist": ["> 1%", "last 2 versions"],
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -49,6 +50,7 @@
     "offline-plugin": "^4.8.4",
     "postcss": "^6.0.14",
     "postcss-loader": "^2.0.8",
+    "rimraf": "^2.6.2",
     "style-loader": "^0.19.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "url-loader": "^0.6.2",

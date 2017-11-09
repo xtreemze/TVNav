@@ -1,2 +1,2 @@
-rmdir = require("rimraf");
+const rmdir = require("rimraf");
 rmdir("./build", function(error) {});

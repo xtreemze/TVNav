@@ -18,15 +18,16 @@ module.exports = function prod(env) {
         // "videojs-contrib-media-sources",
         // "videojs-flash"
       ],
-      app: "./app.js"
+      app: "./app/entry.js"
     },
     output: {
-      path: __dirname,
-      filename: "./build/[name].bundle.[chunkhash].js"
+      path: __dirname + "/public",
+      // publicPath: "./public/",
+      filename: "./js/[name].js?[chunkhash]",
+      chunkFilename: "./js/[id].js?[chunkhash]"
     },
-
     stats: {
-      // warnings: false
+      warnings: false
     },
     resolve: {
       alias: {
@@ -36,30 +37,28 @@ module.exports = function prod(env) {
     devtool: "cheap-module-source-map",
     module: {
       rules: [
-        // {
-        //   test: /indexB.html$/,
-        //   loaders: [
-        //     "file-loader?name=index.[ext]",
-        //     "extract-loader",
-        //     "html-loader"
-        //   ]
-        // },
-        // {
-        //   test: /html$/,
-        //   loaders: [
-        //     "file-loader?name=[name].[ext]",
-        //     "extract-loader",
-        //     "html-loader"
-        //   ]
-        // },
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader", "postcss-loader"]
+          use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
+              {
+                loader: "css-loader",
+                options: {
+                  autoprefixer: false,
+                  minimize: true,
+                  sourceMap: true,
+                  importLoaders: 1
+                }
+              },
+              "postcss-loader"
+            ]
+          })
         },
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=build/[name].[hash].[ext]",
+            "file-loader?name=./img/[name].[ext]?[hash]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -92,31 +91,19 @@ module.exports = function prod(env) {
         {
           test: /\.js$/,
           exclude: [/node_modules/]
-          // use: [
-          //   {
-          //     loader: "babel-loader?cacheDirectory",
-          //     options: {
-          //       presets: [["env", { modules: false }]]
-          //     }
-          //   }
-          // ]
         }
       ]
     },
     plugins: [
       new HtmlWebpackPlugin({
         title: "TVNav",
-        template: "indexB.html"
+        template: "./app/index.ejs"
       }),
-      // new webpack.HashedModuleIdsPlugin(),
+      new ExtractTextPlugin("./css/[name].css?[chunkhash]"),
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",
-        // filename: "build/vendor.bundle.[chunkhash].js",
-        // (Give the chunk a different name)
 
         minChunks: Infinity
-        // (with more entries, this ensures that no other module
-        //  goes into the vendor chunk)
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: "manifest",

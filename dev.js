@@ -13,13 +13,14 @@ module.exports = function dev(env) {
         // "videojs-contrib-media-sources",
         // "videojs-flash"
       ],
-      app: "./app.js"
+      entry: "./app/entry.js"
     },
     output: {
-      path: __dirname,
-      filename: "./build/[name].bundle.[hash].js"
+      path: __dirname + "/public",
+      // publicPath: "./public/",
+      filename: "./js/[name].js?[hash]",
+      chunkFilename: "./js/[id].js?[hash]"
     },
-
     stats: {
       // warnings: false
     },
@@ -31,22 +32,6 @@ module.exports = function dev(env) {
     devtool: "cheap-source-map",
     module: {
       rules: [
-        // {
-        //   test: /indexB.html$/,
-        //   loaders: [
-        //     "file-loader?name=index.[ext]",
-        //     "extract-loader",
-        //     "html-loader"
-        //   ]
-        // },
-        // {
-        //   test: /html$/,
-        //   loaders: [
-        //     "file-loader?name=[name].[ext]",
-        //     "extract-loader",
-        //     "html-loader"
-        //   ]
-        // },
         {
           test: /\.css$/,
           use: ["style-loader", "css-loader", "postcss-loader"]
@@ -54,7 +39,7 @@ module.exports = function dev(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=build/[name].[hash].[ext]",
+            "file-loader?name=./img/[name].[ext]?[hash]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -87,31 +72,18 @@ module.exports = function dev(env) {
         {
           test: /\.js$/,
           exclude: [/node_modules/]
-          // use: [
-          //   {
-          //     loader: "babel-loader?cacheDirectory",
-          //     options: {
-          //       presets: [["env", { modules: false }]]
-          //     }
-          //   }
-          // ]
         }
       ]
     },
     plugins: [
       new HtmlWebpackPlugin({
         title: "TVNav",
-        template: "indexB.html"
+        template: "./app/index.ejs"
       }),
-      // new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",
-        // filename: "build/vendor.bundle.[chunkhash].js",
-        // (Give the chunk a different name)
 
         minChunks: Infinity
-        // (with more entries, this ensures that no other module
-        //  goes into the vendor chunk)
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: "manifest",
@@ -120,65 +92,3 @@ module.exports = function dev(env) {
     ]
   };
 };
-// module.exports = function dev(env) {
-//   return {
-//     entry: "./app.js",
-//     output: {
-//       path: __dirname,
-//       filename: "bundle.js"
-//     },
-//     stats: {
-//       // warnings: false
-//     },
-//     resolve: {
-//       alias: {
-//         webworkify: "webworkify-webpack-dropin"
-//       }
-//     },
-//     devtool: "cheap-module-source-map",
-//     module: {
-//       rules: [
-//         {
-//           test: /indexB.html$/,
-//           loaders: [
-//             "file-loader?name=index.[ext]",
-//             "extract-loader",
-//             "html-loader"
-//           ]
-//         },
-//         {
-//           test: /\.css$/,
-//           use: ["style-loader", "css-loader", "postcss-loader"]
-//         },
-//         {
-//           test: /\.(gif|png|jpe?g|svg)$/i,
-//           loaders: [
-//             "file-loader?name=build/[name].[ext]",
-//             {
-//               loader: "image-webpack-loader",
-//               options: {}
-//             }
-//           ]
-//         },
-//         {
-//           test: /\.(eot|ttf|woff|woff2)$/,
-//           loader: "url-loader?limit=1000000"
-//         },
-
-//         {
-//           test: /\.js$/,
-//           exclude: [/node_modules/],
-//           use: [
-//             // {
-//             //   loader: "babel-loader?cacheDirectory",
-//             //   options: {
-//             //     presets: [["env", { modules: false }]]
-//             //   }
-//             // }
-//           ]
-//         }
-//       ]
-//     }
-//   };
-// };
-//

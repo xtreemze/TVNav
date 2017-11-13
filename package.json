@@ -4,23 +4,19 @@
   "description": "Navega canales de television y radio en vivo.",
   "main": "index.html",
   "scripts": {
-    "test":
-      "webpack-dev-server --public --host 192.30.164.78 --port 8084 --env=dev --profile",
+    "test": "node ./rmDir.js && webpack --env=prod --profile",
     "dev":
-      "webpack-dev-server --host localhost --env=dev --inline --hot --profile --open",
-    "debugHot":
+      "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile --open",
+    "hotDebug":
       "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile",
     "debug":
       "webpack-dev-server --host localhost --port 8080 --env=dev --profile",
-    "net":
-      "webpack-dev-server --public --host 192.168.0.170 --port 80 --env=dev --profile --open",
     "net2":
-      "webpack-dev-server --public --host 192.168.0.117 --port 80 --env=dev --profile --open",
-    "devHTML":
-      "webpack-dev-server --progress --colors --host localhost --port 8080 --env=dev --profile --open",
+      "webpack-dev-server --host 192.168.0.130 --port 80 --env=dev --profile --open",
     "watch": "webpack --progress --colors --env=dev --profile --watch",
-    "exportp": "node ./js/rmDir.js && webpack --env=prod --profile --progress",
-    "rm": "node ./js/rmDir.js"
+    "exportp": "node ./rmDir.js && webpack --env=prod --profile --progress",
+    "rm": "node ./rmDir.js",
+    "clean": "node ./clean.js && npm i -D && npm up -D"
   },
   "repository": {
     "type": "git",
@@ -37,7 +33,7 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^7.1.6",
-    "browserslist": "^2.8.0",
+    "browserslist": "^2.9.0",
     "css-loader": "^0.28.7",
     "extract-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -56,8 +52,6 @@
     "url-loader": "^0.6.2",
     "video.js": "^6.4.0",
     "videojs-contrib-hls": "^5.12.2",
-    "videojs-contrib-media-sources": "^4.6.2",
-    "videojs-flash": "^2.0.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
     "webworkify-webpack-dropin": "^1.1.9",

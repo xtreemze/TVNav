@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-11-13 11:43:14
+#ver:2017-11-17 11:34:04
 #plugin:4.8.4
 
 CACHE:
@@ -30,7 +30,7 @@ CACHE:
 ../img/neox.jpg?2058ce1330793cfec70f4cc5d601cd11
 ../img/nova.png?b794d28cbe11e4a50800bd0bcc030e67
 ../img/cnnChile.svg?750999d9fa6a3b75431980f7bd18b8e9
-../img/tve.svg?b83e1cb709cb5a43a0a41c635885d35a
+../img/tve.svg?2e570e1aec597a2f9bb8e8b604563acf
 ../img/dw.svg?33e0ea4d61d6bc83d9967f104aaf3aad
 ../img/germany.svg?68a51090190055f8e34d670ea0296f9c
 ../img/bbc.svg?15511ca386348d3e2006a87d4e042804
@@ -75,13 +75,13 @@ CACHE:
 ../img/radioAmerica.png?879ae28ffeaea4f1ed7dbe2154cdbf2c
 ../img/radioNacional.jpg?cffb05ddd0b1ecae364803b8db68424f
 ../js/vendor.js?91599c20c827317aafd7
-../js/app.js?2133a2742e4348c31871
-../js/manifest.js?2448b460f2157c10f388
-../css/app.css?2133a2742e4348c31871
+../js/app.js?ff77afb4141380a6ad1c
+../js/manifest.js?2df2362602b80d7f03e0
+../css/app.css?ff77afb4141380a6ad1c
 ../js/vendor.js.map?91599c20c827317aafd7
-../js/app.js.map?2133a2742e4348c31871
-../css/app.css.map?2133a2742e4348c31871
-../js/manifest.js.map?2448b460f2157c10f388
+../js/app.js.map?ff77afb4141380a6ad1c
+../css/app.css.map?ff77afb4141380a6ad1c
+../js/manifest.js.map?2df2362602b80d7f03e0
 ../
 
 NETWORK:

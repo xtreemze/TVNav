@@ -8,9 +8,9 @@ class Channel {
     name,
     shortName,
     link,
-    type,
-    video,
-    data,
+    type = "application/x-mpegURL",
+    video = "video",
+    data = {},
     ustream,
     logo,
     country
@@ -23,22 +23,12 @@ class Channel {
     this.logo = logo;
     this.country = country;
     this.ustream = ustream;
-    if (!type) {
-      this.type = "application/x-mpegURL";
-    } else {
-      this.type = type;
-    }
-    if (!video) {
-      this.video = "video";
-    } else {
-      this.video = "audio";
-    }
-    if (data == "undefined") {
-      this.data = "{}";
-    } else if (!data === false) {
-      this.data = data;
-    }
-    channelList += `<div onclick="window.falseTest(); window.updateVideo(${shortName});" class="individualChannel pointer" id=${shortName}>
+    this.type = type;
+    this.data = data;
+
+    channelList += `<div onclick="window.falseTest(); window.updateVideo(${
+      shortName
+    });" class="individualChannel pointer" id=${shortName}>
     <span class="channelName">
         ${name}
     </span>
@@ -96,6 +86,74 @@ window.hch = new Channel({
   logo: require("../img/logos/hch.png"),
   country: require("../img/flags/honduras.svg"),
   link: "http://stream.innovandote.com/hch/hch/playlist.m3u8"
+});
+
+window.msnbc = new Channel({
+  name: "MSNBC",
+  shortName: "msnbc",
+  logo: require("../img/logos/msnbc.png"),
+  country: require("../img/flags/usa.svg"),
+  link: "http://tvemsnbc-lh.akamaihd.net/i/nbcmsnbc_1@122532/master.m3u8"
+});
+
+window.bloomberg = new Channel({
+  name: "Bloomberg",
+  shortName: "bloomberg",
+  logo: require("../img/logos/bloomberg.svg"),
+  country: require("../img/flags/usa.svg"),
+  link: "http://live-bloomberg-us-east.global.ssl.fastly.net/us/us3_live.m3u8"
+});
+
+window.tve = new Channel({
+  name: "TVE",
+  shortName: "tve",
+  logo: require("../img/logos/tve.svg"),
+  country: require("../img/flags/spain.svg"),
+  link: "http://hlsackdn_gl8-lh.akamaihd.net/i/hlsdvrlive_1@81183/master.m3u8"
+});
+
+window.dw = new Channel({
+  name: "DW",
+  shortName: "dw",
+  logo: require("../img/logos/dw.svg"),
+  country: require("../img/flags/germany.svg"),
+  link:
+    "http://dwstream3-lh.akamaihd.net/i/dwstream3_live@124409/index_5_av-p.m3u8"
+  // ?sd=10&rebase=on"
+});
+
+window.bbc = new Channel({
+  name: "BBC",
+  shortName: "bbc",
+  logo: require("../img/logos/bbc.svg"),
+  country: require("../img/flags/england.svg"),
+  link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/BBCW/tu1_1.m3u8"
+});
+
+window.jazeera = new Channel({
+  name: " AlJazeera",
+  shortName: "jazeera",
+  logo: require("../img/logos/jazeera.svg"),
+  country: require("../img/flags/qatar.svg"),
+  link:
+    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
+});
+
+window.teleProg = new Channel({
+  name: "TeleProgreso",
+  shortName: "teleProg",
+  logo: require("../img/logos/teleprogreso.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
+});
+
+window.rtv = new Channel({
+  name: "RTV",
+  shortName: "rtv",
+  logo: require("../img/logos/rtv.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://www.ustream.tv/embed/18502457",
+  ustream: true
 });
 
 window.globoTV = new Channel({
@@ -216,32 +274,6 @@ window.cnn = new Channel({
   link: "http://unlimited1-us.dps.live/cnn/cnn.smil/playlist.m3u8"
 });
 
-window.tve = new Channel({
-  name: "TVE",
-  shortName: "tve",
-  logo: require("../img/logos/tve.svg"),
-  country: require("../img/flags/spain.svg"),
-  link: "http://hlsackdn_gl8-lh.akamaihd.net/i/hlsdvrlive_1@81183/master.m3u8"
-});
-
-window.dw = new Channel({
-  name: "DW",
-  shortName: "dw",
-  logo: require("../img/logos/dw.svg"),
-  country: require("../img/flags/germany.svg"),
-  link:
-    "http://dwstream3-lh.akamaihd.net/i/dwstream3_live@124409/index_5_av-p.m3u8"
-  // ?sd=10&rebase=on"
-});
-
-window.bbc = new Channel({
-  name: "BBC",
-  shortName: "bbc",
-  logo: require("../img/logos/bbc.svg"),
-  country: require("../img/flags/england.svg"),
-  link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/BBCW/tu1_1.m3u8"
-});
-
 window.weather = new Channel({
   name: "Weather Channel",
   shortName: "weather",
@@ -249,32 +281,6 @@ window.weather = new Channel({
   country: require("../img/flags/usa.svg"),
   link: "http://weather-lh.akamaihd.net/i/twc_1@92006/master.m3u8"
 });
-
-window.msnbc = new Channel({
-  name: "MSNBC",
-  shortName: "msnbc",
-  logo: require("../img/logos/msnbc.png"),
-  country: require("../img/flags/usa.svg"),
-  link: "http://tvemsnbc-lh.akamaihd.net/i/nbcmsnbc_1@122532/master.m3u8"
-});
-
-window.bloomberg = new Channel({
-  name: "Bloomberg",
-  shortName: "bloomberg",
-  logo: require("../img/logos/bloomberg.svg"),
-  country: require("../img/flags/usa.svg"),
-  link: "http://live-bloomberg-us-east.global.ssl.fastly.net/us/us3_live.m3u8"
-});
-
-window.jazeera = new Channel({
-  name: " AlJazeera",
-  shortName: "jazeera",
-  logo: require("../img/logos/jazeera.svg"),
-  country: require("../img/flags/qatar.svg"),
-  link:
-    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
-});
-
 window.twit = new Channel({
   name: "TWiT",
   shortName: "twit",
@@ -412,23 +418,6 @@ window.td = new Channel({
   country: require("../img/flags/honduras.svg"),
   link:
     "http://190.92.0.43:1935/securelive/tdtv85jd5EKL3xWq3/chunklist_w1241310319.m3u8"
-});
-
-window.teleProg = new Channel({
-  name: "TeleProgreso",
-  shortName: "teleProg",
-  logo: require("../img/logos/teleprogreso.png"),
-  country: require("../img/flags/honduras.svg"),
-  link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
-});
-
-window.rtv = new Channel({
-  name: "RTV",
-  shortName: "rtv",
-  logo: require("../img/logos/rtv.png"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://www.ustream.tv/embed/18502457",
-  ustream: true
 });
 
 window.hondured = new Channel({

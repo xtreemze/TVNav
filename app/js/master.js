@@ -149,8 +149,10 @@ window.updateVideo = function(channel) {
     videojs.players.videoContainer.dispose();
   }
   // poster="../img/bars.png"
-  if (navigator.onLine && !channel.ustream) {
-    videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+  if (navigator.onLine && !channel.ustream && !channel.html5) {
+    videoSection.innerHTML = `<${
+      channel.video
+    } controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
     <source src=${channel.link} type=${channel.type} data=${channel.data}>
 </${channel.video}>
 `;
@@ -158,7 +160,7 @@ window.updateVideo = function(channel) {
     if (window.player) {
       window.player.width(window.innerWidth);
       window.player.height(window.innerHeight);
-      if (!channel.ustream) {
+      if (!channel.ustream && !channel.html5) {
         setTimeout(function() {
           window.player.muted(!"setMuted");
         }, 200);
@@ -167,7 +169,7 @@ window.updateVideo = function(channel) {
     window.currentElement = document.getElementById(channel.shortName);
     window.currentElement.classList.add("active");
     window.scroller.center(window.currentElement, 480, 0);
-  } else if (navigator.onLine && channel.ustream) {
+  } else if (navigator.onLine && channel.ustream && !channel.html5) {
     if (!videojs.players.videoContainer === false && !window.player === false) {
       window.currentElement.classList.remove("active");
       videojs.players.videoContainer.pause();
@@ -176,8 +178,29 @@ window.updateVideo = function(channel) {
 
     if (navigator.onLine) {
       videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0"
-      width="${window.innerWidth}" height="${window.innerHeight}" id="video" src="${channel.link}?html5ui=1&autoplay=true&controls=false">
+      width="${window.innerWidth}" height="${
+        window.innerHeight
+      }" id="video" src="${channel.link}">
       </iframe>
+      `;
+
+      window.currentElement = document.getElementById(channel.shortName);
+      window.currentElement.classList.add("active");
+    }
+    document.title = channel.name + " | TVNav";
+    h1Title.innerText = channel.name + " | TVNav";
+  } else if (navigator.onLine && channel.html5) {
+    if (!videojs.players.videoContainer === false && !window.player === false) {
+      window.currentElement.classList.remove("active");
+      videojs.players.videoContainer.pause();
+      videojs.players.videoContainer.dispose();
+    }
+
+    if (navigator.onLine) {
+      videoSection.innerHTML = `<video autoplay="true"cwidth="${window.innerWidth}" height="${
+        window.innerHeight
+      }" id="video" src="${channel.link}">
+      </video>
       `;
 
       window.currentElement = document.getElementById(channel.shortName);
@@ -234,8 +257,12 @@ const channelTest = function(pass) {
 
             // poster="../img/bars.png"
             if (navigator.onLine && !channel.ustream) {
-              videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin">
-            <source src=${channel.link} type=${channel.type} data=${channel.data}>
+              videoSection.innerHTML = `<${
+                channel.video
+              } controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin">
+            <source src=${channel.link} type=${channel.type} data=${
+                channel.data
+              }>
         </${channel.video}>
         `;
               window.player = videojs(

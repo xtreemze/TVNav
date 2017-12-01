@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-12-1 10:57:29
+#ver:2017-12-1 11:30:30
 #plugin:4.8.4
 
 CACHE:
@@ -13,6 +13,14 @@ CACHE:
 ../img/canal5.png?7baf93d617c9501b729cac477759ac36
 ../img/ten.png?a78dac6ed8551874899ba9452fcd25d7
 ../img/hch.png?fc1764313348c39195d270fc2710d546
+../img/teleceiba.png?cc6b336b56d02bb177b0c30808b99284
+../img/globoTV.png?c76a5ad9b215dba6f7dfa176e0235a4b
+../img/canal11.png?904b5b4d62c1475293e9a16a1dd8cefe
+../img/azteca.png?5814f825e479774d179174f898839c82
+../img/campustv.png?8712880b0e84ef04fce778b2eb23bbbe
+../img/jazeera.svg?1b8aefe053a072b8bfc80d08ea5d874b
+../img/qatar.svg?ab51fefc91b14d1c8173b3dca977745d
+../img/teleprogreso.png?a98dbc55a8efb8f7c7fd6e8073d26b8c
 ../img/msnbc.png?009b5832226ead16506cf33a9c35f1da
 ../img/bloomberg.svg?7d529cdb6eaccc93c290ba27cad1f79e
 ../img/tve.svg?b83e1cb709cb5a43a0a41c635885d35a
@@ -20,16 +28,8 @@ CACHE:
 ../img/germany.svg?68a51090190055f8e34d670ea0296f9c
 ../img/bbc.svg?15511ca386348d3e2006a87d4e042804
 ../img/england.svg?e1fc5c82fdd9316a6114baa3f2a28f58
-../img/jazeera.svg?1b8aefe053a072b8bfc80d08ea5d874b
-../img/qatar.svg?ab51fefc91b14d1c8173b3dca977745d
-../img/teleprogreso.png?a98dbc55a8efb8f7c7fd6e8073d26b8c
 ../img/rtv.png?0b734d9589d1dfca1fa1507303198e2f
-../img/globoTV.png?c76a5ad9b215dba6f7dfa176e0235a4b
 ../img/45tv.png?4612db5a718fe0a9d52c3ba790b80424
-../img/teleceiba.png?cc6b336b56d02bb177b0c30808b99284
-../img/canal11.png?904b5b4d62c1475293e9a16a1dd8cefe
-../img/azteca.png?5814f825e479774d179174f898839c82
-../img/campustv.png?8712880b0e84ef04fce778b2eb23bbbe
 ../img/rt.svg?2bd2b49e5b2b985c1c0bf028aff64913
 ../img/russia.svg?14814a48e7284c087eaa9c44fb581302
 ../img/caracol.png?d2da03f489c103d0a5543d038940e3b9
@@ -75,13 +75,13 @@ CACHE:
 ../img/radioAmerica.png?879ae28ffeaea4f1ed7dbe2154cdbf2c
 ../img/radioNacional.jpg?cffb05ddd0b1ecae364803b8db68424f
 ../js/vendor.js?91599c20c827317aafd7
-../js/app.js?67de71066ca4089aa279
-../js/manifest.js?b211e284bd5b1a5ea6f9
-../css/app.css?67de71066ca4089aa279
+../js/app.js?8c64f4f758080d4c8a9d
+../js/manifest.js?1ed4b155fe3e63640d15
+../css/app.css?8c64f4f758080d4c8a9d
 ../js/vendor.js.map?91599c20c827317aafd7
-../js/app.js.map?67de71066ca4089aa279
-../css/app.css.map?67de71066ca4089aa279
-../js/manifest.js.map?b211e284bd5b1a5ea6f9
+../js/app.js.map?8c64f4f758080d4c8a9d
+../css/app.css.map?8c64f4f758080d4c8a9d
+../js/manifest.js.map?1ed4b155fe3e63640d15
 ../
 
 NETWORK:

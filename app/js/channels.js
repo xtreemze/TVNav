@@ -13,7 +13,8 @@ class Channel {
     data = {},
     ustream,
     logo,
-    country
+    country,
+    html5
   }) {
     this.name = name;
     this.shortName = shortName;
@@ -25,6 +26,7 @@ class Channel {
     this.ustream = ustream;
     this.type = type;
     this.data = data;
+    this.html5 = html5;
 
     channelList += `<div onclick="window.falseTest(); window.updateVideo(${
       shortName
@@ -88,6 +90,65 @@ window.hch = new Channel({
   link: "http://stream.innovandote.com/hch/hch/playlist.m3u8"
 });
 
+window.tele7 = new Channel({
+  name: "TeleCeiba",
+  shortName: "tele7",
+  logo: require("../img/logos/teleceiba.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://190.11.224.14:8134/liveevent.m3u8",
+  html5: true
+});
+
+window.globoTV = new Channel({
+  name: "GloboTV",
+  shortName: "globoTV",
+  logo: require("../img/logos/globoTV.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
+});
+
+window.once = new Channel({
+  name: "Canal 11",
+  shortName: "once",
+  logo: require("../img/logos/canal11.png"),
+  country: require("../img/flags/honduras.svg"),
+  link:
+    "http://www.miotv.hn:1935/securelive/smil:c11.smil/chunklist_w1277053248_b1304800.m3u8"
+});
+
+window.azteca = new Channel({
+  name: "Azteca",
+  shortName: "azteca",
+  logo: require("../img/logos/azteca.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://aztecalive-lh.akamaihd.net/i/0dcqjxkgx_1@502208/master.m3u8"
+});
+
+window.campus = new Channel({
+  name: "CampusTV",
+  shortName: "campus",
+  logo: require("../img/logos/campustv.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://st2.worldkast.com/8004/8004/playlist.m3u8"
+});
+
+window.jazeera = new Channel({
+  name: " AlJazeera",
+  shortName: "jazeera",
+  logo: require("../img/logos/jazeera.svg"),
+  country: require("../img/flags/qatar.svg"),
+  link:
+    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
+});
+
+window.teleProg = new Channel({
+  name: "TeleProgreso",
+  shortName: "teleProg",
+  logo: require("../img/logos/teleprogreso.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
+});
+
 window.msnbc = new Channel({
   name: "MSNBC",
   shortName: "msnbc",
@@ -130,38 +191,15 @@ window.bbc = new Channel({
   link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/BBCW/tu1_1.m3u8"
 });
 
-window.jazeera = new Channel({
-  name: " AlJazeera",
-  shortName: "jazeera",
-  logo: require("../img/logos/jazeera.svg"),
-  country: require("../img/flags/qatar.svg"),
-  link:
-    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
-});
-
-window.teleProg = new Channel({
-  name: "TeleProgreso",
-  shortName: "teleProg",
-  logo: require("../img/logos/teleprogreso.png"),
-  country: require("../img/flags/honduras.svg"),
-  link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
-});
-
 window.rtv = new Channel({
   name: "RTV",
   shortName: "rtv",
   logo: require("../img/logos/rtv.png"),
   country: require("../img/flags/honduras.svg"),
-  link: "http://www.ustream.tv/embed/18502457",
+  link:
+    "http://www.ustream.tv/embed/18502457" +
+    "?html5ui=1&autoplay=true&controls=false",
   ustream: true
-});
-
-window.globoTV = new Channel({
-  name: "GloboTV",
-  shortName: "globoTV",
-  logo: require("../img/logos/globoTV.png"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
 });
 
 window.tv45 = new Channel({
@@ -169,41 +207,10 @@ window.tv45 = new Channel({
   shortName: "tv45",
   logo: require("../img/logos/45tv.png"),
   country: require("../img/flags/honduras.svg"),
-  link: "http://www.ustream.tv/embed/19421752",
-  ustream: true
-});
-
-window.tele7 = new Channel({
-  name: "TeleCeiba",
-  shortName: "tele7",
-  logo: require("../img/logos/teleceiba.png"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://190.11.224.14:8134/liveevent.m3u8"
-});
-
-window.once = new Channel({
-  name: "Canal 11",
-  shortName: "once",
-  logo: require("../img/logos/canal11.png"),
-  country: require("../img/flags/honduras.svg"),
   link:
-    "http://www.miotv.hn:1935/securelive/smil:c11.smil/chunklist_w1277053248_b1304800.m3u8"
-});
-
-window.azteca = new Channel({
-  name: "Azteca",
-  shortName: "azteca",
-  logo: require("../img/logos/azteca.png"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://aztecalive-lh.akamaihd.net/i/0dcqjxkgx_1@502208/master.m3u8"
-});
-
-window.campus = new Channel({
-  name: "CampusTV",
-  shortName: "campus",
-  logo: require("../img/logos/campustv.png"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://st2.worldkast.com/8004/8004/playlist.m3u8"
+    "http://www.ustream.tv/embed/19421752" +
+    "?html5ui=1&autoplay=true&controls=false",
+  ustream: true
 });
 
 window.rt = new Channel({

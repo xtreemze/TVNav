@@ -1020,7 +1020,7 @@ window.tele7 = new Channel({
   logo: __webpack_require__(208),
   country: __webpack_require__(3),
   link: "http://190.11.224.14:8134/liveevent.m3u8",
-  html5: true
+  // html5: true
 });
 
 window.globoTV = new Channel({
@@ -1708,7 +1708,7 @@ module.exports = __webpack_require__.p + "./img/twit.svg?7d3dab1c552c5f2f5f5566b
 /* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/cbs.svg?711b99cc510c7573075a52443730d13b";
+module.exports = __webpack_require__.p + "./img/cbs.svg?18582c09bbe312d650d4a0bdd03d6398";
 
 /***/ }),
 /* 239 */
@@ -2059,4 +2059,4 @@ document.addEventListener("keydown", event => {
 
 /***/ })
 ],[197]);
-//# sourceMappingURL=app.js.map?8c64f4f758080d4c8a9d
+//# sourceMappingURL=app.js.map?51c0ee29d6ee0e64de4d

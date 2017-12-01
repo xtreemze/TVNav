@@ -96,7 +96,7 @@ window.tele7 = new Channel({
   logo: require("../img/logos/teleceiba.png"),
   country: require("../img/flags/honduras.svg"),
   link: "http://190.11.224.14:8134/liveevent.m3u8",
-  html5: true
+  // html5: true
 });
 
 window.globoTV = new Channel({

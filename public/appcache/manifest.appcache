@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-12-1 11:30:30
+#ver:2017-12-1 11:50:52
 #plugin:4.8.4
 
 CACHE:
@@ -43,7 +43,7 @@ CACHE:
 ../img/cnnChile.svg?750999d9fa6a3b75431980f7bd18b8e9
 ../img/weather.svg?d61bd628efced925efacecd63f66dcae
 ../img/twit.svg?7d3dab1c552c5f2f5f5566b501b8571d
-../img/cbs.svg?711b99cc510c7573075a52443730d13b
+../img/cbs.svg?18582c09bbe312d650d4a0bdd03d6398
 ../img/nbc.svg?e6b3fe76d94afcc49ee57d40cd800daf
 ../img/fox.svg?0c785292e638b0ec057014bc3c99b69e
 ../img/tvmas.jpg?523e5c4fd8bb284924459e392aa199ae
@@ -75,13 +75,13 @@ CACHE:
 ../img/radioAmerica.png?879ae28ffeaea4f1ed7dbe2154cdbf2c
 ../img/radioNacional.jpg?cffb05ddd0b1ecae364803b8db68424f
 ../js/vendor.js?91599c20c827317aafd7
-../js/app.js?8c64f4f758080d4c8a9d
-../js/manifest.js?1ed4b155fe3e63640d15
-../css/app.css?8c64f4f758080d4c8a9d
+../js/app.js?51c0ee29d6ee0e64de4d
+../js/manifest.js?72ad0882797f4f13db95
+../css/app.css?51c0ee29d6ee0e64de4d
 ../js/vendor.js.map?91599c20c827317aafd7
-../js/app.js.map?8c64f4f758080d4c8a9d
-../css/app.css.map?8c64f4f758080d4c8a9d
-../js/manifest.js.map?1ed4b155fe3e63640d15
+../js/app.js.map?51c0ee29d6ee0e64de4d
+../css/app.css.map?51c0ee29d6ee0e64de4d
+../js/manifest.js.map?72ad0882797f4f13db95
 ../
 
 NETWORK:

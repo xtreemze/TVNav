@@ -150,7 +150,9 @@ window.updateVideo = function(channel) {
   }
   // poster="../img/bars.png"
   if (navigator.onLine && !channel.ustream) {
-    videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+    videoSection.innerHTML = `<${
+      channel.video
+    } controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
     <source src=${channel.link} type=${channel.type} data=${channel.data}>
 </${channel.video}>
 `;
@@ -176,7 +178,11 @@ window.updateVideo = function(channel) {
 
     if (navigator.onLine) {
       videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0"
-      width="${window.innerWidth}" height="${window.innerHeight}" id="video" src="${channel.link}?html5ui=1&autoplay=true&controls=false">
+      width="${window.innerWidth}" height="${
+        window.innerHeight
+      }" id="video" src="${
+        channel.link
+      }?html5ui=1&autoplay=true&controls=false">
       </iframe>
       `;
 
@@ -234,8 +240,12 @@ const channelTest = function(pass) {
 
             // poster="../img/bars.png"
             if (navigator.onLine && !channel.ustream) {
-              videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin">
-            <source src=${channel.link} type=${channel.type} data=${channel.data}>
+              videoSection.innerHTML = `<${
+                channel.video
+              } controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin">
+            <source src=${channel.link} type=${channel.type} data=${
+                channel.data
+              }>
         </${channel.video}>
         `;
               window.player = videojs(
@@ -244,8 +254,8 @@ const channelTest = function(pass) {
                 function() {
                   video.mediaSession;
                   if (window.player) {
-                    window.player.width(window.innerWidth);
-                    window.player.height(window.innerHeight);
+                    // window.player.width(window.innerWidth);
+                    // window.player.height(window.innerHeight);
                     if (!channel.ustream) {
                       setTimeout(function() {
                         window.player.muted(!"setMuted");

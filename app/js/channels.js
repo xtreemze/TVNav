@@ -38,7 +38,9 @@ class Channel {
     } else if (!data === false) {
       this.data = data;
     }
-    channelList += `<div onclick="window.falseTest(); window.updateVideo(${shortName});" class="individualChannel pointer" id=${shortName}>
+    channelList += `<div onclick="window.falseTest(); window.updateVideo(${
+      shortName
+    });" class="individualChannel pointer" id=${shortName}>
     <span class="channelName">
         ${name}
     </span>
@@ -539,23 +541,23 @@ window.america = new Channel({
   video: "audio"
 });
 
-window.rnh = new Channel({
-  name: "Radio Nacional",
-  shortName: "rnh",
-  logo: require("../img/logos/radioNacional.jpg"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://stream.playerlive.info:8049//rnh.aac",
-  type: "audio/aac",
-  video: "audio"
-});
-
-// window.rprog = new Channel({
-//   name: "Radio Progreso",
-//   shortName: "rprog",
-//   link: "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
-//   type: "audio/mpeg",
+// window.rnh = new Channel({
+//   name: "Radio Nacional",
+//   shortName: "rnh",
+//   logo: require("../img/logos/radioNacional.jpg"),
+//   country: require("../img/flags/honduras.svg"),
+//   link: "http://stream.playerlive.info:8049//rnh.aac",
+//   type: "audio/aac",
 //   video: "audio"
 // });
+
+window.rprog = new Channel({
+  name: "Radio Progreso",
+  shortName: "rprog",
+  link: "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
+  type: "audio/mpeg",
+  video: "audio"
+});
 
 // Donate
 channelList += `<div class="individualChannel" id="donate">

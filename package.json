@@ -4,7 +4,7 @@
   "description": "Navega canales de television y radio en vivo.",
   "main": "index.html",
   "scripts": {
-    "test": "node ./rmDir.js && webpack --env=prod --profile",
+    "test2": "node ./rmDir.js && webpack --env=prod --profile",
     "dev":
       "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile --open",
     "hotDebug":

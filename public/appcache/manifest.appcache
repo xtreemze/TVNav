@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-11-17 11:34:04
+#ver:2017-12-1 11:50:52
 #plugin:4.8.4
 
 CACHE:
@@ -13,12 +13,23 @@ CACHE:
 ../img/canal5.png?7baf93d617c9501b729cac477759ac36
 ../img/ten.png?a78dac6ed8551874899ba9452fcd25d7
 ../img/hch.png?fc1764313348c39195d270fc2710d546
-../img/globoTV.png?c76a5ad9b215dba6f7dfa176e0235a4b
-../img/45tv.png?4612db5a718fe0a9d52c3ba790b80424
 ../img/teleceiba.png?cc6b336b56d02bb177b0c30808b99284
+../img/globoTV.png?c76a5ad9b215dba6f7dfa176e0235a4b
 ../img/canal11.png?904b5b4d62c1475293e9a16a1dd8cefe
 ../img/azteca.png?5814f825e479774d179174f898839c82
 ../img/campustv.png?8712880b0e84ef04fce778b2eb23bbbe
+../img/jazeera.svg?1b8aefe053a072b8bfc80d08ea5d874b
+../img/qatar.svg?ab51fefc91b14d1c8173b3dca977745d
+../img/teleprogreso.png?a98dbc55a8efb8f7c7fd6e8073d26b8c
+../img/msnbc.png?009b5832226ead16506cf33a9c35f1da
+../img/bloomberg.svg?7d529cdb6eaccc93c290ba27cad1f79e
+../img/tve.svg?b83e1cb709cb5a43a0a41c635885d35a
+../img/dw.svg?33e0ea4d61d6bc83d9967f104aaf3aad
+../img/germany.svg?68a51090190055f8e34d670ea0296f9c
+../img/bbc.svg?15511ca386348d3e2006a87d4e042804
+../img/england.svg?e1fc5c82fdd9316a6114baa3f2a28f58
+../img/rtv.png?0b734d9589d1dfca1fa1507303198e2f
+../img/45tv.png?4612db5a718fe0a9d52c3ba790b80424
 ../img/rt.svg?2bd2b49e5b2b985c1c0bf028aff64913
 ../img/russia.svg?14814a48e7284c087eaa9c44fb581302
 ../img/caracol.png?d2da03f489c103d0a5543d038940e3b9
@@ -30,18 +41,9 @@ CACHE:
 ../img/neox.jpg?2058ce1330793cfec70f4cc5d601cd11
 ../img/nova.png?b794d28cbe11e4a50800bd0bcc030e67
 ../img/cnnChile.svg?750999d9fa6a3b75431980f7bd18b8e9
-../img/tve.svg?2e570e1aec597a2f9bb8e8b604563acf
-../img/dw.svg?33e0ea4d61d6bc83d9967f104aaf3aad
-../img/germany.svg?68a51090190055f8e34d670ea0296f9c
-../img/bbc.svg?15511ca386348d3e2006a87d4e042804
-../img/england.svg?e1fc5c82fdd9316a6114baa3f2a28f58
 ../img/weather.svg?d61bd628efced925efacecd63f66dcae
-../img/msnbc.png?009b5832226ead16506cf33a9c35f1da
-../img/bloomberg.svg?7d529cdb6eaccc93c290ba27cad1f79e
-../img/jazeera.svg?1b8aefe053a072b8bfc80d08ea5d874b
-../img/qatar.svg?ab51fefc91b14d1c8173b3dca977745d
 ../img/twit.svg?7d3dab1c552c5f2f5f5566b501b8571d
-../img/cbs.svg?711b99cc510c7573075a52443730d13b
+../img/cbs.svg?18582c09bbe312d650d4a0bdd03d6398
 ../img/nbc.svg?e6b3fe76d94afcc49ee57d40cd800daf
 ../img/fox.svg?0c785292e638b0ec057014bc3c99b69e
 ../img/tvmas.jpg?523e5c4fd8bb284924459e392aa199ae
@@ -59,8 +61,6 @@ CACHE:
 ../img/panama.svg?c5c0c6dcbd8d173e2f8fb5827bfe9a1b
 ../img/once.png?d358a9c8dacd48c38ee67032ddd2d49f
 ../img/td.png?a0c820608172a0bc6d963e6748228802
-../img/teleprogreso.png?a98dbc55a8efb8f7c7fd6e8073d26b8c
-../img/rtv.png?0b734d9589d1dfca1fa1507303198e2f
 ../img/hondured.png?10aa8bd1b6399cc8bca7075694f6c30b
 ../img/hispantv.png?ee9228c4f553167ae808b81b57c7ec7f
 ../img/iran.svg?5445a5a1fcfccc3ea1ce748ef5d91991
@@ -75,13 +75,13 @@ CACHE:
 ../img/radioAmerica.png?879ae28ffeaea4f1ed7dbe2154cdbf2c
 ../img/radioNacional.jpg?cffb05ddd0b1ecae364803b8db68424f
 ../js/vendor.js?91599c20c827317aafd7
-../js/app.js?ff77afb4141380a6ad1c
-../js/manifest.js?2df2362602b80d7f03e0
-../css/app.css?ff77afb4141380a6ad1c
+../js/app.js?51c0ee29d6ee0e64de4d
+../js/manifest.js?72ad0882797f4f13db95
+../css/app.css?51c0ee29d6ee0e64de4d
 ../js/vendor.js.map?91599c20c827317aafd7
-../js/app.js.map?ff77afb4141380a6ad1c
-../css/app.css.map?ff77afb4141380a6ad1c
-../js/manifest.js.map?2df2362602b80d7f03e0
+../js/app.js.map?51c0ee29d6ee0e64de4d
+../css/app.css.map?51c0ee29d6ee0e64de4d
+../js/manifest.js.map?72ad0882797f4f13db95
 ../
 
 NETWORK:

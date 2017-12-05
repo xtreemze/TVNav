@@ -679,8 +679,10 @@ window.updateVideo = function(channel) {
     __WEBPACK_IMPORTED_MODULE_0_video_js___default.a.players.videoContainer.dispose();
   }
   // poster="../img/bars.png"
-  if (navigator.onLine && !channel.ustream) {
-    videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
+  if (navigator.onLine && !channel.ustream && !channel.html5) {
+    videoSection.innerHTML = `<${
+      channel.video
+    } controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin vjs-big-play-centered">
     <source src=${channel.link} type=${channel.type} data=${channel.data}>
 </${channel.video}>
 `;
@@ -688,7 +690,7 @@ window.updateVideo = function(channel) {
     if (window.player) {
       window.player.width(window.innerWidth);
       window.player.height(window.innerHeight);
-      if (!channel.ustream) {
+      if (!channel.ustream && !channel.html5) {
         setTimeout(function() {
           window.player.muted(!"setMuted");
         }, 200);
@@ -697,7 +699,7 @@ window.updateVideo = function(channel) {
     window.currentElement = document.getElementById(channel.shortName);
     window.currentElement.classList.add("active");
     window.scroller.center(window.currentElement, 480, 0);
-  } else if (navigator.onLine && channel.ustream) {
+  } else if (navigator.onLine && channel.ustream && !channel.html5) {
     if (!__WEBPACK_IMPORTED_MODULE_0_video_js___default.a.players.videoContainer === false && !window.player === false) {
       window.currentElement.classList.remove("active");
       __WEBPACK_IMPORTED_MODULE_0_video_js___default.a.players.videoContainer.pause();
@@ -706,8 +708,29 @@ window.updateVideo = function(channel) {
 
     if (navigator.onLine) {
       videoSection.innerHTML = `<iframe autoplay="true" showtitle="false" allowfullscreen="false" webkitallowfullscreen="false" scrolling="no" frameborder="0"
-      width="${window.innerWidth}" height="${window.innerHeight}" id="video" src="${channel.link}?html5ui=1&autoplay=true&controls=false">
+      width="${window.innerWidth}" height="${
+        window.innerHeight
+      }" id="video" src="${channel.link}">
       </iframe>
+      `;
+
+      window.currentElement = document.getElementById(channel.shortName);
+      window.currentElement.classList.add("active");
+    }
+    document.title = channel.name + " | TVNav";
+    h1Title.innerText = channel.name + " | TVNav";
+  } else if (navigator.onLine && channel.html5) {
+    if (!__WEBPACK_IMPORTED_MODULE_0_video_js___default.a.players.videoContainer === false && !window.player === false) {
+      window.currentElement.classList.remove("active");
+      __WEBPACK_IMPORTED_MODULE_0_video_js___default.a.players.videoContainer.pause();
+      __WEBPACK_IMPORTED_MODULE_0_video_js___default.a.players.videoContainer.dispose();
+    }
+
+    if (navigator.onLine) {
+      videoSection.innerHTML = `<video autoplay="true"cwidth="${window.innerWidth}" height="${
+        window.innerHeight
+      }" id="video" src="${channel.link}">
+      </video>
       `;
 
       window.currentElement = document.getElementById(channel.shortName);
@@ -764,8 +787,12 @@ const channelTest = function(pass) {
 
             // poster="../img/bars.png"
             if (navigator.onLine && !channel.ustream) {
-              videoSection.innerHTML = `<${channel.video} controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin">
-            <source src=${channel.link} type=${channel.type} data=${channel.data}>
+              videoSection.innerHTML = `<${
+                channel.video
+              } controls id="videoContainer" preload="auto" autoplay muted class="video-js vjs-default-skin">
+            <source src=${channel.link} type=${channel.type} data=${
+                channel.data
+              }>
         </${channel.video}>
         `;
               window.player = __WEBPACK_IMPORTED_MODULE_0_video_js___default()(
@@ -905,12 +932,13 @@ class Channel {
     name,
     shortName,
     link,
-    type,
-    video,
-    data,
+    type = "application/x-mpegURL",
+    video = "video",
+    data = {},
     ustream,
     logo,
-    country
+    country,
+    html5
   }) {
     this.name = name;
     this.shortName = shortName;
@@ -920,22 +948,13 @@ class Channel {
     this.logo = logo;
     this.country = country;
     this.ustream = ustream;
-    if (!type) {
-      this.type = "application/x-mpegURL";
-    } else {
-      this.type = type;
-    }
-    if (!video) {
-      this.video = "video";
-    } else {
-      this.video = "audio";
-    }
-    if (data == "undefined") {
-      this.data = "{}";
-    } else if (!data === false) {
-      this.data = data;
-    }
-    channelList += `<div onclick="window.falseTest(); window.updateVideo(${shortName});" class="individualChannel pointer" id=${shortName}>
+    this.type = type;
+    this.data = data;
+    this.html5 = html5;
+
+    channelList += `<div onclick="window.falseTest(); window.updateVideo(${
+      shortName
+    });" class="individualChannel pointer" id=${shortName}>
     <span class="channelName">
         ${name}
     </span>
@@ -995,35 +1014,27 @@ window.hch = new Channel({
   link: "http://stream.innovandote.com/hch/hch/playlist.m3u8"
 });
 
-window.globoTV = new Channel({
-  name: "GloboTV",
-  shortName: "globoTV",
-  logo: __webpack_require__(208),
-  country: __webpack_require__(3),
-  link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
-});
-
-window.tv45 = new Channel({
-  name: "45TV",
-  shortName: "tv45",
-  logo: __webpack_require__(209),
-  country: __webpack_require__(3),
-  link: "http://www.ustream.tv/embed/19421752",
-  ustream: true
-});
-
 window.tele7 = new Channel({
   name: "TeleCeiba",
   shortName: "tele7",
-  logo: __webpack_require__(210),
+  logo: __webpack_require__(208),
   country: __webpack_require__(3),
-  link: "http://190.11.224.14:8134/liveevent.m3u8"
+  link: "http://190.11.224.14:8134/liveevent.m3u8",
+  // html5: true
+});
+
+window.globoTV = new Channel({
+  name: "GloboTV",
+  shortName: "globoTV",
+  logo: __webpack_require__(209),
+  country: __webpack_require__(3),
+  link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
 });
 
 window.once = new Channel({
   name: "Canal 11",
   shortName: "once",
-  logo: __webpack_require__(211),
+  logo: __webpack_require__(210),
   country: __webpack_require__(3),
   link:
     "http://www.miotv.hn:1935/securelive/smil:c11.smil/chunklist_w1277053248_b1304800.m3u8"
@@ -1032,7 +1043,7 @@ window.once = new Channel({
 window.azteca = new Channel({
   name: "Azteca",
   shortName: "azteca",
-  logo: __webpack_require__(212),
+  logo: __webpack_require__(211),
   country: __webpack_require__(3),
   link: "http://aztecalive-lh.akamaihd.net/i/0dcqjxkgx_1@502208/master.m3u8"
 });
@@ -1040,23 +1051,104 @@ window.azteca = new Channel({
 window.campus = new Channel({
   name: "CampusTV",
   shortName: "campus",
-  logo: __webpack_require__(213),
+  logo: __webpack_require__(212),
   country: __webpack_require__(3),
   link: "http://st2.worldkast.com/8004/8004/playlist.m3u8"
+});
+
+window.jazeera = new Channel({
+  name: " AlJazeera",
+  shortName: "jazeera",
+  logo: __webpack_require__(213),
+  country: __webpack_require__(214),
+  link:
+    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
+});
+
+window.teleProg = new Channel({
+  name: "TeleProgreso",
+  shortName: "teleProg",
+  logo: __webpack_require__(215),
+  country: __webpack_require__(3),
+  link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
+});
+
+window.msnbc = new Channel({
+  name: "MSNBC",
+  shortName: "msnbc",
+  logo: __webpack_require__(216),
+  country: __webpack_require__(15),
+  link: "http://tvemsnbc-lh.akamaihd.net/i/nbcmsnbc_1@122532/master.m3u8"
+});
+
+window.bloomberg = new Channel({
+  name: "Bloomberg",
+  shortName: "bloomberg",
+  logo: __webpack_require__(217),
+  country: __webpack_require__(15),
+  link: "http://live-bloomberg-us-east.global.ssl.fastly.net/us/us3_live.m3u8"
+});
+
+window.tve = new Channel({
+  name: "TVE",
+  shortName: "tve",
+  logo: __webpack_require__(218),
+  country: __webpack_require__(20),
+  link: "http://hlsackdn_gl8-lh.akamaihd.net/i/hlsdvrlive_1@81183/master.m3u8"
+});
+
+window.dw = new Channel({
+  name: "DW",
+  shortName: "dw",
+  logo: __webpack_require__(219),
+  country: __webpack_require__(220),
+  link:
+    "http://dwstream3-lh.akamaihd.net/i/dwstream3_live@124409/index_5_av-p.m3u8"
+  // ?sd=10&rebase=on"
+});
+
+window.bbc = new Channel({
+  name: "BBC",
+  shortName: "bbc",
+  logo: __webpack_require__(221),
+  country: __webpack_require__(222),
+  link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/BBCW/tu1_1.m3u8"
+});
+
+window.rtv = new Channel({
+  name: "RTV",
+  shortName: "rtv",
+  logo: __webpack_require__(223),
+  country: __webpack_require__(3),
+  link:
+    "http://www.ustream.tv/embed/18502457" +
+    "?html5ui=1&autoplay=true&controls=false",
+  ustream: true
+});
+
+window.tv45 = new Channel({
+  name: "45TV",
+  shortName: "tv45",
+  logo: __webpack_require__(224),
+  country: __webpack_require__(3),
+  link:
+    "http://www.ustream.tv/embed/19421752" +
+    "?html5ui=1&autoplay=true&controls=false",
+  ustream: true
 });
 
 window.rt = new Channel({
   name: "RT",
   shortName: "rt",
-  logo: __webpack_require__(214),
-  country: __webpack_require__(215),
+  logo: __webpack_require__(225),
+  country: __webpack_require__(226),
   link: "https://secure-streams.akamaized.net/rt-esp/index800.m3u8"
 });
 
 window.caracol = new Channel({
   name: "Caracol",
   shortName: "caracol",
-  logo: __webpack_require__(216),
+  logo: __webpack_require__(227),
   country: __webpack_require__(51),
   link: "http://mdstrm.com/live-stream-playlist/58dc3d471cbe05ff3c8e463e.m3u8"
   // ustream: true
@@ -1065,8 +1157,8 @@ window.caracol = new Channel({
 window.teleSur = new Channel({
   name: "TeleSUR",
   shortName: "teleSur",
-  logo: __webpack_require__(217),
-  country: __webpack_require__(218),
+  logo: __webpack_require__(228),
+  country: __webpack_require__(229),
   link:
     "http://cdna.telesur.ultrabase.net/mbliveMain/ngrp:mblive_all/playlist.m3u8"
 });
@@ -1074,15 +1166,15 @@ window.teleSur = new Channel({
 window.telpin = new Channel({
   name: "TelPin",
   shortName: "telpin",
-  logo: __webpack_require__(219),
-  country: __webpack_require__(220),
+  logo: __webpack_require__(230),
+  country: __webpack_require__(231),
   link: "http://201.219.100.30:1935/telpintv/ttv.stream_720p/playlist.m3u8"
 });
 
 window.sexta = new Channel({
   name: "la Sexta",
   shortName: "sexta",
-  logo: __webpack_require__(221),
+  logo: __webpack_require__(232),
   country: __webpack_require__(20),
   link: "http://a3live-lh.akamaihd.net/i/lasexta_1@35272/master.m3u8"
 });
@@ -1090,7 +1182,7 @@ window.sexta = new Channel({
 window.neox = new Channel({
   name: "neox",
   shortName: "neox",
-  logo: __webpack_require__(222),
+  logo: __webpack_require__(233),
   country: __webpack_require__(20),
   link: "http://a3live-lh.akamaihd.net/i/nxhds/geoneox_1@35261/master.m3u8"
 });
@@ -1098,7 +1190,7 @@ window.neox = new Channel({
 window.nova = new Channel({
   name: "nova",
   shortName: "nova",
-  logo: __webpack_require__(223),
+  logo: __webpack_require__(234),
   country: __webpack_require__(20),
   link:
     "http://a3live-lh.akamaihd.net/i/nvhds/geonova_1@379404/index_4_av-b.m3u8"
@@ -1108,74 +1200,22 @@ window.nova = new Channel({
 window.cnn = new Channel({
   name: "CNN",
   shortName: "cnn",
-  logo: __webpack_require__(224),
+  logo: __webpack_require__(235),
   country: __webpack_require__(89),
   link: "http://unlimited1-us.dps.live/cnn/cnn.smil/playlist.m3u8"
-});
-
-window.tve = new Channel({
-  name: "TVE",
-  shortName: "tve",
-  logo: __webpack_require__(225),
-  country: __webpack_require__(20),
-  link: "http://hlsackdn_gl8-lh.akamaihd.net/i/hlsdvrlive_1@81183/master.m3u8"
-});
-
-window.dw = new Channel({
-  name: "DW",
-  shortName: "dw",
-  logo: __webpack_require__(226),
-  country: __webpack_require__(227),
-  link:
-    "http://dwstream3-lh.akamaihd.net/i/dwstream3_live@124409/index_5_av-p.m3u8"
-  // ?sd=10&rebase=on"
-});
-
-window.bbc = new Channel({
-  name: "BBC",
-  shortName: "bbc",
-  logo: __webpack_require__(228),
-  country: __webpack_require__(229),
-  link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/BBCW/tu1_1.m3u8"
 });
 
 window.weather = new Channel({
   name: "Weather Channel",
   shortName: "weather",
-  logo: __webpack_require__(230),
+  logo: __webpack_require__(236),
   country: __webpack_require__(15),
   link: "http://weather-lh.akamaihd.net/i/twc_1@92006/master.m3u8"
 });
-
-window.msnbc = new Channel({
-  name: "MSNBC",
-  shortName: "msnbc",
-  logo: __webpack_require__(231),
-  country: __webpack_require__(15),
-  link: "http://tvemsnbc-lh.akamaihd.net/i/nbcmsnbc_1@122532/master.m3u8"
-});
-
-window.bloomberg = new Channel({
-  name: "Bloomberg",
-  shortName: "bloomberg",
-  logo: __webpack_require__(232),
-  country: __webpack_require__(15),
-  link: "http://live-bloomberg-us-east.global.ssl.fastly.net/us/us3_live.m3u8"
-});
-
-window.jazeera = new Channel({
-  name: " AlJazeera",
-  shortName: "jazeera",
-  logo: __webpack_require__(233),
-  country: __webpack_require__(234),
-  link:
-    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
-});
-
 window.twit = new Channel({
   name: "TWiT",
   shortName: "twit",
-  logo: __webpack_require__(235),
+  logo: __webpack_require__(237),
   country: __webpack_require__(15),
   link: "https://www.ustream.tv/embed/1524",
   ustream: true
@@ -1184,7 +1224,7 @@ window.twit = new Channel({
 window.cbsn = new Channel({
   name: "CBSN",
   shortName: "cbsn",
-  logo: __webpack_require__(236),
+  logo: __webpack_require__(238),
   country: __webpack_require__(15),
   link: "http://cbsnewshd-lh.akamaihd.net/i/CBSNHD_7@199302/master.m3u8"
 });
@@ -1192,7 +1232,7 @@ window.cbsn = new Channel({
 window.nbc = new Channel({
   name: "NBC",
   shortName: "nbc",
-  logo: __webpack_require__(237),
+  logo: __webpack_require__(239),
   country: __webpack_require__(15),
   link: "https://wrclive-f.akamaihd.net/i/wrcb1_1@46880/master.m3u8"
 });
@@ -1200,7 +1240,7 @@ window.nbc = new Channel({
 window.fox = new Channel({
   name: "FOX",
   shortName: "fox",
-  logo: __webpack_require__(238),
+  logo: __webpack_require__(240),
   country: __webpack_require__(15),
   link:
     "https://api.new.livestream.com/accounts/2363281/events/1763520/live.m3u8"
@@ -1209,7 +1249,7 @@ window.fox = new Channel({
 window.mas = new Channel({
   name: "TVMas",
   shortName: "mas",
-  logo: __webpack_require__(239),
+  logo: __webpack_require__(241),
   country: __webpack_require__(52),
   link: "http://50.7.98.234:1935/rtv/videortv/chunklist.m3u8"
 });
@@ -1217,7 +1257,7 @@ window.mas = new Channel({
 window.azteca13 = new Channel({
   name: "Azteca",
   shortName: "azteca13",
-  logo: __webpack_require__(240),
+  logo: __webpack_require__(242),
   country: __webpack_require__(52),
   link:
     "http://aztecalive-lh.akamaihd.net/i/0qm7cjvop_1@502476/index_3_av-p.m3u8"
@@ -1227,16 +1267,16 @@ window.azteca13 = new Channel({
 window.peru = new Channel({
   name: "TVPeru",
   shortName: "peru",
-  logo: __webpack_require__(241),
-  country: __webpack_require__(242),
+  logo: __webpack_require__(243),
+  country: __webpack_require__(244),
   link: "http://cdnh15.iblups.com/hls/irtp.m3u8"
 });
 
 window.ecuador = new Channel({
   name: "Ecuador TV",
   shortName: "ecuador",
-  logo: __webpack_require__(243),
-  country: __webpack_require__(244),
+  logo: __webpack_require__(245),
+  country: __webpack_require__(246),
   link:
     "http://api.new.livestream.com/accounts/22196143/events/6576568/live.m3u8"
 });
@@ -1244,7 +1284,7 @@ window.ecuador = new Channel({
 window.antena3 = new Channel({
   name: "Antena 3",
   shortName: "antena3",
-  logo: __webpack_require__(245),
+  logo: __webpack_require__(247),
   country: __webpack_require__(20),
   link: "http://a3live-lh.akamaihd.net/i/antena3_1@35248/index_4_av-p.m3u8"
 });
@@ -1252,7 +1292,7 @@ window.antena3 = new Channel({
 window.mega = new Channel({
   name: "MEGA",
   shortName: "mega",
-  logo: __webpack_require__(246),
+  logo: __webpack_require__(248),
   country: __webpack_require__(20),
   link:
     "http://a3live-lh.akamaihd.net/i/mghds/geomega_1@328914/index_3_av-b.m3u8"
@@ -1261,7 +1301,7 @@ window.mega = new Channel({
 window.chilev = new Channel({
   name: "Chilevision",
   shortName: "chilev",
-  logo: __webpack_require__(247),
+  logo: __webpack_require__(249),
   country: __webpack_require__(89),
   link:
     "http://chv.movil.rtsp.ztreaming.com/chvmovil2/chilevision@140569/chunklist_w787114469.m3u8"
@@ -1270,7 +1310,7 @@ window.chilev = new Channel({
 window.cableNoti = new Channel({
   name: "CableNoticias",
   shortName: "cableNoti",
-  logo: __webpack_require__(248),
+  logo: __webpack_require__(250),
   country: __webpack_require__(51),
   link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/CNOT/tu1_1.m3u8"
 });
@@ -1278,7 +1318,7 @@ window.cableNoti = new Channel({
 window.capital = new Channel({
   name: "Canal Capital",
   shortName: "capital",
-  logo: __webpack_require__(249),
+  logo: __webpack_require__(251),
   country: __webpack_require__(51),
   link:
     "http://us-b2-p-e-sx6.cdn.mdstrm.com/live-stream/57d01d6c28b263eb73b59a5a/publish/media_500.m3u8"
@@ -1288,15 +1328,15 @@ window.capital = new Channel({
 window.nexTV = new Channel({
   name: "NexTV",
   shortName: "nexTV",
-  logo: __webpack_require__(250),
-  country: __webpack_require__(251),
+  logo: __webpack_require__(252),
+  country: __webpack_require__(253),
   link: "http://198.1.117.5:1935/live/livestream/chunklist_w1290911642.m3u8"
 });
 
 window.conce = new Channel({
   name: "Once",
   shortName: "conce",
-  logo: __webpack_require__(252),
+  logo: __webpack_require__(254),
   country: __webpack_require__(52),
   link:
     "http://live.canaloncelive.tv:1935/livepkgr2/smil:internacional.smil/master.m3u8"
@@ -1305,27 +1345,10 @@ window.conce = new Channel({
 window.td = new Channel({
   name: "Todo Deportes",
   shortName: "td",
-  logo: __webpack_require__(253),
+  logo: __webpack_require__(255),
   country: __webpack_require__(3),
   link:
     "http://190.92.0.43:1935/securelive/tdtv85jd5EKL3xWq3/chunklist_w1241310319.m3u8"
-});
-
-window.teleProg = new Channel({
-  name: "TeleProgreso",
-  shortName: "teleProg",
-  logo: __webpack_require__(254),
-  country: __webpack_require__(3),
-  link: "blob:http://ott.streann.com/66e83bc8-5541-4c81-8c32-96e0004dd730"
-});
-
-window.rtv = new Channel({
-  name: "RTV",
-  shortName: "rtv",
-  logo: __webpack_require__(255),
-  country: __webpack_require__(3),
-  link: "http://www.ustream.tv/embed/18502457",
-  ustream: true
 });
 
 window.hondured = new Channel({
@@ -1505,289 +1528,289 @@ module.exports = __webpack_require__.p + "./img/hch.png?fc1764313348c39195d270fc
 /* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/globoTV.png?c76a5ad9b215dba6f7dfa176e0235a4b";
+module.exports = __webpack_require__.p + "./img/teleceiba.png?cc6b336b56d02bb177b0c30808b99284";
 
 /***/ }),
 /* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/45tv.png?4612db5a718fe0a9d52c3ba790b80424";
+module.exports = __webpack_require__.p + "./img/globoTV.png?c76a5ad9b215dba6f7dfa176e0235a4b";
 
 /***/ }),
 /* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/teleceiba.png?cc6b336b56d02bb177b0c30808b99284";
+module.exports = __webpack_require__.p + "./img/canal11.png?904b5b4d62c1475293e9a16a1dd8cefe";
 
 /***/ }),
 /* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/canal11.png?904b5b4d62c1475293e9a16a1dd8cefe";
+module.exports = __webpack_require__.p + "./img/azteca.png?5814f825e479774d179174f898839c82";
 
 /***/ }),
 /* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/azteca.png?5814f825e479774d179174f898839c82";
+module.exports = __webpack_require__.p + "./img/campustv.png?8712880b0e84ef04fce778b2eb23bbbe";
 
 /***/ }),
 /* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/campustv.png?8712880b0e84ef04fce778b2eb23bbbe";
+module.exports = __webpack_require__.p + "./img/jazeera.svg?1b8aefe053a072b8bfc80d08ea5d874b";
 
 /***/ }),
 /* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/rt.svg?2bd2b49e5b2b985c1c0bf028aff64913";
+module.exports = __webpack_require__.p + "./img/qatar.svg?ab51fefc91b14d1c8173b3dca977745d";
 
 /***/ }),
 /* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/russia.svg?14814a48e7284c087eaa9c44fb581302";
+module.exports = __webpack_require__.p + "./img/teleprogreso.png?a98dbc55a8efb8f7c7fd6e8073d26b8c";
 
 /***/ }),
 /* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/caracol.png?d2da03f489c103d0a5543d038940e3b9";
+module.exports = __webpack_require__.p + "./img/msnbc.png?009b5832226ead16506cf33a9c35f1da";
 
 /***/ }),
 /* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/telesur.svg?46ec1d41b608d446873d0a6963906f99";
+module.exports = __webpack_require__.p + "./img/bloomberg.svg?7d529cdb6eaccc93c290ba27cad1f79e";
 
 /***/ }),
 /* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/venezuela.svg?779b8965ebcfa8bfd0724007ec269df8";
+module.exports = __webpack_require__.p + "./img/tve.svg?b83e1cb709cb5a43a0a41c635885d35a";
 
 /***/ }),
 /* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/telpin.png?ef0e08f1490fcbe5867dfb7400525578";
+module.exports = __webpack_require__.p + "./img/dw.svg?33e0ea4d61d6bc83d9967f104aaf3aad";
 
 /***/ }),
 /* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/argentina.svg?3caf28344562066330e971db74f98ecb";
+module.exports = __webpack_require__.p + "./img/germany.svg?68a51090190055f8e34d670ea0296f9c";
 
 /***/ }),
 /* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/sexta.svg?e3615cb727cc8dc05b8d3791fe0424ad";
+module.exports = __webpack_require__.p + "./img/bbc.svg?15511ca386348d3e2006a87d4e042804";
 
 /***/ }),
 /* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/neox.jpg?2058ce1330793cfec70f4cc5d601cd11";
+module.exports = __webpack_require__.p + "./img/england.svg?e1fc5c82fdd9316a6114baa3f2a28f58";
 
 /***/ }),
 /* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/nova.png?b794d28cbe11e4a50800bd0bcc030e67";
+module.exports = __webpack_require__.p + "./img/rtv.png?0b734d9589d1dfca1fa1507303198e2f";
 
 /***/ }),
 /* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/cnnChile.svg?750999d9fa6a3b75431980f7bd18b8e9";
+module.exports = __webpack_require__.p + "./img/45tv.png?4612db5a718fe0a9d52c3ba790b80424";
 
 /***/ }),
 /* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/tve.svg?2e570e1aec597a2f9bb8e8b604563acf";
+module.exports = __webpack_require__.p + "./img/rt.svg?2bd2b49e5b2b985c1c0bf028aff64913";
 
 /***/ }),
 /* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/dw.svg?33e0ea4d61d6bc83d9967f104aaf3aad";
+module.exports = __webpack_require__.p + "./img/russia.svg?14814a48e7284c087eaa9c44fb581302";
 
 /***/ }),
 /* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/germany.svg?68a51090190055f8e34d670ea0296f9c";
+module.exports = __webpack_require__.p + "./img/caracol.png?d2da03f489c103d0a5543d038940e3b9";
 
 /***/ }),
 /* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/bbc.svg?15511ca386348d3e2006a87d4e042804";
+module.exports = __webpack_require__.p + "./img/telesur.svg?46ec1d41b608d446873d0a6963906f99";
 
 /***/ }),
 /* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/england.svg?e1fc5c82fdd9316a6114baa3f2a28f58";
+module.exports = __webpack_require__.p + "./img/venezuela.svg?779b8965ebcfa8bfd0724007ec269df8";
 
 /***/ }),
 /* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/weather.svg?d61bd628efced925efacecd63f66dcae";
+module.exports = __webpack_require__.p + "./img/telpin.png?ef0e08f1490fcbe5867dfb7400525578";
 
 /***/ }),
 /* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/msnbc.png?009b5832226ead16506cf33a9c35f1da";
+module.exports = __webpack_require__.p + "./img/argentina.svg?3caf28344562066330e971db74f98ecb";
 
 /***/ }),
 /* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/bloomberg.svg?7d529cdb6eaccc93c290ba27cad1f79e";
+module.exports = __webpack_require__.p + "./img/sexta.svg?e3615cb727cc8dc05b8d3791fe0424ad";
 
 /***/ }),
 /* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/jazeera.svg?1b8aefe053a072b8bfc80d08ea5d874b";
+module.exports = __webpack_require__.p + "./img/neox.jpg?2058ce1330793cfec70f4cc5d601cd11";
 
 /***/ }),
 /* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/qatar.svg?ab51fefc91b14d1c8173b3dca977745d";
+module.exports = __webpack_require__.p + "./img/nova.png?b794d28cbe11e4a50800bd0bcc030e67";
 
 /***/ }),
 /* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/twit.svg?7d3dab1c552c5f2f5f5566b501b8571d";
+module.exports = __webpack_require__.p + "./img/cnnChile.svg?750999d9fa6a3b75431980f7bd18b8e9";
 
 /***/ }),
 /* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/cbs.svg?711b99cc510c7573075a52443730d13b";
+module.exports = __webpack_require__.p + "./img/weather.svg?d61bd628efced925efacecd63f66dcae";
 
 /***/ }),
 /* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/nbc.svg?e6b3fe76d94afcc49ee57d40cd800daf";
+module.exports = __webpack_require__.p + "./img/twit.svg?7d3dab1c552c5f2f5f5566b501b8571d";
 
 /***/ }),
 /* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/fox.svg?0c785292e638b0ec057014bc3c99b69e";
+module.exports = __webpack_require__.p + "./img/cbs.svg?18582c09bbe312d650d4a0bdd03d6398";
 
 /***/ }),
 /* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/tvmas.jpg?523e5c4fd8bb284924459e392aa199ae";
+module.exports = __webpack_require__.p + "./img/nbc.svg?e6b3fe76d94afcc49ee57d40cd800daf";
 
 /***/ }),
 /* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/azteca13.png?f41dc02257e590d6607a9a1d80353203";
+module.exports = __webpack_require__.p + "./img/fox.svg?0c785292e638b0ec057014bc3c99b69e";
 
 /***/ }),
 /* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/tvperu.png?b188635343a62d5a5b839570e911f1da";
+module.exports = __webpack_require__.p + "./img/tvmas.jpg?523e5c4fd8bb284924459e392aa199ae";
 
 /***/ }),
 /* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/peru.svg?a3855d5b76c478e227e09117957ca4cd";
+module.exports = __webpack_require__.p + "./img/azteca13.png?f41dc02257e590d6607a9a1d80353203";
 
 /***/ }),
 /* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/ecuadortv.png?b2a9da0ffef1ee5c730a26c10ebb66b0";
+module.exports = __webpack_require__.p + "./img/tvperu.png?b188635343a62d5a5b839570e911f1da";
 
 /***/ }),
 /* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/ecuador.svg?8407dec6e3f02f4b76bdbe12b7bae2e3";
+module.exports = __webpack_require__.p + "./img/peru.svg?a3855d5b76c478e227e09117957ca4cd";
 
 /***/ }),
 /* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/antena3.svg?5d3eec216a39b08e9b0e8fea3890ae49";
+module.exports = __webpack_require__.p + "./img/ecuadortv.png?b2a9da0ffef1ee5c730a26c10ebb66b0";
 
 /***/ }),
 /* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/mega.svg?8ccde67f6d309c57e20dec82243718d8";
+module.exports = __webpack_require__.p + "./img/ecuador.svg?8407dec6e3f02f4b76bdbe12b7bae2e3";
 
 /***/ }),
 /* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/chilevision.png?8d7fba976e44f5db6d5d0ae789f94931";
+module.exports = __webpack_require__.p + "./img/antena3.svg?5d3eec216a39b08e9b0e8fea3890ae49";
 
 /***/ }),
 /* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/cablenoticias.png?8e808f375424d8413f98037e021492f0";
+module.exports = __webpack_require__.p + "./img/mega.svg?8ccde67f6d309c57e20dec82243718d8";
 
 /***/ }),
 /* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/capital.svg?43885826e18f6e8b4bb9d00ad868a0e3";
+module.exports = __webpack_require__.p + "./img/chilevision.png?8d7fba976e44f5db6d5d0ae789f94931";
 
 /***/ }),
 /* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/nex.png?f84207466d75ab43710ca3f88ab2f04b";
+module.exports = __webpack_require__.p + "./img/cablenoticias.png?8e808f375424d8413f98037e021492f0";
 
 /***/ }),
 /* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/panama.svg?c5c0c6dcbd8d173e2f8fb5827bfe9a1b";
+module.exports = __webpack_require__.p + "./img/capital.svg?43885826e18f6e8b4bb9d00ad868a0e3";
 
 /***/ }),
 /* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/once.png?d358a9c8dacd48c38ee67032ddd2d49f";
+module.exports = __webpack_require__.p + "./img/nex.png?f84207466d75ab43710ca3f88ab2f04b";
 
 /***/ }),
 /* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/td.png?a0c820608172a0bc6d963e6748228802";
+module.exports = __webpack_require__.p + "./img/panama.svg?c5c0c6dcbd8d173e2f8fb5827bfe9a1b";
 
 /***/ }),
 /* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/teleprogreso.png?a98dbc55a8efb8f7c7fd6e8073d26b8c";
+module.exports = __webpack_require__.p + "./img/once.png?d358a9c8dacd48c38ee67032ddd2d49f";
 
 /***/ }),
 /* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/rtv.png?0b734d9589d1dfca1fa1507303198e2f";
+module.exports = __webpack_require__.p + "./img/td.png?a0c820608172a0bc6d963e6748228802";
 
 /***/ }),
 /* 256 */
@@ -2036,4 +2059,4 @@ document.addEventListener("keydown", event => {
 
 /***/ })
 ],[197]);
-//# sourceMappingURL=app.js.map?ff77afb4141380a6ad1c
+//# sourceMappingURL=app.js.map?51c0ee29d6ee0e64de4d

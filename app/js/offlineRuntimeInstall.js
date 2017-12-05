@@ -17,6 +17,6 @@ OfflinePluginRuntime.install({
     h1Title.innerText = "Actualizado | TVNav";
     setTimeout(function() {
       window.location.reload();
-    }, 10000);
+    }, 3000);
   }
 });

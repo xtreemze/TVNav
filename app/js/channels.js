@@ -549,6 +549,8 @@ window.rprog = new Channel({
   name: "Radio Progreso",
   shortName: "rprog",
   link: "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
+  logo: require("../img/logos/radioProgreso.png"),
+  country: require("../img/flags/honduras.svg"),
   type: "audio/mpeg",
   video: "audio"
 });

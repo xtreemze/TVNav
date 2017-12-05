@@ -727,9 +727,9 @@ window.updateVideo = function(channel) {
     }
 
     if (navigator.onLine) {
-      videoSection.innerHTML = `<video autoplay="true"cwidth="${window.innerWidth}" height="${
-        window.innerHeight
-      }" id="video" src="${channel.link}">
+      videoSection.innerHTML = `<video autoplay="true" width="${
+        window.innerWidth
+      }" height="${window.innerHeight}" id="video" src="${channel.link}">
       </video>
       `;
 
@@ -1019,7 +1019,7 @@ window.tele7 = new Channel({
   shortName: "tele7",
   logo: __webpack_require__(208),
   country: __webpack_require__(3),
-  link: "http://190.11.224.14:8134/liveevent.m3u8",
+  link: "http://190.11.224.14:8134/liveevent.m3u8"
   // html5: true
 });
 
@@ -1459,23 +1459,25 @@ window.america = new Channel({
   video: "audio"
 });
 
-window.rnh = new Channel({
-  name: "Radio Nacional",
-  shortName: "rnh",
-  logo: __webpack_require__(268),
-  country: __webpack_require__(3),
-  link: "http://stream.playerlive.info:8049//rnh.aac",
-  type: "audio/aac",
-  video: "audio"
-});
-
-// window.rprog = new Channel({
-//   name: "Radio Progreso",
-//   shortName: "rprog",
-//   link: "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
-//   type: "audio/mpeg",
+// window.rnh = new Channel({
+//   name: "Radio Nacional",
+//   shortName: "rnh",
+//   logo: require("../img/logos/radioNacional.jpg"),
+//   country: require("../img/flags/honduras.svg"),
+//   link: "http://stream.playerlive.info:8049//rnh.aac",
+//   type: "audio/aac",
 //   video: "audio"
 // });
+
+window.rprog = new Channel({
+  name: "Radio Progreso",
+  shortName: "rprog",
+  link: "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
+  logo: __webpack_require__(268),
+  country: __webpack_require__(3),
+  type: "audio/mpeg",
+  video: "audio"
+});
 
 // Donate
 channelList += `<div class="individualChannel" id="donate">
@@ -1708,7 +1710,7 @@ module.exports = __webpack_require__.p + "./img/twit.svg?7d3dab1c552c5f2f5f5566b
 /* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/cbs.svg?18582c09bbe312d650d4a0bdd03d6398";
+module.exports = __webpack_require__.p + "./img/cbs.svg?711b99cc510c7573075a52443730d13b";
 
 /***/ }),
 /* 239 */
@@ -1888,7 +1890,7 @@ module.exports = __webpack_require__.p + "./img/radioAmerica.png?879ae28ffeaea4f
 /* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/radioNacional.jpg?cffb05ddd0b1ecae364803b8db68424f";
+module.exports = __webpack_require__.p + "./img/radioProgreso.png?3601f547301be40164263e17296744f0";
 
 /***/ }),
 /* 269 */
@@ -2059,4 +2061,4 @@ document.addEventListener("keydown", event => {
 
 /***/ })
 ],[197]);
-//# sourceMappingURL=app.js.map?51c0ee29d6ee0e64de4d
+//# sourceMappingURL=app.js.map?ce3a2092e82fe5880845

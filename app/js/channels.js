@@ -90,6 +90,14 @@ window.une = new Channel({
   link: "http://191.103.88.30/UNETV_HD/manifest.f4m"
 });
 
+window.une2 = new Channel({
+  name: "UNEtv2",
+  shortName: "une2",
+  logo: require("../img/logos/une.jpg"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://191.103.88.30/UNETV_HD/index.m3u8"
+});
+
 window.hch = new Channel({
   name: "HCH",
   shortName: "hch",

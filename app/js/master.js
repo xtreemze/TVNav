@@ -1,7 +1,7 @@
 import videojs from "video.js";
 window.videojs = videojs;
-// import * as HLS from "videojs-contrib-hls";
-// require("videojs-flash");
+import * as HLS from "videojs-contrib-hls";
+require("videojs-flash");
 
 import zenscroll from "zenscroll";
 window.zenscroll = zenscroll;
@@ -12,18 +12,18 @@ const h1Title = document.getElementById("h1Title");
 const main = document.getElementById("main");
 let video = {
   option: {
-    // sourceOrder: true,
-    // techOrder: ["html5", "flash"],
-    // html5: {
-    //   hls: {
-    //     withCredentials: false
-    //   }
-    // },
-    // flash: {
-    //   hls: {
-    //     withCredentials: false
-    //   }
-    // }
+    sourceOrder: true,
+    techOrder: ["html5", "flash"],
+    html5: {
+      hls: {
+        withCredentials: false
+      }
+    },
+    flash: {
+      hls: {
+        withCredentials: false
+      }
+    }
   },
   mediaSession: function(channel) {
     if ("mediaSession" in navigator) {

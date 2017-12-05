@@ -7,7 +7,7 @@ webpackJsonp([0],[
 
 exports.__esModule = true;
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -1953,11 +1953,11 @@ exports.normalizeContent = normalizeContent;
 exports.appendContent = appendContent;
 exports.insertContent = insertContent;
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -2822,6 +2822,26 @@ var $$ = exports.$$ = createQuerier('querySelectorAll');
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(global) {var win;
+
+if (typeof window !== "undefined") {
+    win = window;
+} else if (typeof global !== "undefined") {
+    win = global;
+} else if (typeof self !== "undefined"){
+    win = self;
+} else {
+    win = {};
+}
+
+module.exports = win;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /* WEBPACK VAR INJECTION */(function(global) {var topLevel = typeof global !== 'undefined' ? global :
     typeof window !== 'undefined' ? window : {}
 var minDoc = __webpack_require__(111);
@@ -2841,43 +2861,7 @@ if (typeof document !== 'undefined') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {var win;
-
-if (typeof window !== "undefined") {
-    win = window;
-} else if (typeof global !== "undefined") {
-    win = global;
-} else if (typeof self !== "undefined"){
-    win = self;
-} else {
-    win = {};
-}
-
-module.exports = win;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
-
-/***/ }),
 /* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {if (typeof window !== "undefined") {
-    module.exports = window;
-} else if (typeof global !== "undefined") {
-    module.exports = global;
-} else if (typeof self !== "undefined"){
-    module.exports = self;
-} else {
-    module.exports = {};
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -2894,11 +2878,11 @@ module.exports = win;
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var window = _interopDefault(__webpack_require__(5));
+var window = _interopDefault(__webpack_require__(4));
 var document = _interopDefault(__webpack_require__(28));
 var tsml = _interopDefault(__webpack_require__(36));
 var safeParseTuple = _interopDefault(__webpack_require__(55));
-var xhr = _interopDefault(__webpack_require__(92));
+var xhr = _interopDefault(__webpack_require__(93));
 var vtt = _interopDefault(__webpack_require__(58));
 
 var version = "6.4.0";
@@ -25886,6 +25870,22 @@ module.exports = videojs;
 
 
 /***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {if (typeof window !== "undefined") {
+    module.exports = window;
+} else if (typeof global !== "undefined") {
+    module.exports = global;
+} else if (typeof self !== "undefined"){
+    module.exports = self;
+} else {
+    module.exports = {};
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
+
+/***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25899,7 +25899,7 @@ var _dom = __webpack_require__(2);
 
 var Dom = _interopRequireWildcard(_dom);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -26166,7 +26166,7 @@ function isPlain(value) {
 exports.__esModule = true;
 exports.logByType = undefined;
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -26508,11 +26508,11 @@ var _log = __webpack_require__(10);
 
 var _log2 = _interopRequireDefault(_log);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -27053,9 +27053,9 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -27644,11 +27644,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 // Include the built-in techs
 
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -27664,7 +27664,7 @@ var _setup = __webpack_require__(112);
 
 var setup = _interopRequireWildcard(_setup);
 
-var _stylesheet = __webpack_require__(64);
+var _stylesheet = __webpack_require__(65);
 
 var stylesheet = _interopRequireWildcard(_stylesheet);
 
@@ -27680,7 +27680,7 @@ var _events = __webpack_require__(13);
 
 var Events = _interopRequireWildcard(_events);
 
-var _player = __webpack_require__(65);
+var _player = __webpack_require__(66);
 
 var _player2 = _interopRequireDefault(_player);
 
@@ -27732,7 +27732,7 @@ var _extend = __webpack_require__(165);
 
 var _extend2 = _interopRequireDefault(_extend);
 
-var _xhr = __webpack_require__(69);
+var _xhr = __webpack_require__(70);
 
 var _xhr2 = _interopRequireDefault(_xhr);
 
@@ -28726,11 +28726,11 @@ var _textTrackList = __webpack_require__(118);
 
 var _textTrackList2 = _interopRequireDefault(_textTrackList);
 
-var _videoTrackList = __webpack_require__(70);
+var _videoTrackList = __webpack_require__(71);
 
 var _videoTrackList2 = _interopRequireDefault(_videoTrackList);
 
-var _audioTrackList = __webpack_require__(71);
+var _audioTrackList = __webpack_require__(72);
 
 var _audioTrackList2 = _interopRequireDefault(_audioTrackList);
 
@@ -28744,17 +28744,17 @@ var _log2 = _interopRequireDefault(_log);
 
 var _timeRanges = __webpack_require__(22);
 
-var _buffer = __webpack_require__(66);
+var _buffer = __webpack_require__(67);
 
-var _mediaError = __webpack_require__(67);
+var _mediaError = __webpack_require__(68);
 
 var _mediaError2 = _interopRequireDefault(_mediaError);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -30144,7 +30144,7 @@ var _log = __webpack_require__(10);
 
 var _log2 = _interopRequireDefault(_log);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -30673,7 +30673,7 @@ module.exports = g;
 
 /* WEBPACK VAR INJECTION */(function(global) {var topLevel = typeof global !== 'undefined' ? global :
     typeof window !== 'undefined' ? window : {}
-var minDoc = __webpack_require__(91);
+var minDoc = __webpack_require__(92);
 
 var doccy;
 
@@ -30877,11 +30877,11 @@ exports['default'] = EventTarget;
 exports.__esModule = true;
 exports.isCrossOrigin = exports.getFileExtension = exports.getAbsoluteURL = exports.parseUrl = undefined;
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -31056,7 +31056,7 @@ var isCrossOrigin = exports.isCrossOrigin = function isCrossOrigin(url) {
 
 exports.__esModule = true;
 
-var _trackButton = __webpack_require__(75);
+var _trackButton = __webpack_require__(76);
 
 var _trackButton2 = _interopRequireDefault(_trackButton);
 
@@ -31540,13 +31540,13 @@ var _resolveUrl = __webpack_require__(99);
 
 var _resolveUrl2 = _interopRequireDefault(_resolveUrl);
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
-var _m3u8Parser = __webpack_require__(59);
+var _m3u8Parser = __webpack_require__(60);
 
 var _m3u8Parser2 = _interopRequireDefault(_m3u8Parser);
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -32273,7 +32273,7 @@ var _log = __webpack_require__(10);
 
 var _log2 = _interopRequireDefault(_log);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -32283,7 +32283,7 @@ var _track2 = _interopRequireDefault(_track);
 
 var _url = __webpack_require__(30);
 
-var _xhr = __webpack_require__(69);
+var _xhr = __webpack_require__(70);
 
 var _xhr2 = _interopRequireDefault(_xhr);
 
@@ -32792,7 +32792,7 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -32945,7 +32945,7 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -33178,7 +33178,7 @@ exports['default'] = TrackList;
 exports.__esModule = true;
 exports['default'] = computedStyle;
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -33240,11 +33240,11 @@ var _fn = __webpack_require__(1);
 
 var Fn = _interopRequireWildcard(_fn);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -33788,7 +33788,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -34069,10 +34069,10 @@ module.exports = function (fn, options) {
 
 
 var Stream = __webpack_require__(11);
-var mp4 = __webpack_require__(85);
-var m2ts = __webpack_require__(79);
-var AdtsStream = __webpack_require__(81);
-var H264Stream = __webpack_require__(82).H264Stream;
+var mp4 = __webpack_require__(86);
+var m2ts = __webpack_require__(80);
+var AdtsStream = __webpack_require__(82);
+var H264Stream = __webpack_require__(83).H264Stream;
 var AacStream = __webpack_require__(179);
 var coneOfSilence = __webpack_require__(180);
 var clock = __webpack_require__(181);
@@ -35534,7 +35534,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -36352,8 +36352,8 @@ function SafeParseTuple(obj, reviver) {
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var trim = __webpack_require__(93)
-  , forEach = __webpack_require__(94)
+var trim = __webpack_require__(94)
+  , forEach = __webpack_require__(95)
   , isArray = function(arg) {
       return Object.prototype.toString.call(arg) === '[object Array]';
     }
@@ -36434,12 +36434,12 @@ function extend() {
 // forth between JSON. If we don't then it's not that big of a deal since we're
 // off browser.
 
-var window = __webpack_require__(5);
+var window = __webpack_require__(4);
 
 var vttjs = module.exports = {
-  WebVTT: __webpack_require__(95),
-  VTTCue: __webpack_require__(96),
-  VTTRegion: __webpack_require__(97)
+  WebVTT: __webpack_require__(96),
+  VTTCue: __webpack_require__(97),
+  VTTRegion: __webpack_require__(98)
 };
 
 window.vttjs = vttjs;
@@ -36470,13 +36470,707 @@ if (!window.VTTCue) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/**
+ * @file videojs-contrib-hls.js
+ *
+ * The main file for the HLS project.
+ * License: https://github.com/videojs/videojs-contrib-hls/blob/master/LICENSE
+ */
 
 
-var _lineStream = __webpack_require__(60);
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x4, _x5, _x6) { var _again = true; _function: while (_again) { var object = _x4, property = _x5, receiver = _x6; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x4 = parent; _x5 = property; _x6 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _globalDocument = __webpack_require__(28);
+
+var _globalDocument2 = _interopRequireDefault(_globalDocument);
+
+var _playlistLoader = __webpack_require__(38);
+
+var _playlistLoader2 = _interopRequireDefault(_playlistLoader);
+
+var _playlist = __webpack_require__(16);
+
+var _playlist2 = _interopRequireDefault(_playlist);
+
+var _xhr = __webpack_require__(102);
+
+var _xhr2 = _interopRequireDefault(_xhr);
+
+var _aesDecrypter = __webpack_require__(63);
+
+var _binUtils = __webpack_require__(21);
+
+var _binUtils2 = _interopRequireDefault(_binUtils);
+
+var _videojsContribMediaSources = __webpack_require__(109);
+
+var _m3u8Parser = __webpack_require__(60);
+
+var _m3u8Parser2 = _interopRequireDefault(_m3u8Parser);
+
+var _videoJs = __webpack_require__(6);
+
+var _videoJs2 = _interopRequireDefault(_videoJs);
+
+var _masterPlaylistController = __webpack_require__(182);
+
+var _config = __webpack_require__(35);
+
+var _config2 = _interopRequireDefault(_config);
+
+var _renditionMixin = __webpack_require__(194);
+
+var _renditionMixin2 = _interopRequireDefault(_renditionMixin);
+
+var _globalWindow = __webpack_require__(4);
+
+var _globalWindow2 = _interopRequireDefault(_globalWindow);
+
+var _playbackWatcher = __webpack_require__(195);
+
+var _playbackWatcher2 = _interopRequireDefault(_playbackWatcher);
+
+var _reloadSourceOnError = __webpack_require__(196);
+
+var _reloadSourceOnError2 = _interopRequireDefault(_reloadSourceOnError);
+
+var _playlistSelectorsJs = __webpack_require__(88);
+
+var Hls = {
+  PlaylistLoader: _playlistLoader2['default'],
+  Playlist: _playlist2['default'],
+  Decrypter: _aesDecrypter.Decrypter,
+  AsyncStream: _aesDecrypter.AsyncStream,
+  decrypt: _aesDecrypter.decrypt,
+  utils: _binUtils2['default'],
+
+  STANDARD_PLAYLIST_SELECTOR: _playlistSelectorsJs.lastBandwidthSelector,
+  INITIAL_PLAYLIST_SELECTOR: _playlistSelectorsJs.lowestBitrateCompatibleVariantSelector,
+  comparePlaylistBandwidth: _playlistSelectorsJs.comparePlaylistBandwidth,
+  comparePlaylistResolution: _playlistSelectorsJs.comparePlaylistResolution,
+
+  xhr: (0, _xhr2['default'])()
+};
+
+// 0.5 MB/s
+var INITIAL_BANDWIDTH = 4194304;
+
+// Define getter/setters for config properites
+['GOAL_BUFFER_LENGTH', 'MAX_GOAL_BUFFER_LENGTH', 'GOAL_BUFFER_LENGTH_RATE', 'BUFFER_LOW_WATER_LINE', 'MAX_BUFFER_LOW_WATER_LINE', 'BUFFER_LOW_WATER_LINE_RATE', 'BANDWIDTH_VARIANCE'].forEach(function (prop) {
+  Object.defineProperty(Hls, prop, {
+    get: function get() {
+      _videoJs2['default'].log.warn('using Hls.' + prop + ' is UNSAFE be sure you know what you are doing');
+      return _config2['default'][prop];
+    },
+    set: function set(value) {
+      _videoJs2['default'].log.warn('using Hls.' + prop + ' is UNSAFE be sure you know what you are doing');
+
+      if (typeof value !== 'number' || value < 0) {
+        _videoJs2['default'].log.warn('value of Hls.' + prop + ' must be greater than or equal to 0');
+        return;
+      }
+
+      _config2['default'][prop] = value;
+    }
+  });
+});
+
+/**
+ * Updates the selectedIndex of the QualityLevelList when a mediachange happens in hls.
+ *
+ * @param {QualityLevelList} qualityLevels The QualityLevelList to update.
+ * @param {PlaylistLoader} playlistLoader PlaylistLoader containing the new media info.
+ * @function handleHlsMediaChange
+ */
+var handleHlsMediaChange = function handleHlsMediaChange(qualityLevels, playlistLoader) {
+  var newPlaylist = playlistLoader.media();
+  var selectedIndex = -1;
+
+  for (var i = 0; i < qualityLevels.length; i++) {
+    if (qualityLevels[i].id === newPlaylist.uri) {
+      selectedIndex = i;
+      break;
+    }
+  }
+
+  qualityLevels.selectedIndex_ = selectedIndex;
+  qualityLevels.trigger({
+    selectedIndex: selectedIndex,
+    type: 'change'
+  });
+};
+
+/**
+ * Adds quality levels to list once playlist metadata is available
+ *
+ * @param {QualityLevelList} qualityLevels The QualityLevelList to attach events to.
+ * @param {Object} hls Hls object to listen to for media events.
+ * @function handleHlsLoadedMetadata
+ */
+var handleHlsLoadedMetadata = function handleHlsLoadedMetadata(qualityLevels, hls) {
+  hls.representations().forEach(function (rep) {
+    qualityLevels.addQualityLevel(rep);
+  });
+  handleHlsMediaChange(qualityLevels, hls.playlists);
+};
+
+// HLS is a source handler, not a tech. Make sure attempts to use it
+// as one do not cause exceptions.
+Hls.canPlaySource = function () {
+  return _videoJs2['default'].log.warn('HLS is no longer a tech. Please remove it from ' + 'your player\'s techOrder.');
+};
+
+/**
+ * Whether the browser has built-in HLS support.
+ */
+Hls.supportsNativeHls = (function () {
+  var video = _globalDocument2['default'].createElement('video');
+
+  // native HLS is definitely not supported if HTML5 video isn't
+  if (!_videoJs2['default'].getTech('Html5').isSupported()) {
+    return false;
+  }
+
+  // HLS manifests can go by many mime-types
+  var canPlay = [
+  // Apple santioned
+  'application/vnd.apple.mpegurl',
+  // Apple sanctioned for backwards compatibility
+  'audio/mpegurl',
+  // Very common
+  'audio/x-mpegurl',
+  // Very common
+  'application/x-mpegurl',
+  // Included for completeness
+  'video/x-mpegurl', 'video/mpegurl', 'application/mpegurl'];
+
+  return canPlay.some(function (canItPlay) {
+    return (/maybe|probably/i.test(video.canPlayType(canItPlay))
+    );
+  });
+})();
+
+/**
+ * HLS is a source handler, not a tech. Make sure attempts to use it
+ * as one do not cause exceptions.
+ */
+Hls.isSupported = function () {
+  return _videoJs2['default'].log.warn('HLS is no longer a tech. Please remove it from ' + 'your player\'s techOrder.');
+};
+
+var Component = _videoJs2['default'].getComponent('Component');
+
+/**
+ * The Hls Handler object, where we orchestrate all of the parts
+ * of HLS to interact with video.js
+ *
+ * @class HlsHandler
+ * @extends videojs.Component
+ * @param {Object} source the soruce object
+ * @param {Tech} tech the parent tech object
+ * @param {Object} options optional and required options
+ */
+
+var HlsHandler = (function (_Component) {
+  _inherits(HlsHandler, _Component);
+
+  function HlsHandler(source, tech, options) {
+    var _this = this;
+
+    _classCallCheck(this, HlsHandler);
+
+    _get(Object.getPrototypeOf(HlsHandler.prototype), 'constructor', this).call(this, tech, options.hls);
+
+    // tech.player() is deprecated but setup a reference to HLS for
+    // backwards-compatibility
+    if (tech.options_ && tech.options_.playerId) {
+      var _player = (0, _videoJs2['default'])(tech.options_.playerId);
+
+      if (!_player.hasOwnProperty('hls')) {
+        Object.defineProperty(_player, 'hls', {
+          get: function get() {
+            _videoJs2['default'].log.warn('player.hls is deprecated. Use player.tech_.hls instead.');
+            tech.trigger({ type: 'usage', name: 'hls-player-access' });
+            return _this;
+          }
+        });
+      }
+    }
+
+    this.tech_ = tech;
+    this.source_ = source;
+    this.stats = {};
+    this.ignoreNextSeekingEvent_ = false;
+    this.setOptions_();
+
+    // overriding native HLS only works if audio tracks have been emulated
+    // error early if we're misconfigured:
+    if (this.options_.overrideNative && (tech.featuresNativeVideoTracks || tech.featuresNativeAudioTracks)) {
+      throw new Error('Overriding native HLS requires emulated tracks. ' + 'See https://git.io/vMpjB');
+    }
+
+    // listen for fullscreenchange events for this player so that we
+    // can adjust our quality selection quickly
+    this.on(_globalDocument2['default'], ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'], function (event) {
+      var fullscreenElement = _globalDocument2['default'].fullscreenElement || _globalDocument2['default'].webkitFullscreenElement || _globalDocument2['default'].mozFullScreenElement || _globalDocument2['default'].msFullscreenElement;
+
+      if (fullscreenElement && fullscreenElement.contains(_this.tech_.el())) {
+        _this.masterPlaylistController_.fastQualityChange_();
+      }
+    });
+
+    this.on(this.tech_, 'seeking', function () {
+      if (this.ignoreNextSeekingEvent_) {
+        this.ignoreNextSeekingEvent_ = false;
+        return;
+      }
+
+      this.setCurrentTime(this.tech_.currentTime());
+    });
+    this.on(this.tech_, 'error', function () {
+      if (this.masterPlaylistController_) {
+        this.masterPlaylistController_.pauseLoading();
+      }
+    });
+
+    this.on(this.tech_, 'play', this.play);
+  }
+
+  /**
+   * The Source Handler object, which informs video.js what additional
+   * MIME types are supported and sets up playback. It is registered
+   * automatically to the appropriate tech based on the capabilities of
+   * the browser it is running in. It is not necessary to use or modify
+   * this object in normal usage.
+   */
+
+  _createClass(HlsHandler, [{
+    key: 'setOptions_',
+    value: function setOptions_() {
+      var _this2 = this;
+
+      // defaults
+      this.options_.withCredentials = this.options_.withCredentials || false;
+
+      if (typeof this.options_.blacklistDuration !== 'number') {
+        this.options_.blacklistDuration = 5 * 60;
+      }
+
+      // start playlist selection at a reasonable bandwidth for
+      // broadband internet (0.5 MB/s) or mobile (0.0625 MB/s)
+      if (typeof this.options_.bandwidth !== 'number') {
+        this.options_.bandwidth = INITIAL_BANDWIDTH;
+      }
+
+      // If the bandwidth number is unchanged from the initial setting
+      // then this takes precedence over the enableLowInitialPlaylist option
+      this.options_.enableLowInitialPlaylist = this.options_.enableLowInitialPlaylist && this.options_.bandwidth === INITIAL_BANDWIDTH;
+
+      // grab options passed to player.src
+      ['withCredentials', 'bandwidth'].forEach(function (option) {
+        if (typeof _this2.source_[option] !== 'undefined') {
+          _this2.options_[option] = _this2.source_[option];
+        }
+      });
+
+      this.bandwidth = this.options_.bandwidth;
+    }
+
+    /**
+     * called when player.src gets called, handle a new source
+     *
+     * @param {Object} src the source object to handle
+     */
+  }, {
+    key: 'src',
+    value: function src(_src) {
+      var _this3 = this;
+
+      // do nothing if the src is falsey
+      if (!_src) {
+        return;
+      }
+      this.setOptions_();
+      // add master playlist controller options
+      this.options_.url = this.source_.src;
+      this.options_.tech = this.tech_;
+      this.options_.externHls = Hls;
+
+      this.masterPlaylistController_ = new _masterPlaylistController.MasterPlaylistController(this.options_);
+      this.playbackWatcher_ = new _playbackWatcher2['default'](_videoJs2['default'].mergeOptions(this.options_, {
+        seekable: function seekable() {
+          return _this3.seekable();
+        }
+      }));
+
+      this.masterPlaylistController_.on('error', function () {
+        var player = _videoJs2['default'].players[_this3.tech_.options_.playerId];
+
+        player.error(_this3.masterPlaylistController_.error);
+      });
+
+      // `this` in selectPlaylist should be the HlsHandler for backwards
+      // compatibility with < v2
+      this.masterPlaylistController_.selectPlaylist = this.selectPlaylist ? this.selectPlaylist.bind(this) : Hls.STANDARD_PLAYLIST_SELECTOR.bind(this);
+
+      this.masterPlaylistController_.selectInitialPlaylist = Hls.INITIAL_PLAYLIST_SELECTOR.bind(this);
+
+      // re-expose some internal objects for backwards compatibility with < v2
+      this.playlists = this.masterPlaylistController_.masterPlaylistLoader_;
+      this.mediaSource = this.masterPlaylistController_.mediaSource;
+
+      // Proxy assignment of some properties to the master playlist
+      // controller. Using a custom property for backwards compatibility
+      // with < v2
+      Object.defineProperties(this, {
+        selectPlaylist: {
+          get: function get() {
+            return this.masterPlaylistController_.selectPlaylist;
+          },
+          set: function set(selectPlaylist) {
+            this.masterPlaylistController_.selectPlaylist = selectPlaylist.bind(this);
+          }
+        },
+        throughput: {
+          get: function get() {
+            return this.masterPlaylistController_.mainSegmentLoader_.throughput.rate;
+          },
+          set: function set(throughput) {
+            this.masterPlaylistController_.mainSegmentLoader_.throughput.rate = throughput;
+            // By setting `count` to 1 the throughput value becomes the starting value
+            // for the cumulative average
+            this.masterPlaylistController_.mainSegmentLoader_.throughput.count = 1;
+          }
+        },
+        bandwidth: {
+          get: function get() {
+            return this.masterPlaylistController_.mainSegmentLoader_.bandwidth;
+          },
+          set: function set(bandwidth) {
+            this.masterPlaylistController_.mainSegmentLoader_.bandwidth = bandwidth;
+            // setting the bandwidth manually resets the throughput counter
+            // `count` is set to zero that current value of `rate` isn't included
+            // in the cumulative average
+            this.masterPlaylistController_.mainSegmentLoader_.throughput = {
+              rate: 0,
+              count: 0
+            };
+          }
+        },
+        /**
+         * `systemBandwidth` is a combination of two serial processes bit-rates. The first
+         * is the network bitrate provided by `bandwidth` and the second is the bitrate of
+         * the entire process after that - decryption, transmuxing, and appending - provided
+         * by `throughput`.
+         *
+         * Since the two process are serial, the overall system bandwidth is given by:
+         *   sysBandwidth = 1 / (1 / bandwidth + 1 / throughput)
+         */
+        systemBandwidth: {
+          get: function get() {
+            var invBandwidth = 1 / (this.bandwidth || 1);
+            var invThroughput = undefined;
+
+            if (this.throughput > 0) {
+              invThroughput = 1 / this.throughput;
+            } else {
+              invThroughput = 0;
+            }
+
+            var systemBitrate = Math.floor(1 / (invBandwidth + invThroughput));
+
+            return systemBitrate;
+          },
+          set: function set() {
+            _videoJs2['default'].log.error('The "systemBandwidth" property is read-only');
+          }
+        }
+      });
+
+      Object.defineProperties(this.stats, {
+        bandwidth: {
+          get: function get() {
+            return _this3.bandwidth || 0;
+          },
+          enumerable: true
+        },
+        mediaRequests: {
+          get: function get() {
+            return _this3.masterPlaylistController_.mediaRequests_() || 0;
+          },
+          enumerable: true
+        },
+        mediaRequestsAborted: {
+          get: function get() {
+            return _this3.masterPlaylistController_.mediaRequestsAborted_() || 0;
+          },
+          enumerable: true
+        },
+        mediaRequestsTimedout: {
+          get: function get() {
+            return _this3.masterPlaylistController_.mediaRequestsTimedout_() || 0;
+          },
+          enumerable: true
+        },
+        mediaRequestsErrored: {
+          get: function get() {
+            return _this3.masterPlaylistController_.mediaRequestsErrored_() || 0;
+          },
+          enumerable: true
+        },
+        mediaTransferDuration: {
+          get: function get() {
+            return _this3.masterPlaylistController_.mediaTransferDuration_() || 0;
+          },
+          enumerable: true
+        },
+        mediaBytesTransferred: {
+          get: function get() {
+            return _this3.masterPlaylistController_.mediaBytesTransferred_() || 0;
+          },
+          enumerable: true
+        },
+        mediaSecondsLoaded: {
+          get: function get() {
+            return _this3.masterPlaylistController_.mediaSecondsLoaded_() || 0;
+          },
+          enumerable: true
+        }
+      });
+
+      this.tech_.one('canplay', this.masterPlaylistController_.setupFirstPlay.bind(this.masterPlaylistController_));
+
+      this.masterPlaylistController_.on('selectedinitialmedia', function () {
+        // Add the manual rendition mix-in to HlsHandler
+        (0, _renditionMixin2['default'])(_this3);
+      });
+
+      // the bandwidth of the primary segment loader is our best
+      // estimate of overall bandwidth
+      this.on(this.masterPlaylistController_, 'progress', function () {
+        this.tech_.trigger('progress');
+      });
+
+      // In the live case, we need to ignore the very first `seeking` event since
+      // that will be the result of the seek-to-live behavior
+      this.on(this.masterPlaylistController_, 'firstplay', function () {
+        this.ignoreNextSeekingEvent_ = true;
+      });
+
+      this.tech_.ready(function () {
+        return _this3.setupQualityLevels_();
+      });
+
+      // do nothing if the tech has been disposed already
+      // this can occur if someone sets the src in player.ready(), for instance
+      if (!this.tech_.el()) {
+        return;
+      }
+
+      this.tech_.src(_videoJs2['default'].URL.createObjectURL(this.masterPlaylistController_.mediaSource));
+    }
+
+    /**
+     * Initializes the quality levels and sets listeners to update them.
+     *
+     * @method setupQualityLevels_
+     * @private
+     */
+  }, {
+    key: 'setupQualityLevels_',
+    value: function setupQualityLevels_() {
+      var _this4 = this;
+
+      var player = _videoJs2['default'].players[this.tech_.options_.playerId];
+
+      if (player && player.qualityLevels) {
+        this.qualityLevels_ = player.qualityLevels();
+
+        this.masterPlaylistController_.on('selectedinitialmedia', function () {
+          handleHlsLoadedMetadata(_this4.qualityLevels_, _this4);
+        });
+
+        this.playlists.on('mediachange', function () {
+          handleHlsMediaChange(_this4.qualityLevels_, _this4.playlists);
+        });
+      }
+    }
+
+    /**
+     * Begin playing the video.
+     */
+  }, {
+    key: 'play',
+    value: function play() {
+      this.masterPlaylistController_.play();
+    }
+
+    /**
+     * a wrapper around the function in MasterPlaylistController
+     */
+  }, {
+    key: 'setCurrentTime',
+    value: function setCurrentTime(currentTime) {
+      this.masterPlaylistController_.setCurrentTime(currentTime);
+    }
+
+    /**
+     * a wrapper around the function in MasterPlaylistController
+     */
+  }, {
+    key: 'duration',
+    value: function duration() {
+      return this.masterPlaylistController_.duration();
+    }
+
+    /**
+     * a wrapper around the function in MasterPlaylistController
+     */
+  }, {
+    key: 'seekable',
+    value: function seekable() {
+      return this.masterPlaylistController_.seekable();
+    }
+
+    /**
+    * Abort all outstanding work and cleanup.
+    */
+  }, {
+    key: 'dispose',
+    value: function dispose() {
+      if (this.playbackWatcher_) {
+        this.playbackWatcher_.dispose();
+      }
+      if (this.masterPlaylistController_) {
+        this.masterPlaylistController_.dispose();
+      }
+      if (this.qualityLevels_) {
+        this.qualityLevels_.dispose();
+      }
+      _get(Object.getPrototypeOf(HlsHandler.prototype), 'dispose', this).call(this);
+    }
+  }]);
+
+  return HlsHandler;
+})(Component);
+
+var HlsSourceHandler = function HlsSourceHandler(mode) {
+  return {
+    canHandleSource: function canHandleSource(srcObj) {
+      var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+      var localOptions = _videoJs2['default'].mergeOptions(_videoJs2['default'].options, options);
+
+      // this forces video.js to skip this tech/mode if its not the one we have been
+      // overriden to use, by returing that we cannot handle the source.
+      if (localOptions.hls && localOptions.hls.mode && localOptions.hls.mode !== mode) {
+        return false;
+      }
+      return HlsSourceHandler.canPlayType(srcObj.type, localOptions);
+    },
+    handleSource: function handleSource(source, tech) {
+      var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+      var localOptions = _videoJs2['default'].mergeOptions(_videoJs2['default'].options, options, { hls: { mode: mode } });
+
+      if (mode === 'flash') {
+        // We need to trigger this asynchronously to give others the chance
+        // to bind to the event when a source is set at player creation
+        tech.setTimeout(function () {
+          tech.trigger('loadstart');
+        }, 1);
+      }
+
+      tech.hls = new HlsHandler(source, tech, localOptions);
+      tech.hls.xhr = (0, _xhr2['default'])();
+
+      tech.hls.src(source.src);
+      return tech.hls;
+    },
+    canPlayType: function canPlayType(type) {
+      var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+      var localOptions = _videoJs2['default'].mergeOptions(_videoJs2['default'].options, options);
+
+      if (HlsSourceHandler.canPlayType(type, localOptions)) {
+        return 'maybe';
+      }
+      return '';
+    }
+  };
+};
+
+HlsSourceHandler.canPlayType = function (type, options) {
+  // No support for IE 10 or below
+  if (_videoJs2['default'].browser.IE_VERSION && _videoJs2['default'].browser.IE_VERSION <= 10) {
+    return false;
+  }
+
+  var mpegurlRE = /^(audio|video|application)\/(x-|vnd\.apple\.)?mpegurl/i;
+
+  // favor native HLS support if it's available
+  if (!options.hls.overrideNative && Hls.supportsNativeHls) {
+    return false;
+  }
+  return mpegurlRE.test(type);
+};
+
+if (typeof _videoJs2['default'].MediaSource === 'undefined' || typeof _videoJs2['default'].URL === 'undefined') {
+  _videoJs2['default'].MediaSource = _videojsContribMediaSources.MediaSource;
+  _videoJs2['default'].URL = _videojsContribMediaSources.URL;
+}
+
+var flashTech = _videoJs2['default'].getTech('Flash');
+
+// register source handlers with the appropriate techs
+if (_videojsContribMediaSources.MediaSource.supportsNativeMediaSources()) {
+  _videoJs2['default'].getTech('Html5').registerSourceHandler(HlsSourceHandler('html5'), 0);
+}
+if (_globalWindow2['default'].Uint8Array && flashTech) {
+  flashTech.registerSourceHandler(HlsSourceHandler('flash'));
+}
+
+_videoJs2['default'].HlsHandler = HlsHandler;
+_videoJs2['default'].HlsSourceHandler = HlsSourceHandler;
+_videoJs2['default'].Hls = Hls;
+if (!_videoJs2['default'].use) {
+  _videoJs2['default'].registerComponent('Hls', Hls);
+}
+_videoJs2['default'].m3u8 = _m3u8Parser2['default'];
+_videoJs2['default'].options.hls = _videoJs2['default'].options.hls || {};
+
+if (_videoJs2['default'].registerPlugin) {
+  _videoJs2['default'].registerPlugin('reloadSourceOnError', _reloadSourceOnError2['default']);
+} else {
+  _videoJs2['default'].plugin('reloadSourceOnError', _reloadSourceOnError2['default']);
+}
+
+module.exports = {
+  Hls: Hls,
+  HlsHandler: HlsHandler,
+  HlsSourceHandler: HlsSourceHandler
+};
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _lineStream = __webpack_require__(61);
 
 var _lineStream2 = _interopRequireDefault(_lineStream);
 
-var _parseStream = __webpack_require__(61);
+var _parseStream = __webpack_require__(62);
 
 var _parseStream2 = _interopRequireDefault(_parseStream);
 
@@ -36501,7 +37195,7 @@ module.exports = {
     */
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36575,7 +37269,7 @@ var LineStream = function (_Stream) {
 exports['default'] = LineStream;
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37033,7 +37727,7 @@ var ParseStream = function (_Stream) {
 exports['default'] = ParseStream;
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37057,7 +37751,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 var _decrypter = __webpack_require__(103);
 
-var _asyncStream = __webpack_require__(63);
+var _asyncStream = __webpack_require__(64);
 
 var _asyncStream2 = _interopRequireDefault(_asyncStream);
 
@@ -37069,7 +37763,7 @@ exports['default'] = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37155,7 +37849,7 @@ exports['default'] = AsyncStream;
 module.exports = exports['default'];
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37164,7 +37858,7 @@ module.exports = exports['default'];
 exports.__esModule = true;
 exports.setTextContent = exports.createStyleElement = undefined;
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -37210,7 +37904,7 @@ var setTextContent = exports.setTextContent = function setTextContent(el, conten
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37222,11 +37916,11 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -37260,9 +37954,9 @@ var _toTitleCase2 = _interopRequireDefault(_toTitleCase);
 
 var _timeRanges = __webpack_require__(22);
 
-var _buffer = __webpack_require__(66);
+var _buffer = __webpack_require__(67);
 
-var _stylesheet = __webpack_require__(64);
+var _stylesheet = __webpack_require__(65);
 
 var stylesheet = _interopRequireWildcard(_stylesheet);
 
@@ -37270,7 +37964,7 @@ var _fullscreenApi = __webpack_require__(113);
 
 var _fullscreenApi2 = _interopRequireDefault(_fullscreenApi);
 
-var _mediaError = __webpack_require__(67);
+var _mediaError = __webpack_require__(68);
 
 var _mediaError2 = _interopRequireDefault(_mediaError);
 
@@ -37288,7 +37982,7 @@ var _textTrackListConverter = __webpack_require__(114);
 
 var _textTrackListConverter2 = _interopRequireDefault(_textTrackListConverter);
 
-var _modalDialog = __webpack_require__(68);
+var _modalDialog = __webpack_require__(69);
 
 var _modalDialog2 = _interopRequireDefault(_modalDialog);
 
@@ -37296,11 +37990,11 @@ var _tech = __webpack_require__(23);
 
 var _tech2 = _interopRequireDefault(_tech);
 
-var _audioTrackList = __webpack_require__(71);
+var _audioTrackList = __webpack_require__(72);
 
 var _audioTrackList2 = _interopRequireDefault(_audioTrackList);
 
-var _videoTrackList = __webpack_require__(70);
+var _videoTrackList = __webpack_require__(71);
 
 var _videoTrackList2 = _interopRequireDefault(_videoTrackList);
 
@@ -40902,7 +41596,7 @@ exports['default'] = Player;
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40958,7 +41652,7 @@ function bufferedPercent(buffered, duration) {
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41176,7 +41870,7 @@ exports['default'] = MediaError;
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41676,12 +42370,12 @@ exports['default'] = ModalDialog;
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var window = __webpack_require__(5)
+var window = __webpack_require__(4)
 var isFunction = __webpack_require__(37)
 var parseHeaders = __webpack_require__(56)
 var xtend = __webpack_require__(57)
@@ -41918,7 +42612,7 @@ function noop() {}
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41934,7 +42628,7 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -42118,7 +42812,7 @@ exports['default'] = VideoTrackList;
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42134,7 +42828,7 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -42306,7 +43000,7 @@ exports['default'] = AudioTrackList;
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42666,7 +43360,7 @@ exports['default'] = Slider;
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42674,7 +43368,7 @@ exports['default'] = Slider;
 
 exports.__esModule = true;
 
-var _slider = __webpack_require__(72);
+var _slider = __webpack_require__(73);
 
 var _slider2 = _interopRequireDefault(_slider);
 
@@ -42854,7 +43548,7 @@ exports['default'] = VolumeBar;
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43015,7 +43709,7 @@ exports['default'] = MuteToggle;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43023,7 +43717,7 @@ exports['default'] = MuteToggle;
 
 exports.__esModule = true;
 
-var _menuButton = __webpack_require__(76);
+var _menuButton = __webpack_require__(77);
 
 var _menuButton2 = _interopRequireDefault(_menuButton);
 
@@ -43100,7 +43794,7 @@ exports['default'] = TrackButton;
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43116,7 +43810,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _menu = __webpack_require__(77);
+var _menu = __webpack_require__(78);
 
 var _menu2 = _interopRequireDefault(_menu);
 
@@ -43459,7 +44153,7 @@ exports['default'] = MenuButton;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43668,7 +44362,7 @@ exports['default'] = Menu;
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
@@ -43679,7 +44373,7 @@ module.exports = {
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43697,7 +44391,7 @@ module.exports = {
 var Stream = __webpack_require__(11),
   CaptionStream = __webpack_require__(168),
   StreamTypes = __webpack_require__(26),
-  TimestampRolloverStream = __webpack_require__(80).TimestampRolloverStream;
+  TimestampRolloverStream = __webpack_require__(81).TimestampRolloverStream;
 
 var m2tsStreamTypes = __webpack_require__(26);
 
@@ -44192,7 +44886,7 @@ module.exports = m2ts;
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44283,7 +44977,7 @@ module.exports = {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44422,7 +45116,7 @@ module.exports = AdtsStream;
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44847,7 +45541,7 @@ module.exports = {
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44913,7 +45607,7 @@ exports['default'] = createTextTracksIfNecessary;
 module.exports = exports['default'];
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44945,7 +45639,7 @@ exports["default"] = flashConstants;
 module.exports = exports["default"];
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45722,7 +46416,7 @@ module.exports = {
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45749,7 +46443,7 @@ var _playlist = __webpack_require__(16);
 
 var _playlist2 = _interopRequireDefault(_playlist);
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -45761,7 +46455,7 @@ var _config = __webpack_require__(35);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -45775,7 +46469,7 @@ var _mediaSegmentRequest = __webpack_require__(184);
 
 var _ranges = __webpack_require__(50);
 
-var _playlistSelectors = __webpack_require__(87);
+var _playlistSelectors = __webpack_require__(88);
 
 // in ms
 var CHECK_BUFFER_DELAY = 500;
@@ -47127,7 +47821,7 @@ var SegmentLoader = (function (_videojs$EventTarget) {
 exports['default'] = SegmentLoader;
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47147,7 +47841,7 @@ var _playlist = __webpack_require__(16);
 
 var _playlist2 = _interopRequireDefault(_playlist);
 
-var _utilCodecsJs = __webpack_require__(88);
+var _utilCodecsJs = __webpack_require__(89);
 
 // Utilities
 
@@ -47562,7 +48256,7 @@ var lowestBitrateCompatibleVariantSelector = function lowestBitrateCompatibleVar
 exports.lowestBitrateCompatibleVariantSelector = lowestBitrateCompatibleVariantSelector;
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47609,29 +48303,29 @@ var parseCodecs = function parseCodecs() {
 exports.parseCodecs = parseCodecs;
 
 /***/ }),
-/* 89 */,
-/* 90 */
+/* 90 */,
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(53);
 __webpack_require__(54);
-__webpack_require__(7);
-module.exports = __webpack_require__(98);
+__webpack_require__(6);
+module.exports = __webpack_require__(59);
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var window = __webpack_require__(5)
+var window = __webpack_require__(4)
 var isFunction = __webpack_require__(37)
 var parseHeaders = __webpack_require__(56)
 var xtend = __webpack_require__(57)
@@ -47874,7 +48568,7 @@ function noop() {}
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 
@@ -47894,7 +48588,7 @@ exports.right = function(str){
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isFunction = __webpack_require__(37)
@@ -47946,7 +48640,7 @@ function forEachObject(object, iterator, context) {
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports) {
 
 /**
@@ -49281,7 +49975,7 @@ module.exports = WebVTT;
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 /**
@@ -49592,7 +50286,7 @@ module.exports = VTTCue;
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports) {
 
 /**
@@ -49732,700 +50426,6 @@ module.exports = VTTRegion;
 
 
 /***/ }),
-/* 98 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * @file videojs-contrib-hls.js
- *
- * The main file for the HLS project.
- * License: https://github.com/videojs/videojs-contrib-hls/blob/master/LICENSE
- */
-
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x4, _x5, _x6) { var _again = true; _function: while (_again) { var object = _x4, property = _x5, receiver = _x6; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x4 = parent; _x5 = property; _x6 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _globalDocument = __webpack_require__(28);
-
-var _globalDocument2 = _interopRequireDefault(_globalDocument);
-
-var _playlistLoader = __webpack_require__(38);
-
-var _playlistLoader2 = _interopRequireDefault(_playlistLoader);
-
-var _playlist = __webpack_require__(16);
-
-var _playlist2 = _interopRequireDefault(_playlist);
-
-var _xhr = __webpack_require__(102);
-
-var _xhr2 = _interopRequireDefault(_xhr);
-
-var _aesDecrypter = __webpack_require__(62);
-
-var _binUtils = __webpack_require__(21);
-
-var _binUtils2 = _interopRequireDefault(_binUtils);
-
-var _videojsContribMediaSources = __webpack_require__(109);
-
-var _m3u8Parser = __webpack_require__(59);
-
-var _m3u8Parser2 = _interopRequireDefault(_m3u8Parser);
-
-var _videoJs = __webpack_require__(7);
-
-var _videoJs2 = _interopRequireDefault(_videoJs);
-
-var _masterPlaylistController = __webpack_require__(182);
-
-var _config = __webpack_require__(35);
-
-var _config2 = _interopRequireDefault(_config);
-
-var _renditionMixin = __webpack_require__(194);
-
-var _renditionMixin2 = _interopRequireDefault(_renditionMixin);
-
-var _globalWindow = __webpack_require__(5);
-
-var _globalWindow2 = _interopRequireDefault(_globalWindow);
-
-var _playbackWatcher = __webpack_require__(195);
-
-var _playbackWatcher2 = _interopRequireDefault(_playbackWatcher);
-
-var _reloadSourceOnError = __webpack_require__(196);
-
-var _reloadSourceOnError2 = _interopRequireDefault(_reloadSourceOnError);
-
-var _playlistSelectorsJs = __webpack_require__(87);
-
-var Hls = {
-  PlaylistLoader: _playlistLoader2['default'],
-  Playlist: _playlist2['default'],
-  Decrypter: _aesDecrypter.Decrypter,
-  AsyncStream: _aesDecrypter.AsyncStream,
-  decrypt: _aesDecrypter.decrypt,
-  utils: _binUtils2['default'],
-
-  STANDARD_PLAYLIST_SELECTOR: _playlistSelectorsJs.lastBandwidthSelector,
-  INITIAL_PLAYLIST_SELECTOR: _playlistSelectorsJs.lowestBitrateCompatibleVariantSelector,
-  comparePlaylistBandwidth: _playlistSelectorsJs.comparePlaylistBandwidth,
-  comparePlaylistResolution: _playlistSelectorsJs.comparePlaylistResolution,
-
-  xhr: (0, _xhr2['default'])()
-};
-
-// 0.5 MB/s
-var INITIAL_BANDWIDTH = 4194304;
-
-// Define getter/setters for config properites
-['GOAL_BUFFER_LENGTH', 'MAX_GOAL_BUFFER_LENGTH', 'GOAL_BUFFER_LENGTH_RATE', 'BUFFER_LOW_WATER_LINE', 'MAX_BUFFER_LOW_WATER_LINE', 'BUFFER_LOW_WATER_LINE_RATE', 'BANDWIDTH_VARIANCE'].forEach(function (prop) {
-  Object.defineProperty(Hls, prop, {
-    get: function get() {
-      _videoJs2['default'].log.warn('using Hls.' + prop + ' is UNSAFE be sure you know what you are doing');
-      return _config2['default'][prop];
-    },
-    set: function set(value) {
-      _videoJs2['default'].log.warn('using Hls.' + prop + ' is UNSAFE be sure you know what you are doing');
-
-      if (typeof value !== 'number' || value < 0) {
-        _videoJs2['default'].log.warn('value of Hls.' + prop + ' must be greater than or equal to 0');
-        return;
-      }
-
-      _config2['default'][prop] = value;
-    }
-  });
-});
-
-/**
- * Updates the selectedIndex of the QualityLevelList when a mediachange happens in hls.
- *
- * @param {QualityLevelList} qualityLevels The QualityLevelList to update.
- * @param {PlaylistLoader} playlistLoader PlaylistLoader containing the new media info.
- * @function handleHlsMediaChange
- */
-var handleHlsMediaChange = function handleHlsMediaChange(qualityLevels, playlistLoader) {
-  var newPlaylist = playlistLoader.media();
-  var selectedIndex = -1;
-
-  for (var i = 0; i < qualityLevels.length; i++) {
-    if (qualityLevels[i].id === newPlaylist.uri) {
-      selectedIndex = i;
-      break;
-    }
-  }
-
-  qualityLevels.selectedIndex_ = selectedIndex;
-  qualityLevels.trigger({
-    selectedIndex: selectedIndex,
-    type: 'change'
-  });
-};
-
-/**
- * Adds quality levels to list once playlist metadata is available
- *
- * @param {QualityLevelList} qualityLevels The QualityLevelList to attach events to.
- * @param {Object} hls Hls object to listen to for media events.
- * @function handleHlsLoadedMetadata
- */
-var handleHlsLoadedMetadata = function handleHlsLoadedMetadata(qualityLevels, hls) {
-  hls.representations().forEach(function (rep) {
-    qualityLevels.addQualityLevel(rep);
-  });
-  handleHlsMediaChange(qualityLevels, hls.playlists);
-};
-
-// HLS is a source handler, not a tech. Make sure attempts to use it
-// as one do not cause exceptions.
-Hls.canPlaySource = function () {
-  return _videoJs2['default'].log.warn('HLS is no longer a tech. Please remove it from ' + 'your player\'s techOrder.');
-};
-
-/**
- * Whether the browser has built-in HLS support.
- */
-Hls.supportsNativeHls = (function () {
-  var video = _globalDocument2['default'].createElement('video');
-
-  // native HLS is definitely not supported if HTML5 video isn't
-  if (!_videoJs2['default'].getTech('Html5').isSupported()) {
-    return false;
-  }
-
-  // HLS manifests can go by many mime-types
-  var canPlay = [
-  // Apple santioned
-  'application/vnd.apple.mpegurl',
-  // Apple sanctioned for backwards compatibility
-  'audio/mpegurl',
-  // Very common
-  'audio/x-mpegurl',
-  // Very common
-  'application/x-mpegurl',
-  // Included for completeness
-  'video/x-mpegurl', 'video/mpegurl', 'application/mpegurl'];
-
-  return canPlay.some(function (canItPlay) {
-    return (/maybe|probably/i.test(video.canPlayType(canItPlay))
-    );
-  });
-})();
-
-/**
- * HLS is a source handler, not a tech. Make sure attempts to use it
- * as one do not cause exceptions.
- */
-Hls.isSupported = function () {
-  return _videoJs2['default'].log.warn('HLS is no longer a tech. Please remove it from ' + 'your player\'s techOrder.');
-};
-
-var Component = _videoJs2['default'].getComponent('Component');
-
-/**
- * The Hls Handler object, where we orchestrate all of the parts
- * of HLS to interact with video.js
- *
- * @class HlsHandler
- * @extends videojs.Component
- * @param {Object} source the soruce object
- * @param {Tech} tech the parent tech object
- * @param {Object} options optional and required options
- */
-
-var HlsHandler = (function (_Component) {
-  _inherits(HlsHandler, _Component);
-
-  function HlsHandler(source, tech, options) {
-    var _this = this;
-
-    _classCallCheck(this, HlsHandler);
-
-    _get(Object.getPrototypeOf(HlsHandler.prototype), 'constructor', this).call(this, tech, options.hls);
-
-    // tech.player() is deprecated but setup a reference to HLS for
-    // backwards-compatibility
-    if (tech.options_ && tech.options_.playerId) {
-      var _player = (0, _videoJs2['default'])(tech.options_.playerId);
-
-      if (!_player.hasOwnProperty('hls')) {
-        Object.defineProperty(_player, 'hls', {
-          get: function get() {
-            _videoJs2['default'].log.warn('player.hls is deprecated. Use player.tech_.hls instead.');
-            tech.trigger({ type: 'usage', name: 'hls-player-access' });
-            return _this;
-          }
-        });
-      }
-    }
-
-    this.tech_ = tech;
-    this.source_ = source;
-    this.stats = {};
-    this.ignoreNextSeekingEvent_ = false;
-    this.setOptions_();
-
-    // overriding native HLS only works if audio tracks have been emulated
-    // error early if we're misconfigured:
-    if (this.options_.overrideNative && (tech.featuresNativeVideoTracks || tech.featuresNativeAudioTracks)) {
-      throw new Error('Overriding native HLS requires emulated tracks. ' + 'See https://git.io/vMpjB');
-    }
-
-    // listen for fullscreenchange events for this player so that we
-    // can adjust our quality selection quickly
-    this.on(_globalDocument2['default'], ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'], function (event) {
-      var fullscreenElement = _globalDocument2['default'].fullscreenElement || _globalDocument2['default'].webkitFullscreenElement || _globalDocument2['default'].mozFullScreenElement || _globalDocument2['default'].msFullscreenElement;
-
-      if (fullscreenElement && fullscreenElement.contains(_this.tech_.el())) {
-        _this.masterPlaylistController_.fastQualityChange_();
-      }
-    });
-
-    this.on(this.tech_, 'seeking', function () {
-      if (this.ignoreNextSeekingEvent_) {
-        this.ignoreNextSeekingEvent_ = false;
-        return;
-      }
-
-      this.setCurrentTime(this.tech_.currentTime());
-    });
-    this.on(this.tech_, 'error', function () {
-      if (this.masterPlaylistController_) {
-        this.masterPlaylistController_.pauseLoading();
-      }
-    });
-
-    this.on(this.tech_, 'play', this.play);
-  }
-
-  /**
-   * The Source Handler object, which informs video.js what additional
-   * MIME types are supported and sets up playback. It is registered
-   * automatically to the appropriate tech based on the capabilities of
-   * the browser it is running in. It is not necessary to use or modify
-   * this object in normal usage.
-   */
-
-  _createClass(HlsHandler, [{
-    key: 'setOptions_',
-    value: function setOptions_() {
-      var _this2 = this;
-
-      // defaults
-      this.options_.withCredentials = this.options_.withCredentials || false;
-
-      if (typeof this.options_.blacklistDuration !== 'number') {
-        this.options_.blacklistDuration = 5 * 60;
-      }
-
-      // start playlist selection at a reasonable bandwidth for
-      // broadband internet (0.5 MB/s) or mobile (0.0625 MB/s)
-      if (typeof this.options_.bandwidth !== 'number') {
-        this.options_.bandwidth = INITIAL_BANDWIDTH;
-      }
-
-      // If the bandwidth number is unchanged from the initial setting
-      // then this takes precedence over the enableLowInitialPlaylist option
-      this.options_.enableLowInitialPlaylist = this.options_.enableLowInitialPlaylist && this.options_.bandwidth === INITIAL_BANDWIDTH;
-
-      // grab options passed to player.src
-      ['withCredentials', 'bandwidth'].forEach(function (option) {
-        if (typeof _this2.source_[option] !== 'undefined') {
-          _this2.options_[option] = _this2.source_[option];
-        }
-      });
-
-      this.bandwidth = this.options_.bandwidth;
-    }
-
-    /**
-     * called when player.src gets called, handle a new source
-     *
-     * @param {Object} src the source object to handle
-     */
-  }, {
-    key: 'src',
-    value: function src(_src) {
-      var _this3 = this;
-
-      // do nothing if the src is falsey
-      if (!_src) {
-        return;
-      }
-      this.setOptions_();
-      // add master playlist controller options
-      this.options_.url = this.source_.src;
-      this.options_.tech = this.tech_;
-      this.options_.externHls = Hls;
-
-      this.masterPlaylistController_ = new _masterPlaylistController.MasterPlaylistController(this.options_);
-      this.playbackWatcher_ = new _playbackWatcher2['default'](_videoJs2['default'].mergeOptions(this.options_, {
-        seekable: function seekable() {
-          return _this3.seekable();
-        }
-      }));
-
-      this.masterPlaylistController_.on('error', function () {
-        var player = _videoJs2['default'].players[_this3.tech_.options_.playerId];
-
-        player.error(_this3.masterPlaylistController_.error);
-      });
-
-      // `this` in selectPlaylist should be the HlsHandler for backwards
-      // compatibility with < v2
-      this.masterPlaylistController_.selectPlaylist = this.selectPlaylist ? this.selectPlaylist.bind(this) : Hls.STANDARD_PLAYLIST_SELECTOR.bind(this);
-
-      this.masterPlaylistController_.selectInitialPlaylist = Hls.INITIAL_PLAYLIST_SELECTOR.bind(this);
-
-      // re-expose some internal objects for backwards compatibility with < v2
-      this.playlists = this.masterPlaylistController_.masterPlaylistLoader_;
-      this.mediaSource = this.masterPlaylistController_.mediaSource;
-
-      // Proxy assignment of some properties to the master playlist
-      // controller. Using a custom property for backwards compatibility
-      // with < v2
-      Object.defineProperties(this, {
-        selectPlaylist: {
-          get: function get() {
-            return this.masterPlaylistController_.selectPlaylist;
-          },
-          set: function set(selectPlaylist) {
-            this.masterPlaylistController_.selectPlaylist = selectPlaylist.bind(this);
-          }
-        },
-        throughput: {
-          get: function get() {
-            return this.masterPlaylistController_.mainSegmentLoader_.throughput.rate;
-          },
-          set: function set(throughput) {
-            this.masterPlaylistController_.mainSegmentLoader_.throughput.rate = throughput;
-            // By setting `count` to 1 the throughput value becomes the starting value
-            // for the cumulative average
-            this.masterPlaylistController_.mainSegmentLoader_.throughput.count = 1;
-          }
-        },
-        bandwidth: {
-          get: function get() {
-            return this.masterPlaylistController_.mainSegmentLoader_.bandwidth;
-          },
-          set: function set(bandwidth) {
-            this.masterPlaylistController_.mainSegmentLoader_.bandwidth = bandwidth;
-            // setting the bandwidth manually resets the throughput counter
-            // `count` is set to zero that current value of `rate` isn't included
-            // in the cumulative average
-            this.masterPlaylistController_.mainSegmentLoader_.throughput = {
-              rate: 0,
-              count: 0
-            };
-          }
-        },
-        /**
-         * `systemBandwidth` is a combination of two serial processes bit-rates. The first
-         * is the network bitrate provided by `bandwidth` and the second is the bitrate of
-         * the entire process after that - decryption, transmuxing, and appending - provided
-         * by `throughput`.
-         *
-         * Since the two process are serial, the overall system bandwidth is given by:
-         *   sysBandwidth = 1 / (1 / bandwidth + 1 / throughput)
-         */
-        systemBandwidth: {
-          get: function get() {
-            var invBandwidth = 1 / (this.bandwidth || 1);
-            var invThroughput = undefined;
-
-            if (this.throughput > 0) {
-              invThroughput = 1 / this.throughput;
-            } else {
-              invThroughput = 0;
-            }
-
-            var systemBitrate = Math.floor(1 / (invBandwidth + invThroughput));
-
-            return systemBitrate;
-          },
-          set: function set() {
-            _videoJs2['default'].log.error('The "systemBandwidth" property is read-only');
-          }
-        }
-      });
-
-      Object.defineProperties(this.stats, {
-        bandwidth: {
-          get: function get() {
-            return _this3.bandwidth || 0;
-          },
-          enumerable: true
-        },
-        mediaRequests: {
-          get: function get() {
-            return _this3.masterPlaylistController_.mediaRequests_() || 0;
-          },
-          enumerable: true
-        },
-        mediaRequestsAborted: {
-          get: function get() {
-            return _this3.masterPlaylistController_.mediaRequestsAborted_() || 0;
-          },
-          enumerable: true
-        },
-        mediaRequestsTimedout: {
-          get: function get() {
-            return _this3.masterPlaylistController_.mediaRequestsTimedout_() || 0;
-          },
-          enumerable: true
-        },
-        mediaRequestsErrored: {
-          get: function get() {
-            return _this3.masterPlaylistController_.mediaRequestsErrored_() || 0;
-          },
-          enumerable: true
-        },
-        mediaTransferDuration: {
-          get: function get() {
-            return _this3.masterPlaylistController_.mediaTransferDuration_() || 0;
-          },
-          enumerable: true
-        },
-        mediaBytesTransferred: {
-          get: function get() {
-            return _this3.masterPlaylistController_.mediaBytesTransferred_() || 0;
-          },
-          enumerable: true
-        },
-        mediaSecondsLoaded: {
-          get: function get() {
-            return _this3.masterPlaylistController_.mediaSecondsLoaded_() || 0;
-          },
-          enumerable: true
-        }
-      });
-
-      this.tech_.one('canplay', this.masterPlaylistController_.setupFirstPlay.bind(this.masterPlaylistController_));
-
-      this.masterPlaylistController_.on('selectedinitialmedia', function () {
-        // Add the manual rendition mix-in to HlsHandler
-        (0, _renditionMixin2['default'])(_this3);
-      });
-
-      // the bandwidth of the primary segment loader is our best
-      // estimate of overall bandwidth
-      this.on(this.masterPlaylistController_, 'progress', function () {
-        this.tech_.trigger('progress');
-      });
-
-      // In the live case, we need to ignore the very first `seeking` event since
-      // that will be the result of the seek-to-live behavior
-      this.on(this.masterPlaylistController_, 'firstplay', function () {
-        this.ignoreNextSeekingEvent_ = true;
-      });
-
-      this.tech_.ready(function () {
-        return _this3.setupQualityLevels_();
-      });
-
-      // do nothing if the tech has been disposed already
-      // this can occur if someone sets the src in player.ready(), for instance
-      if (!this.tech_.el()) {
-        return;
-      }
-
-      this.tech_.src(_videoJs2['default'].URL.createObjectURL(this.masterPlaylistController_.mediaSource));
-    }
-
-    /**
-     * Initializes the quality levels and sets listeners to update them.
-     *
-     * @method setupQualityLevels_
-     * @private
-     */
-  }, {
-    key: 'setupQualityLevels_',
-    value: function setupQualityLevels_() {
-      var _this4 = this;
-
-      var player = _videoJs2['default'].players[this.tech_.options_.playerId];
-
-      if (player && player.qualityLevels) {
-        this.qualityLevels_ = player.qualityLevels();
-
-        this.masterPlaylistController_.on('selectedinitialmedia', function () {
-          handleHlsLoadedMetadata(_this4.qualityLevels_, _this4);
-        });
-
-        this.playlists.on('mediachange', function () {
-          handleHlsMediaChange(_this4.qualityLevels_, _this4.playlists);
-        });
-      }
-    }
-
-    /**
-     * Begin playing the video.
-     */
-  }, {
-    key: 'play',
-    value: function play() {
-      this.masterPlaylistController_.play();
-    }
-
-    /**
-     * a wrapper around the function in MasterPlaylistController
-     */
-  }, {
-    key: 'setCurrentTime',
-    value: function setCurrentTime(currentTime) {
-      this.masterPlaylistController_.setCurrentTime(currentTime);
-    }
-
-    /**
-     * a wrapper around the function in MasterPlaylistController
-     */
-  }, {
-    key: 'duration',
-    value: function duration() {
-      return this.masterPlaylistController_.duration();
-    }
-
-    /**
-     * a wrapper around the function in MasterPlaylistController
-     */
-  }, {
-    key: 'seekable',
-    value: function seekable() {
-      return this.masterPlaylistController_.seekable();
-    }
-
-    /**
-    * Abort all outstanding work and cleanup.
-    */
-  }, {
-    key: 'dispose',
-    value: function dispose() {
-      if (this.playbackWatcher_) {
-        this.playbackWatcher_.dispose();
-      }
-      if (this.masterPlaylistController_) {
-        this.masterPlaylistController_.dispose();
-      }
-      if (this.qualityLevels_) {
-        this.qualityLevels_.dispose();
-      }
-      _get(Object.getPrototypeOf(HlsHandler.prototype), 'dispose', this).call(this);
-    }
-  }]);
-
-  return HlsHandler;
-})(Component);
-
-var HlsSourceHandler = function HlsSourceHandler(mode) {
-  return {
-    canHandleSource: function canHandleSource(srcObj) {
-      var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-      var localOptions = _videoJs2['default'].mergeOptions(_videoJs2['default'].options, options);
-
-      // this forces video.js to skip this tech/mode if its not the one we have been
-      // overriden to use, by returing that we cannot handle the source.
-      if (localOptions.hls && localOptions.hls.mode && localOptions.hls.mode !== mode) {
-        return false;
-      }
-      return HlsSourceHandler.canPlayType(srcObj.type, localOptions);
-    },
-    handleSource: function handleSource(source, tech) {
-      var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-      var localOptions = _videoJs2['default'].mergeOptions(_videoJs2['default'].options, options, { hls: { mode: mode } });
-
-      if (mode === 'flash') {
-        // We need to trigger this asynchronously to give others the chance
-        // to bind to the event when a source is set at player creation
-        tech.setTimeout(function () {
-          tech.trigger('loadstart');
-        }, 1);
-      }
-
-      tech.hls = new HlsHandler(source, tech, localOptions);
-      tech.hls.xhr = (0, _xhr2['default'])();
-
-      tech.hls.src(source.src);
-      return tech.hls;
-    },
-    canPlayType: function canPlayType(type) {
-      var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-      var localOptions = _videoJs2['default'].mergeOptions(_videoJs2['default'].options, options);
-
-      if (HlsSourceHandler.canPlayType(type, localOptions)) {
-        return 'maybe';
-      }
-      return '';
-    }
-  };
-};
-
-HlsSourceHandler.canPlayType = function (type, options) {
-  // No support for IE 10 or below
-  if (_videoJs2['default'].browser.IE_VERSION && _videoJs2['default'].browser.IE_VERSION <= 10) {
-    return false;
-  }
-
-  var mpegurlRE = /^(audio|video|application)\/(x-|vnd\.apple\.)?mpegurl/i;
-
-  // favor native HLS support if it's available
-  if (!options.hls.overrideNative && Hls.supportsNativeHls) {
-    return false;
-  }
-  return mpegurlRE.test(type);
-};
-
-if (typeof _videoJs2['default'].MediaSource === 'undefined' || typeof _videoJs2['default'].URL === 'undefined') {
-  _videoJs2['default'].MediaSource = _videojsContribMediaSources.MediaSource;
-  _videoJs2['default'].URL = _videojsContribMediaSources.URL;
-}
-
-var flashTech = _videoJs2['default'].getTech('Flash');
-
-// register source handlers with the appropriate techs
-if (_videojsContribMediaSources.MediaSource.supportsNativeMediaSources()) {
-  _videoJs2['default'].getTech('Html5').registerSourceHandler(HlsSourceHandler('html5'), 0);
-}
-if (_globalWindow2['default'].Uint8Array && flashTech) {
-  flashTech.registerSourceHandler(HlsSourceHandler('flash'));
-}
-
-_videoJs2['default'].HlsHandler = HlsHandler;
-_videoJs2['default'].HlsSourceHandler = HlsSourceHandler;
-_videoJs2['default'].Hls = Hls;
-if (!_videoJs2['default'].use) {
-  _videoJs2['default'].registerComponent('Hls', Hls);
-}
-_videoJs2['default'].m3u8 = _m3u8Parser2['default'];
-_videoJs2['default'].options.hls = _videoJs2['default'].options.hls || {};
-
-if (_videoJs2['default'].registerPlugin) {
-  _videoJs2['default'].registerPlugin('reloadSourceOnError', _reloadSourceOnError2['default']);
-} else {
-  _videoJs2['default'].plugin('reloadSourceOnError', _reloadSourceOnError2['default']);
-}
-
-module.exports = {
-  Hls: Hls,
-  HlsHandler: HlsHandler,
-  HlsSourceHandler: HlsSourceHandler
-};
-
-/***/ }),
 /* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -50446,7 +50446,7 @@ var _urlToolkit = __webpack_require__(100);
 
 var _urlToolkit2 = _interopRequireDefault(_urlToolkit);
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -50593,11 +50593,11 @@ var _stream = __webpack_require__(39);
 
 var _stream2 = _interopRequireDefault(_stream);
 
-var _lineStream = __webpack_require__(60);
+var _lineStream = __webpack_require__(61);
 
 var _lineStream2 = _interopRequireDefault(_lineStream);
 
-var _parseStream = __webpack_require__(61);
+var _parseStream = __webpack_require__(62);
 
 var _parseStream2 = _interopRequireDefault(_parseStream);
 
@@ -50994,7 +50994,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -51090,7 +51090,7 @@ var _aes = __webpack_require__(104);
 
 var _aes2 = _interopRequireDefault(_aes);
 
-var _asyncStream = __webpack_require__(63);
+var _asyncStream = __webpack_require__(64);
 
 var _asyncStream2 = _interopRequireDefault(_asyncStream);
 
@@ -51790,7 +51790,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -51972,7 +51972,7 @@ var _flashSourceBuffer = __webpack_require__(166);
 
 var _flashSourceBuffer2 = _interopRequireDefault(_flashSourceBuffer);
 
-var _flashConstants = __webpack_require__(84);
+var _flashConstants = __webpack_require__(85);
 
 var _flashConstants2 = _interopRequireDefault(_flashConstants);
 
@@ -52171,11 +52171,11 @@ var _events = __webpack_require__(13);
 
 var Events = _interopRequireWildcard(_events);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -52313,7 +52313,7 @@ exports.hasLoaded = hasLoaded;
 
 exports.__esModule = true;
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -52488,7 +52488,7 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -52664,7 +52664,7 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -52823,7 +52823,7 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -52986,7 +52986,7 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
@@ -53202,7 +53202,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -54772,7 +54772,7 @@ var _fn = __webpack_require__(1);
 
 var Fn = _interopRequireWildcard(_fn);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -55436,7 +55436,7 @@ __webpack_require__(141);
 
 __webpack_require__(143);
 
-__webpack_require__(74);
+__webpack_require__(75);
 
 __webpack_require__(146);
 
@@ -56266,7 +56266,7 @@ exports['default'] = ProgressControl;
 
 exports.__esModule = true;
 
-var _slider = __webpack_require__(72);
+var _slider = __webpack_require__(73);
 
 var _slider2 = _interopRequireDefault(_slider);
 
@@ -57204,7 +57204,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-__webpack_require__(73);
+__webpack_require__(74);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -57372,11 +57372,11 @@ var _popupButton = __webpack_require__(145);
 
 var _popupButton2 = _interopRequireDefault(_popupButton);
 
-var _muteToggle = __webpack_require__(74);
+var _muteToggle = __webpack_require__(75);
 
 var _muteToggle2 = _interopRequireDefault(_muteToggle);
 
-var _volumeBar = __webpack_require__(73);
+var _volumeBar = __webpack_require__(74);
 
 var _volumeBar2 = _interopRequireDefault(_volumeBar);
 
@@ -58747,7 +58747,7 @@ exports['default'] = CaptionSettingsMenuItem;
 
 exports.__esModule = true;
 
-var _trackButton = __webpack_require__(75);
+var _trackButton = __webpack_require__(76);
 
 var _trackButton2 = _interopRequireDefault(_trackButton);
 
@@ -58999,11 +58999,11 @@ exports['default'] = AudioTrackMenuItem;
 
 exports.__esModule = true;
 
-var _menuButton = __webpack_require__(76);
+var _menuButton = __webpack_require__(77);
 
 var _menuButton2 = _interopRequireDefault(_menuButton);
 
-var _menu = __webpack_require__(77);
+var _menu = __webpack_require__(78);
 
 var _menu2 = _interopRequireDefault(_menu);
 
@@ -59508,7 +59508,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _modalDialog = __webpack_require__(68);
+var _modalDialog = __webpack_require__(69);
 
 var _modalDialog2 = _interopRequireDefault(_modalDialog);
 
@@ -59612,7 +59612,7 @@ exports['default'] = ErrorDisplay;
 
 exports.__esModule = true;
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -60254,11 +60254,11 @@ var _browser = __webpack_require__(8);
 
 var browser = _interopRequireWildcard(_browser);
 
-var _document = __webpack_require__(4);
+var _document = __webpack_require__(5);
 
 var _document2 = _interopRequireDefault(_document);
 
-var _window = __webpack_require__(6);
+var _window = __webpack_require__(7);
 
 var _window2 = _interopRequireDefault(_window);
 
@@ -62168,7 +62168,7 @@ exports['default'] = Html5;
 
 exports.__esModule = true;
 
-var _player = __webpack_require__(65);
+var _player = __webpack_require__(66);
 
 var _player2 = _interopRequireDefault(_player);
 
@@ -62594,7 +62594,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -62602,7 +62602,7 @@ var _videoJs = __webpack_require__(17);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
-var _muxJsLibFlv = __webpack_require__(78);
+var _muxJsLibFlv = __webpack_require__(79);
 
 var _muxJsLibFlv2 = _interopRequireDefault(_muxJsLibFlv);
 
@@ -62610,7 +62610,7 @@ var _removeCuesFromTrack = __webpack_require__(33);
 
 var _removeCuesFromTrack2 = _interopRequireDefault(_removeCuesFromTrack);
 
-var _createTextTracksIfNecessary = __webpack_require__(83);
+var _createTextTracksIfNecessary = __webpack_require__(84);
 
 var _createTextTracksIfNecessary2 = _interopRequireDefault(_createTextTracksIfNecessary);
 
@@ -62624,7 +62624,7 @@ var _webworkify = __webpack_require__(48);
 
 var _webworkify2 = _interopRequireDefault(_webworkify);
 
-var _flashConstants = __webpack_require__(84);
+var _flashConstants = __webpack_require__(85);
 
 var _flashConstants2 = _interopRequireDefault(_flashConstants);
 
@@ -63204,9 +63204,9 @@ module.exports = exports['default'];
 
 var Stream = __webpack_require__(11);
 var FlvTag = __webpack_require__(46);
-var m2ts = __webpack_require__(79);
-var AdtsStream = __webpack_require__(81);
-var H264Stream = __webpack_require__(82).H264Stream;
+var m2ts = __webpack_require__(80);
+var AdtsStream = __webpack_require__(82);
+var H264Stream = __webpack_require__(83).H264Stream;
 var CoalesceStream = __webpack_require__(171);
 var TagList = __webpack_require__(172);
 
@@ -65192,11 +65192,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
-var _muxJsLibFlv = __webpack_require__(78);
+var _muxJsLibFlv = __webpack_require__(79);
 
 var _muxJsLibFlv2 = _interopRequireDefault(_muxJsLibFlv);
 
@@ -65351,7 +65351,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -65729,7 +65729,7 @@ var _videoJs = __webpack_require__(17);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
-var _createTextTracksIfNecessary = __webpack_require__(83);
+var _createTextTracksIfNecessary = __webpack_require__(84);
 
 var _createTextTracksIfNecessary2 = _interopRequireDefault(_createTextTracksIfNecessary);
 
@@ -66553,7 +66553,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -66753,7 +66753,7 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  generator: __webpack_require__(85),
+  generator: __webpack_require__(86),
   Transmuxer: __webpack_require__(49).Transmuxer,
   AudioSegmentStream: __webpack_require__(49).AudioSegmentStream,
   VideoSegmentStream: __webpack_require__(49).VideoSegmentStream
@@ -67028,7 +67028,7 @@ var _playlistLoader2 = _interopRequireDefault(_playlistLoader);
 
 var _playlistJs = __webpack_require__(16);
 
-var _segmentLoader = __webpack_require__(86);
+var _segmentLoader = __webpack_require__(87);
 
 var _segmentLoader2 = _interopRequireDefault(_segmentLoader);
 
@@ -67040,7 +67040,7 @@ var _ranges = __webpack_require__(50);
 
 var _ranges2 = _interopRequireDefault(_ranges);
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -67066,7 +67066,7 @@ var _config = __webpack_require__(35);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _utilCodecsJs = __webpack_require__(88);
+var _utilCodecsJs = __webpack_require__(89);
 
 var _mediaGroups = __webpack_require__(193);
 
@@ -68367,7 +68367,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -68584,7 +68584,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -69048,15 +69048,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _segmentLoader = __webpack_require__(86);
+var _segmentLoader = __webpack_require__(87);
 
 var _segmentLoader2 = _interopRequireDefault(_segmentLoader);
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -69509,7 +69509,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -69642,7 +69642,7 @@ var _muxJsLibToolsTsInspectorJs = __webpack_require__(189);
 
 var _playlist = __webpack_require__(16);
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -70431,7 +70431,7 @@ module.exports = {
 
 
 var StreamTypes = __webpack_require__(26);
-var handleRollover = __webpack_require__(80).handleRollover;
+var handleRollover = __webpack_require__(81).handleRollover;
 var probe = {};
 probe.ts = __webpack_require__(190);
 probe.aac = __webpack_require__(191);
@@ -71409,11 +71409,11 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
-var _aesDecrypter = __webpack_require__(62);
+var _aesDecrypter = __webpack_require__(63);
 
 var _binUtils = __webpack_require__(21);
 
@@ -71462,7 +71462,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -72349,7 +72349,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var _globalWindow = __webpack_require__(5);
+var _globalWindow = __webpack_require__(4);
 
 var _globalWindow2 = _interopRequireDefault(_globalWindow);
 
@@ -72357,7 +72357,7 @@ var _ranges = __webpack_require__(50);
 
 var _ranges2 = _interopRequireDefault(_ranges);
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -72791,7 +72791,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _videoJs = __webpack_require__(7);
+var _videoJs = __webpack_require__(6);
 
 var _videoJs2 = _interopRequireDefault(_videoJs);
 
@@ -72919,5 +72919,5 @@ exports['default'] = reloadSourceOnError;
 module.exports = exports['default'];
 
 /***/ })
-],[90]);
-//# sourceMappingURL=vendor.js.map?91599c20c827317aafd7
+],[91]);
+//# sourceMappingURL=vendor.js.map?6c039948e226c3e8b9a9

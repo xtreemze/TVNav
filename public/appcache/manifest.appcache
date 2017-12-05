@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-12-5 15:20:33
+#ver:2017-12-5 15:35:01
 #plugin:4.8.4
 
 CACHE:
@@ -8,11 +8,11 @@ CACHE:
 ../img/spain.svg?48f5989c7f98c3cabae7cadd8c9e5da8
 ../img/colombia.svg?14d012867c7fab9aa745e9b9420cbd0d
 ../img/mexico.svg?f1ba522e8e48091b7eca97a81d2097f2
+../img/une.jpg?93efe3e383aa2b578d3d9330f23c902d
 ../img/chile.svg?4e9ff41f7c822ef9a7b2bc728bde3c52
 ../img/tsi.png?b658103c2d1be43f3b13713a5fdad596
 ../img/canal5.png?7baf93d617c9501b729cac477759ac36
 ../img/ten.png?a78dac6ed8551874899ba9452fcd25d7
-../img/une.jpg?93efe3e383aa2b578d3d9330f23c902d
 ../img/hch.png?fc1764313348c39195d270fc2710d546
 ../img/teleceiba.png?cc6b336b56d02bb177b0c30808b99284
 ../img/globoTV.png?c76a5ad9b215dba6f7dfa176e0235a4b
@@ -75,14 +75,14 @@ CACHE:
 ../img/patio.jpg?d2effa51b08b77f63f6e66d209bcea97
 ../img/radioAmerica.png?879ae28ffeaea4f1ed7dbe2154cdbf2c
 ../img/radioProgreso.png?3601f547301be40164263e17296744f0
-../js/vendor.js?6c039948e226c3e8b9a9
-../js/app.js?157b2ced56ce1bdfb3a7
-../js/manifest.js?70b062230bb942d3e49c
-../css/app.css?157b2ced56ce1bdfb3a7
-../js/vendor.js.map?6c039948e226c3e8b9a9
-../js/app.js.map?157b2ced56ce1bdfb3a7
-../css/app.css.map?157b2ced56ce1bdfb3a7
-../js/manifest.js.map?70b062230bb942d3e49c
+../js/vendor.js?4e55114230fd50aafb89
+../js/app.js?f682e45b535e4dfd16cf
+../js/manifest.js?34dfbb2d56ee56d5d97c
+../css/app.css?f682e45b535e4dfd16cf
+../js/vendor.js.map?4e55114230fd50aafb89
+../js/app.js.map?f682e45b535e4dfd16cf
+../css/app.css.map?f682e45b535e4dfd16cf
+../js/manifest.js.map?34dfbb2d56ee56d5d97c
 ../
 
 NETWORK:

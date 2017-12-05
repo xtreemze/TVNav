@@ -117,10 +117,15 @@ module.exports = __webpack_require__.p + "./img/mexico.svg?f1ba522e8e48091b7eca9
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "./img/une.jpg?93efe3e383aa2b578d3d9330f23c902d";
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
 module.exports = __webpack_require__.p + "./img/chile.svg?4e9ff41f7c822ef9a7b2bc728bde3c52";
 
 /***/ }),
-/* 91 */,
 /* 92 */,
 /* 93 */,
 /* 94 */,
@@ -226,22 +231,17 @@ module.exports = __webpack_require__.p + "./img/chile.svg?4e9ff41f7c822ef9a7b2bc
 /* 194 */,
 /* 195 */,
 /* 196 */,
-/* 197 */
+/* 197 */,
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(198);
 __webpack_require__(199);
 __webpack_require__(200);
-__webpack_require__(202);
-__webpack_require__(205);
+__webpack_require__(201);
+__webpack_require__(203);
+__webpack_require__(206);
 __webpack_require__(272);
 
-
-/***/ }),
-/* 198 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 199 */
@@ -251,11 +251,17 @@ __webpack_require__(272);
 
 /***/ }),
 /* 200 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 201 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__);
 
 
@@ -276,13 +282,13 @@ __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__["install"]({
     h1Title.innerText = "Actualizado | TVNav";
     setTimeout(function() {
       window.location.reload();
-    }, 10000);
+    }, 3000);
   }
 });
 
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports) {
 
 var appCacheIframe;
@@ -519,7 +525,7 @@ exports.update = update;
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -533,7 +539,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 window.videojs = __WEBPACK_IMPORTED_MODULE_0_video_js___default.a;
 
-__webpack_require__(203);
+__webpack_require__(204);
 
 
 window.zenscroll = __WEBPACK_IMPORTED_MODULE_2_zenscroll___default.a;
@@ -921,14 +927,14 @@ const channelTest = function(pass) {
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_video_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_video_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_video_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_videojs_swf_package_json__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_videojs_swf_package_json__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_videojs_swf_package_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_videojs_swf_package_json__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_global_window__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_global_window___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_global_window__);
@@ -2371,13 +2377,13 @@ Flash.VERSION = version$1;
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports) {
 
 module.exports = {"_args":[["videojs-swf@5.4.1","C:\\Users\\Media\\Desktop\\Arcade\\TVNav"]],"_from":"videojs-swf@5.4.1","_id":"videojs-swf@5.4.1","_inBundle":false,"_integrity":"sha1-IHfvccdJ8seCPvSbq65N0qywj4c=","_location":"/videojs-swf","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"videojs-swf@5.4.1","name":"videojs-swf","escapedName":"videojs-swf","rawSpec":"5.4.1","saveSpec":null,"fetchSpec":"5.4.1"},"_requiredBy":[],"_resolved":"https://registry.npmjs.org/videojs-swf/-/videojs-swf-5.4.1.tgz","_spec":"5.4.1","_where":"C:\\Users\\Media\\Desktop\\Arcade\\TVNav","author":{"name":"Brightcove"},"bugs":{"url":"https://github.com/videojs/video-js-swf/issues"},"copyright":"Copyright 2014 Brightcove, Inc. https://github.com/videojs/video-js-swf/blob/master/LICENSE","description":"The Flash-fallback video player for video.js (http://videojs.com)","devDependencies":{"async":"~0.2.9","chg":"^0.3.2","flex-sdk":"4.6.0-0","grunt":"~0.4.0","grunt-bumpup":"~0.5.0","grunt-cli":"~0.1.0","grunt-connect":"~0.2.0","grunt-contrib-jshint":"~0.4.3","grunt-contrib-qunit":"~0.2.1","grunt-contrib-watch":"~0.1.4","grunt-npm":"~0.0.2","grunt-prompt":"~0.1.2","grunt-shell":"~0.6.1","grunt-tagrelease":"~0.3.1","qunitjs":"~1.12.0","video.js":"^5.9.2"},"homepage":"http://videojs.com","keywords":["flash","video","player"],"name":"videojs-swf","repository":{"type":"git","url":"git+https://github.com/videojs/video-js-swf.git"},"scripts":{"version":"chg release -y && grunt dist && git add -f dist/ && git add CHANGELOG.md"},"version":"5.4.1"}
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Declare Channel Class
@@ -2441,7 +2447,7 @@ class Channel {
 window.tsi = new Channel({
   name: "TSi",
   shortName: "tsi",
-  logo: __webpack_require__(206),
+  logo: __webpack_require__(207),
   country: __webpack_require__(3),
   link:
     "https://trinity-lh.akamaihd.net/i/TelevicentroLive1_d@17977/master.m3u8"
@@ -2450,7 +2456,7 @@ window.tsi = new Channel({
 window.tn5 = new Channel({
   name: "TN5",
   shortName: "tn5",
-  logo: __webpack_require__(207),
+  logo: __webpack_require__(208),
   country: __webpack_require__(3),
   link:
     "https://trinity-lh.akamaihd.net/i/TelevicentroLive2_d@508538/master.m3u8"
@@ -2459,7 +2465,7 @@ window.tn5 = new Channel({
 window.ten = new Channel({
   name: "TEN",
   shortName: "ten",
-  logo: __webpack_require__(208),
+  logo: __webpack_require__(209),
   country: __webpack_require__(3),
   link: "http://stream.grupoabchn.com:1935/TENHD/TENLive.smil/playlist.m3u8"
 });
@@ -2467,9 +2473,17 @@ window.ten = new Channel({
 window.une = new Channel({
   name: "UNEtv",
   shortName: "une",
-  logo: __webpack_require__(209),
+  logo: __webpack_require__(90),
   country: __webpack_require__(3),
   link: "http://191.103.88.30/UNETV_HD/manifest.f4m"
+});
+
+window.une2 = new Channel({
+  name: "UNEtv2",
+  shortName: "une2",
+  logo: __webpack_require__(90),
+  country: __webpack_require__(3),
+  link: "http://191.103.88.30/UNETV_HD/index.m3u8"
 });
 
 window.hch = new Channel({
@@ -2667,7 +2681,7 @@ window.cnn = new Channel({
   name: "CNN",
   shortName: "cnn",
   logo: __webpack_require__(238),
-  country: __webpack_require__(90),
+  country: __webpack_require__(91),
   link: "http://unlimited1-us.dps.live/cnn/cnn.smil/playlist.m3u8"
 });
 
@@ -2768,7 +2782,7 @@ window.chilev = new Channel({
   name: "Chilevision",
   shortName: "chilev",
   logo: __webpack_require__(252),
-  country: __webpack_require__(90),
+  country: __webpack_require__(91),
   link:
     "http://chv.movil.rtsp.ztreaming.com/chvmovil2/chilevision@140569/chunklist_w787114469.m3u8"
 });
@@ -2969,28 +2983,22 @@ window.scroller = window.zenscroll.createScroller(
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "./img/tsi.png?b658103c2d1be43f3b13713a5fdad596";
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "./img/canal5.png?7baf93d617c9501b729cac477759ac36";
 
 /***/ }),
-/* 208 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "./img/ten.png?a78dac6ed8551874899ba9452fcd25d7";
-
-/***/ }),
 /* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./img/une.jpg?93efe3e383aa2b578d3d9330f23c902d";
+module.exports = __webpack_require__.p + "./img/ten.png?a78dac6ed8551874899ba9452fcd25d7";
 
 /***/ }),
 /* 210 */
@@ -3532,5 +3540,5 @@ document.addEventListener("keydown", event => {
 
 
 /***/ })
-],[197]);
-//# sourceMappingURL=app.js.map?157b2ced56ce1bdfb3a7
+],[198]);
+//# sourceMappingURL=app.js.map?f682e45b535e4dfd16cf

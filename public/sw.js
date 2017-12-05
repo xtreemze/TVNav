@@ -163,16 +163,16 @@ var __wpo = {
     "51839cb2e26aad8c6e2b8c0e9cbd276a74f9362b": "./js/vendor.js?6c039948e226c3e8b9a9",
     "312a746f952349ab2c3f1e30943909bb76052eb7": "./js/app.js?157b2ced56ce1bdfb3a7",
     "70e7c5e91f21ae997cc2f5cc1a71090f25c41c22": "./js/manifest.js?70b062230bb942d3e49c",
-    "592c1641190a72c07512d8a367459ccf65bbc4ad": "./css/app.css?157b2ced56ce1bdfb3a7",
+    "6161c29a59efa5b9591882307064cc28398da956": "./css/app.css?157b2ced56ce1bdfb3a7",
     "50595585d0b54c8d86689a7e42afc379ee9759ef": "./js/vendor.js.map?6c039948e226c3e8b9a9",
     "1bf4ba6b4e574c3d3cb3805c20c085e8ecc07fad": "./js/app.js.map?157b2ced56ce1bdfb3a7",
-    "90f9e24797b252c6df7c0171617c9ff83448f4fd": "./css/app.css.map?157b2ced56ce1bdfb3a7",
-    "9ed8fb5c83222b28f8f1bf7424bf9ecff9840ed3": "./js/manifest.js.map?70b062230bb942d3e49c",
-    "f26957c555842a265ff570dea4117321b56c1d36": "./"
+    "4a0a7d967cd09a89a617c748bbd1a271242434ef": "./css/app.css.map?157b2ced56ce1bdfb3a7",
+    "ac88b9f15b531d636dd8a2e5a4fa2b2f716e1c04": "./js/manifest.js.map?70b062230bb942d3e49c",
+    "4e30f4e71ab85358759ca1137eb8cce0f8816d97": "./"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2017-12-5 15:17:08",
+  "version": "2017-12-5 15:20:33",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

@@ -197,7 +197,7 @@ window.updateVideo = function(channel) {
     }
 
     if (navigator.onLine) {
-      videoSection.innerHTML = `<video autoplay="true"cwidth="${
+      videoSection.innerHTML = `<video autoplay="true" width="${
         window.innerWidth
       }" height="${window.innerHeight}" id="video" src="${channel.link}">
       </video>
@@ -271,8 +271,8 @@ const channelTest = function(pass) {
                 function() {
                   video.mediaSession;
                   if (window.player) {
-                    // window.player.width(window.innerWidth);
-                    // window.player.height(window.innerHeight);
+                    window.player.width(window.innerWidth);
+                    window.player.height(window.innerHeight);
                     if (!channel.ustream) {
                       setTimeout(function() {
                         window.player.muted(!"setMuted");

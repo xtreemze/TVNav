@@ -220,15 +220,6 @@ window.hrn = new Channel({
   video: "audio"
 });
 
-window.teleSur = new Channel({
-  name: "TeleSUR",
-  shortName: "teleSur",
-  logo: require("../img/logos/telesur.svg"),
-  country: require("../img/flags/venezuela.svg"),
-  link:
-    "http://cdna.telesur.ultrabase.net/mbliveMain/ngrp:mblive_all/playlist.m3u8"
-});
-
 window.caracol = new Channel({
   name: "Caracol",
   shortName: "caracol",
@@ -237,6 +228,49 @@ window.caracol = new Channel({
   link:
     "http://mdstrm.com/live-stream-playlist/58dc3d471cbe05ff3c8e463e.m3u8"
   // ustream: true
+});
+
+window.bloomberg = new Channel({
+  name: "Bloomberg",
+  shortName: "bloomberg",
+  logo: require("../img/logos/bloomberg.svg"),
+  country: require("../img/flags/usa.svg"),
+  link:
+    "http://live-bloomberg-us-east.global.ssl.fastly.net/us/us3_live.m3u8"
+});
+
+window.cbsn = new Channel({
+  name: "CBSN",
+  shortName: "cbsn",
+  logo: require("../img/logos/cbs.svg"),
+  country: require("../img/flags/usa.svg"),
+  link: "http://cbsnewshd-lh.akamaihd.net/i/CBSNHD_7@199302/master.m3u8"
+});
+window.tve = new Channel({
+  name: "TVE",
+  shortName: "tve",
+  logo: require("../img/logos/tve.svg"),
+  country: require("../img/flags/spain.svg"),
+  link:
+    "http://hlsackdn_gl8-lh.akamaihd.net/i/hlsdvrlive_1@81183/master.m3u8"
+});
+
+window.telpin = new Channel({
+  name: "TelPin",
+  shortName: "telpin",
+  logo: require("../img/logos/telpin.png"),
+  country: require("../img/flags/argentina.svg"),
+  link:
+    "http://201.219.100.30:1935/telpintv/ttv.stream_720p/playlist.m3u8"
+});
+
+window.teleSur = new Channel({
+  name: "TeleSUR",
+  shortName: "teleSur",
+  logo: require("../img/logos/telesur.svg"),
+  country: require("../img/flags/venezuela.svg"),
+  link:
+    "http://cdna.telesur.ultrabase.net/mbliveMain/ngrp:mblive_all/playlist.m3u8"
 });
 
 window.choluSat = new Channel({
@@ -254,33 +288,6 @@ window.globoTV = new Channel({
   logo: require("../img/logos/globoTV.png"),
   country: require("../img/flags/honduras.svg"),
   link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
-});
-
-window.bloomberg = new Channel({
-  name: "Bloomberg",
-  shortName: "bloomberg",
-  logo: require("../img/logos/bloomberg.svg"),
-  country: require("../img/flags/usa.svg"),
-  link:
-    "http://live-bloomberg-us-east.global.ssl.fastly.net/us/us3_live.m3u8"
-});
-
-window.tve = new Channel({
-  name: "TVE",
-  shortName: "tve",
-  logo: require("../img/logos/tve.svg"),
-  country: require("../img/flags/spain.svg"),
-  link:
-    "http://hlsackdn_gl8-lh.akamaihd.net/i/hlsdvrlive_1@81183/master.m3u8"
-});
-
-window.telpin = new Channel({
-  name: "TelPin",
-  shortName: "telpin",
-  logo: require("../img/logos/telpin.png"),
-  country: require("../img/flags/argentina.svg"),
-  link:
-    "http://201.219.100.30:1935/telpintv/ttv.stream_720p/playlist.m3u8"
 });
 
 window.sexta = new Channel({
@@ -334,7 +341,8 @@ window.twit = new Channel({
   shortName: "twit",
   logo: require("../img/logos/twit.svg"),
   country: require("../img/flags/usa.svg"),
-  link: "https://www.ustream.tv/embed/1524",
+  link:
+    "http://iphone-streaming.ustream.tv/uhls/1524/streams/live/iphone/playlist.m3u8",
   ustream: true
 });
 
@@ -374,32 +382,24 @@ window.capital = new Channel({
   // ?dnt=true&es=us-b2-p-e-sx6.cdn.mdstrm.com&ote=1506105524968&ot=PhcZX6iEf6naqlTvLiSrJA&proto=http"
 });
 
-window.cbsn = new Channel({
-  name: "CBSN",
-  shortName: "cbsn",
-  logo: require("../img/logos/cbs.svg"),
-  country: require("../img/flags/usa.svg"),
-  link: "http://cbsnewshd-lh.akamaihd.net/i/CBSNHD_7@199302/master.m3u8"
-});
+// window.neox = new Channel({
+//   name: "neox",
+//   shortName: "neox",
+//   logo: require("../img/logos/neox.jpg"),
+//   country: require("../img/flags/spain.svg"),
+//   link:
+//     "http://a3live-lh.akamaihd.net/i/nxhds/geoneox_1@35261/master.m3u8"
+// });
 
-window.neox = new Channel({
-  name: "neox",
-  shortName: "neox",
-  logo: require("../img/logos/neox.jpg"),
-  country: require("../img/flags/spain.svg"),
-  link:
-    "http://a3live-lh.akamaihd.net/i/nxhds/geoneox_1@35261/master.m3u8"
-});
-
-window.nova = new Channel({
-  name: "nova",
-  shortName: "nova",
-  logo: require("../img/logos/nova.png"),
-  country: require("../img/flags/spain.svg"),
-  link:
-    "http://a3live-lh.akamaihd.net/i/nvhds/geonova_1@379404/index_4_av-b.m3u8"
-  // ?sd=10&rebase=on"
-});
+// window.nova = new Channel({
+//   name: "nova",
+//   shortName: "nova",
+//   logo: require("../img/logos/nova.png"),
+//   country: require("../img/flags/spain.svg"),
+//   link:
+//     "http://a3live-lh.akamaihd.net/i/nvhds/geonova_1@379404/index_4_av-b.m3u8"
+//   // ?sd=10&rebase=on"
+// });
 
 // window.nbc = new Channel({
 //   name: "NBC",
@@ -451,14 +451,14 @@ window.antena3 = new Channel({
     "http://a3live-lh.akamaihd.net/i/antena3_1@35248/index_4_av-p.m3u8"
 });
 
-window.mega = new Channel({
-  name: "MEGA",
-  shortName: "mega",
-  logo: require("../img/logos/mega.svg"),
-  country: require("../img/flags/spain.svg"),
-  link:
-    "http://a3live-lh.akamaihd.net/i/mghds/geomega_1@328914/index_3_av-b.m3u8"
-});
+// window.mega = new Channel({
+//   name: "MEGA",
+//   shortName: "mega",
+//   logo: require("../img/logos/mega.svg"),
+//   country: require("../img/flags/spain.svg"),
+//   link:
+//     "http://a3live-lh.akamaihd.net/i/mghds/geomega_1@328914/index_3_av-b.m3u8"
+// });
 
 window.chilev = new Channel({
   name: "Chilevision",

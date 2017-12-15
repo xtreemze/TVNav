@@ -380,7 +380,7 @@ window.bloomberg = new Channel({
   logo: require("../img/logos/bloomberg.svg"),
   country: require("../img/flags/usa.svg"),
   link:
-    "http://live-bloomberg-us-east.global.ssl.fastly.net/us/us3_live.m3u8"
+    "https://liveproduseast.global.ssl.fastly.net/btv/desktop/us_live.m3u8"
 });
 window.telpin = new Channel({
   name: "TelPin",

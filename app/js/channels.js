@@ -317,18 +317,20 @@ window.sexta = new Channel({
 //   ustream: true
 // });
 
-// window.tv45 = new Channel({
-//   name: "45TV",
-//   shortName: "tv45",
-//   logo: require("../img/logos/45tv.png"),
-//   country: require("../img/flags/honduras.svg"),
-//   link:
-//     "http://www.ustream.tv/embed/19421752" +
-//     "?html5ui=1&autoplay=true&controls=false",
-//   ustream: true
-// });
+window.tv45 = new Channel({
+  name: "45TV",
+  shortName: "tv45",
+  logo: require("../img/logos/45tv.png"),
+  country: require("../img/flags/honduras.svg"),
+  link:
+    "http://www.ustream.tv/embed/19421752" +
+    "?html5ui=1&autoplay=true&controls=false",
+  ustream: true
+});
 
-window.rt = new Channel({
+//iphone-streaming.ustream.tv/uhls/19421752/streams/live/iphone/playlist.m3u8
+
+http: window.rt = new Channel({
   name: "RT",
   shortName: "rt",
   logo: require("../img/logos/rt.svg"),

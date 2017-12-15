@@ -200,6 +200,26 @@ window.une = new Channel({
   link: "http://191.103.88.30/UNETV_HD/index.m3u8"
 });
 
+window.rprog = new Channel({
+  name: "Radio Progreso",
+  shortName: "rprog",
+  link: "http://192.99.233.46:8900/;?1513336516909.mp3",
+  logo: require("../img/logos/radioProgreso.png"),
+  country: require("../img/flags/honduras.svg"),
+  type: "audio/mpeg",
+  video: "audio"
+});
+
+window.hrn = new Channel({
+  name: "HRN",
+  shortName: "hrn",
+  logo: require("../img/logos/hrn.jpg"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://radios504.geucast.net:18101/radio-live",
+  type: "audio/mpeg",
+  video: "audio"
+});
+
 window.teleSur = new Channel({
   name: "TeleSUR",
   shortName: "teleSur",
@@ -500,16 +520,6 @@ window.hondured = new Channel({
 //   link: "http://d3bus2b3f32oks.cloudfront.net/hn//smil:vtv.smil/playlist.m3u8"
 // });
 
-window.hrn = new Channel({
-  name: "HRN",
-  shortName: "hrn",
-  logo: require("../img/logos/hrn.jpg"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://radios504.geucast.net:18101/radio-live",
-  type: "audio/mpeg",
-  video: "audio"
-});
-
 window.euro = new Channel({
   name: "EuroNews",
   shortName: "euro",
@@ -569,16 +579,6 @@ window.america = new Channel({
 //   type: "audio/aac",
 //   video: "audio"
 // });
-
-window.rprog = new Channel({
-  name: "Radio Progreso",
-  shortName: "rprog",
-  link: "http://noasrv.caster.fm:10194/stream?1504792373090.mp3",
-  logo: require("../img/logos/radioProgreso.png"),
-  country: require("../img/flags/honduras.svg"),
-  type: "audio/mpeg",
-  video: "audio"
-});
 
 // Donate
 channelList += `<div class="individualChannel" id="donate">

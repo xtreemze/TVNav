@@ -248,7 +248,7 @@ window.cbsn = new Channel({
   link: "http://cbsnewshd-lh.akamaihd.net/i/CBSNHD_7@199302/master.m3u8"
 });
 window.tve = new Channel({
-  name: "TVE",
+  name: "rtve",
   shortName: "tve",
   logo: require("../img/logos/tve.svg"),
   country: require("../img/flags/spain.svg"),
@@ -296,7 +296,7 @@ window.tv45 = new Channel({
 });
 
 window.rt = new Channel({
-  name: "RT",
+  name: "RT Es",
   shortName: "rt",
   logo: require("../img/logos/rt.svg"),
   country: require("../img/flags/russia.svg"),
@@ -361,7 +361,7 @@ window.capital = new Channel({
   logo: require("../img/logos/capital.svg"),
   country: require("../img/flags/colombia.svg"),
   link:
-    "http://us-b2-p-e-sx6.cdn.mdstrm.com/live-stream/57d01d6c28b263eb73b59a5a/publish/media_500.m3u8"
+    "http://mdstrm.com/live-stream-playlist/57d01d6c28b263eb73b59a5a.m3u8"
   // ?dnt=true&es=us-b2-p-e-sx6.cdn.mdstrm.com&ote=1506105524968&ot=PhcZX6iEf6naqlTvLiSrJA&proto=http"
 });
 
@@ -382,6 +382,7 @@ window.bloomberg = new Channel({
   link:
     "https://liveproduseast.global.ssl.fastly.net/btv/desktop/us_live.m3u8"
 });
+
 window.telpin = new Channel({
   name: "TelPin",
   shortName: "telpin",

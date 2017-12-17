@@ -192,8 +192,32 @@ window.twit = new Channel({
   logo: require("../img/logos/twit.svg"),
   country: require("../img/flags/usa.svg"),
   // "http://iphone-streaming.ustream.tv/uhls/1524/streams/live/iphone/playlist.m3u8"
-  link: "https://www.ustream.tv/channel/1524",
+  // "http://iphone-streaming.ustream.tv/uhls/1524/streams/live/iphone/playlist.m3u8"
+  link:
+    "https://www.ustream.tv/channel/1524" +
+    "?html5ui=1&autoplay=true&controls=false",
   ustream: true
+});
+
+window.twitM = new Channel({
+  name: "TWiT Mobile",
+  shortName: "twitM",
+  logo: require("../img/logos/twit.svg"),
+  country: require("../img/flags/usa.svg"),
+  link:
+    "http://iphone-streaming.ustream.tv/uhls/1524/streams/live/iphone/playlist.m3u8",
+  html5: true
+  // "http://iphone-streaming.ustream.tv/uhls/1524/streams/live/iphone/playlist.m3u8"
+  // link: "https://www.ustream.tv/channel/1524",
+  // ustream: true
+});
+
+window.twitR = new Channel({
+  name: "TWiT Radio",
+  shortName: "twitR",
+  logo: require("../img/logos/twit.svg"),
+  country: require("../img/flags/usa.svg"),
+  link: "http://twit.am/listen.m3u"
 });
 
 window.khou = new Channel({

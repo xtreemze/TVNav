@@ -54,50 +54,6 @@ class Channel {
 //   ustream: true
 // });
 
-window.msnbc = new Channel({
-  name: "MSNBC",
-  shortName: "msnbc",
-  logo: require("../img/logos/msnbc.png"),
-  country: require("../img/flags/usa.svg"),
-  link: "http://tvemsnbc-lh.akamaihd.net/i/nbcmsnbc_1@122532/master.m3u8"
-});
-window.jazeera = new Channel({
-  name: " AlJazeera",
-  shortName: "jazeera",
-  logo: require("../img/logos/jazeera.svg"),
-  country: require("../img/flags/qatar.svg"),
-  link:
-    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
-});
-
-window.bbc = new Channel({
-  name: "BBC",
-  shortName: "bbc",
-  logo: require("../img/logos/bbc.svg"),
-  country: require("../img/flags/england.svg"),
-  link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/BBCW/tu1_1.m3u8"
-});
-
-window.dw = new Channel({
-  name: "DW Es",
-  shortName: "dw",
-  logo: require("../img/logos/dw.svg"),
-  country: require("../img/flags/germany.svg"),
-  link:
-    "http://dwstream3-lh.akamaihd.net/i/dwstream3_live@124409/master.m3u8?play-only=primary"
-  // ?sd=10&rebase=on"
-});
-
-window.dwEn = new Channel({
-  name: "DW En",
-  shortName: "dwEn",
-  logo: require("../img/logos/dw.svg"),
-  country: require("../img/flags/germany.svg"),
-  link:
-    "http://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/master.m3u8?play-only=primary"
-  // ?sd=10&rebase=on"
-});
-
 window.tsi = new Channel({
   name: "TSi",
   shortName: "tsi",
@@ -142,67 +98,6 @@ window.tele7 = new Channel({
   // html5: true
 });
 
-window.azteca = new Channel({
-  name: "Azteca",
-  shortName: "azteca",
-  logo: require("../img/logos/azteca.png"),
-  country: require("../img/flags/honduras.svg"),
-  link:
-    "http://aztecalive-lh.akamaihd.net/i/0dcqjxkgx_1@502208/master.m3u8"
-});
-
-window.campus = new Channel({
-  name: "CampusTV",
-  shortName: "campus",
-  logo: require("../img/logos/campustv.png"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://st2.worldkast.com/8004/8004/playlist.m3u8"
-});
-
-window.tribuna = new Channel({
-  name: "Tribuna",
-  shortName: "tribuna",
-  // logo: require("../img/logos/globoTV.png"),
-  country: require("../img/flags/honduras.svg"),
-  link:
-    "blob:https://ott.streann.com/aaec9748-8ce1-464e-b312-8098c336af2c"
-});
-
-window.hispan = new Channel({
-  name: "HISPANTV",
-  shortName: "hispan",
-  logo: require("../img/logos/hispantv.png"),
-  country: require("../img/flags/iran.svg"),
-  link:
-    "http://178.32.255.199:1935/live/hispantv/chunklist_w1542092239.m3u8"
-});
-
-window.cnn = new Channel({
-  name: "CNN",
-  shortName: "cnn",
-  logo: require("../img/logos/cnnChile.svg"),
-  country: require("../img/flags/chile.svg"),
-  link: "http://unlimited1-us.dps.live/cnn/cnn.smil/playlist.m3u8"
-});
-
-window.once = new Channel({
-  name: "Canal 11",
-  shortName: "once",
-  logo: require("../img/logos/canal11.png"),
-  country: require("../img/flags/honduras.svg"),
-  link:
-    "http://www.miotv.hn:1935/securelive/smil:c11.smil/chunklist_w1277053248_b1304800.m3u8"
-});
-
-window.seis = new Channel({
-  name: "Canal 6",
-  shortName: "seis",
-  logo: require("../img/logos/canal6.png"),
-  country: require("../img/flags/honduras.svg"),
-  link:
-    "https://ott.streann.com/loadbalancer/services/public/channels-secure/56bd45f5e4b0ba125fe8a866/playlist.m3u8"
-});
-
 window.rprog = new Channel({
   name: "Radio Progreso",
   shortName: "rprog",
@@ -221,6 +116,50 @@ window.hrn = new Channel({
   link: "http://radios504.geucast.net:18101/radio-live",
   type: "audio/mpeg",
   video: "audio"
+});
+
+window.azteca = new Channel({
+  name: "Azteca",
+  shortName: "azteca",
+  logo: require("../img/logos/azteca.png"),
+  country: require("../img/flags/honduras.svg"),
+  link:
+    "http://aztecalive-lh.akamaihd.net/i/0dcqjxkgx_1@502208/master.m3u8"
+});
+
+window.campus = new Channel({
+  name: "CampusTV",
+  shortName: "campus",
+  logo: require("../img/logos/campustv.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://st2.worldkast.com/8004/8004/playlist.m3u8"
+});
+
+// window.tribuna = new Channel({
+//   name: "Tribuna",
+//   shortName: "tribuna",
+//   // logo: require("../img/logos/globoTV.png"),
+//   country: require("../img/flags/honduras.svg"),
+//   link:
+//     "blob:https://ott.streann.com/aaec9748-8ce1-464e-b312-8098c336af2c"
+// });
+
+window.once = new Channel({
+  name: "Canal 11",
+  shortName: "once",
+  logo: require("../img/logos/canal11.png"),
+  country: require("../img/flags/honduras.svg"),
+  link:
+    "http://www.miotv.hn:1935/securelive/smil:c11.smil/chunklist_w1277053248_b1304800.m3u8"
+});
+
+window.seis = new Channel({
+  name: "Canal 6",
+  shortName: "seis",
+  logo: require("../img/logos/canal6.png"),
+  country: require("../img/flags/honduras.svg"),
+  link:
+    "https://ott.streann.com/loadbalancer/services/public/channels-secure/56bd45f5e4b0ba125fe8a866/playlist.m3u8"
 });
 
 window.rt = new Channel({
@@ -263,6 +202,67 @@ window.khou = new Channel({
   logo: require("../img/logos/cbs.svg"),
   country: require("../img/flags/usa.svg"),
   link: "http://khou-lh.akamaihd.net/i/KHOU_Shows_1@74321/master.m3u8"
+});
+
+window.msnbc = new Channel({
+  name: "MSNBC",
+  shortName: "msnbc",
+  logo: require("../img/logos/msnbc.png"),
+  country: require("../img/flags/usa.svg"),
+  link: "http://tvemsnbc-lh.akamaihd.net/i/nbcmsnbc_1@122532/master.m3u8"
+});
+window.jazeera = new Channel({
+  name: " AlJazeera",
+  shortName: "jazeera",
+  logo: require("../img/logos/jazeera.svg"),
+  country: require("../img/flags/qatar.svg"),
+  link:
+    "https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8"
+});
+
+window.bbc = new Channel({
+  name: "BBC",
+  shortName: "bbc",
+  logo: require("../img/logos/bbc.svg"),
+  country: require("../img/flags/england.svg"),
+  link: "http://hlslive.lcdn.une.net.co/v1/AUTH_HLSLIVE/BBCW/tu1_1.m3u8"
+});
+
+window.dw = new Channel({
+  name: "DW Es",
+  shortName: "dw",
+  logo: require("../img/logos/dw.svg"),
+  country: require("../img/flags/germany.svg"),
+  link:
+    "http://dwstream3-lh.akamaihd.net/i/dwstream3_live@124409/master.m3u8?play-only=primary"
+  // ?sd=10&rebase=on"
+});
+
+window.dwEn = new Channel({
+  name: "DW En",
+  shortName: "dwEn",
+  logo: require("../img/logos/dw.svg"),
+  country: require("../img/flags/germany.svg"),
+  link:
+    "http://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/master.m3u8?play-only=primary"
+  // ?sd=10&rebase=on"
+});
+
+window.hispan = new Channel({
+  name: "HISPANTV",
+  shortName: "hispan",
+  logo: require("../img/logos/hispantv.png"),
+  country: require("../img/flags/iran.svg"),
+  link:
+    "http://178.32.255.199:1935/live/hispantv/chunklist_w1542092239.m3u8"
+});
+
+window.cnn = new Channel({
+  name: "CNN",
+  shortName: "cnn",
+  logo: require("../img/logos/cnnChile.svg"),
+  country: require("../img/flags/chile.svg"),
+  link: "http://unlimited1-us.dps.live/cnn/cnn.smil/playlist.m3u8"
 });
 
 window.caracol = new Channel({

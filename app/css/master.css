@@ -21,6 +21,10 @@
   opacity: 0.5;
 }
 
+.video-js .vjs-modal-dialog {
+  background: none;
+}
+
 .channelName {
   position: relative;
   left: 0.6rem;

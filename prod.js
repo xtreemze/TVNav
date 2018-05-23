@@ -58,30 +58,30 @@ module.exports = function prod(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=./img/[name].[ext]?[hash]",
-            {
-              loader: "image-webpack-loader"
-              // options: {
-              //   gifsicle: {
-              //     interlaced: false
-              //   },
-              //   // optipng: {
-              //   //   optimizationLevel: 7
-              //   // },
-              //   pngquant: {
-              //     quality: "65-90",
-              //     speed: 4
-              //   },
-              //   mozjpeg: {
-              //     progressive: true,
-              //     quality: 65
-              //   }
-              //   // Specifying webp here will create a WEBP version of your JPG/PNG images
-              //   // webp: {
-              //   //   quality: 75
-              //   // }
-              // }
-            }
+            "file-loader?name=./img/[name].[ext]?[hash]"
+            // {
+            //   loader: "image-webpack-loader"
+            //   // options: {
+            //   //   gifsicle: {
+            //   //     interlaced: false
+            //   //   },
+            //   //   // optipng: {
+            //   //   //   optimizationLevel: 7
+            //   //   // },
+            //   //   pngquant: {
+            //   //     quality: "65-90",
+            //   //     speed: 4
+            //   //   },
+            //   //   mozjpeg: {
+            //   //     progressive: true,
+            //   //     quality: 65
+            //   //   }
+            //   //   // Specifying webp here will create a WEBP version of your JPG/PNG images
+            //   //   // webp: {
+            //   //   //   quality: 75
+            //   //   // }
+            //   // }
+            // }
           ]
         },
         {

@@ -148,18 +148,18 @@ module.exports = function prod(env) {
           // "https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"
         ],
         caches: "all",
-        // responseStrategy: "network-first",
-        responseStrategy: "cache-first",
-        // updateStrategy: "all",
-        updateStrategy: "changed",
+        responseStrategy: "network-first",
+        // responseStrategy: "cache-first",
+        updateStrategy: "all",
+        // updateStrategy: "changed",
         minify: "true",
         autoUpdate: 1000 * 60 * 60 * 2,
         ServiceWorker: {
           events: "true"
-        },
-        AppCache: {
-          events: "true"
         }
+        // AppCache: {
+        //   events: "true"
+        // }
       })
     ]
   };

@@ -1,16 +1,17 @@
 import videojs from "video.js";
-window.videojs = videojs;
 import * as HLS from "videojs-contrib-hls";
-require("videojs-flash");
 
 import zenscroll from "zenscroll";
+
+window.videojs = videojs;
+require("videojs-flash");
+
 window.zenscroll = zenscroll;
 
 const videoSection = document.getElementById("videoSection");
 const channelSection = document.getElementById("channelSection");
 const h1Title = document.getElementById("h1Title");
-const main = document.getElementById("main");
-let video = {
+const video = {
   option: {
     sourceOrder: true,
     techOrder: ["html5", "flash"],
@@ -25,7 +26,7 @@ let video = {
       }
     }
   },
-  mediaSession: function(channel) {
+  mediaSession(channel) {
     if ("mediaSession" in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: channel.name,
@@ -33,32 +34,26 @@ let video = {
         album: "Live",
         artwork: [{ src: channel.logo }]
       });
-      navigator.mediaSession.setActionHandler("play", function() {
+      navigator.mediaSession.setActionHandler("play", () => {
         player.play();
       });
-      navigator.mediaSession.setActionHandler("pause", function() {
+      navigator.mediaSession.setActionHandler("pause", () => {
         player.pause();
       });
-      navigator.mediaSession.setActionHandler(
-        "previoustrack",
-        function() {
-          if (
-            window.previousElement.parentElement.id === "channelSection"
-          ) {
-            window.selectedElement.classList.remove("selectedElement");
-            window.selectedElement = window.previousElement;
-            window.selectedElement.classList.add("selectedElement");
-            window.nextElement =
-              window.selectedElement.nextElementSibling;
-            window.previousElement =
-              window.selectedElement.previousElementSibling;
-            window.scroller.center(window.selectedElement, 480, 0);
-            window.selectedElement.click();
-            window.selectedElement.classList.remove("selectedElement");
-          }
+      navigator.mediaSession.setActionHandler("previoustrack", () => {
+        if (window.previousElement.parentElement.id === "channelSection") {
+          window.selectedElement.classList.remove("selectedElement");
+          window.selectedElement = window.previousElement;
+          window.selectedElement.classList.add("selectedElement");
+          window.nextElement = window.selectedElement.nextElementSibling;
+          window.previousElement =
+            window.selectedElement.previousElementSibling;
+          window.scroller.center(window.selectedElement, 480, 0);
+          window.selectedElement.click();
+          window.selectedElement.classList.remove("selectedElement");
         }
-      );
-      navigator.mediaSession.setActionHandler("nexttrack", function() {
+      });
+      navigator.mediaSession.setActionHandler("nexttrack", () => {
         if (window.nextElement.parentElement.id === "channelSection") {
           window.selectedElement.classList.remove("selectedElement");
           window.selectedElement = window.nextElement;
@@ -105,17 +100,13 @@ channelSection.addEventListener(
   function touchstart() {
     if (window.test === true) {
       window.falseTest();
-      channelSection.removeEventListener(
-        "touchstart",
-        touchstart(),
-        false
-      );
+      channelSection.removeEventListener("touchstart", touchstart(), false);
     }
   },
   false
 );
 
-window.addEventListener("resize", function() {
+window.addEventListener("resize", () => {
   if (window.player) {
     window.player.width(window.innerWidth);
     window.player.height(window.innerHeight);
@@ -125,7 +116,7 @@ window.addEventListener("resize", function() {
     window.player2.height(window.innerHeight);
   }
 });
-window.addEventListener("orientationchange", function() {
+window.addEventListener("orientationchange", () => {
   if (window.player) {
     window.player.width(window.innerWidth);
     window.player.height(window.innerHeight);
@@ -143,7 +134,7 @@ window.updateVideo = function(channel) {
   if (channel.logo) {
     window.channelLogo.classList.remove("fadeIn");
     window.channelLogo.classList.add("fadeOut");
-    setTimeout(function() {
+    setTimeout(() => {
       window.channelLogo.classList.remove("fadeOut");
       window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
       window.channelLogo.classList.add("fadeIn");
@@ -154,10 +145,7 @@ window.updateVideo = function(channel) {
   if (!window.currentElement === false) {
     window.currentElement.classList.remove("active");
   }
-  if (
-    !videojs.players.videoContainer === false &&
-    !window.player === false
-  ) {
+  if (!videojs.players.videoContainer === false && !window.player === false) {
     videojs.players.videoContainer.pause();
     videojs.players.videoContainer.dispose();
   }
@@ -169,16 +157,12 @@ window.updateVideo = function(channel) {
     <source src=${channel.link} type=${channel.type} data=${channel.data}>
 </${channel.video}>
 `;
-    window.player = videojs(
-      "videoContainer",
-      video.option,
-      video.mediaSession
-    );
+    window.player = videojs("videoContainer", video.option, video.mediaSession);
     if (window.player) {
       window.player.width(window.innerWidth);
       window.player.height(window.innerHeight);
       if (!channel.ustream && !channel.html5) {
-        setTimeout(function() {
+        setTimeout(() => {
           window.player.muted(!"setMuted");
         }, 200);
       }
@@ -187,10 +171,7 @@ window.updateVideo = function(channel) {
     window.currentElement.classList.add("active");
     window.scroller.center(window.currentElement, 480, 0);
   } else if (navigator.onLine && channel.ustream && !channel.html5) {
-    if (
-      !videojs.players.videoContainer === false &&
-      !window.player === false
-    ) {
+    if (!videojs.players.videoContainer === false && !window.player === false) {
       window.currentElement.classList.remove("active");
       videojs.players.videoContainer.pause();
       videojs.players.videoContainer.dispose();
@@ -207,13 +188,10 @@ window.updateVideo = function(channel) {
       window.currentElement = document.getElementById(channel.shortName);
       window.currentElement.classList.add("active");
     }
-    document.title = channel.name + " | TVNav";
-    h1Title.innerText = channel.name + " | TVNav";
+    document.title = `${channel.name} | TVNav`;
+    h1Title.innerText = `${channel.name} | TVNav`;
   } else if (navigator.onLine && channel.html5) {
-    if (
-      !videojs.players.videoContainer === false &&
-      !window.player === false
-    ) {
+    if (!videojs.players.videoContainer === false && !window.player === false) {
       window.currentElement.classList.remove("active");
       videojs.players.videoContainer.pause();
       videojs.players.videoContainer.dispose();
@@ -229,24 +207,24 @@ window.updateVideo = function(channel) {
       window.currentElement = document.getElementById(channel.shortName);
       window.currentElement.classList.add("active");
     }
-    document.title = channel.name + " | TVNav";
-    h1Title.innerText = channel.name + " | TVNav";
+    document.title = `${channel.name} | TVNav`;
+    h1Title.innerText = `${channel.name} | TVNav`;
   }
 
   window.selectedElement = window.currentElement;
-  document.title = channel.name + " | TVNav";
-  h1Title.innerText = channel.name + " | TVNav";
-  window.player.on("error", function() {
+  document.title = `${channel.name} | TVNav`;
+  h1Title.innerText = `${channel.name} | TVNav`;
+  window.player.on("error", () => {
     const element = document.getElementById(channel.shortName);
     setTimeout(() => {
       element.classList.add("deleteChannel");
     }, 120);
-    document.title = "Eliminando: " + channel.name;
-    h1Title.innerText = "Eliminando: " + channel.name;
-    console.log("Eliminando: " + channel.name);
+    document.title = `Eliminando: ${channel.name}`;
+    h1Title.innerText = `Eliminando: ${channel.name}`;
+    console.log(`Eliminando: ${channel.name}`);
     window.nextElement = window.selectedElement.nextElementSibling;
     window.selectedElement = window.nextElement;
-    setTimeout(function() {
+    setTimeout(() => {
       Channels.delete(channel);
       element.remove();
     }, 1001);
@@ -258,15 +236,13 @@ const channelTest = function(pass) {
     window.test = true;
     let timer = 1200;
     if (pass) {
-      Channels.forEach(function(channel) {
+      Channels.forEach(channel => {
         timer += 120;
-        window.channelTestTimer = window.setTimeout(function() {
+        window.channelTestTimer = window.setTimeout(() => {
           if (window.test === true && !channel.ustream) {
             if (channel.logo) {
               setTimeout(function() {
-                window.channelLogo.innerHTML = `<img src="${
-                  channel.logo
-                }">`;
+                window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
               }, 5);
             } else {
               window.channelLogo.innerHTML = ``;
@@ -317,9 +293,7 @@ const channelTest = function(pass) {
               h1Title.innerText = "Revisando: " + channel.name;
             } else if (window.test === true && channel.ustream) {
               if (channel.logo) {
-                window.channelLogo.innerHTML = `<img src="${
-                  channel.logo
-                }">`;
+                window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
               } else {
                 window.channelLogo.innerHTML = ``;
               }
@@ -340,9 +314,9 @@ const channelTest = function(pass) {
       }, this);
     }
     if (pass > 1) {
-      Channels.forEach(function(channel) {
+      Channels.forEach(channel => {
         timer += 1001;
-        window.channelTestTimer = window.setTimeout(function() {
+        window.channelTestTimer = window.setTimeout(() => {
           if (window.test === true && !channel.ustream) {
             updateVideo(channel);
             // window.player.width(0);
@@ -355,9 +329,7 @@ const channelTest = function(pass) {
               window.channelLogo.classList.add("fadeOut");
               setTimeout(function() {
                 window.channelLogo.classList.remove("fadeOut");
-                window.channelLogo.innerHTML = `<img src="${
-                  channel.logo
-                }">`;
+                window.channelLogo.innerHTML = `<img src="${channel.logo}">`;
                 window.channelLogo.classList.add("fadeIn");
               }, 500);
             } else {
@@ -366,9 +338,7 @@ const channelTest = function(pass) {
             if (!window.currentElement === false) {
               window.currentElement.classList.remove("active");
             }
-            window.currentElement = document.getElementById(
-              channel.shortName
-            );
+            window.currentElement = document.getElementById(channel.shortName);
 
             window.currentElement.classList.add("active");
             window.scroller.center(window.currentElement, 480, 0);

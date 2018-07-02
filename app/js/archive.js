@@ -1,7 +1,7 @@
 window.logoList = function() {
   //   let content = "";
   let html = "";
-  Channels.forEach(function(channel) {
+  Channels.forEach(channel => {
     if (channel.logo) {
       //   content += `"${channel.logo}",\n`;
       html += `<img src="${channel.logo}">\n`;
@@ -10,7 +10,7 @@ window.logoList = function() {
   //   console.log(content);
   //   console.log(html);
   window.logos.innerHTML = html;
-  setTimeout(function() {
+  setTimeout(() => {
     window.logos.remove();
   }, 4000);
 };
@@ -29,8 +29,8 @@ window.checkSupport = function() {
     "audio/aac",
     "audio/mp4"
   ];
-  types.forEach(function(type) {
-    let vid = document.createElement("video");
+  types.forEach(type => {
+    const vid = document.createElement("video");
     let response;
     switch (vid.canPlayType(type)) {
       case "probably":
@@ -45,24 +45,26 @@ window.checkSupport = function() {
       default:
         break;
     }
-    content += type + ": " + response + "\n";
+    content += `${type}: ${response}\n`;
   }, this);
   console.log(content);
 };
 
 const initVideo = function(channel) {
   if (navigator.onLine && !channel.ustream) {
-    initialVideoSection.innerHTML = `<${channel.video} controls id="videoContainer2" preload="auto" autoplay muted class="video-js vjs-default-skin">
+    initialVideoSection.innerHTML = `<${
+      channel.video
+    } controls id="videoContainer2" preload="auto" autoplay muted class="video-js vjs-default-skin">
   <source src=${channel.link} type=${channel.type} data=${channel.data}>
 </${channel.video}>
 `;
-    window.player2 = videojs("videoContainer2", video.option, function() {
+    window.player2 = videojs("videoContainer2", video.option, () => {
       video.mediaSession;
       if (window.player2) {
         window.player2.width(window.innerWidth);
         window.player2.height(window.innerHeight);
         if (!channel.ustream) {
-          setTimeout(function() {
+          setTimeout(() => {
             window.player2.muted(!"setMuted");
           }, 1001);
         }
@@ -70,15 +72,3 @@ const initVideo = function(channel) {
     });
   }
 };
-
-window.addEventListener("load", function() {
-  // videojs.players.videoContainer2.dispose();
-  // falseTest();
-  // setTimeout(function() {
-  // updateVideo(earth);
-  // }, 500);
-  // initVideo(earth);
-  // channelTest(1);
-  // toggleChannels();
-  // updateVideo(tsi);
-});

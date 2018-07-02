@@ -67,13 +67,13 @@ var __wpo = {
       "./img/radioGlobo.png?3c28ad20d7e4d7e53ab57782a8182cea",
       "./img/patio.jpg?6e4bd75ab6880834e4f2eb5d151999a9",
       "./img/radioAmerica.png?acb79af1930a5f5d11001d12e8f57013",
-      "./js/vendor.js?eb698db45f98d13d4136",
-      "./js/app.js?1f0b24f076394be34737",
+      "./js/vendor.js?994a16ddbbf70007ff8e",
+      "./js/app.js?81259a2ab25e86b01ffc",
       "./js/manifest.js?05a86d58108d235613ba",
-      "./css/app.css?1f0b24f076394be34737",
-      "./js/vendor.js.map?eb698db45f98d13d4136",
-      "./js/app.js.map?1f0b24f076394be34737",
-      "./css/app.css.map?1f0b24f076394be34737",
+      "./css/app.css?81259a2ab25e86b01ffc",
+      "./js/vendor.js.map?994a16ddbbf70007ff8e",
+      "./js/app.js.map?81259a2ab25e86b01ffc",
+      "./css/app.css.map?81259a2ab25e86b01ffc",
       "./js/manifest.js.map?05a86d58108d235613ba",
       "./"
     ],
@@ -148,21 +148,21 @@ var __wpo = {
     "f14ad509a16a9f4c0b3a8becd5c63bff73213d25": "./img/radioGlobo.png?3c28ad20d7e4d7e53ab57782a8182cea",
     "d5150a22fc7b48d79ea774e8f18b3f39bfec7584": "./img/patio.jpg?6e4bd75ab6880834e4f2eb5d151999a9",
     "4dbeb3c52ad84065bd24f895d6da77326160d49a": "./img/radioAmerica.png?acb79af1930a5f5d11001d12e8f57013",
-    "fb65e57d47e0acd16ac7b024f6b96ceed6643757": "./js/vendor.js?eb698db45f98d13d4136",
-    "76369c6741910e7e6414ec81c004ff1d2e0ac529": "./js/app.js?1f0b24f076394be34737",
+    "219809b7a82504ec7d23406ad1faa00d4f8be08e": "./js/vendor.js?994a16ddbbf70007ff8e",
+    "f4a8656a7dc9a3f7e22397ed78eb40c9bc096284": "./js/app.js?81259a2ab25e86b01ffc",
     "8f47d5980691de9837b5ba6d58bee1662b1ecb1e": "./js/manifest.js?05a86d58108d235613ba",
-    "a125acddfbc5f27e8f271ad0ee362c0a833cc8c4": "./css/app.css?1f0b24f076394be34737",
-    "ab6187243995a81296aa5a562f2ed8ba896d439f": "./js/vendor.js.map?eb698db45f98d13d4136",
-    "92b649918c58f200699583077d81d019fffabd8f": "./js/app.js.map?1f0b24f076394be34737",
-    "3d2073ee1054ff1ce3f1cc672ff203bcc2744b46": "./css/app.css.map?1f0b24f076394be34737",
-    "4b65b23262c1ca08ea370dfa4d6fe6d0f7767ad1": "./js/manifest.js.map?05a86d58108d235613ba",
-    "57490889b38e40f166acc86b7c866a2a299f4b89": "./"
+    "024ad85b0c2006a227522bdc3539b279562e32f9": "./css/app.css?81259a2ab25e86b01ffc",
+    "03f1c425e01cf6f3dd3c2974d3903df21f4310d3": "./js/vendor.js.map?994a16ddbbf70007ff8e",
+    "a2d9cc538ac09e0b73239651997cf848599c50ab": "./js/app.js.map?81259a2ab25e86b01ffc",
+    "a92129e84ad13162f75b9be36a4d9038ed4a9d6c": "./css/app.css.map?81259a2ab25e86b01ffc",
+    "79bb9cb0eaa1554d6d399ed2ac4c3b58c83e7e0c": "./js/manifest.js.map?05a86d58108d235613ba",
+    "85ed02c31f306d136be9f2df8528c14d77b854ab": "./"
   },
-  "strategy": "changed",
-  "responseStrategy": "cache-first",
-  "version": "2018-5-23 12:12:57",
+  "strategy": "all",
+  "responseStrategy": "network-first",
+  "version": "2018-7-2 11:02:56",
   "name": "webpack-offline",
-  "pluginVersion": "5.0.3",
+  "pluginVersion": "5.0.5",
   "relativePaths": true
 };
 
@@ -526,6 +526,14 @@ function WebpackServiceWorker(params, helpers) {
   self.addEventListener('fetch', function (event) {
     // Handle only GET requests
     if (event.request.method !== 'GET') {
+      return;
+    }
+
+    // This prevents some weird issue with Chrome DevTools and 'only-if-cached'
+    // Fixes issue #385, also ref to:
+    // - https://github.com/paulirish/caltrainschedule.io/issues/49
+    // - https://bugs.chromium.org/p/chromium/issues/detail?id=823392
+    if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
       return;
     }
 
@@ -1004,7 +1012,7 @@ function logGroup(title, assets) {
         WebpackServiceWorker(__wpo, {
 loaders: {},
 cacheMaps: [],
-navigationPreload: false,
+navigationPreload: true,
 });
         module.exports = __webpack_require__(1)
       

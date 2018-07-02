@@ -20,24 +20,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. */
 /*global define, YT*/
-(function (root, factory) {
-  if(typeof exports==='object' && typeof module!=='undefined') {
-    module.exports = factory(require('video.js'));
-  } else if(typeof define === 'function' && define.amd) {
-    define(['videojs'], function(videojs){
+(function(root, factory) {
+  if (typeof exports === "object" && typeof module !== "undefined") {
+    module.exports = factory(require("video.js"));
+  } else if (typeof define === "function" && define.amd) {
+    define(["videojs"], function(videojs) {
       return (root.Youtube = factory(videojs));
     });
   } else {
     root.Youtube = factory(root.videojs);
   }
-}(this, function(videojs) {
-  'use strict';
+})(this, function(videojs) {
+  "use strict";
 
   var _isOnMobile = videojs.browser.IS_IOS || videojs.browser.IS_ANDROID;
-  var Tech = videojs.getTech('Tech');
+  var Tech = videojs.getTech("Tech");
 
   var Youtube = videojs.extend(Tech, {
-
     constructor: function(options, ready) {
       Tech.call(this, options, ready);
 
@@ -46,21 +45,23 @@ THE SOFTWARE. */
 
       // Set the vjs-youtube class to the player
       // Parent is not set yet so we have to wait a tick
-      this.setTimeout(function() {
-        if (this.el_) {
-          this.el_.parentNode.className += ' vjs-youtube';
+      this.setTimeout(
+        function() {
+          if (this.el_) {
+            this.el_.parentNode.className += " vjs-youtube";
 
-          if (_isOnMobile) {
-            this.el_.parentNode.className += ' vjs-youtube-mobile';
-          }
+            if (_isOnMobile) {
+              this.el_.parentNode.className += " vjs-youtube-mobile";
+            }
 
-          if (Youtube.isApiReady) {
-            this.initYTPlayer();
-          } else {
-            Youtube.apiReadyQueue.push(this);
+            if (Youtube.isApiReady) {
+              this.initYTPlayer();
+            } else {
+              Youtube.apiReadyQueue.push(this);
+            }
           }
-        }
-      }.bind(this));
+        }.bind(this)
+      );
     },
 
     dispose: function() {
@@ -82,8 +83,8 @@ THE SOFTWARE. */
       this.ytPlayer = null;
 
       this.el_.parentNode.className = this.el_.parentNode.className
-        .replace(' vjs-youtube', '')
-        .replace(' vjs-youtube-mobile', '');
+        .replace(" vjs-youtube", "")
+        .replace(" vjs-youtube-mobile", "");
       this.el_.parentNode.removeChild(this.el_);
 
       //Needs to be called after the YouTube player is destroyed, otherwise there will be a null reference exception
@@ -91,18 +92,24 @@ THE SOFTWARE. */
     },
 
     createEl: function() {
-      var div = document.createElement('div');
-      div.setAttribute('id', this.options_.techId);
-      div.setAttribute('style', 'width:100%;height:100%;top:0;left:0;position:absolute');
-      div.setAttribute('class', 'vjs-tech');
+      var div = document.createElement("div");
+      div.setAttribute("id", this.options_.techId);
+      div.setAttribute(
+        "style",
+        "width:100%;height:100%;top:0;left:0;position:absolute"
+      );
+      div.setAttribute("class", "vjs-tech");
 
-      var divWrapper = document.createElement('div');
+      var divWrapper = document.createElement("div");
       divWrapper.appendChild(div);
 
       if (!_isOnMobile && !this.options_.ytControls) {
-        var divBlocker = document.createElement('div');
-        divBlocker.setAttribute('class', 'vjs-iframe-blocker');
-        divBlocker.setAttribute('style', 'position:absolute;top:0;left:0;width:100%;height:100%');
+        var divBlocker = document.createElement("div");
+        divBlocker.setAttribute("class", "vjs-iframe-blocker");
+        divBlocker.setAttribute(
+          "style",
+          "position:absolute;top:0;left:0;width:100%;height:100%"
+        );
 
         // In case the blocker is still there and we want to pause
         divBlocker.onclick = function() {
@@ -129,92 +136,92 @@ THE SOFTWARE. */
       // To use YouTube controls, you must use ytControls instead
       // To use the loop or autoplay, use the video.js settings
 
-      if (typeof this.options_.autohide !== 'undefined') {
+      if (typeof this.options_.autohide !== "undefined") {
         playerVars.autohide = this.options_.autohide;
       }
 
-      if (typeof this.options_['cc_load_policy'] !== 'undefined') {
-        playerVars['cc_load_policy'] = this.options_['cc_load_policy'];
+      if (typeof this.options_["cc_load_policy"] !== "undefined") {
+        playerVars["cc_load_policy"] = this.options_["cc_load_policy"];
       }
 
-      if (typeof this.options_.ytControls !== 'undefined') {
+      if (typeof this.options_.ytControls !== "undefined") {
         playerVars.controls = this.options_.ytControls;
       }
 
-      if (typeof this.options_.disablekb !== 'undefined') {
+      if (typeof this.options_.disablekb !== "undefined") {
         playerVars.disablekb = this.options_.disablekb;
       }
 
-      if (typeof this.options_.end !== 'undefined') {
+      if (typeof this.options_.end !== "undefined") {
         playerVars.end = this.options_.end;
       }
 
-      if (typeof this.options_.color !== 'undefined') {
+      if (typeof this.options_.color !== "undefined") {
         playerVars.color = this.options_.color;
       }
 
       if (!playerVars.controls) {
         // Let video.js handle the fullscreen unless it is the YouTube native controls
         playerVars.fs = 0;
-      } else if (typeof this.options_.fs !== 'undefined') {
+      } else if (typeof this.options_.fs !== "undefined") {
         playerVars.fs = this.options_.fs;
       }
 
-      if (typeof this.options_.end !== 'undefined') {
+      if (typeof this.options_.end !== "undefined") {
         playerVars.end = this.options_.end;
       }
 
-      if (typeof this.options_.hl !== 'undefined') {
+      if (typeof this.options_.hl !== "undefined") {
         playerVars.hl = this.options_.hl;
-      } else if (typeof this.options_.language !== 'undefined') {
+      } else if (typeof this.options_.language !== "undefined") {
         // Set the YouTube player on the same language than video.js
         playerVars.hl = this.options_.language.substr(0, 2);
       }
 
-      if (typeof this.options_['iv_load_policy'] !== 'undefined') {
-        playerVars['iv_load_policy'] = this.options_['iv_load_policy'];
+      if (typeof this.options_["iv_load_policy"] !== "undefined") {
+        playerVars["iv_load_policy"] = this.options_["iv_load_policy"];
       }
 
-      if (typeof this.options_.list !== 'undefined') {
+      if (typeof this.options_.list !== "undefined") {
         playerVars.list = this.options_.list;
-      } else if (this.url && typeof this.url.listId !== 'undefined') {
+      } else if (this.url && typeof this.url.listId !== "undefined") {
         playerVars.list = this.url.listId;
       }
 
-      if (typeof this.options_.listType !== 'undefined') {
+      if (typeof this.options_.listType !== "undefined") {
         playerVars.listType = this.options_.listType;
       }
 
-      if (typeof this.options_.modestbranding !== 'undefined') {
+      if (typeof this.options_.modestbranding !== "undefined") {
         playerVars.modestbranding = this.options_.modestbranding;
       }
 
-      if (typeof this.options_.playlist !== 'undefined') {
+      if (typeof this.options_.playlist !== "undefined") {
         playerVars.playlist = this.options_.playlist;
       }
 
-      if (typeof this.options_.playsinline !== 'undefined') {
+      if (typeof this.options_.playsinline !== "undefined") {
         playerVars.playsinline = this.options_.playsinline;
       }
 
-      if (typeof this.options_.rel !== 'undefined') {
+      if (typeof this.options_.rel !== "undefined") {
         playerVars.rel = this.options_.rel;
       }
 
-      if (typeof this.options_.showinfo !== 'undefined') {
+      if (typeof this.options_.showinfo !== "undefined") {
         playerVars.showinfo = this.options_.showinfo;
       }
 
-      if (typeof this.options_.start !== 'undefined') {
+      if (typeof this.options_.start !== "undefined") {
         playerVars.start = this.options_.start;
       }
 
-      if (typeof this.options_.theme !== 'undefined') {
+      if (typeof this.options_.theme !== "undefined") {
         playerVars.theme = this.options_.theme;
       }
 
       // Allow undocumented options to be passed along via customVars
-      if (typeof this.options_.customVars !== 'undefined') {
+      if (typeof this.options_.customVars !== "undefined") {
         var customVars = this.options_.customVars;
         Object.keys(customVars).forEach(function(key) {
           playerVars[key] = customVars[key];
@@ -229,7 +236,9 @@ THE SOFTWARE. */
         playerVars: playerVars,
         events: {
           onReady: this.onPlayerReady.bind(this),
-          onPlaybackQualityChange: this.onPlayerPlaybackQualityChange.bind(this),
+          onPlaybackQualityChange: this.onPlayerPlaybackQualityChange.bind(
+            this
+          ),
           onPlaybackRateChange: this.onPlayerPlaybackRateChange.bind(this),
           onStateChange: this.onPlayerStateChange.bind(this),
           onVolumeChange: this.onPlayerVolumeChange.bind(this),
@@ -259,12 +268,10 @@ THE SOFTWARE. */
       }
     },
 
-    onPlayerPlaybackQualityChange: function() {
-
-    },
+    onPlayerPlaybackQualityChange: function() {},
 
     onPlayerPlaybackRateChange: function() {
-      this.trigger('ratechange');
+      this.trigger("ratechange");
     },
 
     onPlayerStateChange: function(e) {
@@ -278,21 +285,21 @@ THE SOFTWARE. */
 
       switch (state) {
         case -1:
-          this.trigger('loadstart');
-          this.trigger('loadedmetadata');
-          this.trigger('durationchange');
-          this.trigger('ratechange');
+          this.trigger("loadstart");
+          this.trigger("loadedmetadata");
+          this.trigger("durationchange");
+          this.trigger("ratechange");
           break;
 
         case YT.PlayerState.ENDED:
-          this.trigger('ended');
+          this.trigger("ended");
           break;
 
         case YT.PlayerState.PLAYING:
-          this.trigger('timeupdate');
-          this.trigger('durationchange');
-          this.trigger('playing');
-          this.trigger('play');
+          this.trigger("timeupdate");
+          this.trigger("durationchange");
+          this.trigger("playing");
+          this.trigger("play");
 
           if (this.isSeeking) {
             this.onSeeked();
@@ -300,50 +307,57 @@ THE SOFTWARE. */
           break;
 
         case YT.PlayerState.PAUSED:
-          this.trigger('canplay');
+          this.trigger("canplay");
           if (this.isSeeking) {
             this.onSeeked();
           } else {
-            this.trigger('pause');
+            this.trigger("pause");
           }
           break;
 
         case YT.PlayerState.BUFFERING:
-          this.player_.trigger('timeupdate');
-          this.player_.trigger('waiting');
+          this.player_.trigger("timeupdate");
+          this.player_.trigger("waiting");
           break;
       }
     },
 
     onPlayerVolumeChange: function() {
-      this.trigger('volumechange');
+      this.trigger("volumechange");
     },
 
     onPlayerError: function(e) {
       this.errorNumber = e.data;
-      this.trigger('pause');
-      this.trigger('error');
+      this.trigger("pause");
+      this.trigger("error");
     },
 
     error: function() {
       var code = 1000 + this.errorNumber; // as smaller codes are reserved
       switch (this.errorNumber) {
         case 5:
-          return { code: code, message: 'Error while trying to play the video' };
+          return {
+            code: code,
+            message: "Error while trying to play the video"
+          };
 
         case 2:
         case 100:
-          return { code: code, message: 'Unable to find the video' };
+          return { code: code, message: "Unable to find the video" };
 
         case 101:
         case 150:
           return {
             code: code,
-            message: 'Playback on other Websites has been disabled by the video owner.'
+            message:
+              "Playback on other Websites has been disabled by the video owner."
           };
       }
 
-      return { code: code, message: 'YouTube unknown error (' + this.errorNumber + ')' };
+      return {
+        code: code,
+        message: "YouTube unknown error (" + this.errorNumber + ")"
+      };
     },
 
     loadVideoById_: function(id) {
@@ -406,8 +420,9 @@ THE SOFTWARE. */
       if (!this.options_.poster) {
         if (this.url.videoId) {
           // Set the low resolution first
-          this.poster_ = 'https://img.youtube.com/vi/' + this.url.videoId + '/0.jpg';
-          this.trigger('posterchange');
+          this.poster_ =
+            "https://img.youtube.com/vi/" + this.url.videoId + "/0.jpg";
+          this.trigger("posterchange");
 
           // Check if their is a high res
           this.checkHighResPoster();
@@ -470,7 +485,7 @@ THE SOFTWARE. */
           this.activeVideoId = this.url.videoId;
         }
       } else {
-        this.trigger('waiting');
+        this.trigger("waiting");
         this.playOnReady = true;
       }
     },
@@ -482,8 +497,9 @@ THE SOFTWARE. */
     },
 
     paused: function() {
-      return (this.ytPlayer) ?
-        (this.lastState !== YT.PlayerState.PLAYING && this.lastState !== YT.PlayerState.BUFFERING)
+      return this.ytPlayer
+        ? this.lastState !== YT.PlayerState.PLAYING &&
+            this.lastState !== YT.PlayerState.BUFFERING
         : true;
     },
 
@@ -501,33 +517,39 @@ THE SOFTWARE. */
       }
 
       this.ytPlayer.seekTo(seconds, true);
-      this.trigger('timeupdate');
-      this.trigger('seeking');
+      this.trigger("timeupdate");
+      this.trigger("seeking");
       this.isSeeking = true;
 
       // A seek event during pause does not return an event to trigger a seeked event,
       // so run an interval timer to look for the currentTime to change
-      if (this.lastState === YT.PlayerState.PAUSED && this.timeBeforeSeek !== seconds) {
+      if (
+        this.lastState === YT.PlayerState.PAUSED &&
+        this.timeBeforeSeek !== seconds
+      ) {
         clearInterval(this.checkSeekedInPauseInterval);
-        this.checkSeekedInPauseInterval = setInterval(function() {
-          if (this.lastState !== YT.PlayerState.PAUSED || !this.isSeeking) {
-            // If something changed while we were waiting for the currentTime to change,
-            //  clear the interval timer
-            clearInterval(this.checkSeekedInPauseInterval);
-          } else if (this.currentTime() !== this.timeBeforeSeek) {
-            this.trigger('timeupdate');
-            this.onSeeked();
-          }
-        }.bind(this), 250);
+        this.checkSeekedInPauseInterval = setInterval(
+          function() {
+            if (this.lastState !== YT.PlayerState.PAUSED || !this.isSeeking) {
+              // If something changed while we were waiting for the currentTime to change,
+              //  clear the interval timer
+              clearInterval(this.checkSeekedInPauseInterval);
+            } else if (this.currentTime() !== this.timeBeforeSeek) {
+              this.trigger("timeupdate");
+              this.onSeeked();
+            }
+          }.bind(this),
+          250
+        );
       }
     },
 
-    seeking: function () {
+    seeking: function() {
       return this.isSeeking;
     },
 
-    seekable: function () {
-      if(!this.ytPlayer) {
+    seekable: function() {
+      if (!this.ytPlayer) {
         return videojs.createTimeRange();
       }
 
@@ -542,7 +564,7 @@ THE SOFTWARE. */
         this.pause();
       }
 
-      this.trigger('seeked');
+      this.trigger("seeked");
     },
 
     playbackRate: function() {
@@ -566,7 +588,7 @@ THE SOFTWARE. */
     },
 
     ended: function() {
-      return this.ytPlayer ? (this.lastState === YT.PlayerState.ENDED) : false;
+      return this.ytPlayer ? this.lastState === YT.PlayerState.ENDED : false;
     },
 
     volume: function() {
@@ -588,8 +610,7 @@ THE SOFTWARE. */
     setMuted: function(mute) {
       if (!this.ytPlayer) {
         return;
-      }
-      else{
+      } else {
         this.muted(true);
       }
 
@@ -598,17 +619,18 @@ THE SOFTWARE. */
       } else {
         this.ytPlayer.unMute();
       }
-      this.setTimeout( function(){
-        this.trigger('volumechange');
+      this.setTimeout(function() {
+        this.trigger("volumechange");
       }, 50);
     },
 
     buffered: function() {
-      if(!this.ytPlayer || !this.ytPlayer.getVideoLoadedFraction) {
+      if (!this.ytPlayer || !this.ytPlayer.getVideoLoadedFraction) {
         return videojs.createTimeRange();
       }
 
-      var bufferedEnd = this.ytPlayer.getVideoLoadedFraction() * this.ytPlayer.getDuration();
+      var bufferedEnd =
+        this.ytPlayer.getVideoLoadedFraction() * this.ytPlayer.getDuration();
 
       return videojs.createTimeRange(0, bufferedEnd);
     },
@@ -623,28 +645,28 @@ THE SOFTWARE. */
     },
 
     // Tries to get the highest resolution thumbnail available for the video
-    checkHighResPoster: function(){
-      var uri = 'https://img.youtube.com/vi/' + this.url.videoId + '/maxresdefault.jpg';
+    checkHighResPoster: function() {
+      var uri =
+        "https://img.youtube.com/vi/" + this.url.videoId + "/maxresdefault.jpg";
 
       try {
         var image = new Image();
-        image.onload = function(){
+        image.onload = function() {
           // Onload may still be called if YouTube returns the 120x90 error thumbnail
-          if('naturalHeight' in image){
+          if ("naturalHeight" in image) {
             if (image.naturalHeight <= 90 || image.naturalWidth <= 120) {
               return;
             }
-          } else if(image.height <= 90 || image.width <= 120) {
+          } else if (image.height <= 90 || image.width <= 120) {
             return;
           }
 
           this.poster_ = uri;
-          this.trigger('posterchange');
+          this.trigger("posterchange");
         }.bind(this);
-        image.onerror = function(){};
+        image.onerror = function() {};
         image.src = uri;
-      }
-      catch(e){}
+      } catch (e) {}
     }
   });
 
@@ -657,7 +679,7 @@ THE SOFTWARE. */
   };
 
   Youtube.canPlayType = function(e) {
-    return (e === 'video/youtube');
+    return e === "video/youtube";
   };
 
   Youtube.parseUrl = function(url) {
@@ -675,7 +697,7 @@ THE SOFTWARE. */
     var regPlaylist = /[?&]list=([^#\&\?]+)/;
     match = url.match(regPlaylist);
 
-    if(match && match[1]) {
+    if (match && match[1]) {
       result.listId = match[1];
     }
 
@@ -694,17 +716,20 @@ THE SOFTWARE. */
 
   function loadScript(src, callback) {
     var loaded = false;
-    var tag = document.createElement('script');
-    var firstScriptTag = document.getElementsByTagName('script')[0];
+    var tag = document.createElement("script");
+    var firstScriptTag = document.getElementsByTagName("script")[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    tag.onload = function () {
+    tag.onload = function() {
       if (!loaded) {
         loaded = true;
         callback();
       }
     };
-    tag.onreadystatechange = function () {
-      if (!loaded && (this.readyState === 'complete' || this.readyState === 'loaded')) {
+    tag.onreadystatechange = function() {
+      if (
+        !loaded &&
+        (this.readyState === "complete" || this.readyState === "loaded")
+      ) {
         loaded = true;
         callback();
       }
@@ -714,17 +739,17 @@ THE SOFTWARE. */
 
   function injectCss() {
     var css = // iframe blocker to catch mouse events
-              '.vjs-youtube .vjs-iframe-blocker { display: none; }' +
-              '.vjs-youtube.vjs-user-inactive .vjs-iframe-blocker { display: block; }' +
-              '.vjs-youtube .vjs-poster { background-size: cover; }' +
-              '.vjs-youtube-mobile .vjs-big-play-button { display: none; }';
+      ".vjs-youtube .vjs-iframe-blocker { display: none; }" +
+      ".vjs-youtube.vjs-user-inactive .vjs-iframe-blocker { display: block; }" +
+      ".vjs-youtube .vjs-poster { background-size: cover; }" +
+      ".vjs-youtube-mobile .vjs-big-play-button { display: none; }";
 
-    var head = document.head || document.getElementsByTagName('head')[0];
+    var head = document.head || document.getElementsByTagName("head")[0];
 
-    var style = document.createElement('style');
-    style.type = 'text/css';
+    var style = document.createElement("style");
+    style.type = "text/css";
 
-    if (style.styleSheet){
+    if (style.styleSheet) {
       style.styleSheet.cssText = css;
     } else {
       style.appendChild(document.createTextNode(css));
@@ -735,15 +760,15 @@ THE SOFTWARE. */
 
   Youtube.apiReadyQueue = [];
 
-  if (typeof document !== 'undefined'){
-    loadScript('https://www.youtube.com/iframe_api', apiLoaded);
+  if (typeof document !== "undefined") {
+    loadScript("https://www.youtube.com/iframe_api", apiLoaded);
     injectCss();
   }
 
   // Older versions of VJS5 doesn't have the registerTech function
-  if (typeof videojs.registerTech !== 'undefined') {
-    videojs.registerTech('Youtube', Youtube);
+  if (typeof videojs.registerTech !== "undefined") {
+    videojs.registerTech("Youtube", Youtube);
   } else {
-    videojs.registerComponent('Youtube', Youtube);
+    videojs.registerComponent("Youtube", Youtube);
   }
-}));
+});

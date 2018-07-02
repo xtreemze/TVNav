@@ -1,6 +1,6 @@
-require("video.js/dist/video-js.css");
-require("./css/master.css");
-require("./js/offlineRuntimeInstall");
-require("./js/master");
-require("./js/channels");
-require("./js/keyboard");
+import "video.js/dist/video-js.css";
+import "./css/master.css";
+import "./js/offlineRuntimeInstall";
+import "./js/master";
+import "./js/channels";
+import "./js/keyboard";

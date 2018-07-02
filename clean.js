@@ -1,2 +1,3 @@
 const rmdir = require("rimraf");
-rmdir("./node_modules", function(error) {});
+
+rmdir("./node_modules", error => {});

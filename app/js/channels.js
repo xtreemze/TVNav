@@ -93,7 +93,9 @@ window.tele7 = new Channel({
   shortName: "tele7",
   logo: require("../img/logos/teleceiba.png"),
   country: require("../img/flags/honduras.svg"),
-  link: "http://190.11.224.14:8134/liveevent.m3u8"
+  // link: "http://190.11.224.14:8134/liveevent.m3u8"
+  link:
+    "http://190.11.224.14:8134/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8"
   // html5: true
 });
 
@@ -210,14 +212,14 @@ window.twitM = new Channel({
   // ustream: true
 });
 
-// window.twitR = new Channel({
-//   name: "TWiT Radio",
-//   shortName: "twitR",
-//   logo: require("../img/logos/twit.svg"),
-//   country: require("../img/flags/usa.svg"),
-//   link: "http://twit.am/listen.m3u",
-//   html5: true
-// });
+window.twitR = new Channel({
+  name: "TWiT Radio",
+  shortName: "twitR",
+  logo: require("../img/logos/twit.svg"),
+  country: require("../img/flags/usa.svg"),
+  link: "http://twit.am/listen.m3u",
+  html5: true
+});
 
 window.khou = new Channel({
   name: "KHOU",
@@ -339,13 +341,15 @@ window.teleSur = new Channel({
 //     "?html5ui=1&autoplay=true&controls=false",
 //   ustream: true
 // });
-window.une = new Channel({
-  name: "UNEtv",
-  shortName: "une",
-  logo: require("../img/logos/une.jpg"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://191.103.88.30/UNETV_HD/index.m3u8"
-});
+
+// window.une = new Channel({
+//   name: "UNEtv",
+//   shortName: "une",
+//   logo: require("../img/logos/une.jpg"),
+//   country: require("../img/flags/honduras.svg"),
+//   link: "http://191.103.88.30/UNETV_HD/index.m3u8"
+// });
+
 window.weather = new Channel({
   name: "Weather Channel",
   shortName: "weather",
@@ -354,16 +358,16 @@ window.weather = new Channel({
   link: "http://weather-lh.akamaihd.net/i/twc_1@92006/master.m3u8"
 });
 
-window.tv45 = new Channel({
-  name: "45TV",
-  shortName: "tv45",
-  logo: require("../img/logos/45tv.png"),
-  country: require("../img/flags/honduras.svg"),
-  link:
-    "http://www.ustream.tv/embed/19421752" +
-    "?html5ui=1&autoplay=true&controls=false",
-  ustream: true
-});
+// window.tv45 = new Channel({
+//   name: "45TV",
+//   shortName: "tv45",
+//   logo: require("../img/logos/45tv.png"),
+//   country: require("../img/flags/honduras.svg"),
+//   link:
+//     "http://www.ustream.tv/embed/19421752" +
+//     "?html5ui=1&autoplay=true&controls=false",
+//   ustream: true
+// });
 
 window.azteca13 = new Channel({
   name: "Azteca",
@@ -536,14 +540,14 @@ window.conce = new Channel({
     "http://live.canaloncelive.tv:1935/livepkgr2/smil:internacional.smil/master.m3u8"
 });
 
-window.td = new Channel({
-  name: "Todo Deportes",
-  shortName: "td",
-  logo: require("../img/logos/td.png"),
-  country: require("../img/flags/honduras.svg"),
-  link:
-    "http://190.92.0.43:1935/securelive/tdtv85jd5EKL3xWq3/chunklist_w1241310319.m3u8"
-});
+// window.td = new Channel({
+//   name: "Todo Deportes",
+//   shortName: "td",
+//   logo: require("../img/logos/td.png"),
+//   country: require("../img/flags/honduras.svg"),
+//   link:
+//     "http://190.92.0.43:1935/securelive/tdtv85jd5EKL3xWq3/chunklist_w1241310319.m3u8"
+// });
 
 window.hondured = new Channel({
   name: "HonduRed",
@@ -614,6 +618,16 @@ window.america = new Channel({
   logo: require("../img/logos/radioAmerica.png"),
   country: require("../img/flags/honduras.svg"),
   link: "http://17803.live.streamtheworld.com/AMERICAAAC.aac",
+  type: "audio/mpeg",
+  video: "audio"
+});
+
+window.pirata = new Channel({
+  name: "Radio Pirata",
+  shortName: "pirata",
+  logo: require("../img/logos/pirata.png"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://s24.myradiostream.com:12420/;?d=",
   type: "audio/mpeg",
   video: "audio"
 });

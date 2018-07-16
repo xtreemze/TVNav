@@ -69,7 +69,7 @@ const video = {
     }
   }
 };
-function falseTest() {
+window.falseTest = function() {
   if (window.test === true) {
     window.test = false;
     window.clearTimeout(window.channelTestTimer);
@@ -88,7 +88,7 @@ channelSection.addEventListener(
   "wheel",
   function wheel() {
     if (window.test === true) {
-      falseTest();
+      window.falseTest();
       channelSection.removeEventListener("wheel", wheel(), false);
     }
   },
@@ -99,7 +99,7 @@ channelSection.addEventListener(
   "touchstart",
   function touchstart() {
     if (window.test === true) {
-      falseTest();
+      window.falseTest();
       channelSection.removeEventListener("touchstart", touchstart(), false);
     }
   },
@@ -384,7 +384,7 @@ function channelTest(pass) {
     //   setTimeout(function() {
     //     // Functions after testing ends
     //     toggleChannels();
-    //     falseTest();
+    //     window.falseTest();
     //   }, 1005);
     // }, timer + 1001);
   }

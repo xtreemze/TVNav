@@ -175,6 +175,7 @@
 }
 
 #channelSection {
+  padding: 50vh 0;
   position: absolute;
   width: 11em;
   z-index: 620;
@@ -182,7 +183,7 @@
   right: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: 100vh;
+  max-height: 0vh;
   scroll-behavior: smooth;
   transition: transform 1s ease-in-out;
 }

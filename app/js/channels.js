@@ -1,5 +1,5 @@
 // Declare Channel Class
-window.Channels = new Set();
+const Channels = new Set();
 // Create Channels
 let channelList = "";
 

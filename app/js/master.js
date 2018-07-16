@@ -69,7 +69,7 @@ const video = {
     }
   }
 };
-window.falseTest = function() {
+function falseTest() {
   if (window.test === true) {
     window.test = false;
     window.clearTimeout(window.channelTestTimer);
@@ -88,7 +88,7 @@ channelSection.addEventListener(
   "wheel",
   function wheel() {
     if (window.test === true) {
-      window.falseTest();
+      falseTest();
       channelSection.removeEventListener("wheel", wheel(), false);
     }
   },
@@ -99,7 +99,7 @@ channelSection.addEventListener(
   "touchstart",
   function touchstart() {
     if (window.test === true) {
-      window.falseTest();
+      falseTest();
       channelSection.removeEventListener("touchstart", touchstart(), false);
     }
   },
@@ -231,7 +231,7 @@ window.updateVideo = function(channel) {
   });
 };
 
-const channelTest = function(pass) {
+function channelTest(pass) {
   if (navigator.onLine) {
     window.test = true;
     let timer = 1200;
@@ -384,7 +384,7 @@ const channelTest = function(pass) {
     //   setTimeout(function() {
     //     // Functions after testing ends
     //     toggleChannels();
-    //     window.falseTest();
+    //     falseTest();
     //   }, 1005);
     // }, timer + 1001);
   }

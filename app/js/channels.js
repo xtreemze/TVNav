@@ -99,26 +99,6 @@ window.tele7 = new Channel({
   // html5: true
 });
 
-window.rprog = new Channel({
-  name: "Radio Progreso",
-  shortName: "rprog",
-  link: "http://192.99.233.46:8900/;?1513336516909.mp3",
-  logo: require("../img/logos/radioProgreso.png"),
-  country: require("../img/flags/honduras.svg"),
-  type: "audio/mpeg",
-  video: "audio"
-});
-
-window.hrn = new Channel({
-  name: "HRN",
-  shortName: "hrn",
-  logo: require("../img/logos/hrn.jpg"),
-  country: require("../img/flags/honduras.svg"),
-  link: "http://radios504.geucast.net:18101/radio-live",
-  type: "audio/mpeg",
-  video: "audio"
-});
-
 window.azteca = new Channel({
   name: "Azteca",
   shortName: "azteca",
@@ -144,23 +124,23 @@ window.campus = new Channel({
 //     "blob:https://ott.streann.com/aaec9748-8ce1-464e-b312-8098c336af2c"
 // });
 
-window.once = new Channel({
-  name: "Canal 11",
-  shortName: "once",
-  logo: require("../img/logos/canal11.png"),
-  country: require("../img/flags/honduras.svg"),
-  link:
-    "http://www.miotv.hn:1935/securelive/smil:c11.smil/chunklist_w1277053248_b1304800.m3u8"
-});
+// window.once = new Channel({
+//   name: "Canal 11",
+//   shortName: "once",
+//   logo: require("../img/logos/canal11.png"),
+//   country: require("../img/flags/honduras.svg"),
+//   link:
+//     "http://www.miotv.hn:1935/securelive/smil:c11.smil/chunklist_w1277053248_b1304800.m3u8"
+// });
 
-window.seis = new Channel({
-  name: "Canal 6",
-  shortName: "seis",
-  logo: require("../img/logos/canal6.png"),
-  country: require("../img/flags/honduras.svg"),
-  link:
-    "https://ott.streann.com/loadbalancer/services/public/channels-secure/56bd45f5e4b0ba125fe8a866/playlist.m3u8"
-});
+// window.seis = new Channel({
+//   name: "Canal 6",
+//   shortName: "seis",
+//   logo: require("../img/logos/canal6.png"),
+//   country: require("../img/flags/honduras.svg"),
+//   link:
+//     "https://ott.streann.com/loadbalancer/services/public/channels-secure/56bd45f5e4b0ba125fe8a866/playlist.m3u8"
+// });
 
 window.rt = new Channel({
   name: "RT Es",
@@ -212,14 +192,7 @@ window.twitM = new Channel({
   // ustream: true
 });
 
-window.twitR = new Channel({
-  name: "TWiT Radio",
-  shortName: "twitR",
-  logo: require("../img/logos/twit.svg"),
-  country: require("../img/flags/usa.svg"),
-  link: "http://twit.am/listen.m3u",
-  html5: true
-});
+
 
 window.khou = new Channel({
   name: "KHOU",
@@ -420,13 +393,13 @@ window.globoTV = new Channel({
   link: "http://tv.aliasdns.info:8979/live/g13/playlist.m3u8"
 });
 
-window.sexta = new Channel({
-  name: "la Sexta",
-  shortName: "sexta",
-  logo: require("../img/logos/sexta.svg"),
-  country: require("../img/flags/spain.svg"),
-  link: "http://a3live-lh.akamaihd.net/i/lasexta_1@35272/master.m3u8"
-});
+// window.sexta = new Channel({
+//   name: "la Sexta",
+//   shortName: "sexta",
+//   logo: require("../img/logos/sexta.svg"),
+//   country: require("../img/flags/spain.svg"),
+//   link: "http://a3live-lh.akamaihd.net/i/lasexta_1@35272/master.m3u8"
+// });
 
 window.telpin = new Channel({
   name: "TelPin",
@@ -572,12 +545,43 @@ window.hondured = new Channel({
 //   link: "http://d3bus2b3f32oks.cloudfront.net/hn//smil:vtv.smil/playlist.m3u8"
 // });
 
+window.twitR = new Channel({
+  name: "TWiT Radio",
+  shortName: "twitR",
+  logo: require("../img/logos/twit.svg"),
+  country: require("../img/flags/usa.svg"),
+  link: "http://twit.am/listen.m3u",
+  type: "audio/mpeg",
+  video: "audio"
+});
+
 window.euro = new Channel({
   name: "EuroNews",
   shortName: "euro",
   logo: require("../img/logos/euro.svg"),
   country: require("../img/flags/france.svg"),
   link: "http://euronews-04.ice.infomaniak.ch/euronews-04.aac",
+  type: "audio/mpeg",
+  video: "audio"
+});
+
+
+window.rprog = new Channel({
+  name: "Radio Progreso",
+  shortName: "rprog",
+  link: "http://192.99.233.46:8900/;?1513336516909.mp3",
+  logo: require("../img/logos/radioProgreso.png"),
+  country: require("../img/flags/honduras.svg"),
+  type: "audio/mpeg",
+  video: "audio"
+});
+
+window.hrn = new Channel({
+  name: "HRN",
+  shortName: "hrn",
+  logo: require("../img/logos/hrn.jpg"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://radios504.geucast.net:18101/radio-live",
   type: "audio/mpeg",
   video: "audio"
 });
@@ -632,15 +636,15 @@ window.pirata = new Channel({
   video: "audio"
 });
 
-// window.rnh = new Channel({
-//   name: "Radio Nacional",
-//   shortName: "rnh",
-//   logo: require("../img/logos/radioNacional.jpg"),
-//   country: require("../img/flags/honduras.svg"),
-//   link: "http://stream.playerlive.info:8049//rnh.aac",
-//   type: "audio/aac",
-//   video: "audio"
-// });
+window.rnh = new Channel({
+  name: "Radio Nacional",
+  shortName: "rnh",
+  logo: require("../img/logos/radioNacional.jpg"),
+  country: require("../img/flags/honduras.svg"),
+  link: "http://stream.playerlive.info:8049//rnh.aac",
+  type: "audio/aac",
+  video: "audio"
+});
 
 // Donate
 channelList += `<div class="individualChannel" id="donate">

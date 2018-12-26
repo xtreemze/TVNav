@@ -1,0 +1,103 @@
+{
+  "name": "TVNav",
+  "short_name": "TVNav",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "./Images/TVNav/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/TVNav/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/d8126b1e-d8b8-f02c-751c-f6f719182c96.webPlatform.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/windows10/SplashScreen.scale-200.png.png",
+      "sizes": "1240x600",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/9eb83a27-9937-99c0-fc39-805f990a501a.webPlatform.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/71040204-01cc-c3e6-33a9-ecab1cdd1a91.webPlatform.png",
+      "sizes": "88x88",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/52a2a529-8f1b-d5b3-ce83-a41878e54a71.webPlatform.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/b1ddbfca-6aa6-f338-3fda-a34387bce27e.webPlatform.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/823e765e-f49f-2348-af2f-2b21fc07cfa8.webPlatform.png",
+      "sizes": "620x300",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/d986ceb1-3c0b-687f-8c25-beff6949e9ce.webPlatform.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/914b41de-1590-d74c-a5d2-741a88a38332.webPlatform.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/4b47990d-79fe-7826-dff1-0eb7282b4346.webPlatform.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/04947a78-0e4b-011f-a7ed-46537905bb96.webPlatform.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/ios/ios-appicon-1024-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/1a435c5c-65e9-1e05-ab5f-50b664f3ea43.webPlatform.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/33b653e7-b82d-e07a-77f9-17cb193c82ef.webPlatform.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/24c0acae-2684-0501-c481-e14038f6bbc9.webPlatform.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/db390fc4-615f-6eee-dc96-faaad5270f2d.webPlatform.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "es",
+  "description": "Vea canales de televisión en Honduras gratis y en vivo!"
+}
